@@ -62,7 +62,7 @@ public class FaladorMedium extends ComplexStateQuestHelper
 	ItemRequirement combatGear, bullseyeLantern, tinderbox, lawRune2, airRune4, waterRune1,
 		crystalKey, bronzeSpear, watermelon, emptySack, fishingExplosive, mithGrapple,
 		anyCrossbow, initiateHelm, initiateChest, initiateLegs, pickaxe, axe, brownApron,
-		willowBranch6, rake;
+		willowBranch6, rake, airStaff, airRuneOrStaff, waterStaff, waterRuneOrStaff;
 
 	//Items Recommended
 	ItemRequirement faladorTeleport, explorersRing, combatBracelet;
@@ -151,8 +151,13 @@ public class FaladorMedium extends ComplexStateQuestHelper
 		tinderbox = new ItemRequirement("Tinderbox", ItemID.TINDERBOX).showConditioned(new Conditions(LogicType.OR, notLitLantern, notChopBurnWillowTav));
 		airRune4 = new ItemRequirement("Air Runes", ItemID.AIR_RUNE, 4).showConditioned(new Conditions(LogicType.OR,
 			notTelegrabbedWine, notTeleportFalador));
-		lawRune2 = new ItemRequirement("Law Runes", ItemID.LAW_RUNE, 2);
+		airStaff = new ItemRequirement("Air staff", ItemCollections.getAirStaff(), 1, true);
+		airRuneOrStaff = new ItemRequirement(LogicType.OR, "4 air runes", airRune4, airStaff);
+		lawRune2 = new ItemRequirement("Law Runes", ItemID.LAW_RUNE, 2).showConditioned(new Conditions(LogicType.OR,
+			notTelegrabbedWine, notTeleportFalador));
 		waterRune1 = new ItemRequirement("Water Runes", ItemID.WATER_RUNE, 1);
+		waterStaff = new ItemRequirement("Water staff", ItemCollections.getWaterStaff(), 1, true);
+		waterRuneOrStaff = new ItemRequirement(LogicType.OR, "1 water rune", waterRune1, waterStaff);
 		crystalKey = new ItemRequirement("Crystal Key", ItemID.CRYSTAL_KEY).showConditioned(notUnlockedCrystalChest);
 		scarecrow = new ItemRequirement("Scarecrow", ItemID.SCARECROW).showConditioned(notPlacedScarecrow);
 		haySack = new ItemRequirement("Hay Sack", ItemID.HAY_SACK).showConditioned(notPlacedScarecrow);
