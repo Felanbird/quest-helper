@@ -136,7 +136,8 @@ public class FremennikHard extends ComplexStateQuestHelper
 		knife = new ItemRequirement("Knife", ItemID.KNIFE).showConditioned(notCatchKyatt);
 		axe = new ItemRequirement("Any axe", ItemCollections.getAxes()).showConditioned(notCraftShield);
 		hammer = new ItemRequirement("Hammer", ItemID.HAMMER).showConditioned(notCraftShield);
-		arcticLog = new ItemRequirement("Arctic pine logs", ItemID.ARCTIC_PINE_LOGS, 2).showConditioned(notCraftShield);
+		arcticLog = new ItemRequirement("Arctic pine logs", ItemID.ARCTIC_PINE_LOGS, 2)
+			.showConditioned(notCraftShield);
 		cadantineUnfPot = new ItemRequirement("Cadantine unf pot", ItemID.CADANTINE_POTION_UNF).showConditioned(notMixSuperDef);
 		whiteBerries = new ItemRequirement("White berries", ItemID.WHITE_BERRIES).showConditioned(notMixSuperDef);
 		log = new ItemRequirement("Logs", ItemID.LOGS).showConditioned(notCatchKyatt);
