@@ -215,7 +215,7 @@ public class DesertElite extends ComplexStateQuestHelper
 	public List<ItemRequirement> getItemRequirements()
 	{
 		return Arrays.asList(rawPie, waterRune, bloodRune, deathRune, dragonDartTip, feather, kqHead, mahoPlank,
-			goldLeaves, coins, saw,	hammer, kqHead);
+			goldLeaves, coins, saw, hammer, kqHead);
 	}
 
 	@Override
