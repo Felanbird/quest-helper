@@ -159,15 +159,15 @@ public class ArdougneMedium extends ComplexStateQuestHelper
 		crossbow = new ItemRequirement("Any crossbow", ItemCollections.getCrossbows()).showConditioned(notGrapYan);
 		bucket = new ItemRequirement("Bucket", ItemID.BUCKET)
 			.showConditioned(new Conditions(notClaimSand));// TODO check for UIM
-		lawRune = new ItemRequirement("Law rune", ItemID.LAW_RUNE).showConditioned(notTPArdy);
-		waterRune = new ItemRequirement("Water rune", ItemID.WATER_RUNE).showConditioned(notTPArdy);
+		lawRune = new ItemRequirement("Law rune", ItemID.LAW_RUNE, 2).showConditioned(notTPArdy);
+		waterRune = new ItemRequirement("Water rune", ItemID.WATER_RUNE, 2).showConditioned(notTPArdy);
 		rawChick = new ItemRequirement("Raw chicken", ItemID.RAW_CHICKEN).showConditioned(notKillSwordchick);
 		rawSword = new ItemRequirement("Raw swordfish", ItemID.RAW_SWORDFISH).showConditioned(notKillSwordchick);
 		ibanStaff = new ItemRequirement("Iban staff", ItemID.IBANS_STAFF).showConditioned(notIbanUpgrade);
-		coins = new ItemRequirement("Coins", ItemCollections.getCoins()).showConditioned(notIbanUpgrade);
+		coins = new ItemRequirement("Coins", ItemCollections.getCoins(), 200000).showConditioned(notIbanUpgrade);
 		ibanStaffU = new ItemRequirement("Iban staff Upgraded", ItemID.IBANS_STAFF_U).showConditioned(notIbanUpgrade);
 		seedDib = new ItemRequirement("Seed dibber", ItemID.SEED_DIBBER).showConditioned(notArdyStraw);
-		strawSeeds = new ItemRequirement("Strawberry seeds", ItemID.STRAWBERRY_SEED).showConditioned(notArdyStraw);
+		strawSeeds = new ItemRequirement("Strawberry seeds", ItemID.STRAWBERRY_SEED, 3).showConditioned(notArdyStraw);
 		rake = new ItemRequirement("Rake", ItemID.RAKE).showConditioned(notArdyStraw);
 		smallFishingNet = new ItemRequirement("Small fishing net", ItemID.SMALL_FISHING_NET)
 			.showConditioned(notFishOnPlatform);
@@ -248,8 +248,8 @@ public class ArdougneMedium extends ComplexStateQuestHelper
 		talkToAug = new NpcStep(this, NpcID.AUGUSTE, new WorldPoint(2810, 3356, 0),
 			"Speak with Augustine and travel to Castle Wars.", yewLog.quantity(11));
 
-		tPArdy = new DetailedQuestStep(this, "Cast Teleport to Ardougne spell.", lawRune.quantity(2),
-			waterRune.quantity(2));
+		tPArdy = new DetailedQuestStep(this, "Cast Teleport to Ardougne spell.", lawRune,
+			waterRune);
 
 		moveToBasement = new ObjectStep(this, ObjectID.TRAPDOOR_21922, new WorldPoint(2648, 3212, 0),
 			"Enter the basement of the Tower of Life.", combatGear, food, rawChick, rawSword);
@@ -269,14 +269,14 @@ public class ArdougneMedium extends ComplexStateQuestHelper
 			"Pickpocket the master farmer north of East Ardougne.");
 
 		ibanUpgrade = new NpcStep(this, NpcID.DARK_MAGE_7753, new WorldPoint(2455, 3312, 0),
-			"Talk to the Dark mage in West Ardougne to upgrade your staff.", ibanStaff, coins.quantity(200000));
+			"Talk to the Dark mage in West Ardougne to upgrade your staff.", ibanStaff, coins);
 		ibanUpgrade.addDialogSteps("Can you upgrade my Staff of Iban?",
 			"Here's 200,000 coins. Please upgrade the staff.");
 		equipIban = new ItemStep(this, "Equip Iban's staff (u).", ibanStaffU);
 
 		ardyStraw = new ObjectStep(this, NullObjectID.NULL_8555, new WorldPoint(2667, 3371, 0),
 			"Plant and harvest the strawberries from the north Ardougne allotment.", true, rake, spade,
-			seedDib, strawSeeds.quantity(3));
+			seedDib, strawSeeds);
 
 		claimReward = new NpcStep(this, NpcID.TWOPINTS, new WorldPoint(2574, 3323, 0),
 			"Talk to Two-pints in the Flying Horse Inn at East Ardougne to claim your reward!");
@@ -287,8 +287,8 @@ public class ArdougneMedium extends ComplexStateQuestHelper
 	public List<ItemRequirement> getItemRequirements()
 	{
 		// TODO handle yew log item req without making it look weird.
-		return Arrays.asList(combatGear, crossbow, mithGrap, rake, strawSeeds.quantity(3), seedDib, ibanStaff,
-			coins.quantity(200000), smallFishingNet, rawChick, rawSword, yewLog.quantity(10), yewLog2.quantity(1),
+		return Arrays.asList(combatGear, crossbow, mithGrap, rake, strawSeeds, seedDib, ibanStaff,
+			coins, smallFishingNet, rawChick, rawSword, yewLog.quantity(10), yewLog2.quantity(1),
 			fairyAccess, spade);
 	}
 
@@ -381,7 +381,7 @@ public class ArdougneMedium extends ComplexStateQuestHelper
 		allSteps.add(sandSteps);
 
 		PanelDetails tpSteps = new PanelDetails("Teleport to Ardougne", Collections.singletonList(tPArdy),
-			new SkillRequirement(Skill.MAGIC, 51), plagueCity, normalBook, lawRune.quantity(2), waterRune.quantity(2));
+			new SkillRequirement(Skill.MAGIC, 51), plagueCity, normalBook, lawRune, waterRune);
 		tpSteps.setDisplayCondition(notTPArdy);
 		allSteps.add(tpSteps);
 
@@ -401,7 +401,7 @@ public class ArdougneMedium extends ComplexStateQuestHelper
 		allSteps.add(farmerSteps);
 
 		PanelDetails ibanSteps = new PanelDetails("Iban Upgrade", Collections.singletonList(ibanUpgrade),
-			undergroundPass, ibanStaff, coins.quantity(200000));
+			undergroundPass, ibanStaff, coins);
 		ibanSteps.setDisplayCondition(notIbanUpgrade);
 		allSteps.add(ibanSteps);
 
@@ -416,7 +416,7 @@ public class ArdougneMedium extends ComplexStateQuestHelper
 		allSteps.add(necroSteps);
 
 		PanelDetails strawSteps = new PanelDetails("Ardougne Strawberries", Collections.singletonList(ardyStraw),
-			new SkillRequirement(Skill.FARMING, 31), rake, strawSeeds.quantity(3), seedDib, spade);
+			new SkillRequirement(Skill.FARMING, 31), rake, strawSeeds, seedDib, spade);
 		strawSteps.setDisplayCondition(notArdyStraw);
 		allSteps.add(strawSteps);
 

@@ -136,9 +136,9 @@ public class ArdougneElite extends ComplexStateQuestHelper
 		// = new ItemRequirement("", ItemID.).showConditioned();
 		combatGear = new ItemRequirement("Combat gear", -1, -1);
 		combatGear.setDisplayItemId(BankSlotIcons.getCombatGear());
-		bloodRune = new ItemRequirement("Blood rune", ItemID.BLOOD_RUNE).showConditioned(notIceBarrage);
-		waterRune = new ItemRequirement("Water rune", ItemID.WATER_RUNE).showConditioned(notIceBarrage);
-		deathRune = new ItemRequirement("Death rune", ItemID.DEATH_RUNE).showConditioned(notIceBarrage);
+		bloodRune = new ItemRequirement("Blood rune", ItemID.BLOOD_RUNE, 2).showConditioned(notIceBarrage);
+		waterRune = new ItemRequirement("Water rune", ItemID.WATER_RUNE, 6).showConditioned(notIceBarrage);
+		deathRune = new ItemRequirement("Death rune", ItemID.DEATH_RUNE, 4).showConditioned(notIceBarrage);
 		lockpick = new ItemRequirement("Lockpick", ItemID.LOCKPICK).showConditioned(notYanAgi);
 		salveAmmy = new ItemRequirement("Salve amulet", ItemCollections.getImbuableSalveAmulet())
 			.showConditioned(notImbueSalve);
@@ -226,8 +226,7 @@ public class ArdougneElite extends ComplexStateQuestHelper
 	public void setupSteps()
 	{
 		iceBarrage = new DetailedQuestStep(this, new WorldPoint(2441, 3089, 0),
-			"Cast Ice Barrage on a Player within Castle Wars.", ancientBook, waterRune.quantity(6),
-			bloodRune.quantity(2), deathRune.quantity(4));
+			"Cast Ice Barrage on a Player within Castle Wars.", ancientBook, waterRune, bloodRune, deathRune);
 
 		moveToYanAgi = new ObjectStep(this, ObjectID.STAIRCASE_16664, new WorldPoint(2604, 3079, 0),
 			"Climb down the stairs to enter the Yanille Agility Dungeon.", lockpick);
@@ -275,8 +274,8 @@ public class ArdougneElite extends ComplexStateQuestHelper
 	@Override
 	public List<ItemRequirement> getItemRequirements()
 	{
-		return Arrays.asList(waterRune.quantity(6), bloodRune.quantity(2), deathRune.quantity(4), lockpick, salveAmmy,
-			sinewOrRoot, runeBar, hammer, knife, yewLog, rake, spade, seedDib, torstolSeed);
+		return Arrays.asList(waterRune, bloodRune, deathRune, lockpick, salveAmmy, sinewOrRoot, runeBar, hammer, knife,
+			yewLog, rake, spade, seedDib, torstolSeed);
 	}
 
 	@Override
@@ -340,8 +339,8 @@ public class ArdougneElite extends ComplexStateQuestHelper
 		List<PanelDetails> allSteps = new ArrayList<>();
 
 		PanelDetails iceSteps = new PanelDetails("Ice Barrage in Castle Wars", Collections.singletonList(iceBarrage),
-			new SkillRequirement(Skill.MAGIC, 94), desertTreasure, ancientBook, waterRune.quantity(6),
-			bloodRune.quantity(2), deathRune.quantity(4));
+			new SkillRequirement(Skill.MAGIC, 94), desertTreasure, ancientBook, waterRune,
+			bloodRune, deathRune);
 		iceSteps.setDisplayCondition(notIceBarrage);
 		allSteps.add(iceSteps);
 

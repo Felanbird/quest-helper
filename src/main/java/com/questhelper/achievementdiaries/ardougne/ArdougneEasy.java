@@ -105,7 +105,7 @@ public class ArdougneEasy extends ComplexStateQuestHelper
 
 		silk = new ItemRequirement("Silk", ItemID.SILK).showConditioned(notSellSilk);
 		rustySword = new ItemRequirement("Rusty sword", ItemID.RUSTY_SWORD).showConditioned(notIdentifySword);
-		coins = new ItemRequirement("Coins", ItemCollections.getCoins()).showConditioned(notIdentifySword);
+		coins = new ItemRequirement("Coins", ItemCollections.getCoins(), 100).showConditioned(notIdentifySword);
 
 		runeMysteries = new QuestRequirement(QuestHelperQuest.RUNE_MYSTERIES, QuestState.FINISHED);
 		biohazard = new QuestRequirement(QuestHelperQuest.BIOHAZARD, QuestState.FINISHED);
@@ -141,7 +141,7 @@ public class ArdougneEasy extends ComplexStateQuestHelper
 
 		identifySword = new NpcStep(this, NpcID.TINDEL_MARCHANT, new WorldPoint(2676, 3152, 0),
 			"Have Tindel Marchant identify a rusty sword for you. Note: there is about a 1% chance this fails and " +
-				"you'll need another sword and more coins.", rustySword, coins.quantity(100));
+				"you'll need another sword and more coins.", rustySword, coins);
 		identifySword.addDialogStep("Ok, I'll give it a go!");
 
 		alecksEmporium = new NpcStep(this, NpcID.ALECK, new WorldPoint(2566, 3083, 0),
@@ -156,7 +156,7 @@ public class ArdougneEasy extends ComplexStateQuestHelper
 	@Override
 	public List<ItemRequirement> getItemRequirements()
 	{
-		return Arrays.asList(rustySword, silk, coins.quantity(100));
+		return Arrays.asList(rustySword, silk, coins);
 	}
 
 	@Override
@@ -206,7 +206,7 @@ public class ArdougneEasy extends ComplexStateQuestHelper
 		allSteps.add(trawlerSteps);
 
 		PanelDetails swordSteps = new PanelDetails("Identify Sword", Collections.singletonList(identifySword),
-			rustySword, coins.quantity(100));
+			rustySword, coins);
 		swordSteps.setDisplayCondition(notIdentifySword);
 		allSteps.add(swordSteps);
 

@@ -142,11 +142,11 @@ public class ArdougneHard extends ComplexStateQuestHelper
 		redAtDoor = new VarbitRequirement(1249, 1);
 		redAtAltar = new VarbitRequirement(1250, 1);
 
-		earthRune = new ItemRequirement("Earth rune", ItemID.EARTH_RUNE).showConditioned(notTPWatchtower);
-		lawRune = new ItemRequirement("Law rune", ItemID.LAW_RUNE).showConditioned(notTPWatchtower);
-		coins = new ItemRequirement("Coins", ItemCollections.getCoins())
+		earthRune = new ItemRequirement("Earth rune", ItemID.EARTH_RUNE, 2).showConditioned(notTPWatchtower);
+		lawRune = new ItemRequirement("Law rune", ItemID.LAW_RUNE, 2).showConditioned(notTPWatchtower);
+		coins = new ItemRequirement("Coins", ItemCollections.getCoins(), 25000)
 			.showConditioned(new Conditions(notYanHouse, notYanPOH));
-		mithBar = new ItemRequirement("Mithril bar", ItemID.MITHRIL_BAR).showConditioned(notMithPlate);
+		mithBar = new ItemRequirement("Mithril bar", ItemID.MITHRIL_BAR, 5).showConditioned(notMithPlate);
 		hammer = new ItemRequirement("Hammer", ItemID.HAMMER)
 			.showConditioned(new Conditions(LogicType.OR, notMithPlate, notDragSquare));
 		rope = new ItemRequirement("Rope", ItemID.ROPE).showConditioned(notRedSally);
@@ -181,9 +181,9 @@ public class ArdougneHard extends ComplexStateQuestHelper
 		spade = new ItemRequirement("Spade", ItemID.SPADE).showConditioned(notPalmTree);
 		poisonIvySeed = new ItemRequirement("Poison ivy seed", ItemID.POISON_IVY_SEED).showConditioned(notPoisonIvy);
 		palmSap = new ItemRequirement("Palm tree sapling", ItemID.PALM_SAPLING).showConditioned(notPalmTree);
-		papaya = new ItemRequirement("Papaya fruit", ItemID.PAPAYA_FRUIT).showConditioned(notPalmTree);
+		papaya = new ItemRequirement("Papaya fruit", ItemID.PAPAYA_FRUIT, 15).showConditioned(notPalmTree);
 		compost = new ItemRequirement("Compost", ItemCollections.getCompost()).showConditioned(notPalmTree);
-		papayaOrCompost = new ItemRequirements(LogicType.OR, "15 Papaya fruit or Compost", papaya.quantity(15), compost)
+		papayaOrCompost = new ItemRequirements(LogicType.OR, "15 Papaya fruit or Compost", papaya, compost)
 			.showConditioned(notPalmTree);
 
 		inCastle = new ZoneRequirement(castle);
@@ -216,11 +216,11 @@ public class ArdougneHard extends ComplexStateQuestHelper
 
 	public void setupSteps()
 	{
-		tPWatchtower = new DetailedQuestStep(this, "Teleport to the Watchtower.", earthRune.quantity(2),
-			lawRune.quantity(2));
+		tPWatchtower = new DetailedQuestStep(this, "Teleport to the Watchtower.", earthRune,
+			lawRune);
 
 		moveHouse = new NpcStep(this, NpcID.ESTATE_AGENT, new WorldPoint(2638, 3293, 0),
-			"Talk to an Estate agent and relocate your house to Yanille.", coins.quantity(25000));
+			"Talk to an Estate agent and relocate your house to Yanille.", coins);
 		moveHouse.addDialogStep("Can you move my house please?");
 		yanPOH = new ObjectStep(this, 15482, new WorldPoint(2544, 3098, 0),
 			"Enter your house from the portal in Yanille.");
@@ -230,7 +230,7 @@ public class ArdougneHard extends ComplexStateQuestHelper
 		magicGuild.addAlternateObjects(ObjectID.MAGIC_GUILD_DOOR_1733);
 
 		mithPlate = new ObjectStep(this, ObjectID.ANVIL_2097, new WorldPoint(2613, 3081, 0),
-			"Smith a Mithril platebody in Yanille.", mithBar.quantity(5), hammer);
+			"Smith a Mithril platebody in Yanille.", mithBar, hammer);
 
 		redSally = new ObjectStep(this, ObjectID.YOUNG_TREE_8990, new WorldPoint(2474, 3239, 0),
 			"Catch a Red Salamander.", true, rope, smallFishingNet);
@@ -286,10 +286,9 @@ public class ArdougneHard extends ComplexStateQuestHelper
 	@Override
 	public List<ItemRequirement> getItemRequirements()
 	{
-		return Arrays.asList(coins.quantity(25000), earthRune.quantity(2), lawRune.quantity(2),
-			mithBar.quantity(5), hammer, rope, smallFishingNet, rechargableJewelry, greeGree, lockpick, shieldLeft,
-			shieldRight, newKey, crystalTrink, mournersOutfit, highEss, deathAccess, spade, rake, palmSap, seedDib,
-			poisonIvySeed);
+		return Arrays.asList(coins, earthRune, lawRune,	mithBar, hammer, rope, smallFishingNet, rechargableJewelry,
+			greeGree, lockpick, shieldLeft, shieldRight, newKey, crystalTrink, mournersOutfit, highEss, deathAccess,
+			spade, rake, palmSap, seedDib, poisonIvySeed);
 	}
 
 	@Override
@@ -345,12 +344,12 @@ public class ArdougneHard extends ComplexStateQuestHelper
 
 		PanelDetails watchtowerSteps = new PanelDetails("Teleport to Watchtower",
 			Collections.singletonList(tPWatchtower), new SkillRequirement(Skill.MAGIC, 58), watchtower,
-			earthRune.quantity(2), lawRune.quantity(2));
+			earthRune, lawRune);
 		watchtowerSteps.setDisplayCondition(notTPWatchtower);
 		allSteps.add(watchtowerSteps);
 
 		PanelDetails yan2Steps = new PanelDetails("Yanille POH", Arrays.asList(moveHouse, yanPOH),
-			new SkillRequirement(Skill.CONSTRUCTION, 50, false), coins.quantity(25000));
+			new SkillRequirement(Skill.CONSTRUCTION, 50, false), coins);
 		yan2Steps.setDisplayCondition(new Conditions(notYanHouse, notYanPOH));
 		allSteps.add(yan2Steps);
 
@@ -364,7 +363,7 @@ public class ArdougneHard extends ComplexStateQuestHelper
 		allSteps.add(mgSteps);
 
 		PanelDetails plateSteps = new PanelDetails("Mithril Platebody", Collections.singletonList(mithPlate),
-			new SkillRequirement(Skill.SMITHING, 68), mithBar.quantity(5), hammer);
+			new SkillRequirement(Skill.SMITHING, 68), mithBar, hammer);
 		plateSteps.setDisplayCondition(notMithPlate);
 		allSteps.add(plateSteps);
 
