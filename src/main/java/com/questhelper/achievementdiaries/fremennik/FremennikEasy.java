@@ -127,7 +127,7 @@ public class FremennikEasy extends ComplexStateQuestHelper
 		notChopAndBurnOak = new VarplayerRequirement(1184, false, 10);
 
 		pickaxe = new ItemRequirement("Any pickaxe", ItemCollections.getPickaxes()).showConditioned(notCraftTiara);
-		coins = new ItemRequirement("Coins", ItemCollections.getCoins()).showConditioned(notChangeBoots);
+		coins = new ItemRequirement("Coins", ItemCollections.getCoins(), 500).showConditioned(notChangeBoots);
 		birdSnare = new ItemRequirement("Bird snare", ItemID.BIRD_SNARE).showConditioned(notCatchCerulean);
 		tinderbox = new ItemRequirement("Tinderbox", ItemID.TINDERBOX).showConditioned(notChopAndBurnOak);
 		tiaraMould = new ItemRequirement("Tiara mould", ItemID.TIARA_MOULD).showConditioned(notCraftTiara);
@@ -136,7 +136,7 @@ public class FremennikEasy extends ComplexStateQuestHelper
 		axe = new ItemRequirement("Any axe", ItemCollections.getAxes()).showConditioned(notChopAndBurnOak);
 		silverBar = new ItemRequirement("Silver bar", ItemID.SILVER_BAR);
 		silverOre = new ItemRequirement("Silver ore", ItemID.SILVER_ORE);
-		snapeGrass = new ItemRequirement("Snape grass", ItemID.SNAPE_GRASS);
+		snapeGrass = new ItemRequirement("Snape grass", ItemID.SNAPE_GRASS, 5);
 
 		combatGear = new ItemRequirement("Combat gear", -1, -1).showConditioned(notKilledCrabs);
 		combatGear.setDisplayItemId(BankSlotIcons.getCombatGear());
@@ -189,14 +189,14 @@ public class FremennikEasy extends ComplexStateQuestHelper
 			"Craft a tiara in Rellekka.", silverBar.highlighted(), fremennikTrials);
 		craftTiara.addIcon(ItemID.SILVER_BAR);
 		changeBoots = new NpcStep(this, NpcID.YRSA_3933, new WorldPoint(2625, 3674, 0),
-			"Change your boots at Yrsa's Shoe Store.", coins.quantity(500));
+			"Change your boots at Yrsa's Shoe Store.", coins);
 		goneToWaterbirth = new NpcStep(this, NpcID.JARVALD, new WorldPoint(2620, 3686, 0),
 			"Speak with Jarvald to travel to Waterbirth Island.");
 		goneToWaterbirth.addDialogStep("What Jarvald is doing.");
 		goneToWaterbirth.addDialogStep("Can I come?");
 		goneToWaterbirth.addDialogStep("YES");
 		collectSnapeGrass = new NpcStep(this, ItemID.SNAPE_GRASS, new WorldPoint(2551, 3754, 0),
-			"Collect 5 snape grass on Waterbirth Island. Speak with Jarvald to return to Rellekka when complete.", snapeGrass.highlighted().quantity(5));
+			"Collect 5 snape grass on Waterbirth Island. Speak with Jarvald to return to Rellekka when complete.", snapeGrass.highlighted());
 		enterTrollStronghold = new ObjectStep(this, ObjectID.SECRET_DOOR, new WorldPoint(2828, 3647, 0),
 			"Enter the Troll Stronghold.");
 		goneToKeldagrim = new ObjectStep(this, ObjectID.TUNNEL_5008, new WorldPoint(2732, 3713, 0), "Enter the tunnel that leads to Keldagrim. Alternatively TP to Varrock and take a minecart near the Grand Exchange.");
@@ -220,7 +220,7 @@ public class FremennikEasy extends ComplexStateQuestHelper
 	@Override
 	public List<ItemRequirement> getItemRequirements()
 	{
-		return Arrays.asList(pickaxe, coins.quantity(500), birdSnare, tiaraMould, axe, bucket, climbingBoots, tinderbox, combatGear);
+		return Arrays.asList(pickaxe, coins, birdSnare, tiaraMould, axe, bucket, climbingBoots, tinderbox, combatGear);
 	}
 
 	@Override
@@ -297,7 +297,7 @@ public class FremennikEasy extends ComplexStateQuestHelper
 		allSteps.add(bucketSteps);
 
 		PanelDetails changeBootsSteps = new PanelDetails("Change boots", Collections.singletonList(changeBoots),
-			fremennikTrials, coins.quantity(500));
+			fremennikTrials, coins);
 		changeBootsSteps.setDisplayCondition(notChangeBoots);
 		allSteps.add(changeBootsSteps);
 

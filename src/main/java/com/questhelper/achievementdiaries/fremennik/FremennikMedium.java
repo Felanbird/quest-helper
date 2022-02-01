@@ -177,7 +177,7 @@ public class FremennikMedium extends ComplexStateQuestHelper
 		butterFlyNet = new ItemRequirement("Butterfly Net", ItemID.BUTTERFLY_NET).showConditioned(notSnowyKnight);
 		petRock = new ItemRequirement("Pet rock", ItemID.PET_ROCK).showConditioned(notPetRockPOH);
 		goldHelm = new ItemRequirement("Gold helmet", ItemID.GOLD_HELMET).showConditioned(notMineGold);
-		oakPlanks = new ItemRequirement("Oak planks", ItemID.OAK_PLANK).showConditioned(notPetRockPOH);
+		oakPlanks = new ItemRequirement("Oak planks", ItemID.OAK_PLANK, 4).showConditioned(notPetRockPOH);
 		saw = new ItemRequirement("Saw", ItemID.SAW).showConditioned(notPetRockPOH);
 		hammer = new ItemRequirement("Hammer", ItemID.HAMMER).showConditioned(notPetRockPOH);
 		thrownaxe = new ItemRequirement("Rune thrownaxe", ItemID.RUNE_THROWNAXE).showConditioned(notLighthouse);
@@ -374,7 +374,7 @@ public class FremennikMedium extends ComplexStateQuestHelper
 	public List<ItemRequirement> getItemRequirements()
 	{
 		return Arrays.asList(pickaxe, coins.quantity(30002), spade, staff, rope, butterFlyJar,
-			butterFlyNet, petRock, goldHelm, oakPlanks.quantity(4), saw, hammer, thrownaxe,
+			butterFlyNet, petRock, goldHelm, oakPlanks, saw, hammer, thrownaxe,
 			combatGear);
 	}
 
@@ -474,7 +474,7 @@ public class FremennikMedium extends ComplexStateQuestHelper
 
 		PanelDetails petRockSteps = new PanelDetails("Pet Rock", Collections.singletonList(petRockPOH),
 			fremennikTrials, new SkillRequirement(Skill.CONSTRUCTION, 37, true), coins.quantity(30000),
-			petRock, saw, hammer, oakPlanks.quantity(4));
+			petRock, saw, hammer, oakPlanks);
 		petRockSteps.setDisplayCondition(notPetRockPOH);
 		allSteps.add(petRockSteps);
 
