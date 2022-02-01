@@ -130,7 +130,7 @@ public class KandarinEasy extends ComplexStateQuestHelper
 		genericFishbowl = new ItemRequirements(LogicType.OR, "Fishbowl", emptyFishbowl, fishBowl, fishBowlSeaweed).showConditioned(notPetFish);
 
         seaweed = new ItemRequirement("Seaweed", ItemID.SEAWEED).showConditioned(notPetFish);
-        juteSeed = new ItemRequirement("Jute seeds", ItemID.JUTE_SEED).showConditioned(notPlantJute);
+        juteSeed = new ItemRequirement("Jute seeds", ItemID.JUTE_SEED, 3).showConditioned(notPlantJute);
         rake = new ItemRequirement("Rake", ItemID.RAKE).showConditioned(notPlantJute);
         seedDibber = new ItemRequirement("Seed dibber", ItemID.SEED_DIBBER).showConditioned(notPlantJute);
         batteredKey = new ItemRequirement("Battered key", ItemID.BATTERED_KEY).showConditioned(notKillEle);
@@ -193,7 +193,7 @@ public class KandarinEasy extends ComplexStateQuestHelper
         playOrgan = new ObjectStep(this, ObjectID.CHURCH_ORGAN_25818, new WorldPoint(2692, 3463, 0),
                 "Play the organ in Seers' Village Church.");
         plantJute = new ObjectStep(this, NullObjectID.NULL_8176, new WorldPoint(2669, 3523, 0),
-                "Plant 3 jute seeds in the hops patch north west of Seers' Village.", juteSeed.quantity(3),
+                "Plant 3 jute seeds in the hops patch north west of Seers' Village.", juteSeed,
 			seedDibber, rake);
         plantJute.addIcon(ItemID.JUTE_SEED);
         cupTea = new NpcStep(this, NpcID.GALAHAD, new WorldPoint(2612, 3474, 0),
@@ -210,7 +210,7 @@ public class KandarinEasy extends ComplexStateQuestHelper
     @Override
     public List<ItemRequirement> getItemRequirements()
     {
-        return Arrays.asList(coins.quantity(33), bigFishingNet, juteSeed.quantity(3),
+        return Arrays.asList(coins.quantity(33), bigFishingNet, juteSeed,
 			seedDibber, rake, batteredKey, genericFishbowl, seaweed, combatGear);
     }
 
@@ -309,7 +309,7 @@ public class KandarinEasy extends ComplexStateQuestHelper
 		allSteps.add(takeShortcutSteps);
 
 		PanelDetails plantJuteSteps = new PanelDetails("Plant Jute", Collections.singletonList(plantJute),
-			new SkillRequirement(Skill.FARMING, 13, true), juteSeed.quantity(3), seedDibber, rake);
+			new SkillRequirement(Skill.FARMING, 13, true), juteSeed, seedDibber, rake);
 		plantJuteSteps.setDisplayCondition(notPlantJute);
 		allSteps.add(plantJuteSteps);
 

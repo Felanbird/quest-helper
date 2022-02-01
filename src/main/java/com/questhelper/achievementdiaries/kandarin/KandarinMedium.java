@@ -259,7 +259,7 @@ public class KandarinMedium extends ComplexStateQuestHelper
 		cookBass = new ObjectStep(this, ObjectID.RANGE_26181, new WorldPoint(2818, 3444, 0),
 			"Cook the bass on the ranged in Catherby.", rawBass);
 		travelMcGrubor = new DetailedQuestStep(this, "Take a fairy ring to McGrubor's Woods (ALS)", staff.equipped());
-		tpCAM = new DetailedQuestStep(this, "Teleport to Camelot.", lawRune.quantity(1), airRune.quantity(5),
+		tpCAM = new DetailedQuestStep(this, "Teleport to Camelot.", lawRune, airRune,
 			normalBook);
 
 		claimReward = new NpcStep(this, NpcID.THE_WEDGE, new WorldPoint(2760, 3476, 0),
@@ -271,8 +271,8 @@ public class KandarinMedium extends ComplexStateQuestHelper
 	public List<ItemRequirement> getItemRequirements()
 	{
 		return Arrays.asList(mithGrap, crossbow, dustyKey, bigFishingNet, unicornHorn, mortarPest,
-			vialOfWater, iritLeaf, mapleUnstrung, bowString, lockpick, pickaxe, lawRune.quantity(1),
-			airRune.quantity(5), limpSeed, seedDib, compost, rake, rope, primedMind, batteredKey,
+			vialOfWater, iritLeaf, mapleUnstrung, bowString, lockpick, pickaxe, lawRune,
+			airRune, limpSeed, seedDib, compost, rake, rope, primedMind, batteredKey,
 			beatenBook, hammer, staff, combatGear);
 	}
 
@@ -416,7 +416,7 @@ public class KandarinMedium extends ComplexStateQuestHelper
 
 		PanelDetails teleCamSteps = new PanelDetails("Teleport to Camelot", Collections.singletonList(tpCAM),
 			new SkillRequirement(Skill.MAGIC, 45, true),
-			lawRune.quantity(1), airRune.quantity(5), normalBook);
+			lawRune, airRune, normalBook);
 		teleCamSteps.setDisplayCondition(notTPCam);
 		allSteps.add(teleCamSteps);
 

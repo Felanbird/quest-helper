@@ -129,12 +129,12 @@ public class KandarinHard extends ComplexStateQuestHelper
 		piety = new PrayerRequirement("Piety", Prayer.PIETY);
 
 		barbRod = new ItemRequirement("Barbarian fishing rod", ItemID.BARBARIAN_ROD).showConditioned(notCatchStur);
-		feather = new ItemRequirement("Feathers", ItemID.FEATHER).showConditioned(notCatchStur);
+		feather = new ItemRequirement("Feathers", ItemID.FEATHER, 20).showConditioned(notCatchStur);
 		axe = new ItemRequirement("Any axe", ItemCollections.getAxes()).showConditioned(notYewLong);
 		bowString = new ItemRequirement("Bow string", ItemID.BOW_STRING).showConditioned(notYewLong);
 		knife = new ItemRequirement("Knife", ItemID.KNIFE).showConditioned(notYewLong);
-		waterRune = new ItemRequirement("Water rune", ItemID.WATER_RUNE).showConditioned(notWaterOrb);
-		cosmicRune = new ItemRequirement("Cosmic rune", ItemID.COSMIC_RUNE).showConditioned(notWaterOrb);
+		waterRune = new ItemRequirement("Water rune", ItemID.WATER_RUNE, 30).showConditioned(notWaterOrb);
+		cosmicRune = new ItemRequirement("Cosmic rune", ItemID.COSMIC_RUNE, 3).showConditioned(notWaterOrb);
 		unpoweredOrb = new ItemRequirement("Unpowered orb", ItemID.UNPOWERED_ORB).showConditioned(notWaterOrb);
 
 		Conditions not70Agility = new Conditions(LogicType.NOR, new SkillRequirement(Skill.AGILITY, 70, true));
@@ -185,14 +185,13 @@ public class KandarinHard extends ComplexStateQuestHelper
 	public void setupSteps()
 	{
 		moveToTavDungeon = new ObjectStep(this, ObjectID.LADDER_16680, new WorldPoint(2884, 3397, 0),
-			"Enter the Taverley Dungeon.", dustyKey, waterRune.quantity(30), cosmicRune.quantity(3), unpoweredOrb);
+			"Enter the Taverley Dungeon.", dustyKey, waterRune, cosmicRune, unpoweredOrb);
 		moveToOb = new ObjectStep(this, ObjectID.LADDER_17385, new WorldPoint(2842, 9824, 0),
 			"Make your way through Taverley Dungeon to the end, and climb the ladder there. If you're 70+ " +
 				"Agility, use on of the shortcuts near the entrance to get there quickly.",
-			dustyKey, waterRune.quantity(30), cosmicRune.quantity(3), unpoweredOrb);
+			dustyKey, waterRune, cosmicRune, unpoweredOrb);
 		waterOrb = new ObjectStep(this, ObjectID.OBELISK_OF_WATER, new WorldPoint(2844, 3422, 0),
-			"Use the charge water orb spell on the obelisk.", waterRune.quantity(30), cosmicRune.quantity(3),
-			unpoweredOrb);
+			"Use the charge water orb spell on the obelisk.", waterRune, cosmicRune, unpoweredOrb);
 		waterOrb.addIcon(ItemID.WATER_ORB);
 		seersRooftop = new ObjectStep(this, ObjectID.WALL_14927, new WorldPoint(2729, 3489, 0),
 			"Complete a lap of the Seers' village Rooftop course.");
@@ -214,7 +213,7 @@ public class KandarinHard extends ComplexStateQuestHelper
 		shadowHound = new NpcStep(this, NpcID.SHADOW_HOUND, new WorldPoint(2699, 5095, 0),
 			"Kill a shadow hound.", true);
 		catchStur = new NpcStep(this, NpcID.FISHING_SPOT_1542, new WorldPoint(2501, 3504, 0),
-			"Catch a leaping Sturgeon south of Barbarian Assault.", true, barbRod, feather.quantity(20));
+			"Catch a leaping Sturgeon south of Barbarian Assault.", true, barbRod, feather);
 		addySpear = new ObjectStep(this, ObjectID.BARBARIAN_ANVIL, new WorldPoint(2502, 3485, 0),
 			"Smith an adamant spear on the barbarian anvil south of Barbarian Assault.", addyBar, yewLogs);
 		addySpear.addIcon(ItemID.ADAMANTITE_BAR);
@@ -238,8 +237,8 @@ public class KandarinHard extends ComplexStateQuestHelper
 	@Override
 	public List<ItemRequirement> getItemRequirements()
 	{
-		return Arrays.asList(barbRod, feather, axe, bowString, knife, cosmicRune.quantity(3),
-			waterRune.quantity(30), unpoweredOrb, dustyKey, mapleLogs, bow, ringOfVis,
+		return Arrays.asList(barbRod, feather, axe, bowString, knife, cosmicRune,
+			waterRune, unpoweredOrb, dustyKey, mapleLogs, bow, ringOfVis,
 			coins, addyBar, hammer, yewLogs, combatGear);
 	}
 
@@ -322,7 +321,7 @@ public class KandarinHard extends ComplexStateQuestHelper
 	{
 		List<PanelDetails> allSteps = new ArrayList<>();
 		PanelDetails chargeOrbSteps = new PanelDetails("Charge Water Orb", Arrays.asList(moveToTavDungeon, moveToOb,
-			waterOrb), waterRune.quantity(30), cosmicRune.quantity(3), unpoweredOrb, dustyKey);
+			waterOrb), waterRune, cosmicRune, unpoweredOrb, dustyKey);
 		chargeOrbSteps.setDisplayCondition(notWaterOrb);
 		allSteps.add(chargeOrbSteps);
 
@@ -368,7 +367,7 @@ public class KandarinHard extends ComplexStateQuestHelper
 			new SkillRequirement(Skill.FISHING, 70, true),
 			new SkillRequirement(Skill.AGILITY, 45),
 			new SkillRequirement(Skill.STRENGTH, 45),
-			barbFishing, barbRod, feather.quantity(20));
+			barbFishing, barbRod, feather);
 		fishSturgeonSteps.setDisplayCondition(notCatchStur);
 		allSteps.add(fishSturgeonSteps);
 

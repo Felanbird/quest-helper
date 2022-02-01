@@ -144,9 +144,9 @@ public class KandarinElite extends ComplexStateQuestHelper
 		chewedBone.setTooltip("These are a rare drop from mithril dragons");
 		tinderbox = new ItemRequirement("Tinderbox", ItemID.TINDERBOX).showConditioned(notPyre);
 		axe = new ItemRequirement("Any axe", ItemCollections.getAxes()).showConditioned(notPyre);
-		lawRune = new ItemRequirement("Law runes", ItemID.LAW_RUNE).showConditioned(notTPCath);
-		astralRune = new ItemRequirement("Astral runes", ItemID.ASTRAL_RUNE).showConditioned(notTPCath);
-		waterRune = new ItemRequirement("Water runes", ItemID.WATER_RUNE).showConditioned(notTPCath);
+		lawRune = new ItemRequirement("Law runes", ItemID.LAW_RUNE, 3).showConditioned(notTPCath);
+		astralRune = new ItemRequirement("Astral runes", ItemID.ASTRAL_RUNE, 3).showConditioned(notTPCath);
+		waterRune = new ItemRequirement("Water runes", ItemID.WATER_RUNE, 10).showConditioned(notTPCath);
 		rawShark = new ItemRequirement("Raw shark", ItemID.RAW_SHARK).showConditioned(not5Shark);
 
 		combatGear = new ItemRequirement("Combat gear", -1, -1).showConditioned(notbarb5);
@@ -179,7 +179,7 @@ public class KandarinElite extends ComplexStateQuestHelper
 	public void setupSteps()
 	{
 		tpCath = new DetailedQuestStep(this, "Teleport to Catherby.",
-			lunarBook, waterRune.quantity(10), astralRune.quantity(3), lawRune.quantity(3));
+			lunarBook, waterRune, astralRune, lawRune);
 		plantAndPickDwarf = new ObjectStep(this, NullObjectID.NULL_8151, new WorldPoint(2814, 3464, 0),
 			"Plant and harvest the dwarf weed from the Catherby patch.", rake, dwarfSeed, seedDib);
 		catchAndCook5Sharks = new NpcStep(this, NpcID.FISHING_SPOT_1519, new WorldPoint(2837, 3431, 0),
@@ -214,7 +214,7 @@ public class KandarinElite extends ComplexStateQuestHelper
 	{
 		return Arrays.asList(dwarfSeed, seedDib, spade, rake, compost, harpoon,
 			cookingGaunt, stamPot, caviar, runiteBar, magicLogs.quantity(2), hammer, chewedBone, tinderbox, axe,
-			lawRune.quantity(3), astralRune.quantity(3), waterRune.quantity(10), combatGear);
+			lawRune, astralRune, waterRune, combatGear);
 	}
 
 	@Override
@@ -273,7 +273,7 @@ public class KandarinElite extends ComplexStateQuestHelper
 
 		PanelDetails teleCathSteps = new PanelDetails("Teleport to Catherby", Collections.singletonList(tpCath),
 			new SkillRequirement(Skill.MAGIC, 87, true),
-			lunarDip, waterRune.quantity(10), lawRune.quantity(3), astralRune.quantity(3));
+			lunarDip, waterRune, lawRune, astralRune);
 		teleCathSteps.setDisplayCondition(notTPCath);
 		allSteps.add(teleCathSteps);
 
@@ -299,14 +299,14 @@ public class KandarinElite extends ComplexStateQuestHelper
 
 		PanelDetails smithRuneHastaSteps = new PanelDetails("Smith Rune Hasta", Collections.singletonList(runeHasta),
 			new SkillRequirement(Skill.SMITHING, 90, true),
-			barbSmith, magicLogs.quantity(1), runiteBar, hammer);
+			barbSmith, magicLogs, runiteBar, hammer);
 		smithRuneHastaSteps.setDisplayCondition(notRuneHasta);
 		allSteps.add(smithRuneHastaSteps);
 
 		PanelDetails magicPyreSteps = new PanelDetails("Magic Pyre Ship", Collections.singletonList(pyre),
 			new SkillRequirement(Skill.FIREMAKING, 85, true),
 			new SkillRequirement(Skill.CRAFTING, 85, true),
-			barbFire, axe, tinderbox, magicLogs.quantity(1), chewedBone);
+			barbFire, axe, tinderbox, magicLogs, chewedBone);
 		magicPyreSteps.setDisplayCondition(notPyre);
 		allSteps.add(magicPyreSteps);
 
