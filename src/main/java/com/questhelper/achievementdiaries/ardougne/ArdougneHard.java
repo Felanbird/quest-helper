@@ -216,8 +216,7 @@ public class ArdougneHard extends ComplexStateQuestHelper
 
 	public void setupSteps()
 	{
-		tPWatchtower = new DetailedQuestStep(this, "Teleport to the Watchtower.", earthRune,
-			lawRune);
+		tPWatchtower = new DetailedQuestStep(this, "Teleport to the Watchtower.", earthRune, lawRune);
 
 		moveHouse = new NpcStep(this, NpcID.ESTATE_AGENT, new WorldPoint(2638, 3293, 0),
 			"Talk to an Estate agent and relocate your house to Yanille.", coins);
@@ -286,7 +285,7 @@ public class ArdougneHard extends ComplexStateQuestHelper
 	@Override
 	public List<ItemRequirement> getItemRequirements()
 	{
-		return Arrays.asList(coins, earthRune, lawRune,	mithBar, hammer, rope, smallFishingNet, rechargableJewelry,
+		return Arrays.asList(coins, earthRune, lawRune, mithBar, hammer, rope, smallFishingNet, rechargableJewelry,
 			greeGree, lockpick, shieldLeft, shieldRight, newKey, crystalTrink, mournersOutfit, highEss, deathAccess,
 			spade, rake, palmSap, seedDib, poisonIvySeed);
 	}

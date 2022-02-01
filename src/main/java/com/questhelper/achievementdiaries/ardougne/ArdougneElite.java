@@ -339,8 +339,7 @@ public class ArdougneElite extends ComplexStateQuestHelper
 		List<PanelDetails> allSteps = new ArrayList<>();
 
 		PanelDetails iceSteps = new PanelDetails("Ice Barrage in Castle Wars", Collections.singletonList(iceBarrage),
-			new SkillRequirement(Skill.MAGIC, 94), desertTreasure, ancientBook, waterRune,
-			bloodRune, deathRune);
+			new SkillRequirement(Skill.MAGIC, 94), desertTreasure, ancientBook, waterRune, bloodRune, deathRune);
 		iceSteps.setDisplayCondition(notIceBarrage);
 		allSteps.add(iceSteps);
 
