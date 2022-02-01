@@ -135,9 +135,9 @@ public class DesertHard extends ComplexStateQuestHelper
 
 		blackjack = new ItemRequirement("Blackjack", ItemCollections.getBlackjacks()).showConditioned(notMenaThug);
 		pickaxe = new ItemRequirement("Any pickaxe", ItemCollections.getPickaxes()).showConditioned(notGranite);
-		fireRune = new ItemRequirement("Fire rune", ItemID.FIRE_RUNE).showConditioned(notRefillWaterskin);
-		waterRune = new ItemRequirement("Water rune", ItemID.WATER_RUNE).showConditioned(notRefillWaterskin);
-		astralRune = new ItemRequirement("Astral rune", ItemID.ASTRAL_RUNE).showConditioned(notRefillWaterskin);
+		fireRune = new ItemRequirement("Fire rune", ItemID.FIRE_RUNE, 1).showConditioned(notRefillWaterskin);
+		waterRune = new ItemRequirement("Water rune", ItemID.WATER_RUNE, 3).showConditioned(notRefillWaterskin);
+		astralRune = new ItemRequirement("Astral rune", ItemID.ASTRAL_RUNE, 1).showConditioned(notRefillWaterskin);
 		emptyWaterskin = new ItemRequirement("Empty waterskin", ItemID.WATERSKIN0).showConditioned(notRefillWaterskin);
 		slayerHelm = new ItemRequirement("Slayer Helmet", ItemCollections.getSlayerHelmets())
 			.showConditioned(notKillDust);
@@ -146,9 +146,9 @@ public class DesertHard extends ComplexStateQuestHelper
 			.showConditioned(notKillLocustRider);
 		yewLog = new ItemRequirement("Yew log", ItemID.YEW_LOGS).showConditioned(notBurnYew);
 		tinderbox = new ItemRequirement("Tinderbox", ItemID.TINDERBOX).showConditioned(notBurnYew);
-		mithBar = new ItemRequirement("Mithril bar", ItemID.MITHRIL_BAR).showConditioned(notMithPlatebody);
+		mithBar = new ItemRequirement("Mithril bar", ItemID.MITHRIL_BAR, 5).showConditioned(notMithPlatebody);
 		hammer = new ItemRequirement("Hammer", ItemID.HAMMER).showConditioned(notMithPlatebody);
-		rope = new ItemRequirement("Rope", ItemID.ROPE).showConditioned(notKalphQueen);
+		rope = new ItemRequirement("Rope", ItemID.ROPE, 2).showConditioned(notKalphQueen);
 
 		nardahTP = new ItemRequirement("Nardah teleport", ItemID.NARDAH_TELEPORT);
 		desertBoots = new ItemRequirement("Desert boots", ItemID.DESERT_BOOTS);
@@ -187,7 +187,7 @@ public class DesertHard extends ComplexStateQuestHelper
 	public void setupSteps()
 	{
 		moveToKalph = new ObjectStep(this, 3827, new WorldPoint(3228, 3109, 0),
-			"Use the rope on the entrance and enter the Kalphite Hive.", rope.highlighted().quantity(2));
+			"Use the rope on the entrance and enter the Kalphite Hive.", rope.highlighted());
 		moveToKalph.addAlternateObjects(ObjectID.TUNNEL_ENTRANCE);
 		moveToKalph.addIcon(ItemID.ROPE);
 		kalphQueen = new ObjectStep(this, 23609, new WorldPoint(3510, 9498, 2),
@@ -202,7 +202,7 @@ public class DesertHard extends ComplexStateQuestHelper
 			"Knockout and pickpocket a Menaphite thug.", blackjack);
 
 		refillWaterskin = new ItemStep(this, "Refill an empty waterskin using the Lunar spell Humidify in the Desert.",
-			lunarBook, fireRune.quantity(1), waterRune.quantity(3), astralRune.quantity(1));
+			lunarBook, fireRune, waterRune, astralRune);
 
 		moveToSmoke = new ObjectStep(this, ObjectID.SMOKEY_WELL, new WorldPoint(3310, 2962, 0),
 			"Go down the Smokey well.");
@@ -223,7 +223,7 @@ public class DesertHard extends ComplexStateQuestHelper
 			"Burn yew logs on the balcony. ", yewLog, tinderbox);
 
 		mithPlatebody = new ObjectStep(this, ObjectID.ANVIL_2097, new WorldPoint(3409, 2921, 0),
-			"Make a Mithril platebody in Nardah.", mithBar.quantity(5), hammer);
+			"Make a Mithril platebody in Nardah.", mithBar, hammer);
 
 		moveToSoph = new ObjectStep(this, ObjectID.LADDER_20275, new WorldPoint(3315, 2797, 0),
 			"Climb down the ladder to enter the Sophanem Dungeon.", combatGear, lightsource);
@@ -242,9 +242,8 @@ public class DesertHard extends ComplexStateQuestHelper
 	@Override
 	public List<ItemRequirement> getItemRequirements()
 	{
-		return Arrays.asList(combatGear, blackjack, pickaxe, fireRune.quantity(1), waterRune.quantity(3),
-			astralRune.quantity(1), emptyWaterskin, slayerHelm, keris, lightsource, yewLog, tinderbox,
-			mithBar.quantity(5), hammer, rope.quantity(2));
+		return Arrays.asList(combatGear, blackjack, pickaxe, fireRune, waterRune, astralRune, emptyWaterskin,
+			slayerHelm, keris, lightsource, yewLog, tinderbox, mithBar, hammer, rope);
 	}
 
 	@Override
@@ -312,7 +311,7 @@ public class DesertHard extends ComplexStateQuestHelper
 		List<PanelDetails> allSteps = new ArrayList<>();
 
 		PanelDetails kalphiteQueenSteps = new PanelDetails("Kalphite Queen", Arrays.asList(moveToKalph, kalphQueen),
-			combatGear, food, rope.quantity(2));
+			combatGear, food, rope);
 		kalphiteQueenSteps.setDisplayCondition(notKalphQueen);
 		allSteps.add(kalphiteQueenSteps);
 
@@ -328,7 +327,7 @@ public class DesertHard extends ComplexStateQuestHelper
 
 		PanelDetails refillWaterskinsSteps = new PanelDetails("Refill Waterskins",
 			Collections.singletonList(refillWaterskin), new SkillRequirement(Skill.MAGIC, 68), dreamMentor,
-			lunarBook, fireRune.quantity(1), waterRune.quantity(3), astralRune.quantity(1), emptyWaterskin);
+			lunarBook, fireRune, waterRune, astralRune, emptyWaterskin);
 		refillWaterskinsSteps.setDisplayCondition(notRefillWaterskin);
 		allSteps.add(refillWaterskinsSteps);
 
@@ -354,7 +353,7 @@ public class DesertHard extends ComplexStateQuestHelper
 		allSteps.add(burnYewSteps);
 
 		PanelDetails mithrilPlatebodySteps = new PanelDetails("Mithril Platebody",
-			Collections.singletonList(mithPlatebody), new SkillRequirement(Skill.SMITHING, 68), mithBar.quantity(5),
+			Collections.singletonList(mithPlatebody), new SkillRequirement(Skill.SMITHING, 68), mithBar,
 			hammer);
 		mithrilPlatebodySteps.setDisplayCondition(notMithPlatebody);
 		allSteps.add(mithrilPlatebodySteps);

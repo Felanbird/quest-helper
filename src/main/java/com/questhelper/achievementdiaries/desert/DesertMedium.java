@@ -139,7 +139,7 @@ public class DesertMedium extends ComplexStateQuestHelper
 		// 1558 0->1 talking to simon
 		talkedToSimon = new VarbitRequirement(1558, 1, Operation.EQUAL);
 
-		coins = new ItemRequirement("Coins", ItemCollections.getCoins()).showConditioned(notMagicCarpet);
+		coins = new ItemRequirement("Coins", ItemCollections.getCoins(), 200).showConditioned(notMagicCarpet);
 		rope = new ItemRequirement("Rope", ItemID.ROPE).showConditioned(new Conditions(LogicType.OR, notOrangeSally,
 			notEagleTravel, notVisitGenie));
 		smallFishingNet = new ItemRequirement("Small fishing net", ItemID.SMALL_FISHING_NET).showConditioned(notOrangeSally);
@@ -194,7 +194,7 @@ public class DesertMedium extends ComplexStateQuestHelper
 			"Use a rope on the Desert Eagle to travel to the Desert area.", rope.highlighted());
 
 		magicCarpet = new NpcStep(this, NpcID.RUG_MERCHANT, new WorldPoint(3310, 3108, 0),
-			"Talk to the rug merchant and travel to Uzer.", coins.quantity(200));
+			"Talk to the rug merchant and travel to Uzer.", coins);
 		magicCarpet.addDialogSteps("Yes please.", "I want to travel to Uzer.", "Uzer");
 
 		phoenixFeather = new NpcStep(this, NpcID.DESERT_PHOENIX, new WorldPoint(3417, 3154, 0),
@@ -249,7 +249,7 @@ public class DesertMedium extends ComplexStateQuestHelper
 	@Override
 	public List<ItemRequirement> getItemRequirements()
 	{
-		return Arrays.asList(combatGear, coins.quantity(200), rope, smallFishingNet, axe, lightSource, scrollOfRedir,
+		return Arrays.asList(combatGear, coins, rope, smallFishingNet, axe, lightSource, scrollOfRedir,
 			teleToHouse, harraPot, goatHornDust, camulet, iceCooler);
 	}
 
@@ -324,7 +324,7 @@ public class DesertMedium extends ComplexStateQuestHelper
 		allSteps.add(orangeSalamanderSteps);
 
 		PanelDetails magicCarpetSteps = new PanelDetails("Magic Carpet to Uzer",
-			Collections.singletonList(magicCarpet), theGolem, coins.quantity(200));
+			Collections.singletonList(magicCarpet), theGolem, coins);
 		magicCarpetSteps.setDisplayCondition(notMagicCarpet);
 		allSteps.add(magicCarpetSteps);
 

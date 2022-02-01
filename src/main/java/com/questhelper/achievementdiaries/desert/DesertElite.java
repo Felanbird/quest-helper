@@ -120,15 +120,15 @@ public class DesertElite extends ComplexStateQuestHelper
 
 		ancientBook = new SpellbookRequirement(Spellbook.ANCIENT);
 
-		coins = new ItemRequirement("Coins", ItemCollections.getCoins()).showConditioned(notTalkKQHead);
+		coins = new ItemRequirement("Coins", ItemCollections.getCoins(), 50000).showConditioned(notTalkKQHead);
 		rawPie = new ItemRequirement("Raw wild pie", ItemID.RAW_WILD_PIE).showConditioned(notWildPie);
-		waterRune = new ItemRequirement("Water rune", ItemID.WATER_RUNE).showConditioned(notIceBarrage);
-		bloodRune = new ItemRequirement("Blood rune", ItemID.BLOOD_RUNE).showConditioned(notIceBarrage);
-		deathRune = new ItemRequirement("Death rune", ItemID.DEATH_RUNE).showConditioned(notIceBarrage);
+		waterRune = new ItemRequirement("Water rune", ItemID.WATER_RUNE, 6).showConditioned(notIceBarrage);
+		bloodRune = new ItemRequirement("Blood rune", ItemID.BLOOD_RUNE, 2).showConditioned(notIceBarrage);
+		deathRune = new ItemRequirement("Death rune", ItemID.DEATH_RUNE, 4).showConditioned(notIceBarrage);
 		dragonDartTip = new ItemRequirement("Dragon dart tip", ItemID.DRAGON_DART_TIP).showConditioned(notDragonDarts);
 		feather = new ItemRequirement("Feather", ItemID.FEATHER).showConditioned(notDragonDarts);
-		mahoPlank = new ItemRequirement("Mahogany plank", ItemID.MAHOGANY_PLANK).showConditioned(notTalkKQHead);
-		goldLeaves = new ItemRequirement("Gold leaf", ItemID.GOLD_LEAF).showConditioned(notTalkKQHead);
+		mahoPlank = new ItemRequirement("Mahogany plank", ItemID.MAHOGANY_PLANK, 2).showConditioned(notTalkKQHead);
+		goldLeaves = new ItemRequirement("Gold leaf", ItemID.GOLD_LEAF, 2).showConditioned(notTalkKQHead);
 		saw = new ItemRequirement("Saw", ItemID.SAW).showConditioned(notTalkKQHead);
 		hammer = new ItemRequirement("Hammer", ItemID.HAMMER).showConditioned(notTalkKQHead);
 		kqHead = new ItemRequirement("Stuffed KQ head", ItemCollections.getStuffedKQHead()).showConditioned(notTalkKQHead);
@@ -192,7 +192,7 @@ public class DesertElite extends ComplexStateQuestHelper
 
 		iceBarrage = new NpcStep(this, NpcID.VULTURE, new WorldPoint(3334, 2865, 0),
 			"Cast Ice barrage against any foe in the Desert (away from any city). You must not splash.", true,
-			waterRune.quantity(6), bloodRune.quantity(2), deathRune.quantity(4));
+			waterRune, bloodRune, deathRune);
 		iceBarrage.addAlternateNpcs(NpcID.VULTURE_1268);
 
 		wildPie = new ObjectStep(this, ObjectID.CLAY_OVEN, new WorldPoint(3434, 2886, 0),
@@ -204,7 +204,7 @@ public class DesertElite extends ComplexStateQuestHelper
 
 		talkKQHead = new DetailedQuestStep(this, "Mount and then talk to a Kalphite Queen head in your POH. The 50k " +
 			"is necessary to stuff the KQ head at the taxidermist in Canifis.",
-			kqHead, mahoPlank.quantity(2), goldLeaves.quantity(2), saw, hammer, coins.quantity(50000));
+			kqHead, mahoPlank, goldLeaves, saw, hammer, coins);
 
 		claimReward = new NpcStep(this, NpcID.JARR, new WorldPoint(3303, 3124, 0),
 			"Talk to Jarr at the Shantay pass to claim your reward!");
@@ -214,9 +214,8 @@ public class DesertElite extends ComplexStateQuestHelper
 	@Override
 	public List<ItemRequirement> getItemRequirements()
 	{
-		return Arrays.asList(rawPie, waterRune.quantity(6), bloodRune.quantity(2), deathRune.quantity(4),
-			dragonDartTip, feather, kqHead, mahoPlank.quantity(2), goldLeaves.quantity(2), coins.quantity(50000), saw,
-			hammer, kqHead);
+		return Arrays.asList(rawPie, waterRune, bloodRune, deathRune, dragonDartTip, feather, kqHead, mahoPlank,
+			goldLeaves, coins, saw,	hammer, kqHead);
 	}
 
 	@Override
@@ -283,8 +282,8 @@ public class DesertElite extends ComplexStateQuestHelper
 		allSteps.add(wildPieSteps);
 
 		PanelDetails iceBarrageSteps = new PanelDetails("Ice Barrage", Collections.singletonList(iceBarrage),
-			new SkillRequirement(Skill.MAGIC, 94), desertTreasure, ancientBook, waterRune.quantity(6),
-			bloodRune.quantity(2), deathRune.quantity(4));
+			new SkillRequirement(Skill.MAGIC, 94), desertTreasure, ancientBook, waterRune,
+			bloodRune, deathRune);
 		iceBarrageSteps.setDisplayCondition(notIceBarrage);
 		allSteps.add(iceBarrageSteps);
 
@@ -304,8 +303,8 @@ public class DesertElite extends ComplexStateQuestHelper
 		allSteps.add(dragonDartsSteps);
 
 		PanelDetails kqHeadSteps = new PanelDetails("Kalphite Queen Head", Collections.singletonList(talkKQHead),
-			new SkillRequirement(Skill.CONSTRUCTION, 78), priestInPeril, kqHead, coins.quantity(50000),
-			mahoPlank.quantity(2), goldLeaves.quantity(2), saw, hammer);
+			new SkillRequirement(Skill.CONSTRUCTION, 78), priestInPeril, kqHead, coins,
+			mahoPlank, goldLeaves, saw, hammer);
 		kqHeadSteps.setDisplayCondition(notTalkKQHead);
 		allSteps.add(kqHeadSteps);
 
