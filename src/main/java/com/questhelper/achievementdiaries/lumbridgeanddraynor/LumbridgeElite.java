@@ -131,9 +131,9 @@ public class LumbridgeElite extends ComplexStateQuestHelper
 		mithgrap = new ItemRequirement("Mith grapple", ItemID.MITH_GRAPPLE_9419).showConditioned(notMovario);
 		lightsource = new ItemRequirement("A lightsource", ItemCollections.getLightSources()).showConditioned(notMovario);
 		axe = new ItemRequirement("Any axe", ItemCollections.getAxes()).showConditioned(notChopMagic);
-		addyBar = new ItemRequirement("Adamantite bar", ItemID.ADAMANTITE_BAR).showConditioned(notAddyPlatebody);
+		addyBar = new ItemRequirement("Adamantite bar", ItemID.ADAMANTITE_BAR, 5).showConditioned(notAddyPlatebody);
 		hammer = new ItemRequirement("Hammer", ItemID.HAMMER).showConditioned(notAddyPlatebody);
-		ess = new ItemRequirement("Essence", ItemCollections.getEssenceLow()).showConditioned(notWaterRunes);
+		ess = new ItemRequirement("Essence", ItemCollections.getEssenceLow(), 28).showConditioned(notWaterRunes);
 		waterAccessOrAbyss = new ItemRequirement("Access to water altar, or travel through abyss",
 			ItemCollections.getWaterAltar()).showConditioned(notWaterRunes);
 		qcCape = new ItemRequirement("Quest cape", ItemCollections.getQuestCape()).showConditioned(notQCEmote);
@@ -171,7 +171,7 @@ public class LumbridgeElite extends ComplexStateQuestHelper
 			"Climb down into the Draynor Sewer.");
 		moveToDraySewer.addAlternateObjects(ObjectID.TRAPDOOR_6434);
 		addyPlatebody = new ObjectStep(this, ObjectID.ANVIL_2097, new WorldPoint(3112, 9689, 0),
-			"Smith a adamant platebody at the anvil in Draynor Sewer.", addyBar.quantity(5), hammer);
+			"Smith a adamant platebody at the anvil in Draynor Sewer.", addyBar, hammer);
 
 		moveToOldman = new TileStep(this, new WorldPoint(3088, 3253, 0),
 			"Go to the Wise Old Man's house in Draynor Village.");
@@ -179,9 +179,9 @@ public class LumbridgeElite extends ComplexStateQuestHelper
 			"Perform the skill cape emote with the quest cape equipped.", qcCape.equipped());
 
 		moveToWater = new ObjectStep(this, 34815, new WorldPoint(3185, 3165, 0),
-			"Enter the water altar.", waterAccessOrAbyss.highlighted(), ess.quantity(28));
+			"Enter the water altar.", waterAccessOrAbyss.highlighted(), ess);
 		waterRunes = new ObjectStep(this, ObjectID.ALTAR_34762, new WorldPoint(2716, 4836, 0),
-			"Craft water runes.", ess.quantity(28));
+			"Craft water runes.", ess);
 
 		moveToUndergroundMovario = new ObjectStep(this, ObjectID.TRAPDOOR_14880, new WorldPoint(3209, 3216, 0),
 			"Climb down the trapdoor in the Lumbridge Castle.", mithgrap, crossbow, lightsource);
@@ -216,8 +216,8 @@ public class LumbridgeElite extends ComplexStateQuestHelper
 	@Override
 	public List<ItemRequirement> getItemRequirements()
 	{
-		return Arrays.asList(qcCape, lockpick, mithgrap, hammer, waterAccessOrAbyss, axe, addyBar.quantity(5),
-			ess.quantity(28), crossbow);
+		return Arrays.asList(qcCape, lockpick, mithgrap, hammer, waterAccessOrAbyss, axe, addyBar,
+			ess, crossbow);
 	}
 
 	@Override
@@ -273,7 +273,7 @@ public class LumbridgeElite extends ComplexStateQuestHelper
 
 		PanelDetails adamantitePlatebodySteps = new PanelDetails("Adamantite Platebody",
 			Arrays.asList(moveToDraySewer, addyPlatebody), new SkillRequirement(Skill.SMITHING, 88),
-			addyBar.quantity(5), hammer);
+			addyBar, hammer);
 		adamantitePlatebodySteps.setDisplayCondition(notAddyPlatebody);
 		allSteps.add(adamantitePlatebodySteps);
 
@@ -283,7 +283,7 @@ public class LumbridgeElite extends ComplexStateQuestHelper
 		allSteps.add(questCapeEmoteSteps);
 
 		PanelDetails waterRunesSteps = new PanelDetails("140 Water Runes", Arrays.asList(moveToWater, waterRunes),
-			new SkillRequirement(Skill.RUNECRAFT, 76), ess.quantity(28), waterAccessOrAbyss);
+			new SkillRequirement(Skill.RUNECRAFT, 76), ess, waterAccessOrAbyss);
 		waterRunesSteps.setDisplayCondition(notWaterRunes);
 		allSteps.add(waterRunesSteps);
 

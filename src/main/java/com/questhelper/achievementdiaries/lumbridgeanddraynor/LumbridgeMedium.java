@@ -143,17 +143,17 @@ public class LumbridgeMedium extends ComplexStateQuestHelper
 			.showConditioned(new Conditions(LogicType.OR, notCraftLava, notTPlumb));
 		ess = new ItemRequirement("Essence", ItemCollections.getEssenceLow()).showConditioned(notCraftLava);
 		bindingNeck = new ItemRequirement("Binding necklace", ItemID.BINDING_NECKLACE).showConditioned(notCraftLava);
-		feathers = new ItemRequirement("Feathers", ItemID.FEATHER).showConditioned(notCatchSalmon);
+		feathers = new ItemRequirement("Feathers", ItemID.FEATHER, 10).showConditioned(notCatchSalmon);
 		flyFishingRod = new ItemRequirement("Fly fishing rod", ItemID.FLY_FISHING_ROD).showConditioned(notCatchSalmon);
 		needle = new ItemRequirement("Needle", ItemID.NEEDLE).showConditioned(notCraftCoif);
 		thread = new ItemRequirement("Thread", ItemID.THREAD).showConditioned(notCraftCoif);
 		leather = new ItemRequirement("Leather", ItemID.LEATHER).showConditioned(notCraftCoif);
 		lawRune = new ItemRequirement("Law rune", ItemID.LAW_RUNE).showConditioned(notTPlumb);
-		airRune = new ItemRequirement("Air rune", ItemID.AIR_RUNE).showConditioned(notTPlumb);
-		steelArrows = new ItemRequirement("Steel arrows", ItemID.STEEL_ARROW).showConditioned(notUpgradeDevice);
-		coins = new ItemRequirement("999 Coins", ItemCollections.getCoins()).showConditioned(notUpgradeDevice);
+		airRune = new ItemRequirement("Air rune", ItemID.AIR_RUNE, 3).showConditioned(notTPlumb);
+		steelArrows = new ItemRequirement("Steel arrows", ItemID.STEEL_ARROW, 75).showConditioned(notUpgradeDevice);
+		coins = new ItemRequirement("999 Coins", ItemCollections.getCoins(), 999).showConditioned(notUpgradeDevice);
 		avasAttractor = new ItemRequirement("Ava's Attractor", ItemID.AVAS_ATTRACTOR).showConditioned(notUpgradeDevice);
-		avasAccumulator = new ItemRequirements(LogicType.OR, "999 Coins or Ava's Attractor", coins.quantity(999),
+		avasAccumulator = new ItemRequirements(LogicType.OR, "999 Coins or Ava's Attractor", coins,
 			avasAttractor);
 		axe = new ItemRequirement("Any axe", ItemCollections.getAxes()).showConditioned(notChopWillow);
 		fairyAccess = new ItemRequirement("Lunar or Dramen staff", ItemCollections.getFairyStaff())
@@ -195,17 +195,17 @@ public class LumbridgeMedium extends ComplexStateQuestHelper
 		craftLava.addIcon(ItemID.EARTH_TALISMAN);
 
 		catchSalmon = new NpcStep(this, NpcID.ROD_FISHING_SPOT_1527, new WorldPoint(3241, 3248, 0),
-			"Catch a salmon in the River Lum.", feathers.quantity(10), flyFishingRod);
+			"Catch a salmon in the River Lum.", feathers, flyFishingRod);
 
 		moveToCowPen = new TileStep(this, new WorldPoint(3257, 3267, 0),
 			"Enter the cow pen in Lumbridge.", thread, needle, leather);
 		craftCoif = new ItemStep(this, "Craft a coif.", thread, needle.highlighted(), leather.highlighted());
 
-		tpLumb = new DetailedQuestStep(this, "Cast the Teleport to Lumbridge spell.", airRune.quantity(3),
-			earthRune.quantity(1), lawRune.quantity(1));
+		tpLumb = new DetailedQuestStep(this, "Cast the Teleport to Lumbridge spell.", airRune,
+			earthRune, lawRune);
 
 		upgradeDevice = new NpcStep(this, NpcID.AVA, new WorldPoint(3093, 3357, 0),
-			"Buy an Ava's Accumulator from Ava in the Draynor Manor.", avasAccumulator, steelArrows.quantity(75));
+			"Buy an Ava's Accumulator from Ava in the Draynor Manor.", avasAccumulator, steelArrows);
 
 		pickGardener = new NpcStep(this, NpcID.MARTIN_THE_MASTER_GARDENER, new WorldPoint(3077, 3263, 0),
 			"Pickpocket Martin the Master Gardener in Draynor Village.");
@@ -240,8 +240,8 @@ public class LumbridgeMedium extends ComplexStateQuestHelper
 	@Override
 	public List<ItemRequirement> getItemRequirements()
 	{
-		return Arrays.asList(crossbow, mithGrap, earthTali, fireAccess, earthRune.quantity(2), ess, feathers.quantity(10), flyFishingRod, needle,
-			thread, leather, lawRune.quantity(1), airRune.quantity(3), steelArrows.quantity(75), avasAccumulator, axe,
+		return Arrays.asList(crossbow, mithGrap, earthTali, fireAccess, earthRune.quantity(2), ess, feathers, flyFishingRod, needle,
+			thread, leather, lawRune, airRune, steelArrows, avasAccumulator, axe,
 			fairyAccess, butterflyNet, implingJar);
 	}
 
@@ -323,7 +323,7 @@ public class LumbridgeMedium extends ComplexStateQuestHelper
 		allSteps.add(pickpocketMasterGardenerSteps);
 
 		PanelDetails upgradeSteps = new PanelDetails("Ava's Accumulator", Collections.singletonList(upgradeDevice),
-			new SkillRequirement(Skill.RANGED, 50), animalMagnetism, avasAccumulator, steelArrows.quantity(75));
+			new SkillRequirement(Skill.RANGED, 50), animalMagnetism, avasAccumulator, steelArrows);
 		upgradeSteps.setDisplayCondition(notUpgradeDevice);
 		allSteps.add(upgradeSteps);
 
