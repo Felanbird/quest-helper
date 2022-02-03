@@ -151,7 +151,7 @@ public class KaramjaHard extends ComplexStateQuestHelper
 		notKilledDragon = new VarbitRequirement(3609, 0);
 
 		pickaxe = new ItemRequirement("Any pickaxe", ItemCollections.getPickaxes()).showConditioned(notKilledDeathwing);
-		coins = new ItemRequirement("Coins", ItemCollections.getCoins()).showConditioned(notKilledDragon);
+		coins = new ItemRequirement("Coins", ItemCollections.getCoins(), 875).showConditioned(notKilledDragon);
 		oomlieWrap = new ItemRequirement("Oomlie wrap", ItemID.COOKED_OOMLIE_WRAP).showConditioned(notEatenWrap);
 		oomlieWrap.setTooltip("You can make one by using a palm leaf on a raw oomlie and cooking it. Both are " +
 			"obtained from the Kharazi Jungle");
@@ -279,7 +279,7 @@ public class KaramjaHard extends ComplexStateQuestHelper
 		getTask = new NpcStep(this, NpcID.DURADEL, new WorldPoint(2869, 2982, 1),
 			"Get a task from Duradel.");
 		enterBrimhavenDungeon = new ObjectStep(this, ObjectID.DUNGEON_ENTRANCE_20876, new WorldPoint(2745, 3155, 0),
-			"Enter Brimhaven Dungeon.", axe, coins.quantity(875), combatGear, antidragonShield);
+			"Enter Brimhaven Dungeon.", axe, coins, combatGear, antidragonShield);
 		killDragon = new NpcStep(this, NpcID.BRONZE_DRAGON, new WorldPoint(2735, 9488, 0),
 			"Kill any metal dragon in the south of the dungeon.", combatGear, antidragonShield);
 
@@ -291,7 +291,7 @@ public class KaramjaHard extends ComplexStateQuestHelper
 	@Override
 	public List<ItemRequirement> getItemRequirements()
 	{
-		return Arrays.asList(oomlieWrap, pureEssence, natureTalismanOrAbyss, coins.quantity(875), rawKarambwan, axe,
+		return Arrays.asList(oomlieWrap, pureEssence, natureTalismanOrAbyss, coins, rawKarambwan, axe,
 			machete, pickaxe, lockpick, crossbow, mithGrapple, antidragonShield, combatGear, fightCaveCombatGear);
 	}
 
@@ -361,7 +361,7 @@ public class KaramjaHard extends ComplexStateQuestHelper
 		allSteps.add(cookedKaramSteps);
 
 		PanelDetails killDragonSteps = new PanelDetails("Kill Metal Dragon", Arrays.asList(enterBrimhavenDungeon,
-			killDragon), combatGear, antidragonShield, axe, coins.quantity(875));
+			killDragon), combatGear, antidragonShield, axe, coins);
 		killDragonSteps.setDisplayCondition(notKilledDragon);
 		allSteps.add(killDragonSteps);
 

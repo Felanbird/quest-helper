@@ -102,13 +102,13 @@ public class KaramjaElite extends ComplexStateQuestHelper
 
 		natureTiaraOrAbyss = new ItemRequirement("Nature tiara, or access to nature altar through the Abyss",
 			ItemID.NATURE_TIARA).showConditioned(notCraftedRunes);
-		pureEssence = new ItemRequirement("Pure essence", ItemID.PURE_ESSENCE).showConditioned(notCraftedRunes);
+		pureEssence = new ItemRequirement("Pure essence", ItemID.PURE_ESSENCE, 28).showConditioned(notCraftedRunes);
 		fireCapeOrInfernal = new ItemRequirement("Fire cape or infernal cape", ItemID.FIRE_CAPE).showConditioned(notEquippedCape);
 		fireCapeOrInfernal.addAlternates(ItemID.INFERNAL_CAPE);
 		palmTreeSapling = new ItemRequirement("Palm tree sapling", ItemID.PALM_SAPLING).showConditioned(notCheckedPalm);
 		antidotePlusPlus = new ItemRequirement("Antidote++", ItemID.ANTIDOTE4_5952).showConditioned(notMadePotion);
 		antidotePlusPlus.addAlternates(ItemID.ANTIDOTE3_5954, ItemID.ANTIDOTE2_5956, ItemID.ANTIDOTE1_5958);
-		zulrahScales = new ItemRequirement("Zulrah scales", ItemID.ZULRAHS_SCALES).showConditioned(notMadePotion);
+		zulrahScales = new ItemRequirement("Zulrah scales", ItemID.ZULRAHS_SCALES, 20).showConditioned(notMadePotion);
 		calquatSapling = new ItemRequirement("Calquat sapling", ItemID.CALQUAT_SAPLING).showConditioned(notCheckedCalquat);
 		rake = new ItemRequirement("Rake", ItemID.RAKE).showConditioned(new Conditions(LogicType.OR, notCheckedCalquat,
 			notCheckedPalm));
@@ -128,16 +128,16 @@ public class KaramjaElite extends ComplexStateQuestHelper
 	{
 		enterNatureAltar = new ObjectStep(this, NullObjectID.NULL_34821, new WorldPoint(2869, 3019, 0),
 			"Enter the nature altar, either from the ruin or through the Abyss.", natureTiaraOrAbyss,
-			pureEssence.quantity(28));
+			pureEssence);
 		craftRunes = new ObjectStep(this, ObjectID.ALTAR_34768, new WorldPoint(2400, 4841, 0),
-			"Craft a full inventory of nature runes.", pureEssence.quantity(28));
+			"Craft a full inventory of nature runes.", pureEssence);
 		equipCape = new DetailedQuestStep(this, "Equip a fire or infernal cape.", fireCapeOrInfernal.equipped());
 		checkPalm = new ObjectStep(this, NullObjectID.NULL_7964, new WorldPoint(2765, 3213, 0),
 			"Grow and check the health of a palm tree in the Brimhaven patch.", palmTreeSapling, rake, spade);
 		checkCalquat = new ObjectStep(this, NullObjectID.NULL_7807, new WorldPoint(2796, 3101, 0),
 			"Grow and check the health of a Calquat in Tai Bwo Wannai.", calquatSapling, rake, spade);
 		makePotion = new DetailedQuestStep(this, new WorldPoint(2734, 3224, 0), "Make an antivenom potion whilst " +
-			"standing in the horse shoe mine.", antidotePlusPlus.highlighted(), zulrahScales.quantity(20).highlighted());
+			"standing in the horse shoe mine.", antidotePlusPlus.highlighted(), zulrahScales.highlighted());
 
 		claimReward = new NpcStep(this, NpcID.PIRATE_JACKIE_THE_FRUIT, new WorldPoint(2810, 3192, 0),
 			"Talk to Pirate Jackie the Fruit in Brimhaven to claim your reward!");
@@ -148,7 +148,7 @@ public class KaramjaElite extends ComplexStateQuestHelper
 	public List<ItemRequirement> getItemRequirements()
 	{
 		return Arrays.asList(natureTiaraOrAbyss, pureEssence, fireCapeOrInfernal, palmTreeSapling, antidotePlusPlus,
-			zulrahScales.quantity(20), calquatSapling, rake, spade);
+			zulrahScales, calquatSapling, rake, spade);
 	}
 
 	@Override
@@ -195,12 +195,12 @@ public class KaramjaElite extends ComplexStateQuestHelper
 		allSteps.add(equipCapeSteps);
 
 		PanelDetails potionSteps = new PanelDetails("Create Antivenom Potion", Collections.singletonList(makePotion),
-			herblore87 , antidotePlusPlus, zulrahScales.quantity(20));
+			herblore87 , antidotePlusPlus, zulrahScales);
 		potionSteps.setDisplayCondition(notMadePotion);
 		allSteps.add(potionSteps);
 
 		PanelDetails craftRunesSteps = new PanelDetails("Craft 56 Nature Runes", Arrays.asList(enterNatureAltar,
-			craftRunes), runecraft91, pureEssence.quantity(28), natureTiaraOrAbyss);
+			craftRunes), runecraft91, pureEssence, natureTiaraOrAbyss);
 		craftRunesSteps.setDisplayCondition(notCraftedRunes);
 		allSteps.add(craftRunesSteps);
 

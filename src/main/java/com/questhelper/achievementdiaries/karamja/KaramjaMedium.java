@@ -181,7 +181,7 @@ public class KaramjaMedium extends BasicQuestHelper
 			notTrappedGraahk, notCrossedLava, notClimbedStairs, notCutVine, notCutTeak, notCutMahog));
 		tradingSticks = new ItemRequirement("Trading sticks", ItemID.TRADING_STICKS).showConditioned(notExchangedGems);
 		tradingSticks.setTooltip("You can get these from villagers when doing Tai Bwo Wannai Cleanup");
-		opal = new ItemRequirement("Opal", ItemID.OPAL).showConditioned(notExchangedGems);
+		opal = new ItemRequirement("Opal", ItemID.OPAL, 3).showConditioned(notExchangedGems);
 		opal.setTooltip("You can bring a jade or red topaz instead for a machete if you also bring more trading " +
 			"sticks");
 		karambwanVessel = new ItemRequirement("Karambwan vessel", ItemID.KARAMBWAN_VESSEL).showConditioned(notCaughtKarambwan);
@@ -265,7 +265,7 @@ public class KaramjaMedium extends BasicQuestHelper
 			"Fish a karambwan from the north east coast of Karamja.", karambwanVessel, rawKarambwanji);
 		getMachete = new NpcStep(this, NpcID.SAFTA_DOC_6423, new WorldPoint(2790, 3100, 0),
 			"Get a gem machete from Safta Doc. If you want to make a red topaz one, you'll need 1200 trading sticks.",
-			goutTuber, opal.quantity(3), tradingSticks.quantity(300));
+			goutTuber, opal, tradingSticks.quantity(300));
 		getMachete.addDialogSteps("What do you do here?", "Yes, I'd like to get a machete.");
 		flyToKaramja = new NpcStep(this, NpcID.CAPTAIN_DALBUR, new WorldPoint(3284, 3213, 0),
 			"Fly on a Gnome Glider to Karamja.");
@@ -300,7 +300,7 @@ public class KaramjaMedium extends BasicQuestHelper
 	public List<ItemRequirement> getItemRequirements()
 	{
 		return Arrays.asList(coins.quantity(1615), spiderCarcass, skewerTicksOrArrowShaft, goutTuber, spade, rake,
-			fruitTreeSapling, teasingStick, knife, logs, axe, pickaxe, opal.quantity(3), tradingSticks.quantity(500),
+			fruitTreeSapling, teasingStick, knife, logs, axe, pickaxe, opal, tradingSticks.quantity(500),
 			karambwanVessel, rawKarambwanji, machete);
 	}
 
