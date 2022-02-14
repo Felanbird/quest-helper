@@ -121,10 +121,10 @@ public class MorytaniaElite extends ComplexStateQuestHelper
 		magicRedwoodPyreLogs.setTooltip("Can be created by using sacred oil on magic / redwood logs");
 		shadeRemains = new ItemRequirement("Shade remains", ItemCollections.getShadeRemains()).showConditioned(notCremateShade);
 		tinderbox = new ItemRequirement("Tinderbox", ItemID.TINDERBOX).showConditioned(notCremateShade);
-		earthRune = new ItemRequirement("Earth rune", ItemID.EARTH_RUNE).showConditioned(notFertilizeHerb);
-		astralRune = new ItemRequirement("Astral rune", ItemID.ASTRAL_RUNE).showConditioned(notFertilizeHerb);
-		natureRune = new ItemRequirement("Nature rune", ItemID.NATURE_RUNE).showConditioned(notFertilizeHerb);
-		blackLeather = new ItemRequirement("Black dragon leather", ItemID.BLACK_DRAGON_LEATHER).showConditioned(notCraftBlackDhideBody);
+		earthRune = new ItemRequirement("Earth rune", ItemID.EARTH_RUNE, 15).showConditioned(notFertilizeHerb);
+		astralRune = new ItemRequirement("Astral rune", ItemID.ASTRAL_RUNE, 3).showConditioned(notFertilizeHerb);
+		natureRune = new ItemRequirement("Nature rune", ItemID.NATURE_RUNE, 2).showConditioned(notFertilizeHerb);
+		blackLeather = new ItemRequirement("Black dragon leather", ItemID.BLACK_DRAGON_LEATHER, 3).showConditioned(notCraftBlackDhideBody);
 		needle = new ItemRequirement("Needle", ItemID.NEEDLE).showConditioned(notCraftBlackDhideBody);
 		thread = new ItemRequirement("Thread", ItemID.THREAD).showConditioned(notCraftBlackDhideBody);
 
@@ -215,13 +215,12 @@ public class MorytaniaElite extends ComplexStateQuestHelper
 			"Kill an Abyssal demon.", combatGear, food);
 
 		moveToCanifisBank = new DetailedQuestStep(this, new WorldPoint(3511, 3480, 0),
-			"Move to the bank in Canifis.", blackLeather.quantity(3).highlighted(), needle.highlighted(), thread);
+			"Move to the bank in Canifis.", blackLeather.highlighted(), needle.highlighted(), thread);
 		craftBlackDhideBody = new DetailedQuestStep(this, "Craft a black dragon hide body.",
-			blackLeather.quantity(3).highlighted(), needle.highlighted(), thread);
+			blackLeather.highlighted(), needle.highlighted(), thread);
 
 		fertilizeHerb = new ObjectStep(this, 8153, new WorldPoint(3606, 3530, 0),
-			"Cast Fertile Soil on the herb patch in Morytania.", lunarBook, earthRune.quantity(15),
-			astralRune.quantity(3), natureRune.quantity(2));
+			"Cast Fertile Soil on the herb patch in Morytania.", lunarBook, earthRune, astralRune, natureRune);
 
 		claimReward = new NpcStep(this, NpcID.LESABR, new WorldPoint(3464, 3480, 0),
 			"Talk to Le-Sabre near Canifis to claim your reward!");
@@ -232,8 +231,7 @@ public class MorytaniaElite extends ComplexStateQuestHelper
 	public List<ItemRequirement> getItemRequirements()
 	{
 		return Arrays.asList(combatGear, magicRedwoodPyreLogs, shadeRemains, tinderbox, barrowsSet,
-			blackLeather.quantity(3),
-			needle, thread, earthRune.quantity(15), astralRune.quantity(3), natureRune.quantity(2));
+			blackLeather, needle, thread, earthRune, astralRune, natureRune);
 	}
 
 	@Override
@@ -322,14 +320,14 @@ public class MorytaniaElite extends ComplexStateQuestHelper
 		allSteps.add(abyssalDemonSteps);
 
 		PanelDetails craftSteps = new PanelDetails("Craft Black D'hide Body", Arrays.asList(moveToCanifisBank,
-			craftBlackDhideBody), new SkillRequirement(Skill.CRAFTING, 84, true), blackLeather.quantity(3),
+			craftBlackDhideBody), new SkillRequirement(Skill.CRAFTING, 84, true), blackLeather,
 			needle, thread);
 		craftSteps.setDisplayCondition(notCraftBlackDhideBody);
 		allSteps.add(craftSteps);
 
 		PanelDetails fertSteps = new PanelDetails("Fertilize Herb Patch", Collections.singletonList(fertilizeHerb),
-			new SkillRequirement(Skill.MAGIC, 83, true), lunarDiplomacy, lunarBook, earthRune.quantity(15),
-			astralRune.quantity(3), natureRune.quantity(2));
+			new SkillRequirement(Skill.MAGIC, 83, true), lunarDiplomacy, lunarBook, earthRune,
+			astralRune, natureRune);
 		fertSteps.setDisplayCondition(notFertilizeHerb);
 		allSteps.add(fertSteps);
 

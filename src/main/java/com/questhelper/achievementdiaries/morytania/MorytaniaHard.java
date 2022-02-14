@@ -143,16 +143,16 @@ public class MorytaniaHard extends ComplexStateQuestHelper
 
 		crystalMineKey = new ItemRequirement("Crystal mine key", ItemID.CRYSTALMINE_KEY).showConditioned(notMithOre);
 		pickaxe = new ItemRequirement("Any pickaxe", ItemCollections.getPickaxes()).showConditioned(notMithOre);
-		coins = new ItemRequirement("Coins", ItemCollections.getCoins()).showConditioned(notKharyrll);
-		limestoneBrick = new ItemRequirement("Limestone brick", ItemID.LIMESTONE_BRICK).showConditioned(notKharyrll);
+		coins = new ItemRequirement("Coins", ItemCollections.getCoins(), 100000).showConditioned(notKharyrll);
+		limestoneBrick = new ItemRequirement("Limestone brick", ItemID.LIMESTONE_BRICK, 2).showConditioned(notKharyrll);
 		hammer = new ItemRequirement("Hammer", ItemID.HAMMER).showConditioned(notKharyrll);
 		saw = new ItemRequirement("Saw", ItemID.SAW).showConditioned(notKharyrll);
-		teakPlank = new ItemRequirement("Teak plank", ItemID.TEAK_PLANK).showConditioned(notKharyrll);
-		lawRune = new ItemRequirement("Law runes", ItemID.LAW_RUNE).showConditioned(notKharyrll);
-		bloodRune = new ItemRequirement("Blood runes", ItemID.BLOOD_RUNE).showConditioned(notKharyrll);
+		teakPlank = new ItemRequirement("Teak plank", ItemID.TEAK_PLANK, 3).showConditioned(notKharyrll);
+		lawRune = new ItemRequirement("Law runes", ItemID.LAW_RUNE, 200).showConditioned(notKharyrll);
+		bloodRune = new ItemRequirement("Blood runes", ItemID.BLOOD_RUNE, 100).showConditioned(notKharyrll);
 		noseProtection = new ItemRequirement("Nose protection", ItemCollections.getNoseProtection())
 			.showConditioned(notAdvancedSpikes);
-		watermelonSeeds = new ItemRequirement("Watermelon seeds", ItemID.WATERMELON_SEED)
+		watermelonSeeds = new ItemRequirement("Watermelon seeds", ItemID.WATERMELON_SEED, 3)
 			.showConditioned(notHarvestWatermelon);
 		seedDibber = new ItemRequirement("Seed dibber", ItemID.SEED_DIBBER)
 			.showConditioned(new Conditions(LogicType.OR, notBittercapMush, notHarvestWatermelon));
@@ -260,11 +260,11 @@ public class MorytaniaHard extends ComplexStateQuestHelper
 		moveToHarmony.addDialogStep("Yes, please.");
 		harvestWatermelon = new ObjectStep(this, NullObjectID.NULL_21950, new WorldPoint(3794, 2836, 0),
 			"Plant and harvest watermelon on Harmony Island. It takes 80 minutes to fully grow.",
-			watermelonSeeds.quantity(3), seedDibber, spade, rake);
+			watermelonSeeds, seedDibber, spade, rake);
 
 		kharyrll = new DetailedQuestStep(this, "Enter the Kharyll portal in your POH. Through a Portal Chamber or " +
-			"Portal Nexus. Either make or construct a Portal Chamber / Kharyll Portal.", coins.quantity(100000),
-			limestoneBrick.quantity(2), hammer, saw, teakPlank.quantity(3), lawRune.quantity(200), bloodRune.quantity(100));
+			"Portal Nexus. Either make or construct a Portal Chamber / Kharyll Portal.", coins,	limestoneBrick, hammer,
+			saw, teakPlank, lawRune, bloodRune);
 
 		claimReward = new NpcStep(this, NpcID.LESABR, new WorldPoint(3464, 3480, 0),
 			"Talk to Le-Sabre near Canifis to claim your reward!");
@@ -274,9 +274,8 @@ public class MorytaniaHard extends ComplexStateQuestHelper
 	@Override
 	public List<ItemRequirement> getItemRequirements()
 	{
-		return Arrays.asList(combatGear, coins.quantity(100000), limestoneBrick.quantity(2), hammer, saw,
-			teakPlank.quantity(3), lawRune.quantity(200), bloodRune.quantity(100), watermelonSeeds.quantity(3), seedDibber, spade, rake, axe,
-			tinderbox, witchwoodIcon, lightSource, mushroomSpore, pickaxe, crystalMineKey);
+		return Arrays.asList(combatGear, coins, limestoneBrick, hammer, saw, teakPlank, lawRune, bloodRune, watermelonSeeds,
+			seedDibber, spade, rake, axe, tinderbox, witchwoodIcon, lightSource, mushroomSpore, pickaxe, crystalMineKey);
 	}
 
 	@Override
@@ -386,14 +385,13 @@ public class MorytaniaHard extends ComplexStateQuestHelper
 
 		PanelDetails watermelonsSteps = new PanelDetails("Harmony Watermelons", Arrays.asList(moveToMos, moveToHarmony,
 			harvestWatermelon), new SkillRequirement(Skill.FARMING, 53, true), theGreatBrainRobbery,
-			watermelonSeeds.quantity(3), rake, seedDibber);
+			watermelonSeeds, rake, seedDibber);
 		watermelonsSteps.setDisplayCondition(notHarvestWatermelon);
 		allSteps.add(watermelonsSteps);
 
 		PanelDetails kharyllSteps = new PanelDetails("Kharyll Portal", Collections.singletonList(kharyrll),
 			new SkillRequirement(Skill.MAGIC, 66), new SkillRequirement(Skill.CONSTRUCTION, 50), desertTreasure,
-			coins.quantity(100000), limestoneBrick.quantity(2), hammer, saw, teakPlank.quantity(3),
-			lawRune.quantity(200), bloodRune.quantity(100));
+			coins, limestoneBrick, hammer, saw, teakPlank, lawRune, bloodRune);
 		kharyllSteps.setDisplayCondition(notKharyrll);
 		allSteps.add(kharyllSteps);
 

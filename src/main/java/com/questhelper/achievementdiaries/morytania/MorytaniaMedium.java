@@ -146,7 +146,7 @@ public class MorytaniaMedium extends ComplexStateQuestHelper
 		smallFishingNet = new ItemRequirement("Small fishing net", ItemID.SMALL_FISHING_NET)
 			.showConditioned(notSwampLizard);
 		axe = new ItemRequirement("Axe", ItemCollections.getAxes()).showConditioned(notHollowTree);
-		ectoToken = new ItemRequirement("Ecto-token", ItemID.ECTOTOKEN).showConditioned(notDragontoothIsland);
+		ectoToken = new ItemRequirement("Ecto-token", ItemID.ECTOTOKEN, 25).showConditioned(notDragontoothIsland);
 		ghostspeakAmulet = new ItemRequirement("Ghostspeak Amulet", ItemID.GHOSTSPEAK_AMULET)
 			.showConditioned(notDragontoothIsland);
 		steelBar = new ItemRequirement("Steel bar", ItemID.STEEL_BAR).showConditioned(notCannonBall);
@@ -274,8 +274,7 @@ public class MorytaniaMedium extends ComplexStateQuestHelper
 			"Make a batch of cannonballs at Port Phasmatys.", ammoMould, steelBar);
 
 		dragontoothIsland = new NpcStep(this, NpcID.GHOST_CAPTAIN, new WorldPoint(3703, 3487, 0),
-			"Talk to the Ghost captain at Port Phasmatys to travel to Dragontooth Island.", ectoToken.quantity(25),
-			ghostspeakAmulet);
+			"Talk to the Ghost captain at Port Phasmatys to travel to Dragontooth Island.", ectoToken, ghostspeakAmulet);
 
 		moveToBrainDeath = new NpcStep(this, NpcID.PIRATE_PETE, new WorldPoint(3681, 3536, 0),
 			"Talk to Pirate Pete to travel to Braindeath Island.");
@@ -301,8 +300,8 @@ public class MorytaniaMedium extends ComplexStateQuestHelper
 	@Override
 	public List<ItemRequirement> getItemRequirements()
 	{
-		return Arrays.asList(combatGear, rope, smallFishingNet, axe, ectoToken.quantity(25), ghostspeakAmulet,
-			steelBar, ammoMould, slayerGloves, ectophial, restorePot, garlic, silverDust);
+		return Arrays.asList(combatGear, rope, smallFishingNet, axe, ectoToken, ghostspeakAmulet, steelBar, ammoMould,
+			slayerGloves, ectophial, restorePot, garlic, silverDust);
 	}
 
 	@Override
@@ -404,7 +403,7 @@ public class MorytaniaMedium extends ComplexStateQuestHelper
 		allSteps.add(cannonballsSteps);
 
 		PanelDetails dragSteps = new PanelDetails("Dragontooth Island", Collections.singletonList(dragontoothIsland),
-			ectoToken.quantity(25), ghostspeakAmulet);
+			ectoToken, ghostspeakAmulet);
 		dragSteps.setDisplayCondition(notDragontoothIsland);
 		allSteps.add(dragSteps);
 

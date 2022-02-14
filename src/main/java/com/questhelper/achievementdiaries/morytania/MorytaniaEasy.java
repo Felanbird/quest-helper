@@ -132,7 +132,7 @@ public class MorytaniaEasy extends ComplexStateQuestHelper
 		snailShell = new ItemRequirement("Snail shell", ItemCollections.getSnailShells()).showConditioned(notCraftSnelm);
 		thinSnail = new ItemRequirement("Thin snail", ItemID.THIN_SNAIL).showConditioned(notCookSnail);
 		tannableHide = new ItemRequirement("Tannable hide", ItemCollections.getTannableHide()).showConditioned(notSbottTan);
-		coins = new ItemRequirement("Coins", ItemCollections.getCoins()).showConditioned(notSbottTan);
+		coins = new ItemRequirement("Coins", ItemCollections.getCoins(), 45).showConditioned(notSbottTan);
 		scarecrow = new ItemRequirement("Scarecrow", ItemID.SCARECROW).showConditioned(notPlaceScarecrow);
 		scarecrow.setTooltip("Created by combining a bronze spear, watermelon, and hay sack (empty sack filled at a " +
 			"hay bale, nearest to Morytania is North-West of Lumbridge)");
@@ -148,7 +148,7 @@ public class MorytaniaEasy extends ComplexStateQuestHelper
 
 		food = new ItemRequirement("Food", ItemCollections.getGoodEatingFood(), -1);
 		earProtection = new ItemRequirement("Ear protection", ItemCollections.getEarProtection()).showConditioned(notKillBanshee);
-		ectoToken = new ItemRequirement("Ecto-Token", ItemID.ECTOTOKEN).showConditioned(notCookSnail);
+		ectoToken = new ItemRequirement("Ecto-Token", ItemID.ECTOTOKEN, 2).showConditioned(notCookSnail);
 		ghostSpeak = new ItemRequirement("Ghostspeak amulet", ItemID.GHOSTSPEAK_AMULET).showConditioned(notCookSnail);
 
 		inGrotto = new ZoneRequirement(grotto);
@@ -188,7 +188,7 @@ public class MorytaniaEasy extends ComplexStateQuestHelper
 		mazchnaTask = new NpcStep(this, NpcID.MAZCHNA, new WorldPoint(3513, 3510, 0),
 			"Get a slayer task from Mazchna.");
 		sbottTan = new NpcStep(this, NpcID.SBOTT, new WorldPoint(3490, 3501, 0),
-			"Tan a hide using Sbott's services.", tannableHide, coins.quantity(45));
+			"Tan a hide using Sbott's services.", tannableHide, coins);
 
 		placeScarecrow = new ObjectStep(this, 7850, new WorldPoint(3602, 3526, 0),
 			"Place a scarecrow at the Morytania flower patch, West of Port Phasmatys.", scarecrow.highlighted());
@@ -219,14 +219,14 @@ public class MorytaniaEasy extends ComplexStateQuestHelper
 	@Override
 	public List<ItemRequirement> getItemRequirements()
 	{
-		return Arrays.asList(combatGear, chisel, snailShell, thinSnail, tannableHide, coins.quantity(45), scarecrow,
+		return Arrays.asList(combatGear, chisel, snailShell, thinSnail, tannableHide, coins, scarecrow,
 			bonemeal, bucketOfSlime, wolfbane, bones, pot, bucket, earProtection);
 	}
 
 	@Override
 	public List<ItemRequirement> getItemRecommended()
 	{
-		return Arrays.asList(food, ghostSpeak, ectoToken.quantity(2));
+		return Arrays.asList(food, ghostSpeak, ectoToken);
 	}
 
 	@Override
@@ -300,7 +300,7 @@ public class MorytaniaEasy extends ComplexStateQuestHelper
 		allSteps.add(killBansheeSteps);
 
 		PanelDetails sbottTanningHideSteps = new PanelDetails("Sbott Tanning Hide",
-			Collections.singletonList(sbottTan), tannableHide, coins.quantity(45));
+			Collections.singletonList(sbottTan), tannableHide, coins);
 		sbottTanningHideSteps.setDisplayCondition(notSbottTan);
 		allSteps.add(sbottTanningHideSteps);
 
