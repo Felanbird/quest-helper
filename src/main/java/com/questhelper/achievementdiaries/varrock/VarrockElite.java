@@ -72,8 +72,8 @@ import com.questhelper.steps.QuestStep;
 public class VarrockElite extends ComplexStateQuestHelper
 {
 	// Items required
-	ItemRequirement sAtk4, sStr4, sDef4, torstol, natRune, astRune, earthRune, coins, mahoLog, cookingGuild, rawPie,
-		runeBar, feather, hammer, ess, earthTali, runeDartTip;
+	ItemRequirement sAtk4, sStr4, sDef4, torstol, natureRune, astralRune, earthRune, coins, mahoganyLog, cookingGuild, rawPie,
+		runeBar, feather, hammer, essence, earthTali, runeDartTip;
 
 	// Quests required
 	Requirement dreamMentor, runeMyster, touristTrap;
@@ -122,19 +122,19 @@ public class VarrockElite extends ComplexStateQuestHelper
 		sStr4 = new ItemRequirement("Super strength(4)", ItemID.SUPER_STRENGTH4).showConditioned(notSuperCombat);
 		sDef4 = new ItemRequirement("Super defense(4)", ItemID.SUPER_DEFENCE4).showConditioned(notSuperCombat);
 		torstol = new ItemRequirement("Torstol", ItemID.TORSTOL).showConditioned(notSuperCombat);
-		natRune = new ItemRequirement("Nature rune", ItemID.NATURE_RUNE).showConditioned(notPlankMake);
-		astRune = new ItemRequirement("Astral rune", ItemID.ASTRAL_RUNE).showConditioned(notPlankMake);
-		earthRune = new ItemRequirement("Earth rune", ItemID.EARTH_RUNE).showConditioned(notPlankMake);
-		coins = new ItemRequirement("Coins", ItemCollections.getCoins()).showConditioned(notPlankMake);
-		mahoLog = new ItemRequirement("Mahogany logs", ItemID.MAHOGANY_LOGS).showConditioned(notPlankMake);
+		natureRune = new ItemRequirement("Nature rune", ItemID.NATURE_RUNE, 20).showConditioned(notPlankMake);
+		astralRune = new ItemRequirement("Astral rune", ItemID.ASTRAL_RUNE, 40).showConditioned(notPlankMake);
+		earthRune = new ItemRequirement("Earth rune", ItemID.EARTH_RUNE, 300).showConditioned(notPlankMake);
+		coins = new ItemRequirement("Coins", ItemCollections.getCoins(), 21000).showConditioned(notPlankMake);
+		mahoganyLog = new ItemRequirement("Mahogany logs", ItemID.MAHOGANY_LOGS, 20).showConditioned(notPlankMake);
 		cookingGuild = new ItemRequirement("Access to cooking guild", ItemCollections.getCookingGuild()).showConditioned(notSummerPie);
 		cookingGuild.setTooltip("A chef's hat, Varrock Armour 3, or Cooking Cape");
 		rawPie = new ItemRequirement("Raw summer pie", ItemID.RAW_SUMMER_PIE).showConditioned(notSummerPie);
 		runeBar = new ItemRequirement("Rune bar", ItemID.RUNITE_BAR).showConditioned(notRuneDart);
-		feather = new ItemRequirement("Feather", ItemID.FEATHER).showConditioned(notRuneDart);
+		feather = new ItemRequirement("Feather", ItemID.FEATHER, 10).showConditioned(notRuneDart);
 		hammer = new ItemRequirement("Hammer", ItemID.HAMMER).showConditioned(notRuneDart);
 		runeDartTip = new ItemRequirement("Rune dart tip", ItemID.RUNE_DART_TIP);
-		ess = new ItemRequirement("Essence", ItemCollections.getEssenceLow()).showConditioned(not100Earth);
+		essence = new ItemRequirement("Essence", ItemCollections.getEssenceLow(), 25).showConditioned(not100Earth);
 		earthTali = new ItemRequirement("Access to Earth altar, or travel through abyss",
 			ItemCollections.getEarthAltar()).showConditioned(not100Earth);
 
@@ -177,7 +177,7 @@ public class VarrockElite extends ComplexStateQuestHelper
 		moveToLumb = new ObjectStep(this, 2618, new WorldPoint(3308, 3492, 0),
 			"Climb the fence to enter the lumber yard.");
 		plankMake = new DetailedQuestStep(this, "Cast plank make until you've made 20 mahogany planks.",
-			natRune.quantity(20), astRune.quantity(40), earthRune.quantity(300), coins.quantity(21000), mahoLog.quantity(20));
+			natureRune, astralRune, earthRune, coins, mahoganyLog);
 		moveToCookingGuild = new ObjectStep(this, ObjectID.DOOR_24958, new WorldPoint(3143, 3443, 0),
 			"Enter the cooking guild.", cookingGuild.equipped());
 		summerPie = new ObjectStep(this, ObjectID.RANGE_7183, new WorldPoint(3146, 3453, 0),
@@ -185,13 +185,13 @@ public class VarrockElite extends ComplexStateQuestHelper
 		moveToEarthRune = new ObjectStep(this, 34816, new WorldPoint(3306, 3474, 0),
 			"Travel to the earth altar or go through the abyss.", earthTali);
 		earthRune100 = new ObjectStep(this, 34763, new WorldPoint(2658, 4841, 0),
-			"Craft the earth runes.", ess.quantity(25));
+			"Craft the earth runes.", essence);
 		moveToAnvil = new TileStep(this, new WorldPoint(3188, 3426, 0),
 			"Go to the anvil beside the east Varrock bank.");
 		dartTip = new ObjectStep(this, ObjectID.ANVIL_2097, new WorldPoint(3188, 3426, 0),
 			"Make rune dart tips on the anvil in east Varrock.", runeBar);
 		runeDart = new ItemStep(this, "Use feathers on the rune dart tips.", runeDartTip.highlighted(),
-			feather.quantity(10).highlighted());
+			feather.highlighted());
 
 		claimReward = new NpcStep(this, NpcID.TOBY, new WorldPoint(3225, 3415, 0),
 			"Talk to Toby in Varrock to claim your reward!");
@@ -201,9 +201,9 @@ public class VarrockElite extends ComplexStateQuestHelper
 	@Override
 	public List<ItemRequirement> getItemRequirements()
 	{
-		return Arrays.asList(sAtk4, sStr4, sDef4, torstol, natRune.quantity(20), astRune.quantity(40),
-			earthRune.quantity(300), coins.quantity(21000), mahoLog.quantity(20), cookingGuild, rawPie, runeBar,
-			feather, hammer, ess.quantity(25), earthTali);
+		return Arrays.asList(sAtk4, sStr4, sDef4, torstol, natureRune, astralRune,
+			earthRune, coins, mahoganyLog, cookingGuild, rawPie, runeBar,
+			feather, hammer, essence, earthTali);
 	}
 
 	@Override
@@ -260,18 +260,18 @@ public class VarrockElite extends ComplexStateQuestHelper
 
 		PanelDetails runeDartsSteps = new PanelDetails("Smith and Fletch 10 Rune Darts", Arrays.asList(moveToAnvil,
 			dartTip, runeDart), new SkillRequirement(Skill.FLETCHING, 81), new SkillRequirement(Skill.SMITHING, 89),
-			touristTrap, runeBar, feather.quantity(10), hammer);
+			touristTrap, runeBar, feather, hammer);
 		runeDartsSteps.setDisplayCondition(notRuneDart);
 		allSteps.add(runeDartsSteps);
 
 		PanelDetails plankMakeSteps = new PanelDetails("Plank Make", Arrays.asList(moveToLumb, plankMake),
-			new SkillRequirement(Skill.MAGIC, 86), dreamMentor, natRune.quantity(20), astRune.quantity(40),
-			earthRune.quantity(300), coins.quantity(21000), mahoLog.quantity(20));
+			new SkillRequirement(Skill.MAGIC, 86), dreamMentor, natureRune, astralRune,
+			earthRune, coins, mahoganyLog);
 		plankMakeSteps.setDisplayCondition(notPlankMake);
 		allSteps.add(plankMakeSteps);
 
 		PanelDetails earth100Steps = new PanelDetails("Craft 100 Earth runes", Arrays.asList(moveToEarthRune,
-			earthRune100), new SkillRequirement(Skill.RUNECRAFT, 78), ess.quantity(25), earthTali);
+			earthRune100), new SkillRequirement(Skill.RUNECRAFT, 78), essence, earthTali);
 		earth100Steps.setDisplayCondition(not100Earth);
 		allSteps.add(earth100Steps);
 

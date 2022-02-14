@@ -74,7 +74,7 @@ import com.questhelper.steps.QuestStep;
 public class VarrockMedium extends ComplexStateQuestHelper
 {
 	// Items required
-	ItemRequirement coins, limpRoot, redSpiderEgg, ringOfCharos, digsitePend, lawRune, airRune, fireRune, mahoLog,
+	ItemRequirement coins, limpRoot, redSpiderEgg, ringOfCharos, digsitePend, lawRune, airRune, fireRune, mahoganyLog,
 		willowLog, log;
 
 	// Items recommended
@@ -165,10 +165,10 @@ public class VarrockMedium extends ComplexStateQuestHelper
 		redSpiderEgg = new ItemRequirement("Red spiders' egg", ItemID.RED_SPIDERS_EGGS).showConditioned(notApothStr);
 		ringOfCharos = new ItemRequirement("Ring of charos (A)", ItemID.RING_OF_CHAROSA).showConditioned(notCatColour);
 		digsitePend = new ItemRequirement("Digsite pendant", ItemCollections.getDigsitePendants()).showConditioned(notTPDigsite);
-		lawRune = new ItemRequirement("Law rune", ItemID.LAW_RUNE).showConditioned(notTPVarrock);
-		airRune = new ItemRequirement("Air rune", ItemID.AIR_RUNE).showConditioned(notTPVarrock);
+		lawRune = new ItemRequirement("Law rune", ItemID.LAW_RUNE, 1).showConditioned(notTPVarrock);
+		airRune = new ItemRequirement("Air rune", ItemID.AIR_RUNE, 3).showConditioned(notTPVarrock);
 		fireRune = new ItemRequirement("Fire rune", ItemID.FIRE_RUNE).showConditioned(notTPVarrock);
-		mahoLog = new ItemRequirement("Mahogany logs", ItemID.MAHOGANY_LOGS).showConditioned(notMaho20);
+		mahoganyLog = new ItemRequirement("Mahogany logs", ItemID.MAHOGANY_LOGS, 20).showConditioned(notMaho20);
 		willowLog = new ItemRequirement("Willow logs", ItemID.WILLOW_LOGS).showConditioned(notBalloon);
 		log = new ItemRequirement("Logs", ItemID.LOGS).showConditioned(notBalloon);
 
@@ -253,7 +253,7 @@ public class VarrockMedium extends ComplexStateQuestHelper
 		tpDigsite = new DetailedQuestStep(this, "Rub the digsite pendant and select the 'Digsite' teleport.", digsitePend.highlighted());
 
 		maho20 = new NpcStep(this, NpcID.SAWMILL_OPERATOR, new WorldPoint(3302, 3492, 0),
-			"Make 20 mahogany planks at the sawmill in ONE run.", mahoLog.quantity(20), coins.quantity(30000));
+			"Make 20 mahogany planks at the sawmill in ONE run.", mahoganyLog, coins.quantity(30000));
 
 		balloon = new ObjectStep(this, 19143, new WorldPoint(3297, 3482, 0),
 			"Use the basket east of Varrock to fly to any available destination.", willowLog.quantity(1));
@@ -267,7 +267,7 @@ public class VarrockMedium extends ComplexStateQuestHelper
 			"Pick a white tree fruit at Varrock Castle.");
 		varrAgi = new ObjectStep(this, ObjectID.ROUGH_WALL_14412, new WorldPoint(3221, 3414, 0),
 			"Complete a lap of the Varrock rooftop course.");
-		tpVarrock = new DetailedQuestStep(this, "Cast Teleport to Varrock", airRune.quantity(3), fireRune.quantity(1), lawRune.quantity(1));
+		tpVarrock = new DetailedQuestStep(this, "Cast Teleport to Varrock", airRune, fireRune, lawRune);
 
 		claimReward = new NpcStep(this, NpcID.TOBY, new WorldPoint(3225, 3415, 0),
 			"Talk to Toby in Varrock to claim your reward!");
@@ -277,8 +277,8 @@ public class VarrockMedium extends ComplexStateQuestHelper
 	@Override
 	public List<ItemRequirement> getItemRequirements()
 	{
-		return Arrays.asList(coins.quantity(30105), limpRoot, redSpiderEgg, ringOfCharos, digsitePend, lawRune.quantity(1),
-			airRune.quantity(3), fireRune.quantity(1), mahoLog.quantity(20), willowLog.quantity(10), log);
+		return Arrays.asList(coins.quantity(30105), limpRoot, redSpiderEgg, ringOfCharos, digsitePend, lawRune,
+			airRune, fireRune, mahoganyLog, willowLog.quantity(10), log);
 	}
 
 	@Override
@@ -375,7 +375,7 @@ public class VarrockMedium extends ComplexStateQuestHelper
 		allSteps.add(tolnaSteps);
 
 		PanelDetails maho20Steps = new PanelDetails("Make 20 Mahogany Planks", Collections.singletonList(maho20),
-			mahoLog.quantity(20), coins.quantity(30000));
+			mahoganyLog, coins.quantity(30000));
 		maho20Steps.setDisplayCondition(notMaho20);
 		allSteps.add(maho20Steps);
 
@@ -385,7 +385,7 @@ public class VarrockMedium extends ComplexStateQuestHelper
 		allSteps.add(balloonSteps);
 
 		PanelDetails tpVarrSteps = new PanelDetails("Teleport to Varrock", Collections.singletonList(tpVarrock),
-			new SkillRequirement(Skill.MAGIC, 25), airRune.quantity(3), lawRune.quantity(1), fireRune.quantity(1),
+			new SkillRequirement(Skill.MAGIC, 25), airRune, lawRune, fireRune,
 			normalBook);
 		tpVarrSteps.setDisplayCondition(notTPVarrock);
 		allSteps.add(tpVarrSteps);

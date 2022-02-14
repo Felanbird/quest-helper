@@ -177,12 +177,12 @@ public class VarrockHard extends ComplexStateQuestHelper
 		strangeSkull = new ItemRequirement("Strange skull", ItemID.STRANGE_SKULL).showConditioned(notSkullSceptre);
 		runedSceptre = new ItemRequirement("Runed sceptre", ItemID.RUNED_SCEPTRE).showConditioned(notSkullSceptre);
 		combinedSkullSceptre = new ItemRequirement("Skull sceptre", ItemID.SKULL_SCEPTRE).showConditioned(notSkullSceptre);
-		dashingKeb = new ItemRequirement("Dashing kebbit fur", ItemID.DASHING_KEBBIT_FUR).showConditioned(notSpottyCape);
+		dashingKeb = new ItemRequirement("Dashing kebbit fur", ItemID.DASHING_KEBBIT_FUR, 2).showConditioned(notSpottyCape);
 		coins = new ItemRequirement("Coins", ItemCollections.getCoins()).showConditioned(new Conditions(LogicType.OR, notSpottyCape, notFancyStone));
 		cape = new ItemRequirement("Spottier cape", ItemID.SPOTTIER_CAPE).showConditioned(notSpottyCape);
 		axe = new ItemRequirement("Any axe", ItemCollections.getAxes()).showConditioned(new Conditions(LogicType.OR,
 			notWakkaEdge, notYewChurch, notYewRoots));
-		lawRune = new ItemRequirement("Law rune", ItemID.LAW_RUNE).showConditioned(notPaddewwaTP);
+		lawRune = new ItemRequirement("Law rune", ItemID.LAW_RUNE, 2).showConditioned(notPaddewwaTP);
 		airRune = new ItemRequirement("Air rune", ItemID.AIR_RUNE).showConditioned(notPaddewwaTP);
 		fireRune = new ItemRequirement("Fire rune", ItemID.FIRE_RUNE).showConditioned(notPaddewwaTP);
 		yewLog = new ItemRequirement("Yew log", ItemID.YEW_LOGS);
@@ -284,7 +284,7 @@ public class VarrockHard extends ComplexStateQuestHelper
 			runedSceptre.highlighted(), strangeSkull.highlighted());
 		skullSceptre = new DetailedQuestStep(this, "Use the sceptre to teleport to the stronghold.", combinedSkullSceptre.highlighted());
 		getCape = new NpcStep(this, NpcID.ASYFF, new WorldPoint(3281, 3398, 0),
-			"Have Asyff make a spotty cape.", dashingKeb.quantity(2), coins.quantity(800));
+			"Have Asyff make a spotty cape.", dashingKeb, coins.quantity(800));
 		getCape.addDialogStep("Could you make anything out of this fur that I got from hunting?");
 		spottyCape = new ItemStep(this, "Equip the spottier cape.", cape.highlighted());
 		moveToBasement = new ObjectStep(this, ObjectID.STAIRS_24428, new WorldPoint(3256, 3452, 0),
@@ -295,7 +295,7 @@ public class VarrockHard extends ComplexStateQuestHelper
 			"Check out the kudos wiki page for more details.");
 		wakkaEdge = new ObjectStep(this, 12166, new WorldPoint(3131, 3510, 0),
 			"Make a Wakka at the canoe station in Edgeville.", axe);
-		paddewwaTP = new DetailedQuestStep(this, "Cast teleport to Paddewwa.", ancientBook, lawRune.quantity(2), airRune.quantity(1), fireRune.quantity(1));
+		paddewwaTP = new DetailedQuestStep(this, "Cast teleport to Paddewwa.", ancientBook, lawRune, airRune, fireRune);
 		cutYew = new ObjectStep(this, 10823, new WorldPoint(3249, 3473, 0),
 			"Cut a yew tree until you get a log.", axe);
 		goUp1 = new ObjectStep(this, ObjectID.STAIRCASE_11790, new WorldPoint(3259, 3488, 0),
@@ -338,7 +338,7 @@ public class VarrockHard extends ComplexStateQuestHelper
 	@Override
 	public List<ItemRequirement> getItemRequirements()
 	{
-		return Arrays.asList(coins.quantity(25800), dashingKeb.quantity(2), axe, lawRune.quantity(2),
+		return Arrays.asList(coins.quantity(25800), dashingKeb, axe, lawRune,
 			fireRune, airRune, tinderBox, yewSap, spade);
 	}
 
@@ -399,7 +399,7 @@ public class VarrockHard extends ComplexStateQuestHelper
 		List<PanelDetails> allSteps = new ArrayList<>();
 
 		PanelDetails spottierCapeSteps = new PanelDetails("Trade for A Spottier Cape", Arrays.asList(getCape, spottyCape),
-			new SkillRequirement(Skill.HUNTER, 66), dashingKeb.quantity(2), coins.quantity(800));
+			new SkillRequirement(Skill.HUNTER, 66), dashingKeb, coins.quantity(800));
 		spottierCapeSteps.setDisplayCondition(notSpottyCape);
 		allSteps.add(spottierCapeSteps);
 
@@ -436,8 +436,8 @@ public class VarrockHard extends ComplexStateQuestHelper
 		allSteps.add(edgevilleWakkaSteps);
 
 		PanelDetails paddewwaSteps = new PanelDetails("Teleport to Paddewwa", Collections.singletonList(paddewwaTP),
-			new SkillRequirement(Skill.MAGIC, 54), desertTreasure, ancientBook, lawRune.quantity(2),
-			airRune.quantity(1), fireRune.quantity(1));
+			new SkillRequirement(Skill.MAGIC, 54), desertTreasure, ancientBook, lawRune,
+			airRune, fireRune);
 		paddewwaSteps.setDisplayCondition(notPaddewwaTP);
 		allSteps.add(paddewwaSteps);
 
