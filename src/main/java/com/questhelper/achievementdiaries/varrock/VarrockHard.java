@@ -436,8 +436,7 @@ public class VarrockHard extends ComplexStateQuestHelper
 		allSteps.add(edgevilleWakkaSteps);
 
 		PanelDetails paddewwaSteps = new PanelDetails("Teleport to Paddewwa", Collections.singletonList(paddewwaTP),
-			new SkillRequirement(Skill.MAGIC, 54), desertTreasure, ancientBook, lawRune,
-			airRune, fireRune);
+			new SkillRequirement(Skill.MAGIC, 54), desertTreasure, ancientBook, lawRune, airRune, fireRune);
 		paddewwaSteps.setDisplayCondition(notPaddewwaTP);
 		allSteps.add(paddewwaSteps);
 

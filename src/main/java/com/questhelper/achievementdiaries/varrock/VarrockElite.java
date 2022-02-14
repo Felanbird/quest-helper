@@ -201,9 +201,8 @@ public class VarrockElite extends ComplexStateQuestHelper
 	@Override
 	public List<ItemRequirement> getItemRequirements()
 	{
-		return Arrays.asList(sAtk4, sStr4, sDef4, torstol, natureRune, astralRune,
-			earthRune, coins, mahoganyLog, cookingGuild, rawPie, runeBar,
-			feather, hammer, essence, earthTali);
+		return Arrays.asList(sAtk4, sStr4, sDef4, torstol, natureRune, astralRune, earthRune, coins,
+			mahoganyLog, cookingGuild, rawPie, runeBar, feather, hammer, essence, earthTali);
 	}
 
 	@Override
