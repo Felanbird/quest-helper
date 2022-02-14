@@ -247,8 +247,8 @@ public class WildernessElite extends ComplexStateQuestHelper
 	@Override
 	public List<ItemRequirement> getItemRequirements()
 	{
-		return Arrays.asList(combatGear, lawRune, waterRune, coins.quantity(3750), axe,
-			tinderbox, pickaxe, coal, lobsterPot, darkFishingBait, godEquip);
+		return Arrays.asList(combatGear, lawRune, waterRune, coins.quantity(3750), axe, tinderbox, pickaxe, coal,
+			lobsterPot, darkFishingBait, godEquip);
 	}
 
 	@Override
@@ -324,8 +324,7 @@ public class WildernessElite extends ComplexStateQuestHelper
 
 		PanelDetails scimSteps = new PanelDetails("Rune Scimitar in Resource Area",
 			Arrays.asList(moveToResource2, runiteGolem, smeltBar, runeScim), new SkillRequirement(Skill.MINING, 85),
-			new SkillRequirement(Skill.SMITHING, 90), coins.quantity(6000), combatGear, food, pickaxe,
-			coal);
+			new SkillRequirement(Skill.SMITHING, 90), coins.quantity(6000), combatGear, food, pickaxe, coal);
 		scimSteps.setDisplayCondition(notRuneScim);
 		allSteps.add(scimSteps);
 

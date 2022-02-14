@@ -244,8 +244,8 @@ public class WildernessHard extends ComplexStateQuestHelper
 	@Override
 	public List<ItemRequirement> getItemRequirements()
 	{
-		return Arrays.asList(combatGear, godStaff, godRunes, airRune, cosmicRune,
-			unpoweredOrb, knife, burningAmulet, oilyRod, fishingBait, coins, hammer, barsOrPick, godEquip);
+		return Arrays.asList(combatGear, godStaff, godRunes, airRune, cosmicRune, unpoweredOrb, knife, burningAmulet,
+			oilyRod, fishingBait, coins, hammer, barsOrPick, godEquip);
 	}
 
 	@Override
