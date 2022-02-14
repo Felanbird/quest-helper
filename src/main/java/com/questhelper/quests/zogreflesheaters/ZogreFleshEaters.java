@@ -78,7 +78,7 @@ public class ZogreFleshEaters extends BasicQuestHelper
 		badPort, charcoal, papyrus, signedPort, cupOfTea, strangePotion, grishKey, ogreRelic, combatGear, knifeHighlighted, tankardHighlighted;
 
 	Requirement askedAboutSickies, inSurface, inTombF2, killedZombie, searchedCoffin, usedKnife, openedCoffin,
-		talkedToZavistic, hasBackpackOrTankard, atSith, askedSithToLookAround, hasOrShownNecroBook, hasOrShownHamBook, 
+		talkedToZavistic, hasBackpackOrTankard, atSith, askedSithToLookAround, hasOrShownNecroBook, hasOrShownHamBook,
 		shownNecroBook, shownHamBook, shownTankard, usedTankardOnBartender, usedPortraitOnBartender, hasOrShownSignedPortrait,
 		shownSignedPortrait, sithTransformed, askedAboutDisease, askedAboutGettingRidOfUndead, askedAboutBow, inTombF0, inTombF2ToBoss, ogreRelicNearby;
 
@@ -379,26 +379,26 @@ public class ZogreFleshEaters extends BasicQuestHelper
 	public List<ExperienceReward> getExperienceRewards()
 	{
 		return Arrays.asList(
-				new ExperienceReward(Skill.FLETCHING, 2000),
-				new ExperienceReward(Skill.RANGED, 2000),
-				new ExperienceReward(Skill.HERBLORE, 2000));
+			new ExperienceReward(Skill.FLETCHING, 2000),
+			new ExperienceReward(Skill.RANGED, 2000),
+			new ExperienceReward(Skill.HERBLORE, 2000));
 	}
 
 	@Override
 	public List<ItemReward> getItemRewards()
 	{
 		return Arrays.asList(
-				new ItemReward("Ourg Bones", ItemID.OURG_BONES, 3),
-				new ItemReward("Zogre Bones", ItemID.ZOGRE_BONE, 2));
+			new ItemReward("Ourg Bones", ItemID.OURG_BONES, 3),
+			new ItemReward("Zogre Bones", ItemID.ZOGRE_BONE, 2));
 	}
 
 	@Override
 	public List<UnlockReward> getUnlockRewards()
 	{
 		return Arrays.asList(
-				new UnlockReward("Ability to make Relicym's balm"),
-				new UnlockReward("Ability to fletch Comp Ogre Bows and Brutal Arrows"),
-				new UnlockReward("Ability to wear Inoculation Bracelets"));
+			new UnlockReward("Ability to make Relicym's balm"),
+			new UnlockReward("Ability to fletch Comp Ogre Bows and Brutal Arrows"),
+			new UnlockReward("Ability to wear Inoculation Bracelets"));
 	}
 
 	@Override

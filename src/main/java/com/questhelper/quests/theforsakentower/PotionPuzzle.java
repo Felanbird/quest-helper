@@ -142,7 +142,7 @@ public class PotionPuzzle extends QuestStep implements OwnerStep
 			{
 				if (!fluidFound)
 				{
-					getFluid.addWidgetChoice(correctFluid-1, 187, 3);
+					getFluid.addWidgetChoice(correctFluid - 1, 187, 3);
 					getFluid.setText("Take Fluid " + correctFluid + " from the table.");
 
 					useFluidOnRefinery.addRequirement(fluids[correctFluid]);
@@ -279,7 +279,7 @@ public class PotionPuzzle extends QuestStep implements OwnerStep
 
 		triedToActivate = new VarbitRequirement(7799, 2);
 		cleanedRefinery = new VarbitRequirement(7799, 3);
-		hasFluids = new Requirement[]{null, fluid1, fluid2, fluid3, fluid4, fluid5 };
+		hasFluids = new Requirement[]{null, fluid1, fluid2, fluid3, fluid4, fluid5};
 	}
 
 	private void setupZones()

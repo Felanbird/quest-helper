@@ -274,7 +274,9 @@ public class PuzzleSolver
 			this.pieceInfo = pieceDetails;
 			this.piece = PuzzleSolver.this.getWidget(pieceInfo);
 			if (this.piece == null)
+			{
 				throw new WidgetNotFoundException();
+			}
 			this.targetX = targetX;
 			this.targetY = targetY;
 			this.correctOrientation = correctOrientation;
@@ -458,11 +460,17 @@ public class PuzzleSolver
 		public CageBarSolution getNext()
 		{
 			if (!p1.isSolved())
+			{
 				return p1;
+			}
 			else if (!p2.isSolved())
+			{
 				return p2;
+			}
 			else
+			{
 				return p3;
+			}
 		}
 	}
 

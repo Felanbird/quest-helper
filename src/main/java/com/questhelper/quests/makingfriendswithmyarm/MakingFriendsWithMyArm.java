@@ -488,7 +488,7 @@ public class MakingFriendsWithMyArm extends BasicQuestHelper
 		goWestSneak3 = new TileStep(this, new WorldPoint(2856, 3923, 0), "Wait a few seconds, then run west to the next point.");
 		goNorth = new TileStep(this, new WorldPoint(2859, 3939, 0), "Wait a few seconds, then run north to the next point.");
 
-		enterHole = new ObjectStep(this, ObjectID.HOLE_33227, new WorldPoint(2854, 3944,0), "Wait a few seconds, and run into the hole.");
+		enterHole = new ObjectStep(this, ObjectID.HOLE_33227, new WorldPoint(2854, 3944, 0), "Wait a few seconds, and run into the hole.");
 		goSouthSneak.addSubSteps(goWestSneak1, goWestSneak2, goWestSneak3, goNorth, enterHole);
 		enterNarrowHole = new ObjectStep(this, ObjectID.NARROW_GAP, new WorldPoint(7248, 2978, 0), "Enter the narrow gap to the south quickly.");
 
@@ -498,7 +498,7 @@ public class MakingFriendsWithMyArm extends BasicQuestHelper
 		leaveWater1 = new ObjectStep(this, ObjectID.WATERS_EDGE, new WorldPoint(2730, 5781, 0), "Wait a few seconds, then swim to the east shore.");
 		waterSpot1.addSubSteps(enterWater, leaveWater1);
 
-		enterWater2 = new ObjectStep(this,  NullObjectID.NULL_33331, new WorldPoint(2734, 5792, 0), "Enter the water.");
+		enterWater2 = new ObjectStep(this, NullObjectID.NULL_33331, new WorldPoint(2734, 5792, 0), "Enter the water.");
 
 		mineCave = new ObjectStep(this, ObjectID.CAVE_EXIT_33247, new WorldPoint(2737, 5817, 0), "Mine the cave exit.", pickaxe);
 
@@ -605,20 +605,20 @@ public class MakingFriendsWithMyArm extends BasicQuestHelper
 	public List<ExperienceReward> getExperienceRewards()
 	{
 		return Arrays.asList(
-				new ExperienceReward(Skill.CONSTRUCTION, 2000),
-				new ExperienceReward(Skill.FIREMAKING, 5000),
-				new ExperienceReward(Skill.MINING, 10000),
-				new ExperienceReward(Skill.AGILITY, 10000));
+			new ExperienceReward(Skill.CONSTRUCTION, 2000),
+			new ExperienceReward(Skill.FIREMAKING, 5000),
+			new ExperienceReward(Skill.MINING, 10000),
+			new ExperienceReward(Skill.AGILITY, 10000));
 	}
 
 	@Override
 	public List<UnlockReward> getUnlockRewards()
 	{
 		return Arrays.asList(
-				new UnlockReward("Access to the Salt Mines."),
-				new UnlockReward("Ability to build fire pits"),
-				new UnlockReward("Ability to tune a house portal to Troll Stronghold."),
-				new UnlockReward("Access to a disease free herb patch in Weis."));
+			new UnlockReward("Access to the Salt Mines."),
+			new UnlockReward("Ability to build fire pits"),
+			new UnlockReward("Ability to tune a house portal to Troll Stronghold."),
+			new UnlockReward("Access to a disease free herb patch in Weis."));
 	}
 
 	@Override

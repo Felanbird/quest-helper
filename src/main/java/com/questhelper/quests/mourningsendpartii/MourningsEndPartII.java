@@ -969,7 +969,7 @@ public class MourningsEndPartII extends BasicQuestHelper
 		leaveDeathAltar = new ObjectStep(this, ObjectID.PORTAL_34758, new WorldPoint(2208, 4829, 0), "Leave the Death Altar and go use the charged crystal on the dark crystal.");
 		turnPillarFromTemple = new ObjectStep(this, NullObjectID.NULL_9939, new WorldPoint(1881, 4639, 0), "Enter the central area, and turn the pillar's mirror east.", chargedCrystal);
 		goUpFromCentre = new ObjectStep(this, ObjectID.STAIRCASE_10015, new WorldPoint(1888, 4639, 0), "Go up to the dark crystal.", chargedCrystal);
-		goUpToNorthToCharge =  new ObjectStep(this, ObjectID.STAIRCASE_10015, new WorldPoint(1891, 4642, 1), "Go up the stairs to the north.", chargedCrystal);
+		goUpToNorthToCharge = new ObjectStep(this, ObjectID.STAIRCASE_10015, new WorldPoint(1891, 4642, 1), "Go up the stairs to the north.", chargedCrystal);
 		useCrystalOnCrystal = new ObjectStep(this, NullObjectID.NULL_9750, new WorldPoint(1909, 4639, 2), "Use the charged crystal on the dark crystal north of you.", chargedCrystalHighlight);
 		useCrystalOnCrystal.addIcon(ItemID.NEWLY_MADE_CRYSTAL_6652);
 
@@ -1029,16 +1029,16 @@ public class MourningsEndPartII extends BasicQuestHelper
 	public List<ItemReward> getItemRewards()
 	{
 		return Arrays.asList(
-				new ItemReward("A Crystal Trinket", ItemID.CRYSTAL_TRINKET, 1),
-				new ItemReward("A Death Talisman", ItemID.DEATH_TALISMAN, 1));
+			new ItemReward("A Crystal Trinket", ItemID.CRYSTAL_TRINKET, 1),
+			new ItemReward("A Death Talisman", ItemID.DEATH_TALISMAN, 1));
 	}
 
 	@Override
 	public List<UnlockReward> getUnlockRewards()
 	{
 		return Arrays.asList(
-				new UnlockReward("Ability to craft Death Runes."),
-				new UnlockReward("Ability to kill Dark Beasts and receive them as a slayer task."));
+			new UnlockReward("Ability to craft Death Runes."),
+			new UnlockReward("Ability to kill Dark Beasts and receive them as a slayer task."));
 	}
 
 	@Override

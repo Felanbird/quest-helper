@@ -906,26 +906,26 @@ public class LunarDiplomacy extends BasicQuestHelper
 	public List<ExperienceReward> getExperienceRewards()
 	{
 		return Arrays.asList(
-				new ExperienceReward(Skill.MAGIC, 5000),
-				new ExperienceReward(Skill.RUNECRAFT, 5000));
+			new ExperienceReward(Skill.MAGIC, 5000),
+			new ExperienceReward(Skill.RUNECRAFT, 5000));
 	}
 
 	@Override
 	public List<ItemReward> getItemRewards()
 	{
 		return Arrays.asList(
-				new ItemReward("50 x Astral Runes", ItemID.ASTRAL_RUNE, 50),
-				new ItemReward("A Seal of Passage", ItemID.SEAL_OF_PASSAGE, 1),
-				new ItemReward("A set of Lunar Equipment", -1, 1));
+			new ItemReward("50 x Astral Runes", ItemID.ASTRAL_RUNE, 50),
+			new ItemReward("A Seal of Passage", ItemID.SEAL_OF_PASSAGE, 1),
+			new ItemReward("A set of Lunar Equipment", -1, 1));
 	}
 
 	@Override
 	public List<UnlockReward> getUnlockRewards()
 	{
 		return Arrays.asList(
-				new UnlockReward("Access to Lunar Island"),
-				new UnlockReward("Access to the Lunar Spellbook"),
-				new UnlockReward("Access to the Astral Altar"));
+			new UnlockReward("Access to Lunar Island"),
+			new UnlockReward("Access to the Lunar Spellbook"),
+			new UnlockReward("Access to the Astral Altar"));
 	}
 
 	@Override

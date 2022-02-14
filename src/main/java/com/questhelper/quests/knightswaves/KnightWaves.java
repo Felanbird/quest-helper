@@ -142,7 +142,7 @@ public class KnightWaves extends BasicQuestHelper
 
 		killKnightsSteps = new ConditionalStep(this, goToFloor1, "Defeat the 8 Knights of the Round Table in the room" +
 			" on top of Camelot. It's recommended to flinch the knights on one of the dummies around the room, and " +
-			"use a poisoned weapon to make the process even easier.",combatGear, poisonedWeapon, food, potions);
+			"use a poisoned weapon to make the process even easier.", combatGear, poisonedWeapon, food, potions);
 		killKnightsSteps.addStep(inRoom, killKnights);
 		killKnightsSteps.addStep(onFloor2, enterGrounds);
 		killKnightsSteps.addStep(onFloor1, goToFloor2);
@@ -167,19 +167,19 @@ public class KnightWaves extends BasicQuestHelper
 	public List<ExperienceReward> getExperienceRewards()
 	{
 		return Arrays.asList(
-				new ExperienceReward(Skill.ATTACK, 20000),
-				new ExperienceReward(Skill.STRENGTH, 20000),
-				new ExperienceReward(Skill.DEFENCE, 20000),
-				new ExperienceReward(Skill.HITPOINTS, 20000));
+			new ExperienceReward(Skill.ATTACK, 20000),
+			new ExperienceReward(Skill.STRENGTH, 20000),
+			new ExperienceReward(Skill.DEFENCE, 20000),
+			new ExperienceReward(Skill.HITPOINTS, 20000));
 	}
 
 	@Override
 	public List<UnlockReward> getUnlockRewards()
 	{
 		return Arrays.asList(
-				new UnlockReward("Access to Chivalry Prayer (60 Prayer & 65 Defence)"),
-				new UnlockReward("Access to Piety (70 Prayer & 70 Defence)"),
-				new UnlockReward("Ability to change your spawn point to Camelot."));
+			new UnlockReward("Access to Chivalry Prayer (60 Prayer & 65 Defence)"),
+			new UnlockReward("Access to Piety (70 Prayer & 70 Defence)"),
+			new UnlockReward("Ability to change your spawn point to Camelot."));
 	}
 
 	@Override

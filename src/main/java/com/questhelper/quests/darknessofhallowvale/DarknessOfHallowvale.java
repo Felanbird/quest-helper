@@ -787,9 +787,9 @@ public class DarknessOfHallowvale extends BasicQuestHelper
 	public List<ExperienceReward> getExperienceRewards()
 	{
 		return Arrays.asList(
-				new ExperienceReward(Skill.AGILITY, 7000),
-				new ExperienceReward(Skill.THIEVING, 6000),
-				new ExperienceReward(Skill.CONSTRUCTION, 2000));
+			new ExperienceReward(Skill.AGILITY, 7000),
+			new ExperienceReward(Skill.THIEVING, 6000),
+			new ExperienceReward(Skill.CONSTRUCTION, 2000));
 	}
 
 	@Override

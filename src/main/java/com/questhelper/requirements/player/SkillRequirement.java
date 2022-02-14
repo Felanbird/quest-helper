@@ -48,9 +48,9 @@ public class SkillRequirement extends AbstractRequirement
 	/**
 	 * Check if a player has a certain skill level
 	 *
-	 * @param skill the {@link Skill} to check
+	 * @param skill         the {@link Skill} to check
 	 * @param requiredLevel the required level for this Requirement to pass
-	 * @param operation what type of check we're making on the stat
+	 * @param operation     what type of check we're making on the stat
 	 */
 	public SkillRequirement(Skill skill, int requiredLevel, Operation operation)
 	{
@@ -64,7 +64,7 @@ public class SkillRequirement extends AbstractRequirement
 	/**
 	 * Check if a player has a certain skill level
 	 *
-	 * @param skill the {@link Skill} to check
+	 * @param skill         the {@link Skill} to check
 	 * @param requiredLevel the required level for this Requirement to pass
 	 */
 	public SkillRequirement(Skill skill, int requiredLevel)
@@ -75,9 +75,9 @@ public class SkillRequirement extends AbstractRequirement
 	/**
 	 * Check if a player has a certain skill level
 	 *
-	 * @param skill the {@link Skill} to check
+	 * @param skill         the {@link Skill} to check
 	 * @param requiredLevel the required level for this Requirement to pass
-	 * @param canBeBoosted if the skill can be boosted to meet this requirement
+	 * @param canBeBoosted  if the skill can be boosted to meet this requirement
 	 */
 	public SkillRequirement(Skill skill, int requiredLevel, boolean canBeBoosted)
 	{
@@ -88,10 +88,10 @@ public class SkillRequirement extends AbstractRequirement
 	/**
 	 * Check if a player has a certain skill level
 	 *
-	 * @param skill the {@link Skill} to check
+	 * @param skill         the {@link Skill} to check
 	 * @param requiredLevel the required level for this Requirement to pass
-	 * @param canBeBoosted if this skill check can be boosted to meet this requirement
-	 * @param displayText the display text
+	 * @param canBeBoosted  if this skill check can be boosted to meet this requirement
+	 * @param displayText   the display text
 	 */
 	public SkillRequirement(Skill skill, int requiredLevel, boolean canBeBoosted, String displayText)
 	{

@@ -391,8 +391,8 @@ public class DreamMentor extends BasicQuestHelper
 	public List<ExperienceReward> getExperienceRewards()
 	{
 		return Arrays.asList(
-				new ExperienceReward(Skill.HITPOINTS, 15000),
-				new ExperienceReward(Skill.MAGIC, 10000));
+			new ExperienceReward(Skill.HITPOINTS, 15000),
+			new ExperienceReward(Skill.MAGIC, 10000));
 	}
 
 	@Override
@@ -405,8 +405,8 @@ public class DreamMentor extends BasicQuestHelper
 	public List<UnlockReward> getUnlockRewards()
 	{
 		return Arrays.asList(
-				new UnlockReward("7 New Lunar Spells"),
-				new UnlockReward("Ability to bank without the Seal of Passage by talking to 'Birds-Eye-Jack'"));
+			new UnlockReward("7 New Lunar Spells"),
+			new UnlockReward("Ability to bank without the Seal of Passage by talking to 'Birds-Eye-Jack'"));
 	}
 
 	@Override

@@ -366,7 +366,7 @@ public class BetweenARock extends BasicQuestHelper
 		talkToDondakanWithHelmet.addSubSteps(enterDwarfCaveWithHelmet, enterDwarfCave2WithHelmet, talkToFerrymanWithHelmet, talkToDondakanForEnd);
 
 		mine6GoldOre = new DetailedQuestStep(this, "Mine 6 gold ores. If you want the Avatar to be level 75 vs 125, get 15. " +
-				"Keep these in your inventory for the boss fight. Do not remove your gold helmet.", pickaxe, goldHelmetEquipped);
+			"Keep these in your inventory for the boss fight. Do not remove your gold helmet.", pickaxe, goldHelmetEquipped);
 
 		talkToSecondFlame = new ObjectStep(this, ObjectID.WALL_OF_FLAME_5979, new WorldPoint(2373, 4956, 0),
 			"TALK to the central wall of flame.", goldHelmetEquipped);
@@ -410,9 +410,9 @@ public class BetweenARock extends BasicQuestHelper
 	public List<ExperienceReward> getExperienceRewards()
 	{
 		return Arrays.asList(
-				new ExperienceReward(Skill.DEFENCE, 5000),
-				new ExperienceReward(Skill.MINING, 5000),
-				new ExperienceReward(Skill.SMITHING, 5000));
+			new ExperienceReward(Skill.DEFENCE, 5000),
+			new ExperienceReward(Skill.MINING, 5000),
+			new ExperienceReward(Skill.SMITHING, 5000));
 	}
 
 	@Override
@@ -425,8 +425,8 @@ public class BetweenARock extends BasicQuestHelper
 	public List<UnlockReward> getUnlockRewards()
 	{
 		return Arrays.asList(
-				new UnlockReward("Ability to Teleport to Dondakan's Rock using a Ring of Wealth."),
-				new UnlockReward("Access to Arzinian Mine."));
+			new UnlockReward("Ability to Teleport to Dondakan's Rock using a Ring of Wealth."),
+			new UnlockReward("Access to Arzinian Mine."));
 	}
 
 	@Override

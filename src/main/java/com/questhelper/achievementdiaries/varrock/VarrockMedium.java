@@ -316,19 +316,19 @@ public class VarrockMedium extends ComplexStateQuestHelper
 	public List<ItemReward> getItemRewards()
 	{
 		return Arrays.asList(
-				new ItemReward("Varrock Armor (2)", ItemID.VARROCK_ARMOUR_2, 1),
-				new ItemReward("7,500 Exp. Lamp (Any skill over 40)", ItemID.ANTIQUE_LAMP, 1));
+			new ItemReward("Varrock Armor (2)", ItemID.VARROCK_ARMOUR_2, 1),
+			new ItemReward("7,500 Exp. Lamp (Any skill over 40)", ItemID.ANTIQUE_LAMP, 1));
 	}
 
 	@Override
 	public List<UnlockReward> getUnlockRewards()
 	{
 		return Arrays.asList(
-				new UnlockReward("10% Chance to mine 2 ores at once up to mithril ore"),
-				new UnlockReward("10% Chance of smelting 2 bars at once up to mithril when using the Edgeville furnace"),
-				new UnlockReward("Zaff will sell 30 Battlestaves per day for 7,000 Coins each"),
-				new UnlockReward("The Skull sceptre will now hold 18 charges"),
-				new UnlockReward("Ability to toggle the Varrock Teleport to go to The Grand Exchange"));
+			new UnlockReward("10% Chance to mine 2 ores at once up to mithril ore"),
+			new UnlockReward("10% Chance of smelting 2 bars at once up to mithril when using the Edgeville furnace"),
+			new UnlockReward("Zaff will sell 30 Battlestaves per day for 7,000 Coins each"),
+			new UnlockReward("The Skull sceptre will now hold 18 charges"),
+			new UnlockReward("Ability to toggle the Varrock Teleport to go to The Grand Exchange"));
 	}
 
 	@Override

@@ -46,6 +46,7 @@ public class DigStep extends DetailedQuestStep
 	private final ItemRequirement SPADE = new ItemRequirement("Spade", ItemID.SPADE);
 	private Predicate<Item> expectedItemPredicate = i -> i.getId() == -1;
 	private boolean hasExpectedItem = false;
+
 	public DigStep(QuestHelper questHelper, WorldPoint worldPoint, String text, Requirement... requirements)
 	{
 		super(questHelper, worldPoint, text, requirements);
@@ -70,7 +71,8 @@ public class DigStep extends DetailedQuestStep
 		if (!hasExpectedItem)
 		{
 			Player player = client.getLocalPlayer();
-			if (player == null) {
+			if (player == null)
+			{
 				return;
 			}
 			WorldPoint targetLocation = worldPoint;

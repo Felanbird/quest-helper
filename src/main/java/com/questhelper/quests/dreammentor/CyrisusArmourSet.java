@@ -33,7 +33,7 @@ import net.runelite.api.Skill;
 
 enum CyrisusArmourSet
 {
-	MELEE(0,  Arrays.asList(CyrisusBankItem.DRAGON_MED_HELM, CyrisusBankItem.AHRIM_ROBETOP,
+	MELEE(0, Arrays.asList(CyrisusBankItem.DRAGON_MED_HELM, CyrisusBankItem.AHRIM_ROBETOP,
 		CyrisusBankItem.AHRIM_SKIRT, CyrisusBankItem.RANGER_BOOTS, CyrisusBankItem.ABYSSAL_WHIP)),
 	RANGED(1, Arrays.asList(CyrisusBankItem.SPLITBARK_HELM, CyrisusBankItem.KARILS_TOP,
 		CyrisusBankItem.TORAG_LEG, CyrisusBankItem.ADAMANT_BOOTS, CyrisusBankItem.MAGIC_SHORTBOW)),
@@ -55,8 +55,8 @@ enum CyrisusArmourSet
 	public static CyrisusArmourSet getCorrectSet(Client client)
 	{
 		float meleeCombatLevel = client.getRealSkillLevel(Skill.ATTACK) + client.getRealSkillLevel(Skill.STRENGTH);
-		float rangedCombatLevel = client.getRealSkillLevel(Skill.RANGED) * (3f/2f);
-		float magicCombatLevel = client.getRealSkillLevel(Skill.MAGIC) * (3f/2f);
+		float rangedCombatLevel = client.getRealSkillLevel(Skill.RANGED) * (3f / 2f);
+		float magicCombatLevel = client.getRealSkillLevel(Skill.MAGIC) * (3f / 2f);
 
 		if (meleeCombatLevel >= rangedCombatLevel)
 		{

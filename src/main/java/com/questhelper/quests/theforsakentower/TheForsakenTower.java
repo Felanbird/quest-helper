@@ -237,17 +237,17 @@ public class TheForsakenTower extends BasicQuestHelper
 	public List<ExperienceReward> getExperienceRewards()
 	{
 		return Arrays.asList(
-				new ExperienceReward(Skill.MINING, 500),
-				new ExperienceReward(Skill.SMITHING, 500));
+			new ExperienceReward(Skill.MINING, 500),
+			new ExperienceReward(Skill.SMITHING, 500));
 	}
 
 	@Override
 	public List<ItemReward> getItemRewards()
 	{
 		return Arrays.asList(
-				new ItemReward("6000 Coins", ItemID.COINS_995, 6000),
-				new ItemReward("Lovakenj Favour Certificate", ItemID.LOVAKENGJ_FAVOUR_CERTIFICATE, 1),
-				new ItemReward("A page for Kharedst's memoirs.", ItemID.KHAREDSTS_MEMOIRS, 1));
+			new ItemReward("6000 Coins", ItemID.COINS_995, 6000),
+			new ItemReward("Lovakenj Favour Certificate", ItemID.LOVAKENGJ_FAVOUR_CERTIFICATE, 1),
+			new ItemReward("A page for Kharedst's memoirs.", ItemID.KHAREDSTS_MEMOIRS, 1));
 	}
 
 	@Override

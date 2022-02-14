@@ -41,7 +41,7 @@ public class PrayerRequirement extends AbstractRequirement
 	/**
 	 * Checks if the {@link Prayer} is currently active.
 	 *
-	 * @param text the display text
+	 * @param text   the display text
 	 * @param prayer the {@link Prayer} to check
 	 */
 	public PrayerRequirement(String text, Prayer prayer)

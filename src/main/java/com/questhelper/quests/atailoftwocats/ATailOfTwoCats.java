@@ -241,10 +241,10 @@ public class ATailOfTwoCats extends BasicQuestHelper
 	public List<ItemReward> getItemRewards()
 	{
 		return Arrays.asList(
-				new ItemReward("2 x 2,500 Experience Lamps (Any skill over level 30).", ItemID.ANTIQUE_LAMP, 2),
-				new ItemReward("A Doctors hat", ItemID.DOCTORS_HAT, 1),
-				new ItemReward("A Nurse hat", ItemID.NURSE_HAT, 1),
-				new ItemReward("A Mouse Toy", ItemID.MOUSE_TOY, 1)); //4447 Is Placeholder.
+			new ItemReward("2 x 2,500 Experience Lamps (Any skill over level 30).", ItemID.ANTIQUE_LAMP, 2),
+			new ItemReward("A Doctors hat", ItemID.DOCTORS_HAT, 1),
+			new ItemReward("A Nurse hat", ItemID.NURSE_HAT, 1),
+			new ItemReward("A Mouse Toy", ItemID.MOUSE_TOY, 1)); //4447 Is Placeholder.
 	}
 
 	@Override

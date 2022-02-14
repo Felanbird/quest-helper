@@ -237,7 +237,10 @@ public class QuestBankTab
 	@Subscribe
 	public void onClientTick(ClientTick clientTick)
 	{
-		if (!questBankTabInterface.isQuestTabActive() || questBankTabInterface.isHidden()) return;
+		if (!questBankTabInterface.isQuestTabActive() || questBankTabInterface.isHidden())
+		{
+			return;
+		}
 
 		net.runelite.api.Point mousePoint = client.getMouseCanvasPosition();
 		if (fakeToRealItem.isEmpty())

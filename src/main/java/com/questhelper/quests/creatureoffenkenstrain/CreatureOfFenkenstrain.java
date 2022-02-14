@@ -66,7 +66,7 @@ import net.runelite.api.Skill;
 import net.runelite.api.coords.WorldPoint;
 
 @QuestDescriptor(
-        quest = QuestHelperQuest.CREATURE_OF_FENKENSTRAIN
+	quest = QuestHelperQuest.CREATURE_OF_FENKENSTRAIN
 )
 public class CreatureOfFenkenstrain extends BasicQuestHelper
 {
@@ -138,7 +138,7 @@ public class CreatureOfFenkenstrain extends BasicQuestHelper
 		goToMonster.addStep(inMonsterTower, talkToMonster);
 		goToMonster.addStep(new Conditions(usedTowerKey, inCastleFloor1), goToMonsterFloor2);
 		goToMonster.addStep(new Conditions(towerKey, inCastleFloor1), openLockedDoor);
-		
+
 		steps.put(1, gatherBodyParts);
 		steps.put(2, gatherNeedleAndThread);
 		steps.put(3, fixLightningRod);
@@ -439,7 +439,7 @@ public class CreatureOfFenkenstrain extends BasicQuestHelper
 		allSteps.add(new PanelDetails("Attracting lightning",
 			Arrays.asList(talkToGardenerForKey, searchForBrush, grabCanes, extendBrush, goUpWestStairs,
 				searchFirePlace, makeLightningRod, goUpWestStairsWithRod, goUpTowerLadder,
-			repairConductor, goBackToFirstFloor, talkToFenkenstrainAfterFixingRod), ghostSpeakAmulet, bronzeWire,
+				repairConductor, goBackToFirstFloor, talkToFenkenstrainAfterFixingRod), ghostSpeakAmulet, bronzeWire,
 			silverBar, hammer));
 		allSteps.add(new PanelDetails("Facing the monster", Arrays.asList(goToMonsterFloor1,
 			openLockedDoor, goToMonsterFloor2, talkToMonster)));

@@ -121,7 +121,7 @@ public class ThroneOfMiscellania extends BasicQuestHelper
 		courtBrand.addStep(new Conditions(inMiscCastleFirstFloor, talked2P1, talked2P2, talked2P3), giveCakeToBrand);
 		courtBrand.addStep(new Conditions(inMiscCastleFirstFloor, talked1P4), talkBrand2);
 		courtBrand.addStep(new Conditions(inMiscCastleFirstFloor, talked1P3, talked1P2, talked1P3, givenFlowers), clapForBrand);
-		courtBrand.addStep(new Conditions(inMiscCastleFirstFloor,talked1P1, talked1P2, talked1P3), giveFlowersToBrand);
+		courtBrand.addStep(new Conditions(inMiscCastleFirstFloor, talked1P1, talked1P2, talked1P3), giveFlowersToBrand);
 		courtBrand.addStep(inMiscCastleFirstFloor, talkBrand1);
 		courtBrand.addStep(inIslands, goUpstairsToBrand);
 
@@ -243,7 +243,7 @@ public class ThroneOfMiscellania extends BasicQuestHelper
 		awfulAnthem = new ItemRequirement("Awful anthem", ItemID.AWFUL_ANTHEM);
 		goodAnthem = new ItemRequirement("Good anthem", ItemID.GOOD_ANTHEM);
 		treaty = new ItemRequirement("Treaty", ItemID.TREATY);
-		
+
 		String repItemsString = "One of: ";
 		if (client.getRealSkillLevel(Skill.FARMING) >= 10)
 		{
@@ -510,8 +510,8 @@ public class ThroneOfMiscellania extends BasicQuestHelper
 	public List<UnlockReward> getUnlockRewards()
 	{
 		return Arrays.asList(
-				new UnlockReward("Ability to manage Miscellania."),
-				new UnlockReward("Ability to teleport to Miscellania with the Ring of Wealth."));
+			new UnlockReward("Ability to manage Miscellania."),
+			new UnlockReward("Ability to teleport to Miscellania with the Ring of Wealth."));
 	}
 
 	@Override

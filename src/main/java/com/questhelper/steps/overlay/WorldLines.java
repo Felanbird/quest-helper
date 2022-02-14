@@ -59,7 +59,7 @@ public class WorldLines
 	}
 
 	public static void createMinimapLines(Graphics2D graphics, Client client, List<WorldPoint> linePoints,
-									  Color color)
+										  Color color)
 	{
 		if (linePoints == null || linePoints.size() < 2)
 		{
@@ -68,7 +68,7 @@ public class WorldLines
 		for (int i = 0; i < linePoints.size() - 1; i++)
 		{
 			LocalPoint startPoint = QuestPerspective.getInstanceLocalPoint(client, linePoints.get(i));
-			LocalPoint destinationPoint = QuestPerspective.getInstanceLocalPoint(client, linePoints.get(i+1));
+			LocalPoint destinationPoint = QuestPerspective.getInstanceLocalPoint(client, linePoints.get(i + 1));
 			if (startPoint == null || destinationPoint == null)
 			{
 				continue;
@@ -106,7 +106,7 @@ public class WorldLines
 	}
 
 	public static void renderWorldMapLine(Graphics2D graphics, Client client, Rectangle mapViewArea, Point startPoint,
-									Point endPoint, Color color)
+										  Point endPoint, Color color)
 	{
 		if (mapViewArea == null || startPoint == null || endPoint == null)
 		{
@@ -153,12 +153,12 @@ public class WorldLines
 	}
 
 	public static void drawLinesOnWorld(Graphics2D graphics, Client client, List<WorldPoint> linePoints,
-									   Color color)
+										Color color)
 	{
 		for (int i = 0; i < linePoints.size() - 1; i++)
 		{
 			LocalPoint startLp = QuestPerspective.getInstanceLocalPoint(client, linePoints.get(i));
-			LocalPoint endLp = QuestPerspective.getInstanceLocalPoint(client, linePoints.get(i+1));
+			LocalPoint endLp = QuestPerspective.getInstanceLocalPoint(client, linePoints.get(i + 1));
 			if (startLp == null || endLp == null)
 			{
 				continue;

@@ -165,7 +165,7 @@ public class QuestOverviewPanel extends JPanel
 		overviewPanel.add(generateRequirementPanel(questOverviewNotesPanel, questNoteHeader, "Notes:"));
 		overviewPanel.add(generateRequirementPanel(questRewardPanel, questRewardHeader,
 			"Rewards:"));
-		overviewPanel.add(generateRequirementPanel(externalQuestResourcesPanel, externalQuestResourcesHeader , "External Resources:"));
+		overviewPanel.add(generateRequirementPanel(externalQuestResourcesPanel, externalQuestResourcesHeader, "External Resources:"));
 
 		introPanel.add(overviewPanel, BorderLayout.NORTH);
 
@@ -289,7 +289,7 @@ public class QuestOverviewPanel extends JPanel
 				boolean highlighted = false;
 				panel.setLockable(panel.panelDetails.getLockingQuestSteps() != null &&
 					(panel.panelDetails.getVars() == null || panel.panelDetails.getVars().contains(currentQuest.getVar())));
-				
+
 				for (QuestStep step : panel.getSteps())
 				{
 					if (step == newStep || step.getSubsteps().contains(newStep))
@@ -381,10 +381,22 @@ public class QuestOverviewPanel extends JPanel
 
 		/* Rewards */
 		List<Reward> rewards = new ArrayList<>();
-		if (quest.getQuestPointReward() != null) rewards.add(quest.getQuestPointReward());
-		if (quest.getExperienceRewards() != null) rewards.addAll(quest.getExperienceRewards());
-		if (quest.getItemRewards() != null) rewards.addAll(quest.getItemRewards());
-		if (quest.getUnlockRewards() != null) rewards.addAll(quest.getUnlockRewards());
+		if (quest.getQuestPointReward() != null)
+		{
+			rewards.add(quest.getQuestPointReward());
+		}
+		if (quest.getExperienceRewards() != null)
+		{
+			rewards.addAll(quest.getExperienceRewards());
+		}
+		if (quest.getItemRewards() != null)
+		{
+			rewards.addAll(quest.getItemRewards());
+		}
+		if (quest.getUnlockRewards() != null)
+		{
+			rewards.addAll(quest.getUnlockRewards());
+		}
 
 		updateRewardsPanels(rewards);
 	}
@@ -412,7 +424,7 @@ public class QuestOverviewPanel extends JPanel
 	}
 
 	private void updateItemRequirementsPanels(JPanel listPanel, List<QuestRequirementPanel> panels,
-										  List<ItemRequirement> requirements)
+											  List<ItemRequirement> requirements)
 	{
 		if (requirements != null)
 		{
@@ -501,21 +513,26 @@ public class QuestOverviewPanel extends JPanel
 		//Button variable properties
 		wikiBtn.setText("<html><body>" + quest.getQuest().getName() + " Wiki </body></html>");
 
-		wikiBtn.addMouseListener(new java.awt.event.MouseAdapter() {
-			public void mouseEntered(java.awt.event.MouseEvent evt) {
+		wikiBtn.addMouseListener(new java.awt.event.MouseAdapter()
+		{
+			public void mouseEntered(java.awt.event.MouseEvent evt)
+			{
 				wikiBtn.setForeground(Color.blue.brighter().brighter().brighter());
 				wikiBtn.setText("<html><body style = 'text-decoration:underline'>" + quest.getQuest().getName() + " Wiki </body></html>");
 			}
 
-			public void mouseExited(java.awt.event.MouseEvent evt) {
+			public void mouseExited(java.awt.event.MouseEvent evt)
+			{
 				wikiBtn.setForeground(Color.white);
 				wikiBtn.setText("<html><body>" + quest.getQuest().getName() + " Wiki </body></html>");
 			}
 		});
 
 		//Access URL values from ExternalQuestResources enum class
-		for (ExternalQuestResources externalResource : externalResourcesList) {
-			if (externalResource.getWikiURL().length() > 0) {
+		for (ExternalQuestResources externalResource : externalResourcesList)
+		{
+			if (externalResource.getWikiURL().length() > 0)
+			{
 				wikiBtn.addActionListener((ev) -> LinkBrowser.browse(externalResource.getWikiURL()));
 			}
 		}

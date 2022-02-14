@@ -517,8 +517,8 @@ public class DesertTreasure extends BasicQuestHelper
 		placeBlood = new ObjectStep(this, NullObjectID.NULL_6482, new WorldPoint(3221, 2910, 0),
 			"Place all the diamonds in the obelisks around the pyramid south east of the Bandit Camp. Note a " +
 				"mysterious stranger can appear and attack you whilst you're holding the diamonds.",
-			bloodDiamondHighlighted,	smokeDiamond,
-			iceDiamond,	shadowDiamond);
+			bloodDiamondHighlighted, smokeDiamond,
+			iceDiamond, shadowDiamond);
 		placeBlood.addIcon(ItemID.BLOOD_DIAMOND);
 
 		placeSmoke = new ObjectStep(this, NullObjectID.NULL_6485, new WorldPoint(3245, 2910, 0),
@@ -541,10 +541,10 @@ public class DesertTreasure extends BasicQuestHelper
 		placeBlood.addSubSteps(placeSmoke, placeShadow, placeIce);
 
 		enterPyramid = new ObjectStep(this, ObjectID.LADDER_6497, new WorldPoint(3233, 2897, 0),
-				"Bring any energy/stamina potions you have, some food, and enter the pyramid south east of the Bandit Camp.", energyOrStaminas, food, antipoison);
+			"Bring any energy/stamina potions you have, some food, and enter the pyramid south east of the Bandit Camp.", energyOrStaminas, food, antipoison);
 
 		goDownFromFirstFloor = new ObjectStep(this, ObjectID.LADDER_6498, new WorldPoint(2909, 4964, 3), "Go down to the bottom of the pyramid. " +
-				"You may randomly fall out of the pyramid as you traverse it and need to start again.");
+			"You may randomly fall out of the pyramid as you traverse it and need to start again.");
 		goDownFromSecondFloor = new ObjectStep(this, ObjectID.LADDER_6499, new WorldPoint(2846, 4973, 2), "Go down to the bottom of the pyramid.");
 		goDownFromThirdFloor = new ObjectStep(this, ObjectID.LADDER_6500, new WorldPoint(2784, 4941, 1), "Go down to the bottom of the pyramid.");
 
@@ -603,9 +603,9 @@ public class DesertTreasure extends BasicQuestHelper
 	public List<UnlockReward> getUnlockRewards()
 	{
 		return Arrays.asList(
-				new UnlockReward("Ability to use Ancient Magicks."),
-				new UnlockReward("Ability to purchase an Ancient Staff."),
-				new UnlockReward("Access to Smoke Dungeon."));
+			new UnlockReward("Ability to use Ancient Magicks."),
+			new UnlockReward("Ability to purchase an Ancient Staff."),
+			new UnlockReward("Access to Smoke Dungeon."));
 	}
 
 	@Override
@@ -615,7 +615,7 @@ public class DesertTreasure extends BasicQuestHelper
 		allSteps.add(new PanelDetails("Starting off",
 			Arrays.asList(talkToArchaeologist, talkToExpert, talkToExpertAgain,
 				bringTranslationToArchaeologist, talkToArchaeologistAgainAfterTranslation, buyDrink, talkToBartender, talkToEblis, bringItemsToEblis), coins650, ashes, bloodRune, bones, charcoal, moltenGlass6,
-				magicLogs12, steelBars6));
+			magicLogs12, steelBars6));
 
 		PanelDetails smokeDiamondPanel = new PanelDetails("Smoke diamond",
 			Arrays.asList(enterSmokeDungeon, lightTorch1, openChest, useWarmKey, killFareed), faceMask, tinderbox, iceGloves, waterSpellOrMelee, energyOrStaminas);

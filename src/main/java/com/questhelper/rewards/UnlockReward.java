@@ -28,24 +28,24 @@ import javax.annotation.Nonnull;
 
 public class UnlockReward implements Reward
 {
-    private final String unlock;
+	private final String unlock;
 
-    public UnlockReward(String unlock)
-    {
-        this.unlock = unlock;
-    }
+	public UnlockReward(String unlock)
+	{
+		this.unlock = unlock;
+	}
 
-    @Nonnull
-    @Override
-    public RewardType rewardType()
-    {
-        return RewardType.UNLOCK;
-    }
+	@Nonnull
+	@Override
+	public RewardType rewardType()
+	{
+		return RewardType.UNLOCK;
+	}
 
-    @Nonnull
-    @Override
-    public String getDisplayText()
-    {
-        return unlock;
-    }
+	@Nonnull
+	@Override
+	public String getDisplayText()
+	{
+		return unlock;
+	}
 }

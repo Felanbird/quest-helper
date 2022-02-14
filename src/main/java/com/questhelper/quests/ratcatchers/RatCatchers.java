@@ -144,7 +144,7 @@ public class RatCatchers extends BasicQuestHelper
 		steps.put(40, talkToJack);
 		steps.put(45, talkToJack);
 
-		ConditionalStep	goPoisonRats = new ConditionalStep(this, climbJackLadder);
+		ConditionalStep goPoisonRats = new ConditionalStep(this, climbJackLadder);
 		goPoisonRats.addStep(new Conditions(inGiantRatArea, poisonedCheese1, poisonedHole1, poisonedHole2, poisonedHole3),
 			useCheeseOnHole4);
 		goPoisonRats.addStep(new Conditions(inGiantRatArea, poisonedCheese1, poisonedHole1, poisonedHole2), useCheeseOnHole3);
@@ -441,7 +441,7 @@ public class RatCatchers extends BasicQuestHelper
 			"Talk to The Face in Port Sarim again.", cat, catspeakAmuletOrDS2);
 
 		useCoinOnPot = new ObjectStep(this, ObjectID.MONEY_POT, new WorldPoint(3355, 2953, 0),
-		"Use a coin on the pot next to the Snake Charmer in Pollnivneach.", coin.quantity(101).highlighted());
+			"Use a coin on the pot next to the Snake Charmer in Pollnivneach.", coin.quantity(101).highlighted());
 		useCoinOnPot.addDialogSteps("I want to talk to you about animal charming.", "Forget about it. I don't care.",
 			"What if I offered you some money?", "Walk away slowly", "Stop");
 		useCoinOnPot.addIcon(ItemID.COINS);
@@ -506,8 +506,8 @@ public class RatCatchers extends BasicQuestHelper
 	public List<UnlockReward> getUnlockRewards()
 	{
 		return Arrays.asList(
-				new UnlockReward("Access to the Rat Pits"),
-				new UnlockReward("Ability to train Overgrown Cats into Wiley and Lazy Cats"));
+			new UnlockReward("Access to the Rat Pits"),
+			new UnlockReward("Ability to train Overgrown Cats into Wiley and Lazy Cats"));
 	}
 
 	@Override

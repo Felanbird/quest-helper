@@ -41,16 +41,23 @@ import net.runelite.api.ItemContainer;
  */
 public enum InventorySlots
 {
-	/** Represents the equipment slots of a player */
+	/**
+	 * Represents the equipment slots of a player
+	 */
 	EQUIPMENT_SLOTS(InventoryID.EQUIPMENT),
-	/** Represents the inventory slots of a player */
+	/**
+	 * Represents the inventory slots of a player
+	 */
 	INVENTORY_SLOTS(InventoryID.INVENTORY),
-	/** Represents both equipment and inventory slots of a player */
+	/**
+	 * Represents both equipment and inventory slots of a player
+	 */
 	EQUIPMENT_AND_INVENTORY_SLOTS(InventoryID.INVENTORY, InventoryID.EQUIPMENT),
 	BANK(InventoryID.BANK),
 	;
 
 	private final InventoryID[] inventoryID;
+
 	InventorySlots(InventoryID... inventoryID)
 	{
 		this.inventoryID = inventoryID;
@@ -58,8 +65,8 @@ public enum InventorySlots
 
 	/**
 	 * Checks that all the {@link Item}s in a client's {@link ItemContainer} match the given predicate.
-	 * 
-	 * @param client the {@link Client} to check
+	 *
+	 * @param client    the {@link Client} to check
 	 * @param predicate the predicate to use
 	 * @return true if ALL the items match the predicate via {@link Stream#allMatch(Predicate)}
 	 */
@@ -78,7 +85,7 @@ public enum InventorySlots
 	 * Check if any of the {@link Item} in a client's {@link ItemContainer} match
 	 * the given predicate.
 	 *
-	 * @param client the {@link Client} to check
+	 * @param client    the {@link Client} to check
 	 * @param predicate the predicate to use
 	 * @return true if ANY of the items match the predicate
 	 */

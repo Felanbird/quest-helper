@@ -382,9 +382,9 @@ public class MisthalinMystery extends BasicQuestHelper
 	public List<ItemReward> getItemRewards()
 	{
 		return Arrays.asList(
-				new ItemReward("Uncut Ruby", ItemID.UNCUT_RUBY, 1),
-				new ItemReward("Uncut Emerald", ItemID.UNCUT_EMERALD, 1),
-				new ItemReward("Uncut Sapphire", ItemID.UNCUT_SAPPHIRE, 1));
+			new ItemReward("Uncut Ruby", ItemID.UNCUT_RUBY, 1),
+			new ItemReward("Uncut Emerald", ItemID.UNCUT_EMERALD, 1),
+			new ItemReward("Uncut Sapphire", ItemID.UNCUT_SAPPHIRE, 1));
 	}
 
 	@Override

@@ -222,7 +222,7 @@ public class DragonSlayer extends BasicQuestHelper
 		skeletonKey = new ItemRequirement("Key", ItemID.KEY_1545);
 		zombieKey = new ItemRequirement("Key", ItemID.KEY_1546);
 		melzarKey = new ItemRequirement("Key", ItemID.KEY_1547);
-		demonKey = 	new ItemRequirement("Key", ItemID.KEY_1548);
+		demonKey = new ItemRequirement("Key", ItemID.KEY_1548);
 		combatGear = new ItemRequirement("Combat equipment", -1, -1);
 		combatGear.setDisplayItemId(BankSlotIcons.getCombatGear());
 		food = new ItemRequirement("Food", ItemCollections.getGoodEatingFood(), -1);
@@ -262,14 +262,14 @@ public class DragonSlayer extends BasicQuestHelper
 		roomToBasement1 = new Zone(new WorldPoint(2937, 3237, 0), new WorldPoint(2940, 3245, 0));
 		roomToBasement2 = new Zone(new WorldPoint(2932, 3240, 0), new WorldPoint(2936, 3242, 0));
 
-		zombieRoom = new Zone(new WorldPoint(2931, 9639, 0), new WorldPoint( 2933, 9644, 0));
-		melzarRoom1 = new Zone(new WorldPoint(2927, 9643, 0), new WorldPoint( 2930, 9651, 0));
-		melzarRoom2 = new Zone(new WorldPoint(2931, 9646, 0), new WorldPoint( 2931, 9651, 0));
+		zombieRoom = new Zone(new WorldPoint(2931, 9639, 0), new WorldPoint(2933, 9644, 0));
+		melzarRoom1 = new Zone(new WorldPoint(2927, 9643, 0), new WorldPoint(2930, 9651, 0));
+		melzarRoom2 = new Zone(new WorldPoint(2931, 9646, 0), new WorldPoint(2931, 9651, 0));
 
-		demonRoom1 = new Zone(new WorldPoint(2924, 9652, 0), new WorldPoint( 2933, 9655, 0));
-		demonRoom2 = new Zone(new WorldPoint(2934, 9647, 0), new WorldPoint( 2933, 9658, 0));
+		demonRoom1 = new Zone(new WorldPoint(2924, 9652, 0), new WorldPoint(2933, 9655, 0));
+		demonRoom2 = new Zone(new WorldPoint(2934, 9647, 0), new WorldPoint(2933, 9658, 0));
 		melzarsMaze = new Zone(new WorldPoint(2922, 3237, 0), new WorldPoint(2942, 9658, 0));
-		melzarsBasement = new Zone(new WorldPoint(2920, 9639, 0), new WorldPoint(1,2,0));
+		melzarsBasement = new Zone(new WorldPoint(2920, 9639, 0), new WorldPoint(1, 2, 0));
 
 		lastMelzarRoom1 = new Zone(new WorldPoint(2924, 9656, 0), new WorldPoint(2942, 9656, 0));
 		lastMelzarRoom2 = new Zone(new WorldPoint(2926, 9657, 0), new WorldPoint(2942, 9657, 0));
@@ -369,13 +369,13 @@ public class DragonSlayer extends BasicQuestHelper
 		talkToOracle = new NpcStep(this, NpcID.ORACLE, new WorldPoint(3014, 3501, 0), "Talk to the Oracle on top of Ice Mountain.", silk, lobsterPot, mindBomb, unfiredBowl);
 		talkToOracle.addDialogStep("I seek a piece of the map to the island of Crandor.");
 
-		goIntoDwarvenMine = new ObjectStep(this, ObjectID.TRAPDOOR_11867, new WorldPoint(3019, 3450,0), "Go down the ladder in the dwarven camp to the south into the Dwarven Mines.", silk, lobsterPot, mindBomb, unfiredBowl);
+		goIntoDwarvenMine = new ObjectStep(this, ObjectID.TRAPDOOR_11867, new WorldPoint(3019, 3450, 0), "Go down the ladder in the dwarven camp to the south into the Dwarven Mines.", silk, lobsterPot, mindBomb, unfiredBowl);
 
 		useSilkOnDoor = new ObjectStep(this, ObjectID.MAGIC_DOOR_25115, new WorldPoint(3050, 9840, 0), "Go to the north east of the Dwarven Mines and use the silk on the magic door.", silk, lobsterPot, mindBomb, unfiredBowl);
 		useSilkOnDoor.addIcon(ItemID.SILK);
 		usePotOnDoor = new ObjectStep(this, ObjectID.MAGIC_DOOR_25115, new WorldPoint(3050, 9840, 0), "Go to the north east of the Dwarven Mines and use the lobster pot on the magic door.", lobsterPot, mindBomb, unfiredBowl);
 		usePotOnDoor.addIcon(ItemID.LOBSTER_POT);
-		useUnfiredBowlOnDoor = new ObjectStep(this, ObjectID.MAGIC_DOOR_25115, new WorldPoint(3050, 9840, 0), "Go to the north east of the Dwarven Mines and use the unfired bowl on the magic door.",  mindBomb, unfiredBowl);
+		useUnfiredBowlOnDoor = new ObjectStep(this, ObjectID.MAGIC_DOOR_25115, new WorldPoint(3050, 9840, 0), "Go to the north east of the Dwarven Mines and use the unfired bowl on the magic door.", mindBomb, unfiredBowl);
 		useUnfiredBowlOnDoor.addIcon(ItemID.UNFIRED_BOWL);
 		useMindBombOnDoor = new ObjectStep(this, ObjectID.MAGIC_DOOR_25115, new WorldPoint(3050, 9840, 0), "Go to the north east of the Dwarven Mines and use the wizard's mind bomb on the magic door (BE CAREFUL NOT TO DRINK IT).", lobsterPot, mindBomb, unfiredBowl);
 		useMindBombOnDoor.addIcon(ItemID.WIZARDS_MIND_BOMB);
@@ -522,18 +522,18 @@ public class DragonSlayer extends BasicQuestHelper
 	public List<ExperienceReward> getExperienceRewards()
 	{
 		return Arrays.asList(
-				new ExperienceReward(Skill.STRENGTH, 18650),
-				new ExperienceReward(Skill.DEFENCE, 18650));
+			new ExperienceReward(Skill.STRENGTH, 18650),
+			new ExperienceReward(Skill.DEFENCE, 18650));
 	}
 
 	@Override
 	public List<UnlockReward> getUnlockRewards()
 	{
 		return Arrays.asList(
-				new UnlockReward("The abiltiy to equip a Green D'hide Body, Rune Platebody & Dragon Platebody"),
-				new UnlockReward("Access to Crandor"),
-				new UnlockReward("Access to the Corsair Cove Resource Area."),
-				new UnlockReward("Ability to receive dragons as a slayer task."));
+			new UnlockReward("The abiltiy to equip a Green D'hide Body, Rune Platebody & Dragon Platebody"),
+			new UnlockReward("Access to Crandor"),
+			new UnlockReward("Access to the Corsair Cove Resource Area."),
+			new UnlockReward("Ability to receive dragons as a slayer task."));
 	}
 
 	@Override

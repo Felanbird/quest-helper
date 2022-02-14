@@ -35,7 +35,7 @@ import lombok.Getter;
 public enum MageArenaTemperature
 {
 	VERY_COLD("is very cold", 200, 5000),
-	COLD("is cold",  150, 199),
+	COLD("is cold", 150, 199),
 	HOT("is hot", 70, 149),
 	VERY_HOT("is very hot", 30, 69),
 	INCREDIBLY_HOT("is incredibly hot", 15, 29),

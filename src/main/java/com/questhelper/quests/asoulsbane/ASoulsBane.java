@@ -257,7 +257,7 @@ public class ASoulsBane extends BasicQuestHelper
 
 		killRealConfusionBeast = new NpcStep(this, NpcID.CONFUSION_BEAST, new WorldPoint(3055, 5199, 0),
 			"Attack the confusion beasts until you find one which takes damage, and kill it. The others will take 8 " +
-				"hits to die.",	true);
+				"hits to die.", true);
 		((NpcStep) killRealConfusionBeast).addAlternateNpcs(NpcID.CONFUSION_BEAST_1068, NpcID.CONFUSION_BEAST_1069,
 			NpcID.CONFUSION_BEAST_1070, NpcID.CONFUSION_BEAST_1071);
 
@@ -304,8 +304,8 @@ public class ASoulsBane extends BasicQuestHelper
 	public List<ExperienceReward> getExperienceRewards()
 	{
 		return Arrays.asList(
-				new ExperienceReward(Skill.DEFENCE, 500),
-				new ExperienceReward(Skill.HITPOINTS, 500));
+			new ExperienceReward(Skill.DEFENCE, 500),
+			new ExperienceReward(Skill.HITPOINTS, 500));
 	}
 
 	@Override

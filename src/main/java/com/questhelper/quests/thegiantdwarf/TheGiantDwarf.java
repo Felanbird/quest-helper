@@ -76,7 +76,7 @@ public class TheGiantDwarf extends BasicQuestHelper
 	//Items Required
 	ItemRequirement coins2500, logs, tinderbox, coal, ironBar, lawRune, airRune, sapphires3, oresBars, redberryPie, redberryPieNoInfo,
 		weightBelow30, inventorySpace, coins200, bookOnCostumes, exquisiteClothes, exquisiteBoots, dwarvenBattleaxe, leftBoot,
-			dwarvenBattleaxeBroken, dwarvenBattleaxeSapphires;
+		dwarvenBattleaxeBroken, dwarvenBattleaxeSapphires;
 
 	Requirement weightBelow30Check, inventorySpaceCheck;
 
@@ -521,12 +521,12 @@ public class TheGiantDwarf extends BasicQuestHelper
 	public List<ExperienceReward> getExperienceRewards()
 	{
 		return Arrays.asList(
-				new ExperienceReward(Skill.MINING, 2500),
-				new ExperienceReward(Skill.SMITHING, 2500),
-				new ExperienceReward(Skill.CRAFTING, 2500),
-				new ExperienceReward(Skill.MAGIC, 1500),
-				new ExperienceReward(Skill.THIEVING, 1500),
-				new ExperienceReward(Skill.FIREMAKING, 1500));
+			new ExperienceReward(Skill.MINING, 2500),
+			new ExperienceReward(Skill.SMITHING, 2500),
+			new ExperienceReward(Skill.CRAFTING, 2500),
+			new ExperienceReward(Skill.MAGIC, 1500),
+			new ExperienceReward(Skill.THIEVING, 1500),
+			new ExperienceReward(Skill.FIREMAKING, 1500));
 	}
 
 	@Override

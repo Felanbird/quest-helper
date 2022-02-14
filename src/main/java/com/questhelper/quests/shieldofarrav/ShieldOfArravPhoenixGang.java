@@ -62,7 +62,7 @@ public class ShieldOfArravPhoenixGang extends BasicQuestHelper
 	//Items Required
 	ItemRequirement book, intelReport, twentyCoins, shieldHalf, certificateHalf, blackArmCertificateHalf, certificate;
 
-	Requirement inPhoenixEntry,intelReportNearby, inPhoenixBase, chestOpen;
+	Requirement inPhoenixEntry, intelReportNearby, inPhoenixBase, chestOpen;
 
 	QuestStep startQuest, searchBookcase, talkToReldoAgain, talkToBaraek, goDownToPhoenixGang, talkToStraven, goUpFromPhoenixGang, killJonny, pickupIntelReport,
 		returnDownLadder, talkToStravenAgain, getShieldHalf, getShieldHalf1, tradeCertificateHalf, combineCertificate, talkToHaig, talkToRoald, leaveAfterGettingShieldHalf;

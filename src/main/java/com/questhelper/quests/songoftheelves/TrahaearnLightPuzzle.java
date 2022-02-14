@@ -238,12 +238,12 @@ public class TrahaearnLightPuzzle extends ConditionalStep
 			"Add a mirror to the pillar to the east. Rotate it to point the light up.", handMirrorHighlighted);
 		p1Pillar6.addIcon(ItemID.HAND_MIRROR_23775);
 
-		p1Pillar7 = new ObjectStep(getQuestHelper(), ObjectID.PILLAR_OF_LIGHT_35087, new WorldPoint(2581, 6116,2),
+		p1Pillar7 = new ObjectStep(getQuestHelper(), ObjectID.PILLAR_OF_LIGHT_35087, new WorldPoint(2581, 6116, 2),
 			"Add a mirror to the pillar to the south. Rotate it to point the light north.", handMirrorHighlighted);
 		p1Pillar7.setWorldMapPoint(new WorldPoint(2965, 6116, 2));
 		p1Pillar7.addIcon(ItemID.HAND_MIRROR_23775);
 
-		p1Pillar8 = new ObjectStep(getQuestHelper(), ObjectID.PILLAR_OF_LIGHT_35088, new WorldPoint(2581, 6130,2),
+		p1Pillar8 = new ObjectStep(getQuestHelper(), ObjectID.PILLAR_OF_LIGHT_35088, new WorldPoint(2581, 6130, 2),
 			"Add a mirror to the pillar to the north. Rotate it to point the light east.", handMirrorHighlighted);
 		p1Pillar8.setWorldMapPoint(new WorldPoint(2965, 6130, 2));
 		p1Pillar8.addIcon(ItemID.HAND_MIRROR_23775);

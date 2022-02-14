@@ -474,27 +474,28 @@ public class HeroesQuest extends BasicQuestHelper
 	public List<ExperienceReward> getExperienceRewards()
 	{
 		return Arrays.asList(
-				new ExperienceReward(Skill.ATTACK, 3075),
-				new ExperienceReward(Skill.DEFENCE, 3075),
-				new ExperienceReward(Skill.STRENGTH, 3075),
-				new ExperienceReward(Skill.RANGED, 2075),
-				new ExperienceReward(Skill.HITPOINTS, 3075),
-				new ExperienceReward(Skill.FISHING, 2725),
-				new ExperienceReward(Skill.COOKING, 2825),
-				new ExperienceReward(Skill.WOODCUTTING, 1575),
-				new ExperienceReward(Skill.FIREMAKING, 1575),
-				new ExperienceReward(Skill.SMITHING, 2257),
-				new ExperienceReward(Skill.MINING, 2275),
-				new ExperienceReward(Skill.HERBLORE, 1325));
+			new ExperienceReward(Skill.ATTACK, 3075),
+			new ExperienceReward(Skill.DEFENCE, 3075),
+			new ExperienceReward(Skill.STRENGTH, 3075),
+			new ExperienceReward(Skill.RANGED, 2075),
+			new ExperienceReward(Skill.HITPOINTS, 3075),
+			new ExperienceReward(Skill.FISHING, 2725),
+			new ExperienceReward(Skill.COOKING, 2825),
+			new ExperienceReward(Skill.WOODCUTTING, 1575),
+			new ExperienceReward(Skill.FIREMAKING, 1575),
+			new ExperienceReward(Skill.SMITHING, 2257),
+			new ExperienceReward(Skill.MINING, 2275),
+			new ExperienceReward(Skill.HERBLORE, 1325));
 	}
+
 	@Override
 	public List<UnlockReward> getUnlockRewards()
 	{
 		return Arrays.asList(
-				new UnlockReward("Access to the Hero's Guild."),
-				new UnlockReward("Ability to use the Fountain of Rune."),
-				new UnlockReward("Ability to use Charge Dragonstone Jewellery scrolls."),
-				new UnlockReward("Ability to purchase and equip Dragon Battleaxes and Maces."));
+			new UnlockReward("Access to the Hero's Guild."),
+			new UnlockReward("Ability to use the Fountain of Rune."),
+			new UnlockReward("Ability to use Charge Dragonstone Jewellery scrolls."),
+			new UnlockReward("Ability to purchase and equip Dragon Battleaxes and Maces."));
 	}
 
 	@Override
@@ -531,7 +532,7 @@ public class HeroesQuest extends BasicQuestHelper
 		}
 		else
 		{
-			thirdPanel = new PanelDetails("Get thieves' armband", 
+			thirdPanel = new PanelDetails("Get thieves' armband",
 				Arrays.asList(talkToStraven, talkToAlfonse, getKeyFromPartner, talkToCharlie, pushWall, useKeyOnDoor,
 					killGrip, bringCandlestickToStraven), rangedMage);
 		}

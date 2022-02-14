@@ -184,8 +184,8 @@ public class TheMageArenaI extends BasicQuestHelper
 	public List<ItemReward> getItemRewards()
 	{
 		return Arrays.asList(
-				new ItemReward("A God Staff", ItemID.ZAMORAK_STAFF, 1),
-				new ItemReward("A God Cape", ItemID.ZAMORAK_CAPE, 1));
+			new ItemReward("A God Staff", ItemID.ZAMORAK_STAFF, 1),
+			new ItemReward("A God Cape", ItemID.ZAMORAK_CAPE, 1));
 	}
 
 	@Override

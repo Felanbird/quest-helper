@@ -34,7 +34,7 @@ public class ItemStep extends DetailedQuestStep
 			}
 
 			int startX = poly.getBounds().x + (poly.getBounds().width / 2);
-			int startY =  poly.getBounds().y + (poly.getBounds().height / 2);
+			int startY = poly.getBounds().y + (poly.getBounds().height / 2);
 
 			DirectionArrow.drawWorldArrow(graphics, getQuestHelper().getConfig().targetOverlayColor(), startX, startY);
 		});

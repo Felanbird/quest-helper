@@ -75,7 +75,7 @@ public class OlafsQuest extends BasicQuestHelper
 		triangleKey, circleKey, starKey;
 
 	//Items Recommended
-	ItemRequirement  prayerPotions, food, combatGear;
+	ItemRequirement prayerPotions, food, combatGear;
 
 	Requirement givenIngridCarving, inFirstArea, inSecondArea, inThirdArea, keyNearby, puzzleOpen, has2Barrels6Ropes, hasBarrel3Ropes, placedBarrel1, placedBarrel2,
 		keyInterfaceOpen, ulfricNearby, killedUlfric;

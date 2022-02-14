@@ -272,8 +272,8 @@ public class ErnestTheChicken extends BasicQuestHelper
 	public List<UnlockReward> getUnlockRewards()
 	{
 		return Arrays.asList(
-				new UnlockReward("Access to the Killerwatt plane (Members Only)."),
-				new UnlockReward("Ability to be assigned Killerwatts as a Slayer task."));
+			new UnlockReward("Access to the Killerwatt plane (Members Only)."),
+			new UnlockReward("Ability to be assigned Killerwatts as a Slayer task."));
 	}
 
 	@Override

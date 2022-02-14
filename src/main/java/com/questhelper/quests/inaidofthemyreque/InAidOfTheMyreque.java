@@ -587,17 +587,18 @@ public class InAidOfTheMyreque extends BasicQuestHelper
 	public List<ExperienceReward> getExperienceRewards()
 	{
 		return Arrays.asList(
-				new ExperienceReward(Skill.ATTACK, 2000),
-				new ExperienceReward(Skill.STRENGTH, 2000),
-				new ExperienceReward(Skill.CRAFTING, 2000),
-				new ExperienceReward(Skill.DEFENCE, 2000));
+			new ExperienceReward(Skill.ATTACK, 2000),
+			new ExperienceReward(Skill.STRENGTH, 2000),
+			new ExperienceReward(Skill.CRAFTING, 2000),
+			new ExperienceReward(Skill.DEFENCE, 2000));
 	}
 
 	@Override
-	public List<UnlockReward> getUnlockRewards() {
+	public List<UnlockReward> getUnlockRewards()
+	{
 		return Arrays.asList(
-				new UnlockReward("Access to Temple Trekking Minigame."),
-				new UnlockReward("Ability to make the Rod of Ivandis"));
+			new UnlockReward("Access to Temple Trekking Minigame."),
+			new UnlockReward("Ability to make the Rod of Ivandis"));
 	}
 
 	@Override

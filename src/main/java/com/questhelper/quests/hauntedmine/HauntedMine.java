@@ -67,7 +67,7 @@ public class HauntedMine extends BasicQuestHelper
 {
 	//Items Required
 	ItemRequirement zealotsKey, chisel, glowingFungus, glowingFungusHighlight, crystalMineKey, combatGear,
-	zealotsKeyHighlighted, food;
+		zealotsKeyHighlighted, food;
 
 	Requirement askedAboutKey, inLevel1South, valveOpened, valveOpen, hasKeyOrOpenedValve,
 		inLiftRoom, inLevel2North, inLevel3North, inLevel2South, inLevel3South, inCartRoom, inCollectRoom, leverAWrong, leverBWrong,
@@ -400,8 +400,8 @@ public class HauntedMine extends BasicQuestHelper
 	public List<UnlockReward> getUnlockRewards()
 	{
 		return Arrays.asList(
-				new UnlockReward("Ability to create the Salve Amulet"),
-				new UnlockReward("Ability to access Tarn's Lair"));
+			new UnlockReward("Ability to create the Salve Amulet"),
+			new UnlockReward("Ability to access Tarn's Lair"));
 	}
 
 	@Override

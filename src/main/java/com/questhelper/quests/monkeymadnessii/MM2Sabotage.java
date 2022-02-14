@@ -173,7 +173,7 @@ public class MM2Sabotage extends ConditionalStep
 		goFromF0WithSatchelToF1.setHideMinimapLines(true);
 
 		goF0Reset = new ObjectStep(getQuestHelper(), ObjectID.LADDER_28618, new WorldPoint(2085, 5431, 1),
-		"Go back and fill up your satchels with gunpowder.");
+			"Go back and fill up your satchels with gunpowder.");
 		goF0Reset.setLinePoints(pathToReset);
 
 		goDownToGunpowder = new ObjectStep(getQuestHelper(), ObjectID.LADDER_28619, new WorldPoint(2098, 5421, 2), "Make your way east then south and go down the ladder there. Avoid the monkey on the way.");

@@ -72,7 +72,7 @@ public class CombinationPuzzle extends ObjectStep
 	{
 		super(questHelper, ObjectID.DOOR_4165, new WorldPoint(2631, 3667, 0),
 			"Click on the door again, then click the highlighted arrows to solve the combination lock with " +
-			"solution " + solution + ".");
+				"solution " + solution + ".");
 		addDialogStep("Solve the riddle");
 		ENTRY_ONE = solution.charAt(0);
 		ENTRY_TWO = solution.charAt(1);
@@ -100,7 +100,7 @@ public class CombinationPuzzle extends ObjectStep
 		highlightButtons.replace(1, matchStateToSolution(SLOT_ONE, ENTRY_ONE, ARROW_ONE_RIGHT, ARROW_ONE_LEFT));
 		highlightButtons.replace(2, matchStateToSolution(SLOT_TWO, ENTRY_TWO, ARROW_TWO_RIGHT, ARROW_TWO_LEFT));
 		highlightButtons.replace(3, matchStateToSolution(SLOT_THREE, ENTRY_THREE, ARROW_THREE_RIGHT, ARROW_THREE_LEFT));
-		highlightButtons.replace(4, matchStateToSolution(SLOT_FOUR, ENTRY_FOUR,ARROW_FOUR_RIGHT, ARROW_FOUR_LEFT));
+		highlightButtons.replace(4, matchStateToSolution(SLOT_FOUR, ENTRY_FOUR, ARROW_FOUR_RIGHT, ARROW_FOUR_LEFT));
 
 		distance.replace(1, matchStateToDistance(SLOT_ONE, ENTRY_ONE));
 		distance.replace(2, matchStateToDistance(SLOT_TWO, ENTRY_TWO));
@@ -111,7 +111,9 @@ public class CombinationPuzzle extends ObjectStep
 		if (highlightButtons.get(1) + highlightButtons.get(2) + highlightButtons.get(3) + highlightButtons.get(4) == 0)
 		{
 			highlightButtons.put(5, COMPLETE);
-		} else {
+		}
+		else
+		{
 			highlightButtons.put(5, 0);
 		}
 	}
@@ -119,18 +121,27 @@ public class CombinationPuzzle extends ObjectStep
 	private int matchStateToSolution(int slot, Character target, int arrowRightId, int arrowLeftId)
 	{
 		Widget widget = client.getWidget(298, slot);
-		if (widget == null) return 0;
+		if (widget == null)
+		{
+			return 0;
+		}
 		char current = widget.getText().charAt(0);
-		int currentPos = (int)current - (int)'A';
+		int currentPos = (int) current - (int) 'A';
 		int id = Math.floorMod(currentPos - target, 26) < Math.floorMod(target - currentPos, 26) ? arrowRightId : arrowLeftId;
-		if(current != target) return id;
+		if (current != target)
+		{
+			return id;
+		}
 		return 0;
 	}
 
 	private int matchStateToDistance(int slot, Character target)
 	{
 		Widget widget = client.getWidget(298, slot);
-		if (widget == null) return 0;
+		if (widget == null)
+		{
+			return 0;
+		}
 		char current = widget.getText().charAt(0);
 		return Math.min(Math.floorMod(current - target, 26), Math.floorMod(target - current, 26));
 	}

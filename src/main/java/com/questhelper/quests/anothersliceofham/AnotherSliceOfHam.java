@@ -203,7 +203,7 @@ public class AnotherSliceOfHam extends BasicQuestHelper
 		tower = new Zone(new WorldPoint(2440, 5416, 2), new WorldPoint(2447, 5418, 2));
 		goblinVillage = new Zone(new WorldPoint(2434, 5409, 0), new WorldPoint(2459, 5438, 0));
 		swamp = new Zone(new WorldPoint(3138, 9536, 0), new WorldPoint(3261, 9601, 0));
-		base = new Zone(new WorldPoint(2393, 5525, 0), new WorldPoint(2414, 5560,0));
+		base = new Zone(new WorldPoint(2393, 5525, 0), new WorldPoint(2414, 5560, 0));
 		finalRoom = new Zone(new WorldPoint(2532, 5509, 0), new WorldPoint(2553, 5520, 0));
 	}
 
@@ -362,7 +362,7 @@ public class AnotherSliceOfHam extends BasicQuestHelper
 
 		useSpecial = new NpcStep(this, NpcID.SIGMUND_5142, new WorldPoint(2543, 5511, 0), "When Sigmund starts " +
 			"using protection prayers, use the ancient mace's special attack on Sigmund to remove them and then " +
-			"defeat him.",	ancientMace.equipped().highlighted());
+			"defeat him.", ancientMace.equipped().highlighted());
 		((NpcStep) useSpecial).addAlternateNpcs(NpcID.SIGMUND_5143, NpcID.SIGMUND_5144, NpcID.SIGMUND_5145);
 
 		defeatSigmund = new NpcStep(this, NpcID.SIGMUND_5146, new WorldPoint(2543, 5511, 0),
@@ -441,7 +441,7 @@ public class AnotherSliceOfHam extends BasicQuestHelper
 	}
 
 	@Override
-	public QuestPointReward	getQuestPointReward()
+	public QuestPointReward getQuestPointReward()
 	{
 		return new QuestPointReward(1);
 	}
@@ -450,8 +450,8 @@ public class AnotherSliceOfHam extends BasicQuestHelper
 	public List<ExperienceReward> getExperienceRewards()
 	{
 		return Arrays.asList(
-				new ExperienceReward(Skill.MINING, 3000),
-				new ExperienceReward(Skill.PRAYER, 3000));
+			new ExperienceReward(Skill.MINING, 3000),
+			new ExperienceReward(Skill.PRAYER, 3000));
 	}
 
 	@Override
@@ -464,8 +464,8 @@ public class AnotherSliceOfHam extends BasicQuestHelper
 	public List<UnlockReward> getUnlockRewards()
 	{
 		return Arrays.asList(
-				new UnlockReward("Dorgeshuun Train Access."),
-				new UnlockReward("Ability to buy Goblin Village Teleport Spheres"));
+			new UnlockReward("Dorgeshuun Train Access."),
+			new UnlockReward("Ability to buy Goblin Village Teleport Spheres"));
 	}
 
 	@Override

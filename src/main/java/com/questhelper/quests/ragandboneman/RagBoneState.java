@@ -57,7 +57,7 @@ public enum RagBoneState
 	MOGRE_BONE("Mogre", 14, 14),
 
 	// P1
-	MONKEY_PAW("Monkey Paw",15,39),
+	MONKEY_PAW("Monkey Paw", 15, 39),
 
 	// P2
 	DAGANNOTH_RIBS("Dagannoth", 16, 15),
@@ -79,7 +79,7 @@ public enum RagBoneState
 	CAVE_GOBLIN_SKULL("Cave Goblin", 32, 31),
 
 	// P1
-	BIG_FROG_LEGS("Big Frog Legs",33,36),
+	BIG_FROG_LEGS("Big Frog Legs", 33, 36),
 
 	// P2
 	VULTURE_WING("Vulture", 34, 32),

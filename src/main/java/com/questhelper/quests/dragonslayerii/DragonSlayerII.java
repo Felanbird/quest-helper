@@ -133,8 +133,7 @@ public class DragonSlayerII extends BasicQuestHelper
 
 	DetailedQuestStep talkToRoald, goUpToAmik1, goUpToAmik2, talkToAmik, goUpToLathasOrThoros, talkToLathasOrThoros, talkToBrundtAboutThreat, enterVarrockDiningRoom, talkToBobAfterDiningRoom;
 
-	DetailedQuestStep takeBoatToUngael, keepShipAfloat, getToMainShip, kill2Blue2Green, killBlackSteelBrutalRedDragon
-	, killMithAddyAndRuneDragons, killGalvekSidebar, killGalvek, talkToAlecToFinish;
+	DetailedQuestStep takeBoatToUngael, keepShipAfloat, getToMainShip, kill2Blue2Green, killBlackSteelBrutalRedDragon, killMithAddyAndRuneDragons, killGalvekSidebar, killGalvek, talkToAlecToFinish;
 
 	ConditionalStep goEnterMithDoorFirstTime, goEnterMithDoorSecondTime, goSmithKey, goOpenDoorWithKey, openDoorWithoutKey, goTalkToBobAfterRelease;
 
@@ -854,7 +853,7 @@ public class DragonSlayerII extends BasicQuestHelper
 			"This is a hard fight, so if you're unfamiliar with it it's recommended you watch a video on it first.", rangedCombatGear);
 		killVorkathSidebar.addSubSteps(killVorkath);
 
-			killVorkathSidebar.addText("Protect from Magic, and drink an antifire and antivenom potion.");
+		killVorkathSidebar.addText("Protect from Magic, and drink an antifire and antivenom potion.");
 		killVorkathSidebar.addText("When Vorkath fires a pink fireball it'll turn your prayer off.");
 		killVorkathSidebar.addText("When Vorkath shoots an orange fireball into the air, move away from the spot you're on.");
 		killVorkathSidebar.addText("When Vorkath spits acid everywhere, WALK around to avoid the fireballs he will shoot.");
@@ -1063,7 +1062,7 @@ public class DragonSlayerII extends BasicQuestHelper
 		killMithAddyAndRuneDragons.addText("");
 		((NpcStep) (killMithAddyAndRuneDragons)).addAlternateNpcs(NpcID.MITHRIL_DRAGON_8089, NpcID.ADAMANT_DRAGON, NpcID.ADAMANT_DRAGON_8090, NpcID.RUNE_DRAGON, NpcID.RUNE_DRAGON_8091);
 		killGalvek = new NpcStep(this, NpcID.GALVEK_8095, new WorldPoint(1631, 5735, 2), "Kill Galvek. Read the " +
-			"sidebar for more details.",true);
+			"sidebar for more details.", true);
 		((NpcStep) (killGalvek)).addAlternateNpcs(NpcID.GALVEK_8096, NpcID.GALVEK_8097, NpcID.GALVEK_8098);
 
 		killGalvekSidebar = new NpcStep(this, NpcID.GALVEK_8095, new WorldPoint(1631, 5735, 2),
@@ -1154,35 +1153,35 @@ public class DragonSlayerII extends BasicQuestHelper
 	public List<ExperienceReward> getExperienceRewards()
 	{
 		return Arrays.asList(
-				new ExperienceReward(Skill.SMITHING, 25000),
-				new ExperienceReward(Skill.MINING, 18000),
-				new ExperienceReward(Skill.AGILITY, 15000),
-				new ExperienceReward(Skill.THIEVING, 15000));
+			new ExperienceReward(Skill.SMITHING, 25000),
+			new ExperienceReward(Skill.MINING, 18000),
+			new ExperienceReward(Skill.AGILITY, 15000),
+			new ExperienceReward(Skill.THIEVING, 15000));
 	}
 
 	@Override
 	public List<ItemReward> getItemRewards()
 	{
 		return Arrays.asList(
-				new ItemReward("25,000 Experience Tome (Any Combat Skill).", ItemID.ANTIQUE_LAMP, 4), //4447 is placeholder
-				new ItemReward("A Locator Orb", ItemID.LOCATOR_ORB, 1));
+			new ItemReward("25,000 Experience Tome (Any Combat Skill).", ItemID.ANTIQUE_LAMP, 4), //4447 is placeholder
+			new ItemReward("A Locator Orb", ItemID.LOCATOR_ORB, 1));
 	}
 
 	@Override
 	public List<UnlockReward> getUnlockRewards()
 	{
 		return Arrays.asList(
-				new UnlockReward("Access to the Myths Guild."),
-				new UnlockReward("Ability to make Super Antifire Potions"),
-				new UnlockReward("Access to the Fountain of Uhld."),
-				new UnlockReward("Access to the Wrath Altar."),
-				new UnlockReward("Ability to purchase the Mythical Cape"),
-				new UnlockReward("Access to Adamant and Rune Dragons"),
-				new UnlockReward("Access to Vorkath"),
-				new UnlockReward("Ability to re-forge the dragon platebody and kiteshield."),
-				new UnlockReward("Ability to craft Ferocious Gloves"),
-				new UnlockReward("Ability to further upgrade your Ava's device."),
-				new UnlockReward("Ability to teleport to Lithkren with the Digsite Pendant."));
+			new UnlockReward("Access to the Myths Guild."),
+			new UnlockReward("Ability to make Super Antifire Potions"),
+			new UnlockReward("Access to the Fountain of Uhld."),
+			new UnlockReward("Access to the Wrath Altar."),
+			new UnlockReward("Ability to purchase the Mythical Cape"),
+			new UnlockReward("Access to Adamant and Rune Dragons"),
+			new UnlockReward("Access to Vorkath"),
+			new UnlockReward("Ability to re-forge the dragon platebody and kiteshield."),
+			new UnlockReward("Ability to craft Ferocious Gloves"),
+			new UnlockReward("Ability to further upgrade your Ava's device."),
+			new UnlockReward("Ability to teleport to Lithkren with the Digsite Pendant."));
 	}
 
 	@Override

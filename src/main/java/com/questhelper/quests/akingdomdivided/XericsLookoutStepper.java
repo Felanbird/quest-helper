@@ -50,7 +50,8 @@ public class XericsLookoutStepper extends ConditionalStep
 
 	Zone lookoutBasement, lookoutF1, lookoutF2, lookoutF3;
 
-	public XericsLookoutStepper(QuestHelper questHelper, QuestStep speakToWho, int floor, QuestStep sidebar) {
+	public XericsLookoutStepper(QuestHelper questHelper, QuestStep speakToWho, int floor, QuestStep sidebar)
+	{
 		super(questHelper, speakToWho);
 
 		this.speakToWho = speakToWho;
@@ -66,7 +67,8 @@ public class XericsLookoutStepper extends ConditionalStep
 		addSteppers();
 	}
 
-	public XericsLookoutStepper(QuestHelper questHelper, QuestStep speakToWho, int floor) {
+	public XericsLookoutStepper(QuestHelper questHelper, QuestStep speakToWho, int floor)
+	{
 		super(questHelper, speakToWho);
 
 		this.speakToWho = speakToWho;
@@ -84,20 +86,59 @@ public class XericsLookoutStepper extends ConditionalStep
 
 	private void addSteppers()
 	{
-		if (floor == 3) addStep(new Conditions(inLookoutF3), speakToWho);
-		else if (floor == 2) addStep(new Conditions(inLookoutF2), speakToWho);
-		else if (floor == 1) addStep(new Conditions(inLookoutF1), speakToWho);
-		else if (floor == 0) addStep(new Conditions(inLookoutF0), speakToWho);
-		else if (floor == -1) addStep(new Conditions(inLookoutBasement), speakToWho);
+		if (floor == 3)
+		{
+			addStep(new Conditions(inLookoutF3), speakToWho);
+		}
+		else if (floor == 2)
+		{
+			addStep(new Conditions(inLookoutF2), speakToWho);
+		}
+		else if (floor == 1)
+		{
+			addStep(new Conditions(inLookoutF1), speakToWho);
+		}
+		else if (floor == 0)
+		{
+			addStep(new Conditions(inLookoutF0), speakToWho);
+		}
+		else if (floor == -1)
+		{
+			addStep(new Conditions(inLookoutBasement), speakToWho);
+		}
 
-		if (floor > -1) addStep(new Conditions(inLookoutBasement), goUpLookoutBasementtoF0);
-		if (floor < 0) addStep(new Conditions(inLookoutF0), goDownLookoutF0toBasement);
-		else if (floor > 0) addStep(inLookoutF0, goUpLookoutF0toF1);
-		if (floor < 1) addStep(new Conditions(inLookoutF1), goDownLookoutF1toF0);
-		else if (floor > 1) addStep(new Conditions(inLookoutF1), goUpLookoutF1toF2);
-		if (floor < 2) addStep(new Conditions(inLookoutF2), goDownLookoutF2toF1);
-		else if (floor > 2) addStep(new Conditions(inLookoutF2), goUpLookoutF2toF3);
-		if (floor < 3) addStep(new Conditions(inLookoutF3), goDownLookoutF3toF2);
+		if (floor > -1)
+		{
+			addStep(new Conditions(inLookoutBasement), goUpLookoutBasementtoF0);
+		}
+		if (floor < 0)
+		{
+			addStep(new Conditions(inLookoutF0), goDownLookoutF0toBasement);
+		}
+		else if (floor > 0)
+		{
+			addStep(inLookoutF0, goUpLookoutF0toF1);
+		}
+		if (floor < 1)
+		{
+			addStep(new Conditions(inLookoutF1), goDownLookoutF1toF0);
+		}
+		else if (floor > 1)
+		{
+			addStep(new Conditions(inLookoutF1), goUpLookoutF1toF2);
+		}
+		if (floor < 2)
+		{
+			addStep(new Conditions(inLookoutF2), goDownLookoutF2toF1);
+		}
+		else if (floor > 2)
+		{
+			addStep(new Conditions(inLookoutF2), goUpLookoutF2toF3);
+		}
+		if (floor < 3)
+		{
+			addStep(new Conditions(inLookoutF3), goDownLookoutF3toF2);
+		}
 	}
 
 	public void setupZones()

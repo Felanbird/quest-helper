@@ -357,7 +357,7 @@ public class GardenOfTranquillity extends BasicQuestHelper
 
 		notAddedCompost1 = new VarbitRequirement(984, 0);
 		notAddedCompost2 = new VarbitRequirement(986, 0);
-		notPlantedDelphinium =  new VarbitRequirement(982, 3, Operation.LESS_EQUAL);
+		notPlantedDelphinium = new VarbitRequirement(982, 3, Operation.LESS_EQUAL);
 		notPlantedYellowOrchid = new VarbitRequirement(986, 1, Operation.LESS_EQUAL);
 		notPlantedPinkOrchid = new VarbitRequirement(984, 1, Operation.LESS_EQUAL);
 		notPlantedSnowdrop = new VarbitRequirement(983, 3, Operation.LESS_EQUAL);
@@ -464,7 +464,7 @@ public class GardenOfTranquillity extends BasicQuestHelper
 		useSecateursOnWhiteTree.addIcon(ItemID.SECATEURS);
 		useShootOnPot = new DetailedQuestStep(this, "Use the shoot on a plant pot.", whiteTreeShoot.highlighted(),
 			plantPot.highlighted());
-		useCanOnPot =  new DetailedQuestStep(this, "Water the white tree shoot.", whiteTreePot.highlighted(),
+		useCanOnPot = new DetailedQuestStep(this, "Water the white tree shoot.", whiteTreePot.highlighted(),
 			wateringCan.highlighted());
 
 		talkToAlthric = new NpcStep(this, NpcID.BROTHER_ALTHRIC, new WorldPoint(3052, 3502, 0),
@@ -510,7 +510,7 @@ public class GardenOfTranquillity extends BasicQuestHelper
 			"plantpots in Ellmaria's garden with compost.", compost.highlighted());
 		fillPotWithCompost.addIcon(ItemID.COMPOST);
 		fillPotWithCompost2 = new ObjectStep(this, NullObjectID.NULL_9198, new WorldPoint(3231, 3486, 0), "Fill the " +
-		"plantpots in Ellmaria's garden with compost.", compost.highlighted());
+			"plantpots in Ellmaria's garden with compost.", compost.highlighted());
 		fillPotWithCompost2.addIcon(ItemID.COMPOST);
 		plantDelphinium = new ObjectStep(this, NullObjectID.NULL_9165, new WorldPoint(3226, 3477, 0), "Plant the " +
 			"delphinum seeds.", delphiniumSeed4.highlighted(), rake, dibber);
@@ -518,7 +518,7 @@ public class GardenOfTranquillity extends BasicQuestHelper
 		plantPinkOrchid = new ObjectStep(this, NullObjectID.NULL_9197, new WorldPoint(3229, 3486, 0), "Plant the " +
 			"pink orchids in the marked plantpot.", pinkOrchidSeed3.highlighted(), dibber);
 		plantPinkOrchid.addIcon(ItemID.ORCHID_SEED);
-		plantYellowOrchid = new ObjectStep(this,NullObjectID.NULL_9198, new WorldPoint(3231, 3486, 0), "Plant the " +
+		plantYellowOrchid = new ObjectStep(this, NullObjectID.NULL_9198, new WorldPoint(3231, 3486, 0), "Plant the " +
 			"yellow orchids in the marked plantpot.", yellowOrchid3.highlighted(), dibber);
 		plantYellowOrchid.addIcon(ItemID.ORCHID_SEED_6459);
 		plantSnowdrop = new ObjectStep(this, NullObjectID.NULL_9223, new WorldPoint(3232, 3483, 0), "Plant snowdrops " +
@@ -581,10 +581,10 @@ public class GardenOfTranquillity extends BasicQuestHelper
 		)));
 
 		talkToEllmariaAfterGrown = new NpcStep(this, NpcID.QUEEN_ELLAMARIA, new WorldPoint(3230, 3478, 0),
-		"Talk to Ellamaria once everything's finished growing.");
+			"Talk to Ellamaria once everything's finished growing.");
 		talkToRoald = new NpcStep(this, NpcID.KING_ROALD_5215, new WorldPoint(3221, 3473, 0),
 			"Talk to King Roald in Varrock Castle, watch the cutscene, then finish the dialog with Ellmaria to finish" +
-				" the quest!",	ringOfCharosA.equipped());
+				" the quest!", ringOfCharosA.equipped());
 		talkToRoald.addDialogSteps("Ask King Roald to follow me.", "[Charm] Of course, your majesty - please forgive " +
 			"me.", "[Charm] The Queen asked me to bring you.");
 	}
@@ -653,7 +653,7 @@ public class GardenOfTranquillity extends BasicQuestHelper
 		allSteps.add(kragenPanel);
 
 		PanelDetails dantaeraPanel = new PanelDetails("White Tree", Arrays.asList(talkToDantaera, useSecateursOnWhiteTree,
-			useShootOnPot, useCanOnPot), ringOfCharosA,	secateurs, trowel, plantPot, wateringCan);
+			useShootOnPot, useCanOnPot), ringOfCharosA, secateurs, trowel, plantPot, wateringCan);
 		dantaeraPanel.setLockingStep(helpingDantaera);
 		allSteps.add(dantaeraPanel);
 

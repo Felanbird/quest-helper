@@ -326,10 +326,10 @@ public class RFDPiratePete extends BasicQuestHelper
 	public List<ExperienceReward> getExperienceRewards()
 	{
 		return Arrays.asList(
-				new ExperienceReward(Skill.COOKING, 1000),
-				new ExperienceReward(Skill.CRAFTING, 1000),
-				new ExperienceReward(Skill.FISHING, 1000),
-				new ExperienceReward(Skill.SMITHING, 1000));
+			new ExperienceReward(Skill.COOKING, 1000),
+			new ExperienceReward(Skill.CRAFTING, 1000),
+			new ExperienceReward(Skill.FISHING, 1000),
+			new ExperienceReward(Skill.SMITHING, 1000));
 	}
 
 	@Override
@@ -342,8 +342,8 @@ public class RFDPiratePete extends BasicQuestHelper
 	public List<UnlockReward> getUnlockRewards()
 	{
 		return Arrays.asList(
-				new UnlockReward("Access to the Mogre Camp"),
-				new UnlockReward("Increased access to the Culinaromancer's Chest"));
+			new UnlockReward("Access to the Mogre Camp"),
+			new UnlockReward("Increased access to the Culinaromancer's Chest"));
 	}
 
 	@Override

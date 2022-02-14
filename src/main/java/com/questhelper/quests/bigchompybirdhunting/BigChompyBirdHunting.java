@@ -329,9 +329,9 @@ public class BigChompyBirdHunting extends BasicQuestHelper
 	public List<ExperienceReward> getExperienceRewards()
 	{
 		return Arrays.asList(
-				new ExperienceReward(Skill.FLETCHING, 262),
-				new ExperienceReward(Skill.COOKING, 1470),
-				new ExperienceReward(Skill.RANGED, 735));
+			new ExperienceReward(Skill.FLETCHING, 262),
+			new ExperienceReward(Skill.COOKING, 1470),
+			new ExperienceReward(Skill.RANGED, 735));
 	}
 
 	@Override
@@ -344,8 +344,8 @@ public class BigChompyBirdHunting extends BasicQuestHelper
 	public List<UnlockReward> getUnlockRewards()
 	{
 		return Arrays.asList(
-				new UnlockReward("The ability to fletch Ogre Arrows."),
-				new UnlockReward("The ability to hunt and cook Chompy Birds."));
+			new UnlockReward("The ability to fletch Ogre Arrows."),
+			new UnlockReward("The ability to hunt and cook Chompy Birds."));
 	}
 
 	@Override

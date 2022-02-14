@@ -75,7 +75,7 @@ public class SheepHerder extends BasicQuestHelper
 		sheep4Burned, allSheepBonesObtained, allSheepBurned, bonesNearby;
 
 	DetailedQuestStep talkToHalgrive, talkToOrbon, enterEnclosure, pickupCattleprod, prodSheep1, prodSheep2,
-	prodSheep3, prodSheep4, feedSheep, pickupBones, useBonesOnIncinerator, talkToHalgriveToFinish;
+		prodSheep3, prodSheep4, feedSheep, pickupBones, useBonesOnIncinerator, talkToHalgriveToFinish;
 
 	Zone enclosure;
 
@@ -96,7 +96,7 @@ public class SheepHerder extends BasicQuestHelper
 		goBurnSheep.addStep(new Conditions(allSheepBonesObtained), useBonesOnIncinerator);
 		goBurnSheep.addStep(new Conditions(bonesNearby), pickupBones);
 		goBurnSheep.addStep(new Conditions(sheep1InEnclosure, sheep2InEnclosure, sheep3InEnclosure,
-				sheep4InEnclosure), feedSheep);
+			sheep4InEnclosure), feedSheep);
 		goBurnSheep.addStep(new Conditions(cattleprod, sheep1InEnclosure, sheep2InEnclosure, sheep3InEnclosure),
 			prodSheep4);
 		goBurnSheep.addStep(new Conditions(cattleprod, sheep1InEnclosure, sheep2InEnclosure), prodSheep3);
@@ -208,11 +208,11 @@ public class SheepHerder extends BasicQuestHelper
 			true, cattleprod.equipped(), plagueJacket.equipped(), plagueTrousers.equipped());
 		prodSheep2.addTileMarker(new QuestTile(new WorldPoint(2594, 3362, 0)));
 		prodSheep3 = new NpcStep(this, NpcID.GREEN_SHEEP, new WorldPoint(2621, 3367, 0),
-		"Prod one of the green sheep east of the enclosure to the enclosure gate.",
+			"Prod one of the green sheep east of the enclosure to the enclosure gate.",
 			true, cattleprod.equipped(), plagueJacket.equipped(), plagueTrousers.equipped());
 		prodSheep3.addTileMarker(new QuestTile(new WorldPoint(2594, 3362, 0)));
 		prodSheep4 = new NpcStep(this, NpcID.RED_SHEEP, new WorldPoint(2609, 3347, 0),
-		"Prod one of the red sheep south east of the enclosure to the enclosure gate.",
+			"Prod one of the red sheep south east of the enclosure to the enclosure gate.",
 			true, cattleprod.equipped(), plagueJacket.equipped(), plagueTrousers.equipped());
 		prodSheep4.addTileMarker(new QuestTile(new WorldPoint(2594, 3362, 0)));
 

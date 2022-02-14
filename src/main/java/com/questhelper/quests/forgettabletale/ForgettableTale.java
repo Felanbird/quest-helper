@@ -265,7 +265,7 @@ public class ForgettableTale extends BasicQuestHelper
 		goDoPuzzle6.addStep(inPuzzle5Room, returnFromPuzzle5);
 
 		goDoPuzzle6.addStep(new Conditions(inRoom2PuzzleWidget, donePuzzle6P1, donePuzzle6P2, donePuzzle6P3, donePuzzle6P4,
-				donePuzzle6P5), puzzle6Ok);
+			donePuzzle6P5), puzzle6Ok);
 		goDoPuzzle6.addStep(new Conditions(donePuzzle6P1, donePuzzle6P2, donePuzzle6P3, donePuzzle6P4, donePuzzle6P5),
 			takePuzzle6Cart);
 		goDoPuzzle6.addStep(new Conditions(inRoom2PuzzleWidget, donePuzzle6P1, donePuzzle6P2, donePuzzle6P3, donePuzzle6P4),
@@ -292,9 +292,9 @@ public class ForgettableTale extends BasicQuestHelper
 		ConditionalStep goDoPuzzle7 = new ConditionalStep(this, searchBox3);
 		goDoPuzzle7.addStep(inPuzzle7Room, searchPuzzle7Box);
 		goDoPuzzle7.addStep(new Conditions(inRoom3PuzzleWidget, donePuzzle7P1, donePuzzle7P2, donePuzzle7P3,
-			donePuzzle7P4),	puzzle7Ok);
+			donePuzzle7P4), puzzle7Ok);
 		goDoPuzzle7.addStep(new Conditions(donePuzzle7P1, donePuzzle7P2, donePuzzle7P3,
-			donePuzzle7P4),	takePuzzle7Cart);
+			donePuzzle7P4), takePuzzle7Cart);
 		goDoPuzzle7.addStep(new Conditions(inRoom3PuzzleWidget, donePuzzle7P1, donePuzzle7P2, donePuzzle7P3),
 			puzzle7P4);
 		goDoPuzzle7.addStep(new Conditions(inRoom3PuzzleWidget, donePuzzle7P1, donePuzzle7P2), puzzle7P3);
@@ -307,13 +307,13 @@ public class ForgettableTale extends BasicQuestHelper
 
 		goDoPuzzle8.addStep(inPuzzle8Room, searchPuzzle8Box);
 		goDoPuzzle8.addStep(new Conditions(inRoom3PuzzleWidget, donePuzzle8P1, donePuzzle8P2, donePuzzle8P3,
-				donePuzzle8P4, donePuzzle8P5, donePuzzle8P6), puzzle8Ok);
+			donePuzzle8P4, donePuzzle8P5, donePuzzle8P6), puzzle8Ok);
 		goDoPuzzle8.addStep(new Conditions(donePuzzle8P1, donePuzzle8P2, donePuzzle8P3, donePuzzle8P4, donePuzzle8P5,
-				donePuzzle8P6), takePuzzle8Cart);
+			donePuzzle8P6), takePuzzle8Cart);
 		goDoPuzzle8.addStep(new Conditions(inRoom3PuzzleWidget, donePuzzle8P1, donePuzzle8P2, donePuzzle8P3,
 			donePuzzle8P4, donePuzzle8P5), puzzle8P6);
 		goDoPuzzle8.addStep(new Conditions(inRoom3PuzzleWidget, donePuzzle8P1, donePuzzle8P2, donePuzzle8P3,
-				donePuzzle8P4), puzzle8P5);
+			donePuzzle8P4), puzzle8P5);
 		goDoPuzzle8.addStep(new Conditions(inRoom3PuzzleWidget, donePuzzle8P1, donePuzzle8P2, donePuzzle8P3),
 			puzzle8P4);
 		goDoPuzzle8.addStep(new Conditions(inRoom3PuzzleWidget, donePuzzle8P1, donePuzzle8P2), puzzle8P3);
@@ -973,8 +973,8 @@ public class ForgettableTale extends BasicQuestHelper
 	public List<ExperienceReward> getExperienceRewards()
 	{
 		return Arrays.asList(
-				new ExperienceReward(Skill.COOKING, 5000),
-				new ExperienceReward(Skill.FARMING, 5000));
+			new ExperienceReward(Skill.COOKING, 5000),
+			new ExperienceReward(Skill.FARMING, 5000));
 	}
 
 	@Override
@@ -992,7 +992,7 @@ public class ForgettableTale extends BasicQuestHelper
 				goTalkRowdyDwarf, goTalkToKhorvak, goGiveKhorvakBeer, goTalkToGuass, goTalkToRind,
 				goPlantKelda, waitForKelda, goHarvestKelda, goBrew, pickupPot, buyYeast, addWater, addMalts, addKelda, addYeast,
 				waitBrewing, goTurnValve, goUseGlass, goGiveDrunkenDwarfKelda), coins500, barleyMalt2, bucketOfWater2,
-			spade,	dibber, rake, beer.quantity(2), dwarvenStout, beerGlass, randomItem));
+			spade, dibber, rake, beer.quantity(2), dwarvenStout, beerGlass, randomItem));
 		allSteps.add(new PanelDetails("Unlocking the tunnels", Arrays.asList(goTalkToConductor, goTalkToDirector,
 			goTakeSecretCart)));
 		allSteps.add(new PanelDetails("Puzzle 1", Arrays.asList(searchBox1, startPuzzle1, puzzle1P1, puzzle1P2,

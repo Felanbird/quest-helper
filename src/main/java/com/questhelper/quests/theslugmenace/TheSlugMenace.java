@@ -421,9 +421,9 @@ public class TheSlugMenace extends BasicQuestHelper
 	public List<ExperienceReward> getExperienceRewards()
 	{
 		return Arrays.asList(
-				new ExperienceReward(Skill.RUNECRAFT, 3500),
-				new ExperienceReward(Skill.CRAFTING, 3500),
-				new ExperienceReward(Skill.THIEVING, 3500));
+			new ExperienceReward(Skill.RUNECRAFT, 3500),
+			new ExperienceReward(Skill.CRAFTING, 3500),
+			new ExperienceReward(Skill.THIEVING, 3500));
 	}
 
 	@Override

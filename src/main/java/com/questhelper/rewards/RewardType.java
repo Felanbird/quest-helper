@@ -26,8 +26,8 @@ package com.questhelper.rewards;
 
 public enum RewardType
 {
-    EXPERIENCE,
-    UNLOCK,
-    QUEST_POINT,
-    ITEM
+	EXPERIENCE,
+	UNLOCK,
+	QUEST_POINT,
+	ITEM
 }

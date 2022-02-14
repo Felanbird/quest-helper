@@ -200,7 +200,7 @@ public class DruidicRitual extends BasicQuestHelper
 		List<PanelDetails> allSteps = new ArrayList<>();
 		allSteps.add(new PanelDetails("Helping the druids",
 			Arrays.asList(talkToKaqemeex, talkToSanfew, enterDungeon, enchantMeats, talkToSanfewWithMeat, talkToKaqemeexToFinish),
-				rawBear, rawBeef, rawChicken, rawRat));
+			rawBear, rawBeef, rawChicken, rawRat));
 
 		return allSteps;
 	}

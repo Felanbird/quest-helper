@@ -40,17 +40,20 @@ public class NpcHintArrowRequirement extends SimpleRequirement
 
 	private final Zone zone;
 
-	public NpcHintArrowRequirement(int... npcIDs) {
+	public NpcHintArrowRequirement(int... npcIDs)
+	{
 		this.npcIDs = Arrays.stream(npcIDs).boxed().collect(QuestUtil.collectToArrayList());
 		this.zone = null;
 	}
 
-	public NpcHintArrowRequirement(WorldPoint worldPoint, int... npcIDs) {
+	public NpcHintArrowRequirement(WorldPoint worldPoint, int... npcIDs)
+	{
 		this.npcIDs = Arrays.stream(npcIDs).boxed().collect(QuestUtil.collectToArrayList());
 		this.zone = new Zone(worldPoint, worldPoint);
 	}
 
-	public NpcHintArrowRequirement(Zone zone, int... npcIDs) {
+	public NpcHintArrowRequirement(Zone zone, int... npcIDs)
+	{
 		this.npcIDs = Arrays.stream(npcIDs).boxed().collect(QuestUtil.collectToArrayList());
 		this.zone = zone;
 	}

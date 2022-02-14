@@ -226,7 +226,7 @@ public class DeviousMinds extends BasicQuestHelper
 	public List<String> getNotes()
 	{
 		return Arrays.asList("You will need to enter the Wilderness briefly during the " +
-			"quest. Other players can attack and kill you here, so don't bring anything you're not willing to lose!",
+				"quest. Other players can attack and kill you here, so don't bring anything you're not willing to lose!",
 			"You will enter the Abyss briefly during this quest. This is full of aggressive monsters in multi-combat," +
 				" and your prayer will be drained to 0 upon entering!");
 	}
@@ -257,9 +257,9 @@ public class DeviousMinds extends BasicQuestHelper
 	public List<ExperienceReward> getExperienceRewards()
 	{
 		return Arrays.asList(
-				new ExperienceReward(Skill.FLETCHING, 5000),
-				new ExperienceReward(Skill.RUNECRAFT, 5000),
-				new ExperienceReward(Skill.SMITHING, 6500));
+			new ExperienceReward(Skill.FLETCHING, 5000),
+			new ExperienceReward(Skill.RUNECRAFT, 5000),
+			new ExperienceReward(Skill.SMITHING, 6500));
 	}
 
 	@Override

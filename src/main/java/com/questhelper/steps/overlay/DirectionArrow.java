@@ -174,18 +174,19 @@ public class DirectionArrow
 		g.dispose();
 	}
 
-	public static void drawLineArrowHead(Graphics2D g2d, Line2D.Double line) {
+	public static void drawLineArrowHead(Graphics2D g2d, Line2D.Double line)
+	{
 		AffineTransform tx = new AffineTransform();
 
 		Polygon arrowHead = new Polygon();
-		arrowHead.addPoint( 0,0);
-		arrowHead.addPoint( -3, -6);
-		arrowHead.addPoint( 3,-6);
+		arrowHead.addPoint(0, 0);
+		arrowHead.addPoint(-3, -6);
+		arrowHead.addPoint(3, -6);
 
 		tx.setToIdentity();
-		double angle = Math.atan2(line.y2-line.y1, line.x2-line.x1);
+		double angle = Math.atan2(line.y2 - line.y1, line.x2 - line.x1);
 		tx.translate(line.x2, line.y2);
-		tx.rotate((angle-Math.PI/2d));
+		tx.rotate((angle - Math.PI / 2d));
 
 		Graphics2D g = (Graphics2D) g2d.create();
 		g.setTransform(tx);
@@ -205,7 +206,7 @@ public class DirectionArrow
 
 	public static void renderWorldMapArrow(Rectangle mapViewArea, Point drawPoint, QuestHelperWorldMapPoint mapPoint)
 	{
-		if (mapViewArea != null &&  drawPoint != null && !mapViewArea.contains(drawPoint.getX(), drawPoint.getY()))
+		if (mapViewArea != null && drawPoint != null && !mapViewArea.contains(drawPoint.getX(), drawPoint.getY()))
 		{
 			if (drawPoint.getX() < mapViewArea.getMinX())
 			{

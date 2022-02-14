@@ -361,17 +361,17 @@ public class FaladorMedium extends ComplexStateQuestHelper
 	public List<ItemReward> getItemRewards()
 	{
 		return Arrays.asList(
-				new ItemReward("Falador Shield (2)", ItemID.FALADOR_SHIELD_2, 1),
-				new ItemReward("7,500 Exp. Lamp (Any skill over 40)", ItemID.ANTIQUE_LAMP, 1));
+			new ItemReward("Falador Shield (2)", ItemID.FALADOR_SHIELD_2, 1),
+			new ItemReward("7,500 Exp. Lamp (Any skill over 40)", ItemID.ANTIQUE_LAMP, 1));
 	}
 
 	@Override
 	public List<UnlockReward> getUnlockRewards()
 	{
 		return Arrays.asList(
-				new UnlockReward("10% more experience from the Falador Farming Patch"),
-				new UnlockReward("Access to a shortcut in the Motherlode Mine"),
-				new UnlockReward("Increased chance to receiving a clue scroll from a guard in Falador"));
+			new UnlockReward("10% more experience from the Falador Farming Patch"),
+			new UnlockReward("Access to a shortcut in the Motherlode Mine"),
+			new UnlockReward("Increased chance to receiving a clue scroll from a guard in Falador"));
 	}
 
 	@Override

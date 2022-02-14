@@ -28,24 +28,24 @@ import javax.annotation.Nonnull;
 
 public class QuestPointReward implements Reward
 {
-    private final int points;
+	private final int points;
 
-    public QuestPointReward(int points)
-    {
-        this.points = points;
-    }
+	public QuestPointReward(int points)
+	{
+		this.points = points;
+	}
 
-    @Nonnull
-    @Override
-    public RewardType rewardType()
-    {
-        return RewardType.QUEST_POINT;
-    }
+	@Nonnull
+	@Override
+	public RewardType rewardType()
+	{
+		return RewardType.QUEST_POINT;
+	}
 
-    @Nonnull
-    @Override
-    public String getDisplayText()
-    {
-        return points + " Quest Points";
-    }
+	@Nonnull
+	@Override
+	public String getDisplayText()
+	{
+		return points + " Quest Points";
+	}
 }

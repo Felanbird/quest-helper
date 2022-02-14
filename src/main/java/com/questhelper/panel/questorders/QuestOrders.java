@@ -83,7 +83,7 @@ public class QuestOrders
 		QuestHelperQuest.THE_DEPTHS_OF_DESPAIR,
 		QuestHelperQuest.MOUNTAIN_DAUGHTER,
 		QuestHelperQuest.ICTHLARINS_LITTLE_HELPER,
-        	QuestHelperQuest.THE_GOLEM,
+		QuestHelperQuest.THE_GOLEM,
 		QuestHelperQuest.THE_GRAND_TREE,
 		QuestHelperQuest.ALFRED_GRIMHANDS_BARCRAWL,
 		QuestHelperQuest.SCORPION_CATCHER,

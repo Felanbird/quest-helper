@@ -34,8 +34,8 @@ import lombok.Getter;
 import net.runelite.api.coords.WorldPoint;
 
 /*
-* Routes are from Start (S) X to End (E) Y. The nodes are as labeled in https://imgur.com/a/CRQTC1d
-* */
+ * Routes are from Start (S) X to End (E) Y. The nodes are as labeled in https://imgur.com/a/CRQTC1d
+ * */
 @AllArgsConstructor
 @Getter
 public enum MM2Route
@@ -74,8 +74,8 @@ public enum MM2Route
 			new WorldPoint(2602, 9232, 1))),
 
 	S3E4(3, 4, new Zone(new WorldPoint(2578, 9238, 1)), new Zone(new WorldPoint(2579, 9238, 1)),
-	new ChatMessageRequirement(new ZoneRequirement(new WorldPoint(2576, 9238, 1), new WorldPoint(2578, 9238, 1)), "Something about this route feels wrong."),
-	Arrays.asList(new WorldPoint(2575, 9238, 1), new WorldPoint(2583, 9238, 1))),
+		new ChatMessageRequirement(new ZoneRequirement(new WorldPoint(2576, 9238, 1), new WorldPoint(2578, 9238, 1)), "Something about this route feels wrong."),
+		Arrays.asList(new WorldPoint(2575, 9238, 1), new WorldPoint(2583, 9238, 1))),
 	S4E3(4, 3, new Zone(new WorldPoint(2580, 9238, 1)), new Zone(new WorldPoint(2579, 9238, 1)),
 		new ChatMessageRequirement(new ZoneRequirement(new WorldPoint(2580, 9238, 1), new WorldPoint(2582, 9238, 1)), "Something about this route feels wrong."),
 		Arrays.asList(new WorldPoint(2583, 9238, 1), new WorldPoint(2575, 9238, 1))),
@@ -88,8 +88,8 @@ public enum MM2Route
 		new ChatMessageRequirement(new ZoneRequirement(new WorldPoint(2585, 9239, 1)), "Something about this route feels wrong."),
 		Arrays.asList(new WorldPoint(2585, 9238, 1), new WorldPoint(2585, 9244, 1))),
 	S8E4(8, 4, new Zone(new WorldPoint(2585, 9241, 1)), new Zone(new WorldPoint(2585, 9240, 1)),
-	new ChatMessageRequirement(new ZoneRequirement(new WorldPoint(2585, 9243, 1)), "Something about this route feels wrong."),
-	Arrays.asList(new WorldPoint(2585, 9244, 1), new WorldPoint(2585, 9238, 1))),
+		new ChatMessageRequirement(new ZoneRequirement(new WorldPoint(2585, 9243, 1)), "Something about this route feels wrong."),
+		Arrays.asList(new WorldPoint(2585, 9244, 1), new WorldPoint(2585, 9238, 1))),
 
 	S4E5(4, 5, new Zone(new WorldPoint(2588, 9237, 1)), new Zone(new WorldPoint(2589, 9237, 1)),
 		new ChatMessageRequirement(new ZoneRequirement(new WorldPoint(2587, 9237, 1)), "Something about this route feels wrong."),

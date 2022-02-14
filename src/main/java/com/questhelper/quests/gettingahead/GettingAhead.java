@@ -62,7 +62,7 @@ import net.runelite.api.Skill;
 import net.runelite.api.coords.WorldPoint;
 
 @QuestDescriptor(
-        quest = QuestHelperQuest.GETTING_AHEAD
+	quest = QuestHelperQuest.GETTING_AHEAD
 )
 public class GettingAhead extends BasicQuestHelper
 {
@@ -334,8 +334,8 @@ public class GettingAhead extends BasicQuestHelper
 	public List<ExperienceReward> getExperienceRewards()
 	{
 		return Arrays.asList(
-				new ExperienceReward(Skill.CRAFTING, 4000),
-				new ExperienceReward(Skill.CONSTRUCTION, 3200));
+			new ExperienceReward(Skill.CRAFTING, 4000),
+			new ExperienceReward(Skill.CONSTRUCTION, 3200));
 	}
 
 	@Override
@@ -361,7 +361,7 @@ public class GettingAhead extends BasicQuestHelper
 			useDyeOnHead, putUpHead, talkToGordonFinal), bearFur, softClay, hammer, saw, planks, nails, knife, redDye, needle, thread));
 		return allSteps;
 	}
-	
+
 	@Override
 	public List<Requirement> getGeneralRequirements()
 	{

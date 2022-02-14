@@ -106,7 +106,9 @@ public class QuestBank
 		worldType = RuneScapeProfileType.getCurrent(client);
 		List<Item> storedItems = gson.fromJson(
 			configManager.getRSProfileConfiguration(CONFIG_GROUP, BANK_KEY),
-			new TypeToken<List<Item>>(){}.getType());
+			new TypeToken<List<Item>>()
+			{
+			}.getType());
 		if (storedItems != null)
 		{
 			bankItems = storedItems;
@@ -133,7 +135,9 @@ public class QuestBank
 		for (WorldType type : worldType)
 		{
 			if (worldTypes.contains(type))
+			{
 				key.append(type.name()).append(":");
+			}
 		}
 		if (client.getLocalPlayer() == null)
 		{

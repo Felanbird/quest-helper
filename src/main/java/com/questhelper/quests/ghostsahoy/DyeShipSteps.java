@@ -296,10 +296,13 @@ public class DyeShipSteps extends DetailedOwnerStep
 			return item;
 		}
 
-		public static FlagColour findByKey(String colour) {
+		public static FlagColour findByKey(String colour)
+		{
 			FlagColour[] flagColours = FlagColour.values();
-			for (FlagColour flagColour : flagColours) {
-				if (flagColour.colourText.equals(colour)) {
+			for (FlagColour flagColour : flagColours)
+			{
+				if (flagColour.colourText.equals(colour))
+				{
 					return flagColour;
 				}
 			}

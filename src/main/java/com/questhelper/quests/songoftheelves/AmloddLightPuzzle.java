@@ -62,7 +62,7 @@ public class AmloddLightPuzzle extends ConditionalStep
 	Requirement hasMirrorsAndCrystal, onF1, onF2, onF0, notResetCrwys, r1, r2, r3, r4, r5, r6, r7, r8, r9, r10, r11, r12, r13, r14, r15,
 		r16, r17, r18, r19;
 
-	public AmloddLightPuzzle(QuestHelper questHelper,ConditionalStep goToF1Steps, ConditionalStep goToF0Steps)
+	public AmloddLightPuzzle(QuestHelper questHelper, ConditionalStep goToF1Steps, ConditionalStep goToF0Steps)
 	{
 		super(questHelper, goToF1Steps);
 		setupItemRequirements();
@@ -216,39 +216,39 @@ public class AmloddLightPuzzle extends ConditionalStep
 			"Add a mirror to the pillar near the stairs. Rotate it to point the light south.", handMirrorHighlighted);
 		p1Pillar11.addIcon(ItemID.HAND_MIRROR_23775);
 
-		p1Pillar12 = new ObjectStep(getQuestHelper(), ObjectID.PILLAR_OF_LIGHT_35151, new WorldPoint(2623, 6130,0),
+		p1Pillar12 = new ObjectStep(getQuestHelper(), ObjectID.PILLAR_OF_LIGHT_35151, new WorldPoint(2623, 6130, 0),
 			"Add a mirror to the pillar to the south. Rotate it to point the light west.", handMirrorHighlighted);
 		p1Pillar12.addIcon(ItemID.HAND_MIRROR_23775);
 
-		p1Pillar13 = new ObjectStep(getQuestHelper(), ObjectID.PILLAR_OF_LIGHT_35145, new WorldPoint(2609, 6130,0),
+		p1Pillar13 = new ObjectStep(getQuestHelper(), ObjectID.PILLAR_OF_LIGHT_35145, new WorldPoint(2609, 6130, 0),
 			"Add a mirror to the pillar to the west. Rotate it to point the light south.", handMirrorHighlighted);
 		p1Pillar13.addIcon(ItemID.HAND_MIRROR_23775);
 
-		p1Pillar14 = new ObjectStep(getQuestHelper(), ObjectID.PILLAR_OF_LIGHT_35144, new WorldPoint(2609, 6116,0),
+		p1Pillar14 = new ObjectStep(getQuestHelper(), ObjectID.PILLAR_OF_LIGHT_35144, new WorldPoint(2609, 6116, 0),
 			"Add a mirror to the pillar to the south. Rotate it to point the light west.", handMirrorHighlighted);
 		p1Pillar14.addIcon(ItemID.HAND_MIRROR_23775);
 
-		p1Pillar15 = new ObjectStep(getQuestHelper(), ObjectID.PILLAR_OF_LIGHT_35138, new WorldPoint(2595, 6116,0),
+		p1Pillar15 = new ObjectStep(getQuestHelper(), ObjectID.PILLAR_OF_LIGHT_35138, new WorldPoint(2595, 6116, 0),
 			"Add a mirror to the pillar to the west. Rotate it to point the light north.", handMirrorHighlighted);
 		p1Pillar15.addIcon(ItemID.HAND_MIRROR_23775);
 
-		p1Pillar16 = new ObjectStep(getQuestHelper(), ObjectID.PILLAR_OF_LIGHT_35139, new WorldPoint(2595, 6130,0),
+		p1Pillar16 = new ObjectStep(getQuestHelper(), ObjectID.PILLAR_OF_LIGHT_35139, new WorldPoint(2595, 6130, 0),
 			"Add a green crystal to the pillar to the north.", greenCrystalHighlighted);
 		p1Pillar16.addIcon(ItemID.GREEN_CRYSTAL_23778);
 
-		p1Pillar17 = new ObjectStep(getQuestHelper(), ObjectID.PILLAR_OF_LIGHT_35140, new WorldPoint(2595, 6144,0),
+		p1Pillar17 = new ObjectStep(getQuestHelper(), ObjectID.PILLAR_OF_LIGHT_35140, new WorldPoint(2595, 6144, 0),
 			"Add a yellow crystal to the pillar to the north.", yellowCrystalHighlighted);
 		p1Pillar17.addIcon(ItemID.YELLOW_CRYSTAL_23777);
 
-		p1Pillar18 = new ObjectStep(getQuestHelper(), ObjectID.PILLAR_OF_LIGHT_35141, new WorldPoint(2595, 6158,0),
+		p1Pillar18 = new ObjectStep(getQuestHelper(), ObjectID.PILLAR_OF_LIGHT_35141, new WorldPoint(2595, 6158, 0),
 			"Add a mirror to the pillar to the north. Rotate it to point the light east.", handMirrorHighlighted);
 		p1Pillar18.addIcon(ItemID.HAND_MIRROR_23775);
 
-		p1Pillar19 = new ObjectStep(getQuestHelper(), ObjectID.PILLAR_OF_LIGHT_35142, new WorldPoint(2595, 6172,0),
+		p1Pillar19 = new ObjectStep(getQuestHelper(), ObjectID.PILLAR_OF_LIGHT_35142, new WorldPoint(2595, 6172, 0),
 			"Add a mirror to the pillar to the north. Rotate it to point the light east.", handMirrorHighlighted);
 		p1Pillar19.addIcon(ItemID.HAND_MIRROR_23775);
 
-		p1Pillar20 = new ObjectStep(getQuestHelper(), ObjectID.PILLAR_OF_LIGHT_35148, new WorldPoint(2609, 6172,0),
+		p1Pillar20 = new ObjectStep(getQuestHelper(), ObjectID.PILLAR_OF_LIGHT_35148, new WorldPoint(2609, 6172, 0),
 			"Add a mirror to the pillar to the east. Rotate it to point the light south.", handMirrorHighlighted);
 		p1Pillar20.addIcon(ItemID.HAND_MIRROR_23775);
 
@@ -284,8 +284,8 @@ public class AmloddLightPuzzle extends ConditionalStep
 		notResetCrwys = new VarbitRequirement(8958, MAGENTA);
 
 		r1 = new Conditions(
-		new VarbitRequirement(8947, MAGENTA), // North
-		new VarbitRequirement(8969, MAGENTA)  // West
+			new VarbitRequirement(8947, MAGENTA), // North
+			new VarbitRequirement(8969, MAGENTA)  // West
 		);
 		r2 = new Conditions(new VarbitRequirement(8948, MAGENTA), r1);
 		r3 = new Conditions(new VarbitRequirement(8949, RED), r1);

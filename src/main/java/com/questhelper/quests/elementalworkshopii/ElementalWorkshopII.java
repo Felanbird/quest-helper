@@ -495,7 +495,7 @@ public class ElementalWorkshopII extends BasicQuestHelper
 		((ObjectStep) getCogsAndPipe).addAlternateObjects(ObjectID.CRATE_18613, ObjectID.CRATES_18614,
 			ObjectID.CRATES_18615, ObjectID.CRATE_18616, ObjectID.CRATES_18617, ObjectID.CRATE_18618,
 			ObjectID.CRATE_18619);
-		((ObjectStep)getCogsAndPipe).setRevalidateObjects(true);
+		((ObjectStep) getCogsAndPipe).setRevalidateObjects(true);
 
 		repairPipe = new ObjectStep(this, NullObjectID.NULL_3414, new WorldPoint(1953, 5168, 3),
 			"", pipe.highlighted());
@@ -642,8 +642,8 @@ public class ElementalWorkshopII extends BasicQuestHelper
 	public List<ExperienceReward> getExperienceRewards()
 	{
 		return Arrays.asList(
-				new ExperienceReward(Skill.CRAFTING, 7500),
-				new ExperienceReward(Skill.SMITHING, 7500));
+			new ExperienceReward(Skill.CRAFTING, 7500),
+			new ExperienceReward(Skill.SMITHING, 7500));
 	}
 
 	@Override

@@ -597,9 +597,9 @@ public class EadgarsRuse extends BasicQuestHelper
 	public List<UnlockReward> getUnlockRewards()
 	{
 		return Arrays.asList(
-				new UnlockReward("Ability to use the Trollheim teleport"),
-				new UnlockReward("Ability to use Scrolls of Redirection to Trollheim."),
-				new UnlockReward("Ability to trade Goutweed to Sanfew for herbs."));
+			new UnlockReward("Ability to use the Trollheim teleport"),
+			new UnlockReward("Ability to use Scrolls of Redirection to Trollheim."),
+			new UnlockReward("Ability to trade Goutweed to Sanfew for herbs."));
 	}
 
 	@Override

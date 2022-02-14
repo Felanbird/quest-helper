@@ -101,23 +101,23 @@ public class CadarnLightPuzzle extends ConditionalStep
 			"Add a mirror to the pillar near the stairs. Rotate it to point the light south.", handMirrorHighlighted);
 		p1Pillar3.addIcon(ItemID.HAND_MIRROR_23775);
 
-		p1Pillar4 = new ObjectStep(getQuestHelper(), ObjectID.PILLAR_OF_LIGHT_35151, new WorldPoint(2623, 6130,0),
+		p1Pillar4 = new ObjectStep(getQuestHelper(), ObjectID.PILLAR_OF_LIGHT_35151, new WorldPoint(2623, 6130, 0),
 			"Add a mirror to the pillar to the south. Rotate it to point the light west.", handMirrorHighlighted);
 		p1Pillar4.addIcon(ItemID.HAND_MIRROR_23775);
 
-		p1Pillar5 = new ObjectStep(getQuestHelper(), ObjectID.PILLAR_OF_LIGHT_35145, new WorldPoint(2609, 6130,0),
+		p1Pillar5 = new ObjectStep(getQuestHelper(), ObjectID.PILLAR_OF_LIGHT_35145, new WorldPoint(2609, 6130, 0),
 			"Add a mirror to the pillar to the west. Rotate it to point the light south.", handMirrorHighlighted);
 		p1Pillar5.addIcon(ItemID.HAND_MIRROR_23775);
 
-		p1Pillar6 = new ObjectStep(getQuestHelper(), ObjectID.PILLAR_OF_LIGHT_35144, new WorldPoint(2609, 6116,0),
+		p1Pillar6 = new ObjectStep(getQuestHelper(), ObjectID.PILLAR_OF_LIGHT_35144, new WorldPoint(2609, 6116, 0),
 			"Add the red crystal to the pillar to the south.", redCrystalHighlighted);
 		p1Pillar6.addIcon(ItemID.RED_CRYSTAL_23776);
 
-		p1Pillar7 = new ObjectStep(getQuestHelper(), ObjectID.PILLAR_OF_LIGHT_35143, new WorldPoint(2609, 6102,0),
+		p1Pillar7 = new ObjectStep(getQuestHelper(), ObjectID.PILLAR_OF_LIGHT_35143, new WorldPoint(2609, 6102, 0),
 			"Add a mirror to the pillar to the south. Rotate it to point the light east.", handMirrorHighlighted);
 		p1Pillar7.addIcon(ItemID.HAND_MIRROR_23775);
 
-		p1Pillar8 = new ObjectStep(getQuestHelper(), ObjectID.PILLAR_OF_LIGHT_35149, new WorldPoint(2623, 6102,0),
+		p1Pillar8 = new ObjectStep(getQuestHelper(), ObjectID.PILLAR_OF_LIGHT_35149, new WorldPoint(2623, 6102, 0),
 			"Add a mirror to the pillar to the east. Rotate it to point the light south at the Seal of Cadarn.", handMirrorHighlighted);
 		p1Pillar8.addIcon(ItemID.HAND_MIRROR_23775);
 	}

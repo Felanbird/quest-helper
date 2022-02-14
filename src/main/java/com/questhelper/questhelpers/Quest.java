@@ -54,7 +54,8 @@ public interface Quest
 		;
 
 		@Override
-		public boolean test(QuestHelper quest) {
+		public boolean test(QuestHelper quest)
+		{
 			return quest.getQuest().getDifficulty() == this || this == ALL;
 		}
 	}

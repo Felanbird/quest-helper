@@ -76,7 +76,7 @@ public class ShadowOfTheStorm extends BasicQuestHelper
 	//Items Recommended
 	ItemRequirement combatGear, coinsForCarpet;
 
-	Requirement inRuin, inThroneRoom,talkedToGolem, talkedToMatthew, inCircleSpot, sigilNearby, evilDaveMoved, baddenMoved,
+	Requirement inRuin, inThroneRoom, talkedToGolem, talkedToMatthew, inCircleSpot, sigilNearby, evilDaveMoved, baddenMoved,
 		reenMoved, golemMoved, golemRejected, golemReprogrammed,
 		inSecondCircleSpot;
 
@@ -365,8 +365,8 @@ public class ShadowOfTheStorm extends BasicQuestHelper
 	public List<ItemReward> getItemRewards()
 	{
 		return Arrays.asList(
-				new ItemReward("10,000 Experience Lamp (Any combat skill except Prayer)", ItemID.ANTIQUE_LAMP, 1), //4447 is placeholder for filter
-				new ItemReward("Darklight", ItemID.DARKLIGHT, 1));
+			new ItemReward("10,000 Experience Lamp (Any combat skill except Prayer)", ItemID.ANTIQUE_LAMP, 1), //4447 is placeholder for filter
+			new ItemReward("Darklight", ItemID.DARKLIGHT, 1));
 	}
 
 	@Override

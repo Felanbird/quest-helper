@@ -73,7 +73,7 @@ public class Watchtower extends BasicQuestHelper
 		magicPotion, magicPotionHighlight, crystal3, crystal4, crystalHighlight, crystal2Highlight, crystal3Highlight, crystal4Highlight;
 
 	Requirement inWatchtowerFloor1, inWatchtowerFloor2, hasTobansKey, onGrewIsland, talkedToGrew, talkedToOg, knownOgreStep, onTobanIsland, hasGoradsTooth,
-		talkedToToban, hasTobansGold, hasRelic1, hasRelic2, hasRelic3,gettingOgreRockCake, gaveCake, inEndOfJumpingPath, hasBeenAtEndOfPath, knowsRiddle, inScaredSkavidRoom,
+		talkedToToban, hasTobansGold, hasRelic1, hasRelic2, hasRelic3, gettingOgreRockCake, gaveCake, inEndOfJumpingPath, hasBeenAtEndOfPath, knowsRiddle, inScaredSkavidRoom,
 		talkedToScaredSkavid, inSkavidRoom1, inSkavidRoom2, inSkavidRoom3, inSkavidRoom4, talkedToSkavid1, talkedToSkavid2, talkedToSkavid3, talkedToSkavid4, inInsaneSkavidPath,
 		inInsaneSkavidRoom, inEnclave, seenShamans, killedOgre1, killedOgre2, killedOgre3, killedOgre4, killedOgre5,
 		killedOgre6, killedAllOgres, gotCrystal4, placedCrystal1, placedCrystal2, placedCrystal3, placedCrystal4, inAreaBeforeBridgeJump;

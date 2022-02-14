@@ -66,7 +66,7 @@ public class RuneliteRequirement extends AbstractRequirement
 	}
 
 	public RuneliteRequirement(ConfigManager configManager, String id, String expectedValue,
-							  Requirement requirement)
+							   Requirement requirement)
 	{
 		this(configManager, id, expectedValue, Collections.singletonMap(expectedValue, requirement));
 	}
@@ -102,7 +102,10 @@ public class RuneliteRequirement extends AbstractRequirement
 	public void validateCondition(Client client)
 	{
 		requirements.forEach((value, req) -> {
-			if (req.check(client)) setConfigValue(value);
+			if (req.check(client))
+			{
+				setConfigValue(value);
+			}
 		});
 	}
 

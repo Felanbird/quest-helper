@@ -597,18 +597,18 @@ public class TheFremennikIsles extends BasicQuestHelper
 	public List<ExperienceReward> getExperienceRewards()
 	{
 		return Arrays.asList(
-				new ExperienceReward(Skill.CONSTRUCTION, 5000),
-				new ExperienceReward(Skill.CRAFTING, 5000),
-				new ExperienceReward(Skill.WOODCUTTING, 10000));
+			new ExperienceReward(Skill.CONSTRUCTION, 5000),
+			new ExperienceReward(Skill.CRAFTING, 5000),
+			new ExperienceReward(Skill.WOODCUTTING, 10000));
 	}
 
 	@Override
 	public List<ItemReward> getItemRewards()
 	{
 		return Arrays.asList(
-				new ItemReward("10,000 Exp. Lamp (Combat)", ItemID.ANTIQUE_LAMP, 2),
-				new ItemReward("Helm of Neitiznot", ItemID.HELM_OF_NEITIZNOT, 1),
-				new ItemReward("Jester Outfit", ItemID.JESTER, 1));
+			new ItemReward("10,000 Exp. Lamp (Combat)", ItemID.ANTIQUE_LAMP, 2),
+			new ItemReward("Helm of Neitiznot", ItemID.HELM_OF_NEITIZNOT, 1),
+			new ItemReward("Jester Outfit", ItemID.JESTER, 1));
 	}
 
 	@Override

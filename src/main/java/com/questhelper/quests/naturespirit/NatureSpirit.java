@@ -321,17 +321,17 @@ public class NatureSpirit extends BasicQuestHelper
 	public List<ExperienceReward> getExperienceRewards()
 	{
 		return Arrays.asList(
-				new ExperienceReward(Skill.CRAFTING, 3000),
-				new ExperienceReward(Skill.DEFENCE, 2000),
-				new ExperienceReward(Skill.HITPOINTS, 2000));
+			new ExperienceReward(Skill.CRAFTING, 3000),
+			new ExperienceReward(Skill.DEFENCE, 2000),
+			new ExperienceReward(Skill.HITPOINTS, 2000));
 	}
 
 	@Override
 	public List<UnlockReward> getUnlockRewards()
 	{
 		return Arrays.asList(
-				new UnlockReward("Access to Mort Myre Swamp"),
-				new UnlockReward("Ability to fight Ghasts."));
+			new UnlockReward("Access to Mort Myre Swamp"),
+			new UnlockReward("Ability to fight Ghasts."));
 	}
 
 	@Override

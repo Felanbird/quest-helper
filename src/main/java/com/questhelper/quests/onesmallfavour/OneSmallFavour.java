@@ -365,9 +365,9 @@ public class OneSmallFavour extends BasicQuestHelper
 
 		harrTea = new ItemRequirement("Herb tea mix (harralander)", ItemID.HERB_TEA_MIX);
 		guamTea = new ItemRequirement("Herb tea mix (guam)", ItemID.HERB_TEA_MIX_4466);
-		marrTea =  new ItemRequirement("Herb tea mix (marrentill)", ItemID.HERB_TEA_MIX_4468);
+		marrTea = new ItemRequirement("Herb tea mix (marrentill)", ItemID.HERB_TEA_MIX_4468);
 		harrMarrTea = new ItemRequirement("Herb tea mix (harr/marr)", ItemID.HERB_TEA_MIX_4470);
-		guamHarrTea =  new ItemRequirement("Herb tea mix (harr/guam)", ItemID.HERB_TEA_MIX_4472);
+		guamHarrTea = new ItemRequirement("Herb tea mix (harr/guam)", ItemID.HERB_TEA_MIX_4472);
 		guam2Tea = new ItemRequirement("Herb tea mix (2 guam)", ItemID.HERB_TEA_MIX_4474);
 		guamMarrTea = new ItemRequirement("Herb tea mix (marr/guam)", ItemID.HERB_TEA_MIX_4476);
 		guamHarrMarrTea = new ItemRequirement("Herb tea mix (harr/marr/guam)", ItemID.HERB_TEA_MIX_4478);
@@ -578,7 +578,7 @@ public class OneSmallFavour extends BasicQuestHelper
 				guamHarrMarrTea)).highlighted(),
 			cupOfWater.hideConditioned(new Conditions(LogicType.OR, guamTea, harrTea, marrTea, harrMarrTea, guamHarrTea,
 				guam2Tea, guam2MarrTea, guamMarrTea, guam2HarrTea, guamHarrMarrTea)).highlighted(),
-		    herbTeaMix.hideConditioned(new Conditions(LogicType.NOR, guamTea, harrTea, marrTea, harrMarrTea,
+			herbTeaMix.hideConditioned(new Conditions(LogicType.NOR, guamTea, harrTea, marrTea, harrMarrTea,
 				guamHarrTea, guam2Tea, guam2MarrTea, guamMarrTea, guam2HarrTea, guamHarrMarrTea)).highlighted());
 		makeGuthixRest = new DetailedQuestStep(this, "Make Guthix Rest by using a bowl of hot water on an empty tea cup, then using 2 guams, a marrentill and a harralander on it.", emptyCup, hotWaterBowl, guam2, marrentill, harralander);
 		makeGuthixRest.addSubSteps(useBowlOnCup, useHerbsOnCup);
@@ -838,16 +838,16 @@ public class OneSmallFavour extends BasicQuestHelper
 	public List<ItemReward> getItemRewards()
 	{
 		return Arrays.asList(
-				new ItemReward("2 x 10,000 Experience Lamps (Any skill over level 30)", ItemID.ANTIQUE_LAMP, 2), //4447 is placeholder for filter
-				new ItemReward("A Steel Keyring", ItemID.STEEL_KEY_RING, 1));
+			new ItemReward("2 x 10,000 Experience Lamps (Any skill over level 30)", ItemID.ANTIQUE_LAMP, 2), //4447 is placeholder for filter
+			new ItemReward("A Steel Keyring", ItemID.STEEL_KEY_RING, 1));
 	}
 
 	@Override
 	public List<UnlockReward> getUnlockRewards()
 	{
 		return Arrays.asList(
-				new UnlockReward("The ability to make Guthix Rest tea."),
-				new UnlockReward("Gnome Glider in Feldip Hills."));
+			new UnlockReward("The ability to make Guthix Rest tea."),
+			new UnlockReward("Gnome Glider in Feldip Hills."));
 	}
 
 	@Override

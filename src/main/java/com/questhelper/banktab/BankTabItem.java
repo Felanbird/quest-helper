@@ -52,7 +52,7 @@ public class BankTabItem
 	{
 		this.quantity = quantity;
 		this.text = text;
-		this.itemIDs =  Collections.singletonList(itemID);
+		this.itemIDs = Collections.singletonList(itemID);
 		this.details = details;
 		this.displayID = null;
 	}

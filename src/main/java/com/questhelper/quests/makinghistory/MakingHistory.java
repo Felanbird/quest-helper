@@ -148,7 +148,7 @@ public class MakingHistory extends BasicQuestHelper
 		ectoTokens.appendToTooltip("Additionally, you can also enter Port Phasmatys via Charter ship, but that costs up to 4,100 coins.");
 
 		portPhasmatysEntry = ComplexRequirementBuilder.or("2 x Ecto-tokens, or 4100 coins to travel there via Charter" +
-			" Ship")
+				" Ship")
 			.with(ectoTokens)
 			.with(new QuestRequirement(QuestHelperQuest.GHOSTS_AHOY, QuestState.FINISHED))
 			.with(new ItemRequirement("Coins", ItemCollections.getCoins(), 4100))
@@ -282,16 +282,16 @@ public class MakingHistory extends BasicQuestHelper
 	public List<ExperienceReward> getExperienceRewards()
 	{
 		return Arrays.asList(
-				new ExperienceReward(Skill.CRAFTING, 1000),
-				new ExperienceReward(Skill.PRAYER, 1000));
+			new ExperienceReward(Skill.CRAFTING, 1000),
+			new ExperienceReward(Skill.PRAYER, 1000));
 	}
 
 	@Override
 	public List<ItemReward> getItemRewards()
 	{
 		return Arrays.asList(
-				new ItemReward("750 Coins", ItemID.COINS_995, 750),
-				new ItemReward("An Enchanted Key", ItemID.ENCHANTED_KEY, 1));
+			new ItemReward("750 Coins", ItemID.COINS_995, 750),
+			new ItemReward("An Enchanted Key", ItemID.ENCHANTED_KEY, 1));
 	}
 
 	@Override

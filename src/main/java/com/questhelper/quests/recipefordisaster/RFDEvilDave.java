@@ -200,10 +200,10 @@ public class RFDEvilDave extends BasicQuestHelper
 	public List<UnlockReward> getUnlockRewards()
 	{
 		return Arrays.asList(
-				new UnlockReward("Ability to catch Hell Rats"),
-				new UnlockReward("Ability to make spicy stews"),
-				new UnlockReward("Ability to own a hell-cat"),
-				new UnlockReward("Increased access to the Culinaromancer's Chest"));
+			new UnlockReward("Ability to catch Hell Rats"),
+			new UnlockReward("Ability to make spicy stews"),
+			new UnlockReward("Ability to own a hell-cat"),
+			new UnlockReward("Increased access to the Culinaromancer's Chest"));
 	}
 
 	@Override

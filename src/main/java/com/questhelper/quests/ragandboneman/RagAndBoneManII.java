@@ -80,7 +80,7 @@ public class RagAndBoneManII extends BasicQuestHelper
 {
 	//Items Required
 	ItemRequirement coins, pots, logs, tinderbox, lightSource, rope, dustyKey, mirrorShield, iceCooler,
-	fishingExplosive, coinsOrVinegar;
+		fishingExplosive, coinsOrVinegar;
 
 	//Items Recommended
 	ItemRequirement antifireShield, inoculationBracelet, digsitePendant, ectophial, ringOfDueling,
@@ -132,7 +132,7 @@ public class RagAndBoneManII extends BasicQuestHelper
 		deepTaverleyDungeon2, deepTaverleyDungeon3, deepTaverleyDungeon4, jailCell;
 
 	ConditionalStep morySteps, varrockSteps, lumbridgeSteps, desertSteps, sarimSteps, karamjaSteps, taverleySteps,
-	fremennikSteps, strongholdSteps, feldipSteps;
+		fremennikSteps, strongholdSteps, feldipSteps;
 
 	ConditionalStep collectBonesSteps, preparingBonesSteps, cookingSteps;
 
@@ -509,7 +509,7 @@ public class RagAndBoneManII extends BasicQuestHelper
 			"Enter the Fremennik Slayer Dungeon.", mirrorShield.equipped());
 		killBasilisk = new NpcStep(this, NpcID.BASILISK_417, new WorldPoint(2743, 10010, 0),
 			"Kill basilisks in the middle of the dungeon.", mirrorShield.equipped(), new SkillRequirement(Skill.SLAYER,
-			40,	true));
+			40, true));
 		travelToWaterbirth = new NpcStep(this, NpcID.JARVALD, new WorldPoint(2620, 3685, 0), "Travel to Waterbirth " +
 			"Island.");
 		((NpcStep) travelToWaterbirth).addAlternateNpcs(NpcID.JARVALD_7205, NpcID.JARVALD_10407);
@@ -899,8 +899,8 @@ public class RagAndBoneManII extends BasicQuestHelper
 	public List<ItemReward> getItemRewards()
 	{
 		return Arrays.asList(
-				new ItemReward("A Bonesack", ItemID.BONESACK, 1),
-				new ItemReward("A Ram Skull Helm", ItemID.RAM_SKULL_HELM, 1));
+			new ItemReward("A Bonesack", ItemID.BONESACK, 1),
+			new ItemReward("A Ram Skull Helm", ItemID.RAM_SKULL_HELM, 1));
 	}
 
 	@Override

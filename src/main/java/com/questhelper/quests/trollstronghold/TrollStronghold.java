@@ -302,9 +302,9 @@ public class TrollStronghold extends BasicQuestHelper
 	public List<UnlockReward> getUnlockRewards()
 	{
 		return Arrays.asList(
-				new UnlockReward("Ability to make Law Runes"),
-				new UnlockReward("Access to Trollheim and the Troll Stronghold"),
-				new UnlockReward("Access to the God Wars Dungeon"));
+			new UnlockReward("Ability to make Law Runes"),
+			new UnlockReward("Access to Trollheim and the Troll Stronghold"),
+			new UnlockReward("Access to the God Wars Dungeon"));
 	}
 
 	@Override

@@ -244,7 +244,7 @@ public class SeaSlug extends BasicQuestHelper
 	{
 		return Collections.singletonList(new UnlockReward("Access to the Fishing Platform"));
 	}
-	
+
 	@Override
 	public List<PanelDetails> getPanels()
 	{

@@ -220,8 +220,8 @@ public class IorwerthLightPuzzle extends ConditionalStep
 	{
 		f0SW = new Zone(new WorldPoint(2566, 6115, 0), new WorldPoint(2588, 6150, 0));
 		f0 = new Zone(new WorldPoint(2565, 6080, 0), new WorldPoint(2740, 6204, 0));
-		f0NE1 = new Zone(new WorldPoint(2619,6166, 0), new WorldPoint(2680, 6201, 0));
-		f0NE2 = new Zone(new WorldPoint(2636,6164, 0), new WorldPoint(2680, 6165, 0));
+		f0NE1 = new Zone(new WorldPoint(2619, 6166, 0), new WorldPoint(2680, 6201, 0));
+		f0NE2 = new Zone(new WorldPoint(2636, 6164, 0), new WorldPoint(2680, 6165, 0));
 
 		f1 = new Zone(new WorldPoint(2565, 6080, 1), new WorldPoint(2740, 6204, 1));
 		f2 = new Zone(new WorldPoint(2565, 6080, 2), new WorldPoint(2740, 6204, 2));

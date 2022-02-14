@@ -51,7 +51,7 @@ import net.runelite.api.ObjectID;
 import net.runelite.api.coords.WorldPoint;
 
 @QuestDescriptor(
-quest = QuestHelperQuest.BEAR_YOUR_SOUL
+	quest = QuestHelperQuest.BEAR_YOUR_SOUL
 )
 public class BearYourSoul extends BasicQuestHelper
 {

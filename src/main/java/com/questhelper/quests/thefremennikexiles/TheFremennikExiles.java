@@ -79,13 +79,13 @@ public class TheFremennikExiles extends BasicQuestHelper
 {
 	//Items Required
 	ItemRequirement combatGear, mirrorShield, kegsOfBeer, moltenGlass, astralRunes, petRock, kegs2Or650Coins,
-	fishingOrFlyFishingRod, fremennikShield, iceGloves, hammer, glassblowingPipe, pickaxe, sealOfPassage, coins150kOrCharos;
+		fishingOrFlyFishingRod, fremennikShield, iceGloves, hammer, glassblowingPipe, pickaxe, sealOfPassage, coins150kOrCharos;
 
 	//Items Recommended
 	ItemRequirement food, rellekkaTeleport, coins650, restorePot;
 
 	ItemRequirement letter, fang, venomGland, lunarOre, lunarBar, lunarGlass, moltenGlassI, sigil, sigilE,
-	polishedRock, vShield, runeThrowingaxeOrFriend;
+		polishedRock, vShield, runeThrowingaxeOrFriend;
 
 	Requirement inYagaHouse, inMine, onIsleOfStone, inTyphorRoom;
 
@@ -434,7 +434,7 @@ public class TheFremennikExiles extends BasicQuestHelper
 		travelToIsleOfStone = new ObjectStep(this, NullObjectID.NULL_37432, new WorldPoint(2623, 3693, 0),
 			"Take the boat to the Isle of Stone.");
 		talkToBrundtOutsidePuzzle = new NpcStep(this, NpcID.BRUNDT_THE_CHIEFTAIN_9267, new WorldPoint(2466, 4010, 0),
-		"Talk to Brundt outside the cave entrance.");
+			"Talk to Brundt outside the cave entrance.");
 
 		solvePuzzle = new ObjectStep(this, NullObjectID.NULL_37433, new WorldPoint(2465, 4012, 0),
 			"Attempt to open the door and solve the puzzle. It's Mastermind, where a red tick means you have one of " +
@@ -512,9 +512,9 @@ public class TheFremennikExiles extends BasicQuestHelper
 	public List<ExperienceReward> getExperienceRewards()
 	{
 		return Arrays.asList(
-				new ExperienceReward(Skill.SLAYER, 15000),
-				new ExperienceReward(Skill.CRAFTING, 15000),
-				new ExperienceReward(Skill.RUNECRAFT, 5000));
+			new ExperienceReward(Skill.SLAYER, 15000),
+			new ExperienceReward(Skill.CRAFTING, 15000),
+			new ExperienceReward(Skill.RUNECRAFT, 5000));
 	}
 
 	@Override
@@ -527,9 +527,9 @@ public class TheFremennikExiles extends BasicQuestHelper
 	public List<UnlockReward> getUnlockRewards()
 	{
 		return Arrays.asList(
-				new UnlockReward("Access to the Isle of Stone"),
-				new UnlockReward("Ability to kill Basilisk Knights as a slayer task"),
-				new UnlockReward("Ability to craft and equip the Neitiznot faceguard."));
+			new UnlockReward("Access to the Isle of Stone"),
+			new UnlockReward("Ability to kill Basilisk Knights as a slayer task"),
+			new UnlockReward("Ability to craft and equip the Neitiznot faceguard."));
 	}
 
 	@Override

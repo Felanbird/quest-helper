@@ -45,6 +45,7 @@ public interface Requirement
 {
 	/**
 	 * Check the {@link Client} that it meets this requirement.
+	 *
 	 * @param client client to check
 	 * @return true if the client meets this requirement
 	 */
@@ -94,7 +95,9 @@ public interface Requirement
 	 *
 	 * @param tooltip the new tooltip
 	 */
-	default void setTooltip(@Nullable String tooltip) {}
+	default void setTooltip(@Nullable String tooltip)
+	{
+	}
 
 	default List<LineComponent> getDisplayTextWithChecks(Client client, QuestHelperConfig config)
 	{
@@ -124,5 +127,7 @@ public interface Requirement
 	 *
 	 * @param requirement the new requirement
 	 */
-	default void setOverlayReplacement(Requirement requirement) {}
+	default void setOverlayReplacement(Requirement requirement)
+	{
+	}
 }

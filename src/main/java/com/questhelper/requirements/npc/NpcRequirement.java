@@ -45,7 +45,7 @@ public class NpcRequirement extends AbstractRequirement
 	 * Check for the existence of an NPC within your canvas.
 	 *
 	 * @param displayText the display text
-	 * @param npcID the NPC to check for
+	 * @param npcID       the NPC to check for
 	 */
 	public NpcRequirement(String displayText, int npcID)
 	{
@@ -56,8 +56,8 @@ public class NpcRequirement extends AbstractRequirement
 	 * Check if a given NPC is in a specified {@link Zone}.
 	 *
 	 * @param displayText the display text
-	 * @param npcID the {@link NPC} to check for
-	 * @param worldPoint the location to check for the NPC
+	 * @param npcID       the {@link NPC} to check for
+	 * @param worldPoint  the location to check for the NPC
 	 */
 	public NpcRequirement(String displayText, int npcID, WorldPoint worldPoint)
 	{
@@ -68,8 +68,8 @@ public class NpcRequirement extends AbstractRequirement
 	 * Check if a given NPC is in a specified {@link Zone}.
 	 *
 	 * @param displayText the display text
-	 * @param npcID the {@link NPC} to check for
-	 * @param zone the zone to check.
+	 * @param npcID       the {@link NPC} to check for
+	 * @param zone        the zone to check.
 	 */
 	public NpcRequirement(String displayText, int npcID, Zone zone)
 	{
@@ -81,10 +81,10 @@ public class NpcRequirement extends AbstractRequirement
 	 * <br>
 	 * If {@param checkNotInZone} is true, this will check if the NPC is NOT in the zone.
 	 *
-	 * @param displayText the display text
-	 * @param npcID the {@link NPC} to check for
+	 * @param displayText    the display text
+	 * @param npcID          the {@link NPC} to check for
 	 * @param checkNotInZone determines whether to check if the NPC is in the zone or not
-	 * @param zone the zone to check.
+	 * @param zone           the zone to check.
 	 */
 	public NpcRequirement(String displayText, int npcID, boolean checkNotInZone, Zone zone)
 	{
@@ -105,9 +105,9 @@ public class NpcRequirement extends AbstractRequirement
 		{
 			if (zone != null)
 			{
-				for(NPC npc : found)
+				for (NPC npc : found)
 				{
-					WorldPoint npcLocation = WorldPoint.fromLocalInstance(client,  npc.getLocalLocation(), 2);
+					WorldPoint npcLocation = WorldPoint.fromLocalInstance(client, npc.getLocalLocation(), 2);
 					if (npcLocation != null)
 					{
 						boolean inZone = zone.contains(npcLocation);

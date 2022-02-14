@@ -57,7 +57,7 @@ import net.runelite.api.Skill;
 import net.runelite.api.coords.WorldPoint;
 
 @QuestDescriptor(
-        quest = QuestHelperQuest.SPIRITS_OF_THE_ELID
+	quest = QuestHelperQuest.SPIRITS_OF_THE_ELID
 )
 public class SpiritsOfTheElid extends BasicQuestHelper
 {
@@ -329,9 +329,9 @@ public class SpiritsOfTheElid extends BasicQuestHelper
 	public List<ExperienceReward> getExperienceRewards()
 	{
 		return Arrays.asList(
-				new ExperienceReward(Skill.PRAYER, 8000),
-				new ExperienceReward(Skill.THIEVING, 1000),
-				new ExperienceReward(Skill.MAGIC, 1000));
+			new ExperienceReward(Skill.PRAYER, 8000),
+			new ExperienceReward(Skill.THIEVING, 1000),
+			new ExperienceReward(Skill.MAGIC, 1000));
 	}
 
 	@Override

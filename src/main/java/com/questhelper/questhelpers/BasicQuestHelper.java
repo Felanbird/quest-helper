@@ -43,7 +43,7 @@ public abstract class BasicQuestHelper extends QuestHelper
 	public void startUp(QuestHelperConfig config)
 	{
 		this.config = config;
-		if(steps == null)
+		if (steps == null)
 		{
 			steps = loadSteps();
 			instantiateSteps(steps.values());
@@ -72,7 +72,8 @@ public abstract class BasicQuestHelper extends QuestHelper
 		return false;
 	}
 
-	public List<PanelDetails> getPanels() {
+	public List<PanelDetails> getPanels()
+	{
 		List<PanelDetails> panelSteps = new ArrayList<>();
 		steps.forEach((id, step) -> panelSteps.add(new PanelDetails("", step)));
 		return panelSteps;

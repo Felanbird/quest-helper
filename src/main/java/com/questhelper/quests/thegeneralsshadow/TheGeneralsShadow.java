@@ -62,7 +62,7 @@ public class TheGeneralsShadow extends BasicQuestHelper
 {
 	// Required
 	ItemRequirement ghostlyHood, ghostlyBody, ghostlyLegs, ghostlyGloves, ghostlyBoots, ghostlyCloak,
-	ringOfVisibility, ghostspeak, combatGear, coins40, sinSeersNote, ghostlyRobes, serveredLeg;
+		ringOfVisibility, ghostspeak, combatGear, coins40, sinSeersNote, ghostlyRobes, serveredLeg;
 
 	// Recommended
 	ItemRequirement kharidTeleport, gnomeTeleport, rellekkaTeleport, karamjaTeleport;

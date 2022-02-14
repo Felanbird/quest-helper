@@ -33,7 +33,7 @@ import net.runelite.api.Skill;
 import net.runelite.api.coords.WorldPoint;
 
 @QuestDescriptor(
-		quest = QuestHelperQuest.SCORPION_CATCHER
+	quest = QuestHelperQuest.SCORPION_CATCHER
 )
 public class ScorpionCatcher extends BasicQuestHelper
 {
@@ -69,7 +69,7 @@ public class ScorpionCatcher extends BasicQuestHelper
 		beginQuest.addStep(inSorcerersTower3, speakToThormac);
 
 		finishQuest = new ConditionalStep(this, goToTopOfTower,
-			"Return to Thormac to finish the quest.",	scorpionCageFull);
+			"Return to Thormac to finish the quest.", scorpionCageFull);
 		finishQuest.addStep(inSorcerersTower3, returnToThormac);
 
 		ConditionalStep goGetTaverleyScorpion = new ConditionalStep(this, enterTaverleyDungeon);

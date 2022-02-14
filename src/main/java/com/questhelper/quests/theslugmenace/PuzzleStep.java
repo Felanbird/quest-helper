@@ -108,7 +108,7 @@ public class PuzzleStep extends QuestStep
 	{
 		int currentPiece;
 
-		HashMap<Integer, Integer>[] piecesCurrentState =  new HashMap[3];
+		HashMap<Integer, Integer>[] piecesCurrentState = new HashMap[3];
 
 		HashMap<Integer, Integer> highlightButtonsTmp = new HashMap<>();
 

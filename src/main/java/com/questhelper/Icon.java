@@ -57,6 +57,7 @@ public enum Icon
 	;
 
 	private final String file;
+
 	Icon(String file)
 	{
 		this.file = file;
@@ -64,6 +65,7 @@ public enum Icon
 
 	/**
 	 * Get the raw {@link BufferedImage} of this icon.
+	 *
 	 * @return {@link BufferedImage} of the icon
 	 */
 	public BufferedImage getImage()

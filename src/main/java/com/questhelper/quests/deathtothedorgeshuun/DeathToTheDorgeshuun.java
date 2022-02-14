@@ -520,17 +520,17 @@ public class DeathToTheDorgeshuun extends BasicQuestHelper
 	public List<ExperienceReward> getExperienceRewards()
 	{
 		return Arrays.asList(
-				new ExperienceReward(Skill.THIEVING, 2000),
-				new ExperienceReward(Skill.RANGED, 2000));
+			new ExperienceReward(Skill.THIEVING, 2000),
+			new ExperienceReward(Skill.RANGED, 2000));
 	}
 
 	@Override
 	public List<UnlockReward> getUnlockRewards()
 	{
 		return Arrays.asList(
-				new UnlockReward("Ability to use Dorgeshuun Special Attacks"),
-				new UnlockReward("Access to H.A.M. Store Rooms."),
-				new UnlockReward("Access to Dorgesh-Kann."));
+			new UnlockReward("Ability to use Dorgeshuun Special Attacks"),
+			new UnlockReward("Access to H.A.M. Store Rooms."),
+			new UnlockReward("Access to Dorgesh-Kann."));
 	}
 
 	@Override

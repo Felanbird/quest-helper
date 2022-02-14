@@ -263,7 +263,7 @@ public class LumbridgeElite extends ComplexStateQuestHelper
 			new UnlockReward("20% discount on items in the Culinaromancer's Chest"),
 			new UnlockReward("Ability to use Fairy rings without the need of a Dramen or Lunar staff"),
 			new UnlockReward("Unlocked the 6th slot for blocking Slayer tasks")
-			);
+		);
 	}
 
 	@Override

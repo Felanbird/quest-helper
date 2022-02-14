@@ -50,7 +50,7 @@ public class FreeInventorySlotRequirement extends AbstractRequirement
 	 * Checks if the player has a required number of slots free in a given
 	 * {@link InventoryID}
 	 *
-	 * @param inventoryID the inventory to check
+	 * @param inventoryID  the inventory to check
 	 * @param numSlotsFree the required number of slots free
 	 */
 	public FreeInventorySlotRequirement(InventoryID inventoryID, int numSlotsFree)

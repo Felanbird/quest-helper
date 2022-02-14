@@ -46,31 +46,42 @@ public interface QuestHelperConfig extends Config
 {
 	enum QuestOrdering implements Comparator<QuestHelper>
 	{
-		/** Sort quests in alphabetical order */
+		/**
+		 * Sort quests in alphabetical order
+		 */
 		A_TO_Z(QuestOrders.sortAToZ(), QuestFilter.QUEST, QuestFilter.MINIQUEST, QuestFilter.ACHIEVEMENT_DIARY,
 			QuestFilter.SKILL, QuestFilter.GENERIC_HELPER),
-		/** Sort quests in reverse alphabetical order */
+		/**
+		 * Sort quests in reverse alphabetical order
+		 */
 		Z_TO_A(QuestOrders.sortZToA(), QuestFilter.QUEST, QuestFilter.MINIQUEST, QuestFilter.ACHIEVEMENT_DIARY,
 			QuestFilter.SKILL, QuestFilter.GENERIC_HELPER),
-		/** Sort quests according to the Optimal Quest Guide (https://oldschool.runescape.wiki/w/Optimal_quest_guide) */
+		/**
+		 * Sort quests according to the Optimal Quest Guide (https://oldschool.runescape.wiki/w/Optimal_quest_guide)
+		 */
 		OPTIMAL(QuestOrders.sortOptimalOrder(), QuestFilter.OPTIMAL, QuestFilter.GENERIC_HELPER),
-		/** Sort quests according to the Optimal Quest Guide (Ironman version) (https://oldschool.runescape.wiki/w/Optimal_quest_guide/Ironman) */
+		/**
+		 * Sort quests according to the Optimal Quest Guide (Ironman version) (https://oldschool.runescape.wiki/w/Optimal_quest_guide/Ironman)
+		 */
 		OPTIMAL_IRONMAN(QuestOrders.sortOptimalIronmanOrder(), QuestFilter.OPTIMAL, QuestFilter.GENERIC_HELPER),
-		/** Sort quest by their release date (https://oldschool.runescape.wiki/w/Quests/Release_dates) */
-		RELEASE_DATE(QuestOrders.sortByRelease(), QuestFilter.QUEST, QuestFilter.MINIQUEST)
-		;
+		/**
+		 * Sort quest by their release date (https://oldschool.runescape.wiki/w/Quests/Release_dates)
+		 */
+		RELEASE_DATE(QuestOrders.sortByRelease(), QuestFilter.QUEST, QuestFilter.MINIQUEST);
 
 		private final Comparator<QuestHelper> comparator;
 		@Getter
 		private final QuestFilter[] sections;
 
-		QuestOrdering(Comparator<QuestHelper> comparator, QuestFilter... sections) {
+		QuestOrdering(Comparator<QuestHelper> comparator, QuestFilter... sections)
+		{
 			this.comparator = comparator;
 			this.sections = sections;
 
 		}
 
-		public List<QuestHelper> sort(Collection<QuestHelper> list) {
+		public List<QuestHelper> sort(Collection<QuestHelper> list)
+		{
 			return list.stream().sorted(this).collect(Collectors.toList());
 		}
 
@@ -81,7 +92,8 @@ public interface QuestHelperConfig extends Config
 		}
 	}
 
-	enum QuestFilter implements Predicate<QuestHelper> {
+	enum QuestFilter implements Predicate<QuestHelper>
+	{
 		/**
 		 * Show all quests
 		 */
@@ -94,11 +106,11 @@ public interface QuestHelperConfig extends Config
 		 * Show all except generic helpers
 		 */
 		OPTIMAL("Optimal ordering",
-				q -> q.getQuest().getQuestType() == Quest.Type.P2P ||
-						q.getQuest().getQuestType() == Quest.Type.F2P ||
-						q.getQuest().getQuestType() == Quest.Type.MINIQUEST ||
-						q.getQuest().getQuestType() == Quest.Type.ACHIEVEMENT_DIARY,
-				false),
+			q -> q.getQuest().getQuestType() == Quest.Type.P2P ||
+				q.getQuest().getQuestType() == Quest.Type.F2P ||
+				q.getQuest().getQuestType() == Quest.Type.MINIQUEST ||
+				q.getQuest().getQuestType() == Quest.Type.ACHIEVEMENT_DIARY,
+			false),
 		/**
 		 * Show all free-to-play quests
 		 */
@@ -111,7 +123,7 @@ public interface QuestHelperConfig extends Config
 		 * Show all quests
 		 */
 		QUEST("Quests", q -> q.getQuest().getQuestType() == Quest.Type.P2P ||
-				q.getQuest().getQuestType() == Quest.Type.F2P),
+			q.getQuest().getQuestType() == Quest.Type.F2P),
 		/**
 		 * Show all miniquests (all miniquests are members' only)
 		 */
@@ -133,30 +145,35 @@ public interface QuestHelperConfig extends Config
 
 		protected final boolean shouldDisplay;
 
-		QuestFilter(Predicate<QuestHelper> predicate) {
+		QuestFilter(Predicate<QuestHelper> predicate)
+		{
 			this.predicate = predicate;
 			this.displayName = Text.titleCase(this);
 			this.shouldDisplay = true;
 		}
 
-		QuestFilter(String displayName, Predicate<QuestHelper> predicate) {
+		QuestFilter(String displayName, Predicate<QuestHelper> predicate)
+		{
 			this.predicate = predicate;
 			this.displayName = displayName;
 			this.shouldDisplay = true;
 		}
 
-		QuestFilter(String displayName, Predicate<QuestHelper> predicate, boolean shouldDisplay) {
+		QuestFilter(String displayName, Predicate<QuestHelper> predicate, boolean shouldDisplay)
+		{
 			this.predicate = predicate;
 			this.displayName = displayName;
 			this.shouldDisplay = shouldDisplay;
 		}
 
 		@Override
-		public boolean test(QuestHelper quest) {
+		public boolean test(QuestHelper quest)
+		{
 			return predicate.test(quest);
 		}
 
-		public List<QuestHelper> test(Collection<QuestHelper> helpers) {
+		public List<QuestHelper> test(Collection<QuestHelper> helpers)
+		{
 
 			return helpers.stream().filter(this).collect(Collectors.toList());
 		}
@@ -208,9 +225,9 @@ public interface QuestHelperConfig extends Config
 	}
 
 	@ConfigItem(
-			keyName = "showMiniMapArrow",
-			name = "Display arrows on the mini-map and overworld",
-			description = "Choose whether flashing arrows point to the next objective"
+		keyName = "showMiniMapArrow",
+		name = "Display arrows on the mini-map and overworld",
+		description = "Choose whether flashing arrows point to the next objective"
 	)
 	default boolean showMiniMapArrow()
 	{
@@ -218,9 +235,9 @@ public interface QuestHelperConfig extends Config
 	}
 
 	@ConfigItem(
-			keyName = "showWorldLines",
-			name = "Display navigation paths",
-			description = "Choose whether navigation paths are drawn to the next objective"
+		keyName = "showWorldLines",
+		name = "Display navigation paths",
+		description = "Choose whether navigation paths are drawn to the next objective"
 	)
 	default boolean showWorldLines()
 	{
@@ -236,7 +253,7 @@ public interface QuestHelperConfig extends Config
 	{
 		return true;
 	}
-	
+
 	@ConfigSection(
 		position = 1,
 		name = "Colours",

@@ -62,6 +62,7 @@ public enum ItemSlots
 		this.name = name;
 		this.inventorySlots = null;
 	}
+
 	ItemSlots(int slotIdx, String name, InventorySlots slots)
 	{
 		this.slotIdx = slotIdx;
@@ -73,7 +74,7 @@ public enum ItemSlots
 	 * Checks that a given item slot is empty.
 	 * If checking all equipment, inventory, or both, the predicate will be used to
 	 *
-	 * @param client the {@link Client} to check
+	 * @param client    the {@link Client} to check
 	 * @param predicate the predicate to use
 	 * @return true if ALL the items match the predicate via {@link Stream#allMatch(Predicate)}
 	 */
@@ -103,7 +104,7 @@ public enum ItemSlots
 	 * Check if any of the {@link Item} in a client's {@link ItemContainer} match
 	 * the given predicate.
 	 *
-	 * @param client the {@link Client} to check
+	 * @param client    the {@link Client} to check
 	 * @param predicate the predicate to use
 	 * @return true if ANY of the items match the predicate
 	 */

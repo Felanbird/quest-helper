@@ -100,7 +100,9 @@ public abstract class QuestHelper implements Module, QuestDebugRenderer
 
 	public abstract boolean updateQuest();
 
-	public void debugStartup(QuestHelperConfig config) {}
+	public void debugStartup(QuestHelperConfig config)
+	{
+	}
 
 	protected void startUpStep(QuestStep step)
 	{
@@ -177,7 +179,10 @@ public abstract class QuestHelper implements Module, QuestDebugRenderer
 	@Override
 	public void renderDebugOverlay(Graphics graphics, QuestHelperPlugin plugin, PanelComponent panelComponent)
 	{
-		if (!plugin.isDeveloperMode()) return;
+		if (!plugin.isDeveloperMode())
+		{
+			return;
+		}
 		panelComponent.getChildren().add(LineComponent.builder()
 			.left("Quest")
 			.leftColor(ColorScheme.BRAND_ORANGE_TRANSPARENT)
@@ -284,7 +289,10 @@ public abstract class QuestHelper implements Module, QuestDebugRenderer
 		return rewards;
 	}
 
-	public List<ExternalQuestResources> getExternalResources(){ return null; }
+	public List<ExternalQuestResources> getExternalResources()
+	{
+		return null;
+	}
 
 	public abstract List<PanelDetails> getPanels();
 }

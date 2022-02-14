@@ -77,7 +77,7 @@ public class QuestRequirement extends AbstractRequirement
 	/**
 	 * Check if a {@link net.runelite.api.Quest} is past the minimum var value
 	 *
-	 * @param quest         the quest to check
+	 * @param quest           the quest to check
 	 * @param minimumVarValue the required quest state
 	 */
 	public QuestRequirement(QuestHelperQuest quest, int minimumVarValue)
@@ -91,9 +91,9 @@ public class QuestRequirement extends AbstractRequirement
 	/**
 	 * Check if a {@link net.runelite.api.Quest} is past the minimum var value
 	 *
-	 * @param quest         the quest to check
+	 * @param quest           the quest to check
 	 * @param minimumVarValue the required quest state
-	 * @param displayText   display text
+	 * @param displayText     display text
 	 */
 	public QuestRequirement(QuestHelperQuest quest, int minimumVarValue, String displayText)
 	{

@@ -159,7 +159,7 @@ public class EnlightenedJourney extends BasicQuestHelper
 
 	public void setupZones()
 	{
-		entrana = new Zone(new WorldPoint(2798, 3327,0), new WorldPoint(2878, 3394,1));
+		entrana = new Zone(new WorldPoint(2798, 3327, 0), new WorldPoint(2878, 3394, 1));
 	}
 
 	public void setupConditions()
@@ -255,26 +255,26 @@ public class EnlightenedJourney extends BasicQuestHelper
 	public List<ExperienceReward> getExperienceRewards()
 	{
 		return Arrays.asList(
-				new ExperienceReward(Skill.CRAFTING, 2000),
-				new ExperienceReward(Skill.FARMING, 3000),
-				new ExperienceReward(Skill.WOODCUTTING, 1500),
-				new ExperienceReward(Skill.FIREMAKING, 4000));
+			new ExperienceReward(Skill.CRAFTING, 2000),
+			new ExperienceReward(Skill.FARMING, 3000),
+			new ExperienceReward(Skill.WOODCUTTING, 1500),
+			new ExperienceReward(Skill.FIREMAKING, 4000));
 	}
 
 	@Override
 	public List<ItemReward> getItemRewards()
 	{
 		return Arrays.asList(
-				new ItemReward("Bomber Jacket", ItemID.BOMBER_JACKET, 1),
-				new ItemReward("Bomber Cap", ItemID.BOMBER_CAP, 1));
+			new ItemReward("Bomber Jacket", ItemID.BOMBER_JACKET, 1),
+			new ItemReward("Bomber Cap", ItemID.BOMBER_CAP, 1));
 	}
 
 	@Override
 	public List<UnlockReward> getUnlockRewards()
 	{
 		return Arrays.asList(
-				new UnlockReward("Access to the Hot Air Balloon transport system."),
-				new UnlockReward("Ability to make origami balloons."));
+			new UnlockReward("Access to the Hot Air Balloon transport system."),
+			new UnlockReward("Ability to make origami balloons."));
 	}
 
 
@@ -286,7 +286,7 @@ public class EnlightenedJourney extends BasicQuestHelper
 		allSteps.add(new PanelDetails("Making a balloon", Arrays.asList(travelToEntrana, talkToAuguste,
 			usePapyrusOnWool,
 			useCandleOnBalloon, talkToAugusteAgain, talkToAugusteWithPapyrus, talkToAugusteAfterMob, fillSacks,
-			talkToAugusteWithDye),	papyrus3, ballOfWool, unlitCandle, sackOfPotatoes, emptySack8, yellowDye,redDye,
+			talkToAugusteWithDye), papyrus3, ballOfWool, unlitCandle, sackOfPotatoes, emptySack8, yellowDye, redDye,
 			silk10, bowl));
 
 		allSteps.add(new PanelDetails("Flying", Arrays.asList(talkToAugusteWithBranches,

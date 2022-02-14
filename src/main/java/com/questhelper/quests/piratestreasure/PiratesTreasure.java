@@ -50,7 +50,7 @@ import net.runelite.api.ObjectID;
 import net.runelite.api.coords.WorldPoint;
 
 @QuestDescriptor(
-        quest = QuestHelperQuest.PIRATES_TREASURE
+	quest = QuestHelperQuest.PIRATES_TREASURE
 )
 public class PiratesTreasure extends BasicQuestHelper
 {
@@ -146,8 +146,8 @@ public class PiratesTreasure extends BasicQuestHelper
 	public List<ItemReward> getItemRewards()
 	{
 		return Arrays.asList(
-				new ItemReward("A Gold Ring", ItemID.GOLD_RING, 1),
-				new ItemReward("450 Coins", ItemID.COINS_995, 450));
+			new ItemReward("A Gold Ring", ItemID.GOLD_RING, 1),
+			new ItemReward("450 Coins", ItemID.COINS_995, 450));
 	}
 
 	@Override

@@ -31,26 +31,26 @@ import net.runelite.client.util.QuantityFormatter;
 
 public class ExperienceReward implements Reward
 {
-    private final Skill skill;
-    private final int experience;
+	private final Skill skill;
+	private final int experience;
 
-    public ExperienceReward(Skill skill, int experience)
-    {
-        this.skill = skill;
-        this.experience = experience;
-    }
+	public ExperienceReward(Skill skill, int experience)
+	{
+		this.skill = skill;
+		this.experience = experience;
+	}
 
-    @Nonnull
-    @Override
-    public RewardType rewardType()
-    {
-        return RewardType.EXPERIENCE;
-    }
+	@Nonnull
+	@Override
+	public RewardType rewardType()
+	{
+		return RewardType.EXPERIENCE;
+	}
 
-    @Nonnull
-    @Override
-    public String getDisplayText()
-    {
-        return  QuantityFormatter.formatNumber(experience) + " " + Character.toUpperCase(skill.name().charAt(0)) + skill.name().toLowerCase(Locale.ROOT).substring(1) + " Experience";
-    }
+	@Nonnull
+	@Override
+	public String getDisplayText()
+	{
+		return QuantityFormatter.formatNumber(experience) + " " + Character.toUpperCase(skill.name().charAt(0)) + skill.name().toLowerCase(Locale.ROOT).substring(1) + " Experience";
+	}
 }

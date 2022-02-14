@@ -118,7 +118,7 @@ public class GertrudesCat extends BasicQuestHelper
 		//Need to find to ways to hide arrow
 		searchNearbyCrates = new NpcStep(this, NpcID.CRATE, new WorldPoint(3306, 3505, 0),
 			"Search for a kitten in the crates in the Lumberyard.", true);
-		((NpcStep)(searchNearbyCrates)).setHideWorldArrow(true);
+		((NpcStep) (searchNearbyCrates)).setHideWorldArrow(true);
 		ObjectStep climbDownLadderStep = goDownLadderStep();
 		ObjectStep climbUpLadderStep = getClimbLadder();
 		ArrayList<ItemRequirement> fluffsKittenRequirement = new ArrayList<>();
@@ -277,9 +277,9 @@ public class GertrudesCat extends BasicQuestHelper
 	public List<ItemReward> getItemRewards()
 	{
 		return Arrays.asList(
-				new ItemReward("A pet Kitten", ItemID.PET_KITTEN, 1),
-				new ItemReward("Chocolate Cake", ItemID.CHOCOLATE_CAKE, 1),
-				new ItemReward("Stew", ItemID.STEW, 1));
+			new ItemReward("A pet Kitten", ItemID.PET_KITTEN, 1),
+			new ItemReward("Chocolate Cake", ItemID.CHOCOLATE_CAKE, 1),
+			new ItemReward("Stew", ItemID.STEW, 1));
 	}
 
 	@Override

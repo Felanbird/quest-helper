@@ -609,9 +609,9 @@ public class RoyalTrouble extends BasicQuestHelper
 	public List<ExperienceReward> getExperienceRewards()
 	{
 		return Arrays.asList(
-				new ExperienceReward(Skill.AGILITY, 5000),
-				new ExperienceReward(Skill.SLAYER, 5000),
-				new ExperienceReward(Skill.HITPOINTS, 5000));
+			new ExperienceReward(Skill.AGILITY, 5000),
+			new ExperienceReward(Skill.SLAYER, 5000),
+			new ExperienceReward(Skill.HITPOINTS, 5000));
 	}
 
 	@Override

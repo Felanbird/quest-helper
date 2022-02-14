@@ -361,11 +361,11 @@ public class InSearchOfTheMyreque extends BasicQuestHelper
 	public List<ExperienceReward> getExperienceRewards()
 	{
 		return Arrays.asList(
-				new ExperienceReward(Skill.ATTACK, 600),
-				new ExperienceReward(Skill.DEFENCE, 600),
-				new ExperienceReward(Skill.STRENGTH, 600),
-				new ExperienceReward(Skill.HITPOINTS, 600),
-				new ExperienceReward(Skill.CRAFTING, 600));
+			new ExperienceReward(Skill.ATTACK, 600),
+			new ExperienceReward(Skill.DEFENCE, 600),
+			new ExperienceReward(Skill.STRENGTH, 600),
+			new ExperienceReward(Skill.HITPOINTS, 600),
+			new ExperienceReward(Skill.CRAFTING, 600));
 	}
 
 	@Override

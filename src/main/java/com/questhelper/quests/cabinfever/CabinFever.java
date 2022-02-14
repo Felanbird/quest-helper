@@ -646,27 +646,27 @@ public class CabinFever extends BasicQuestHelper
 	public List<ExperienceReward> getExperienceRewards()
 	{
 		return Arrays.asList(
-				new ExperienceReward(Skill.SMITHING, 7000),
-				new ExperienceReward(Skill.CRAFTING, 7000),
-				new ExperienceReward(Skill.AGILITY, 7000));
+			new ExperienceReward(Skill.SMITHING, 7000),
+			new ExperienceReward(Skill.CRAFTING, 7000),
+			new ExperienceReward(Skill.AGILITY, 7000));
 	}
 
 	@Override
 	public List<ItemReward> getItemRewards()
 	{
 		return Arrays.asList(
-				new ItemReward("10,000 Coins", ItemID.COINS_995, 10000),
-				new ItemReward("The Book o' Piracy", ItemID.BOOK_O_PIRACY, 1));
+			new ItemReward("10,000 Coins", ItemID.COINS_995, 10000),
+			new ItemReward("The Book o' Piracy", ItemID.BOOK_O_PIRACY, 1));
 	}
 
 	@Override
 	public List<UnlockReward> getUnlockRewards()
 	{
 		return Arrays.asList(
-				new UnlockReward("Access to Mos Le'Harmless"),
-				new UnlockReward("Access to Cave Horrors and the ability to receive them as a Slayer Task."),
-				new UnlockReward("Charter Ship prices are now halved."),
-				new UnlockReward("Ability to play the Trouble Brewing minigame."));
+			new UnlockReward("Access to Mos Le'Harmless"),
+			new UnlockReward("Access to Cave Horrors and the ability to receive them as a Slayer Task."),
+			new UnlockReward("Charter Ship prices are now halved."),
+			new UnlockReward("Ability to play the Trouble Brewing minigame."));
 	}
 
 	@Override

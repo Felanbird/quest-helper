@@ -258,7 +258,7 @@ public class InSearchOfKnowledge extends BasicQuestHelper
 
 		allSteps.add(new PanelDetails("Document the Tomes",
 			Collections.singletonList(useMoonOnLogosia), moonTome, sunTome,
-				templeTome));
+			templeTome));
 
 		return allSteps;
 	}

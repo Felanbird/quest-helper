@@ -7,10 +7,12 @@ import java.util.HashSet;
 public class PuzzleSolver
 {
 
-	public PuzzleSolver() {}
+	public PuzzleSolver()
+	{
+	}
 
 	//Controls
-    private static final WidgetDetails[] buttons = new WidgetDetails[]{
+	private static final WidgetDetails[] buttons = new WidgetDetails[]{
 		new WidgetDetails(480, 26, 0),
 		//Skip 2
 		new WidgetDetails(480, 31, 0),
@@ -26,7 +28,8 @@ public class PuzzleSolver
 	{
 		HashSet<WidgetDetails> highlights = new HashSet<>();
 
-		for (WidgetDetails button : buttons) {
+		for (WidgetDetails button : buttons)
+		{
 			highlights.add(button);
 		}
 

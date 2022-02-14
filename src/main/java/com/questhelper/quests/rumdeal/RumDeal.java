@@ -74,7 +74,7 @@ public class RumDeal extends BasicQuestHelper
 	Requirement prayerPoints47;
 
 	Requirement onIsland, onIslandF1, onIslandF2, onIslandF0, rakedPatch, plantedPatch, grownPatch, onNorthIsland, added5Sluglings,
-		inSpiderRoom, evilSpiritNearby,carcassNearby;
+		inSpiderRoom, evilSpiritNearby, carcassNearby;
 
 	DetailedQuestStep talkToPete, talkToBraindeath, goDownstairs, rakePatch, plantSeed, waitForGrowth, pickPlant, goUpStairsWithPlant, talkToBraindeathWithPlant, talkToPeteWithPlant,
 		climbUpToDropPlant, dropPlant, goDownFromDropPlant, talkToBraindeathAfterPlant, goDownForWater, openGate, useBucketOnWater, goUpWithWater, goUpToDropWater, dropWater,
@@ -448,9 +448,9 @@ public class RumDeal extends BasicQuestHelper
 	public List<ExperienceReward> getExperienceRewards()
 	{
 		return Arrays.asList(
-				new ExperienceReward(Skill.FISHING, 7000),
-				new ExperienceReward(Skill.PRAYER, 7000),
-				new ExperienceReward(Skill.FARMING, 7000));
+			new ExperienceReward(Skill.FISHING, 7000),
+			new ExperienceReward(Skill.PRAYER, 7000),
+			new ExperienceReward(Skill.FARMING, 7000));
 	}
 
 	@Override

@@ -182,7 +182,7 @@ public class TheAscentOfArceuus extends BasicQuestHelper
 	public void setupSteps()
 	{
 		talkToMori = new NpcStep(this, NpcID.MORI, new WorldPoint(1698, 3742, 0), "Talk to Mori in Arceuus.");
-		talkToMori.addDialogSteps("What can I do to help?", "We should let someone know about this.","Yes.",
+		talkToMori.addDialogSteps("What can I do to help?", "We should let someone know about this.", "Yes.",
 			"Of course I'll help.");
 
 		goUpToAndrews = new ObjectStep(this, ObjectID.STAIRCASE_11807, new WorldPoint(1616, 3681, 0),
@@ -247,7 +247,7 @@ public class TheAscentOfArceuus extends BasicQuestHelper
 			"Return to Kaal-Ket-Jor.");
 		talkToKaalAgain.addSubSteps(enterKaruulmAgain);
 
-		searchRocks = new ObjectStep(this, ObjectID.ROCKS_33595,"Inspect the rocks near the Arceuus Altar until you find a device.");
+		searchRocks = new ObjectStep(this, ObjectID.ROCKS_33595, "Inspect the rocks near the Arceuus Altar until you find a device.");
 		((ObjectStep) searchRocks).setHideWorldArrow(true);
 		((ObjectStep) searchRocks).addAlternateObjects(ObjectID.ROCKS_33593);
 		((ObjectStep) searchRocks).setWorldMapPoint(new WorldPoint(1714, 3880, 0));
@@ -292,17 +292,17 @@ public class TheAscentOfArceuus extends BasicQuestHelper
 	public List<ExperienceReward> getExperienceRewards()
 	{
 		return Arrays.asList(
-				new ExperienceReward(Skill.HUNTER, 1500),
-				new ExperienceReward(Skill.RUNECRAFT, 500));
+			new ExperienceReward(Skill.HUNTER, 1500),
+			new ExperienceReward(Skill.RUNECRAFT, 500));
 	}
 
 	@Override
 	public List<ItemReward> getItemRewards()
 	{
 		return Arrays.asList(
-				new ItemReward("2,000 Coins", ItemID.COINS_995, 2000),
-				new ItemReward("Arceuus Favour Certificate", ItemID.ARCEUUS_FAVOUR_CERTIFICATE, 1),
-				new ItemReward("A Kharedst's Memoirs page", ItemID.KHAREDSTS_MEMOIRS, 1));
+			new ItemReward("2,000 Coins", ItemID.COINS_995, 2000),
+			new ItemReward("Arceuus Favour Certificate", ItemID.ARCEUUS_FAVOUR_CERTIFICATE, 1),
+			new ItemReward("A Kharedst's Memoirs page", ItemID.KHAREDSTS_MEMOIRS, 1));
 	}
 
 	@Override

@@ -742,17 +742,17 @@ public class MonkeyMadnessI extends BasicQuestHelper
 	public List<ItemReward> getItemRewards()
 	{
 		return Arrays.asList(
-				new ItemReward("55,000 Experience Combat Lamp (Over multiple Skills)", ItemID.ANTIQUE_LAMP, 1), //4447 is placeholder for filter
-				new ItemReward("10,000 Coins", ItemID.COINS_995, 10000),
-				new ItemReward("3 Diamonds", ItemID.DIAMOND, 3));
+			new ItemReward("55,000 Experience Combat Lamp (Over multiple Skills)", ItemID.ANTIQUE_LAMP, 1), //4447 is placeholder for filter
+			new ItemReward("10,000 Coins", ItemID.COINS_995, 10000),
+			new ItemReward("3 Diamonds", ItemID.DIAMOND, 3));
 	}
 
 	@Override
 	public List<UnlockReward> getUnlockRewards()
 	{
 		return Arrays.asList(
-				new UnlockReward("Ability to purchase and wield the Dragon Scimitar."),
-				new UnlockReward("Full access to Ape Atoll."));
+			new UnlockReward("Ability to purchase and wield the Dragon Scimitar."),
+			new UnlockReward("Full access to Ape Atoll."));
 	}
 
 	@Override

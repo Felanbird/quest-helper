@@ -117,7 +117,7 @@ public class CryptPuzzle extends DetailedOwnerStep
 
 		items.put(AIVAS, aivasBust);
 		items.put(CAMORRA, camorraBust);
-		items.put(ROBERT,robertBust);
+		items.put(ROBERT, robertBust);
 		items.put(TRISTAN, tristanBust);
 	}
 

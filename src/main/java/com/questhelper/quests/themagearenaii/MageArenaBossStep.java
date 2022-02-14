@@ -169,7 +169,7 @@ public class MageArenaBossStep extends DetailedQuestStep
 		setWorldPoint(null);
 		Set<MageArenaSpawnLocation> locations =
 			Arrays.stream(MageArenaSpawnLocation.values())
-			.collect(Collectors.toSet());
+				.collect(Collectors.toSet());
 
 		if (mageArenaSolver != null)
 		{
@@ -257,7 +257,7 @@ public class MageArenaBossStep extends DetailedQuestStep
 		currentVar = client.getVarbitValue(BOSS_MOVING_TIMER_VARBIT);
 		Set<MageArenaSpawnLocation> locations =
 			Arrays.stream(MageArenaSpawnLocation.values())
-			.collect(Collectors.toSet());
+				.collect(Collectors.toSet());
 		mageArenaSolver = new MageArenaSolver(locations);
 		if (locations.size() == 1)
 		{

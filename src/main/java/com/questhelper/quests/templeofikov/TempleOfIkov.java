@@ -76,7 +76,7 @@ public class TempleOfIkov extends BasicQuestHelper
 
 	Requirement emptyInventorySpot;
 
-	Requirement  belowMinus1Weight, below4Weight, inEntryRoom, inNorthRoom, inBootsRoom, dontHaveBoots, inMainOrNorthRoom,
+	Requirement belowMinus1Weight, below4Weight, inEntryRoom, inNorthRoom, inBootsRoom, dontHaveBoots, inMainOrNorthRoom,
 		leverNearby, pulledLever, inArrowRoom, hasEnoughArrows, lesNearby, inLesRoom, inWitchRoom, inDemonArea,
 		inArmaRoom;
 
@@ -212,7 +212,7 @@ public class TempleOfIkov extends BasicQuestHelper
 
 		staffOfArmadyl = new ItemRequirement("Staff of Armadyl", ItemID.STAFF_OF_ARMADYL);
 
-		emptyInventorySpot = new FreeInventorySlotRequirement(InventoryID.INVENTORY,  1);
+		emptyInventorySpot = new FreeInventorySlotRequirement(InventoryID.INVENTORY, 1);
 	}
 
 	public void loadZones()
@@ -394,8 +394,8 @@ public class TempleOfIkov extends BasicQuestHelper
 	public List<ExperienceReward> getExperienceRewards()
 	{
 		return Arrays.asList(
-				new ExperienceReward(Skill.RANGED, 10500),
-				new ExperienceReward(Skill.FLETCHING, 8000));
+			new ExperienceReward(Skill.RANGED, 10500),
+			new ExperienceReward(Skill.FLETCHING, 8000));
 	}
 
 	@Override
@@ -409,7 +409,7 @@ public class TempleOfIkov extends BasicQuestHelper
 	{
 		List<PanelDetails> allSteps = new ArrayList<>();
 		allSteps.add(new PanelDetails("Starting off", Collections.singletonList(talkToLucien)));
-		allSteps.add(new PanelDetails("Defeat Lesarkus", 
+		allSteps.add(new PanelDetails("Defeat Lesarkus",
 			Arrays.asList(prepare, enterDungeon, goDownToBoots, getBoots, goUpFromBoots, pickUpLever, useLeverOnHole,
 				pullLever, enterArrowRoom, collectArrows, returnToMainRoom, goSearchThievingLever,
 				tryToEnterWitchRoom, fightLes), pendantOfLucien, yewOrBetterBow, knife, lightSource, limpwurt20));

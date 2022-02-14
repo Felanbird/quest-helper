@@ -267,7 +267,7 @@ public class FairytaleI extends BasicQuestHelper
 
 		enterZanarisForFight = new ObjectStep(this, ObjectID.DOOR_2406, new WorldPoint(3202, 3169, 0),
 			"Travel to Zanaris, ready to fight the Tanglefoot.",
-					dramenOrLunarStaff, magicSecateurs);
+			dramenOrLunarStaff, magicSecateurs);
 		enterTanglefootRoom = new ObjectStep(this, NullObjectID.NULL_11999, new WorldPoint(2399, 4379, 0),
 			"Enter the tanglefoot lair in the south of Zanaris, near the cosmic altar.", magicSecateursEquipped, food);
 		killTanglefoot = new NpcStep(this, NpcID.TANGLEFOOT, new WorldPoint(2375, 4385, 0), "Kill the large " +
@@ -318,9 +318,9 @@ public class FairytaleI extends BasicQuestHelper
 	public List<ExperienceReward> getExperienceRewards()
 	{
 		return Arrays.asList(
-				new ExperienceReward(Skill.FARMING, 3500),
-				new ExperienceReward(Skill.ATTACK, 2000),
-				new ExperienceReward(Skill.MAGIC, 1000));
+			new ExperienceReward(Skill.FARMING, 3500),
+			new ExperienceReward(Skill.ATTACK, 2000),
+			new ExperienceReward(Skill.MAGIC, 1000));
 	}
 
 	@Override

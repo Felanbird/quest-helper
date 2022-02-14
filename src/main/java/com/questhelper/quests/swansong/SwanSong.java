@@ -321,9 +321,9 @@ public class SwanSong extends BasicQuestHelper
 	public List<ExperienceReward> getExperienceRewards()
 	{
 		return Arrays.asList(
-				new ExperienceReward(Skill.MAGIC, 15000),
-				new ExperienceReward(Skill.PRAYER, 10000),
-				new ExperienceReward(Skill.FISHING, 10000)
+			new ExperienceReward(Skill.MAGIC, 15000),
+			new ExperienceReward(Skill.PRAYER, 10000),
+			new ExperienceReward(Skill.FISHING, 10000)
 		);
 	}
 
@@ -337,8 +337,8 @@ public class SwanSong extends BasicQuestHelper
 	public List<UnlockReward> getUnlockRewards()
 	{
 		return Arrays.asList(
-				new UnlockReward("Access to the Piscatoris Fishing Colony"),
-				new UnlockReward("The ability to fish Monkfish"));
+			new UnlockReward("Access to the Piscatoris Fishing Colony"),
+			new UnlockReward("The ability to fish Monkfish"));
 	}
 
 	@Override

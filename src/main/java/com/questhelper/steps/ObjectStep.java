@@ -324,7 +324,7 @@ public class ObjectStep extends DetailedQuestStep
 			if (clickbox != null && !inCutscene)
 			{
 				Rectangle2D boundingBox = clickbox.getBounds2D();
-				graphics.drawImage(icon, (int) boundingBox.getCenterX() - 15,  (int) boundingBox.getCenterY() - 10,
+				graphics.drawImage(icon, (int) boundingBox.getCenterX() - 15, (int) boundingBox.getCenterY() - 10,
 					null);
 			}
 		}

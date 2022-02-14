@@ -234,16 +234,16 @@ public class FightArena extends BasicQuestHelper
 	public List<ExperienceReward> getExperienceRewards()
 	{
 		return Arrays.asList(
-				new ExperienceReward(Skill.ATTACK, 12175),
-				new ExperienceReward(Skill.THIEVING, 2175));
+			new ExperienceReward(Skill.ATTACK, 12175),
+			new ExperienceReward(Skill.THIEVING, 2175));
 	}
 
 	@Override
 	public List<ItemReward> getItemRewards()
 	{
 		return Arrays.asList(
-				new ItemReward("1,000 Coins", ItemID.COINS_995, 1000),
-				new ItemReward("Khazard Armor", ItemID.KHAZARD_ARMOUR, 1));
+			new ItemReward("1,000 Coins", ItemID.COINS_995, 1000),
+			new ItemReward("Khazard Armor", ItemID.KHAZARD_ARMOUR, 1));
 	}
 
 	@Override

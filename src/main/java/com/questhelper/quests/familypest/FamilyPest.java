@@ -55,7 +55,7 @@ import net.runelite.api.QuestState;
 import net.runelite.api.coords.WorldPoint;
 
 @QuestDescriptor(
-        quest = QuestHelperQuest.FAMILY_PEST
+	quest = QuestHelperQuest.FAMILY_PEST
 )
 public class FamilyPest extends BasicQuestHelper
 {

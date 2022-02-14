@@ -28,9 +28,9 @@ import javax.annotation.Nonnull;
 
 public interface Reward
 {
-    @Nonnull
-    RewardType rewardType();
+	@Nonnull
+	RewardType rewardType();
 
-    @Nonnull
-    String getDisplayText();
+	@Nonnull
+	String getDisplayText();
 }

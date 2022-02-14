@@ -163,8 +163,8 @@ public class WildernessMedium extends ComplexStateQuestHelper
 		burningAmulet = new ItemRequirement("Burning amulet", ItemCollections.getBurningAmulets());
 		gamesNeck = new ItemRequirement("Games necklace", ItemCollections.getGamesNecklaces());
 
-		enterGodwars = new ComplexRequirement(LogicType.OR,"60 Strength or Agility",
-			new SkillRequirement(Skill.AGILITY,	60),
+		enterGodwars = new ComplexRequirement(LogicType.OR, "60 Strength or Agility",
+			new SkillRequirement(Skill.AGILITY, 60),
 			new SkillRequirement(Skill.STRENGTH, 60));
 
 		inEdge = new ZoneRequirement(edge);

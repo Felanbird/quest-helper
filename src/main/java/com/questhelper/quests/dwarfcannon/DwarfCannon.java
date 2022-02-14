@@ -29,7 +29,7 @@ import net.runelite.api.*;
 import net.runelite.api.coords.WorldPoint;
 
 @QuestDescriptor(
-        quest = QuestHelperQuest.DWARF_CANNON
+	quest = QuestHelperQuest.DWARF_CANNON
 )
 
 public class DwarfCannon extends BasicQuestHelper
@@ -226,8 +226,8 @@ public class DwarfCannon extends BasicQuestHelper
 	public List<UnlockReward> getUnlockRewards()
 	{
 		return Arrays.asList(
-				new UnlockReward("Ability to purchase and use the Dwarf Multicannon."),
-				new UnlockReward("Ability to make cannonballs."));
+			new UnlockReward("Ability to purchase and use the Dwarf Multicannon."),
+			new UnlockReward("Ability to make cannonballs."));
 	}
 
 	@Override

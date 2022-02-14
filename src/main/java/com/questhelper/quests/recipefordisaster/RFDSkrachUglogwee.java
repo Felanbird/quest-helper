@@ -260,18 +260,18 @@ public class RFDSkrachUglogwee extends BasicQuestHelper
 	public List<ExperienceReward> getExperienceRewards()
 	{
 		return Arrays.asList(
-				new ExperienceReward(Skill.WOODCUTTING, 1500),
-				new ExperienceReward(Skill.COOKING, 1500),
-				new ExperienceReward(Skill.CRAFTING, 1500),
-				new ExperienceReward(Skill.RANGED, 1500));
+			new ExperienceReward(Skill.WOODCUTTING, 1500),
+			new ExperienceReward(Skill.COOKING, 1500),
+			new ExperienceReward(Skill.CRAFTING, 1500),
+			new ExperienceReward(Skill.RANGED, 1500));
 	}
 
 	@Override
 	public List<UnlockReward> getUnlockRewards()
 	{
 		return Arrays.asList(
-				new UnlockReward("New method of travel between Karamja and Feldip Hills."),
-				new UnlockReward("Increased access to the Culinaromancer's Chest."));
+			new UnlockReward("New method of travel between Karamja and Feldip Hills."),
+			new UnlockReward("Increased access to the Culinaromancer's Chest."));
 	}
 
 	@Override

@@ -262,7 +262,7 @@ public class AgilityDungeonSteps extends DetailedOwnerStep
 			"Traverse the next section of the dungeon. PROTECT FROM MISSILE if you fall.");
 		getKey = new ObjectStep(getQuestHelper(), ObjectID.CHEST_28792, new WorldPoint(2653, 9163, 1),
 			"Right-click unlock the chest in the cavern to the east for a bronze key.");
-		((ObjectStep)(getKey)).addAlternateObjects(ObjectID.CHEST_28793);
+		((ObjectStep) (getKey)).addAlternateObjects(ObjectID.CHEST_28793);
 		getKey.setLinePoints(pathToChest);
 
 		openBronzeDoor = new ObjectStep(getQuestHelper(), ObjectID.BRONZE_DOOR, new WorldPoint(2610, 9195, 1),
@@ -285,7 +285,7 @@ public class AgilityDungeonSteps extends DetailedOwnerStep
 	private void updateSection1Route()
 	{
 		ArrayList<WorldPoint> newRoute = new ArrayList<>();
-		if(shouldUsePath1V2.check(client))
+		if (shouldUsePath1V2.check(client))
 		{
 			newRoute.addAll(path1V2);
 		}
@@ -294,7 +294,7 @@ public class AgilityDungeonSteps extends DetailedOwnerStep
 			newRoute.addAll(path1V1);
 		}
 
-		if(shouldUsePath2V2.check(client))
+		if (shouldUsePath2V2.check(client))
 		{
 			if (shouldUsePath1V2.check(client))
 			{
@@ -312,7 +312,7 @@ public class AgilityDungeonSteps extends DetailedOwnerStep
 		}
 		newRoute.addAll(pathMaze);
 
-		if(shouldUsePath3V2.check(client))
+		if (shouldUsePath3V2.check(client))
 		{
 			newRoute.addAll(path3V2);
 		}
@@ -327,7 +327,7 @@ public class AgilityDungeonSteps extends DetailedOwnerStep
 	private void updateSection2Route()
 	{
 		ArrayList<WorldPoint> newRoute = new ArrayList<>();
-		if(shouldUsePath4V2.check(client))
+		if (shouldUsePath4V2.check(client))
 		{
 			newRoute.addAll(path4V2);
 			newRoute.addAll(workOutFifthSection(0, new ArrayList<>(), 0));
@@ -342,7 +342,7 @@ public class AgilityDungeonSteps extends DetailedOwnerStep
 
 	private void updateSection3Route()
 	{
-		if(shouldUsePath6V2.check(client))
+		if (shouldUsePath6V2.check(client))
 		{
 			goToKruk.setLinePoints(pathToKrukV2);
 			goToKruk.setWorldPoint(new WorldPoint(2548, 9225, 1));
@@ -403,7 +403,10 @@ public class AgilityDungeonSteps extends DetailedOwnerStep
 		{
 			if (currentNode.getPaths()[i] != null)
 			{
-				if (currentNode.getPaths()[i].getWrongWay().check(client)) routeSavedValues.get(currentNode.getPaths()[i]).setConfigValue("true");
+				if (currentNode.getPaths()[i].getWrongWay().check(client))
+				{
+					routeSavedValues.get(currentNode.getPaths()[i]).setConfigValue("true");
+				}
 				if (routeSavedValues.get(currentNode.getPaths()[i]).check(client) && !previousIds.contains(currentNode.getPaths()[i].getIdEnd()))
 				{
 					nextNodeId = currentNode.getPaths()[i].getIdEnd();
@@ -452,7 +455,10 @@ public class AgilityDungeonSteps extends DetailedOwnerStep
 	{
 		if (!shouldUsePath1V2.check(client))
 		{
-			if (path1SouthIsWrong.check(client)) shouldUsePath1V2.setConfigValue("true");
+			if (path1SouthIsWrong.check(client))
+			{
+				shouldUsePath1V2.setConfigValue("true");
+			}
 			if (shouldUsePath1V2.check(client))
 			{
 				updateSection1Route();
@@ -460,7 +466,10 @@ public class AgilityDungeonSteps extends DetailedOwnerStep
 		}
 		if (!shouldUsePath2V2.check(client))
 		{
-			if (path2NorthIsWrong.check(client)) shouldUsePath2V2.setConfigValue("true");
+			if (path2NorthIsWrong.check(client))
+			{
+				shouldUsePath2V2.setConfigValue("true");
+			}
 			if (shouldUsePath2V2.check(client))
 			{
 				updateSection1Route();
@@ -468,7 +477,10 @@ public class AgilityDungeonSteps extends DetailedOwnerStep
 		}
 		if (!shouldUsePath3V2.check(client))
 		{
-			if (path3SouthIsWrong.check(client)) shouldUsePath3V2.setConfigValue("true");
+			if (path3SouthIsWrong.check(client))
+			{
+				shouldUsePath3V2.setConfigValue("true");
+			}
 			if (shouldUsePath3V2.check(client))
 			{
 				updateSection1Route();
@@ -477,7 +489,10 @@ public class AgilityDungeonSteps extends DetailedOwnerStep
 
 		if (!shouldUsePath4V2.check(client))
 		{
-			if (path4NorthIsWrong.check(client)) shouldUsePath4V2.setConfigValue("true");
+			if (path4NorthIsWrong.check(client))
+			{
+				shouldUsePath4V2.setConfigValue("true");
+			}
 			if (shouldUsePath4V2.check(client))
 			{
 				updateSection2Route();
@@ -486,7 +501,10 @@ public class AgilityDungeonSteps extends DetailedOwnerStep
 
 		if (!shouldntUsePath5V1.check(client))
 		{
-			if (path5EastIsWrong.check(client)) shouldntUsePath5V1.setConfigValue("true");
+			if (path5EastIsWrong.check(client))
+			{
+				shouldntUsePath5V1.setConfigValue("true");
+			}
 			if (shouldntUsePath5V1.check(client))
 			{
 				updateSection2Route();
@@ -495,7 +513,10 @@ public class AgilityDungeonSteps extends DetailedOwnerStep
 
 		if (!shouldntUsePath5V2.check(client))
 		{
-			if (path5MiddleIsWrong.check(client)) shouldntUsePath5V2.setConfigValue("true");
+			if (path5MiddleIsWrong.check(client))
+			{
+				shouldntUsePath5V2.setConfigValue("true");
+			}
 			if (shouldntUsePath5V2.check(client))
 			{
 				updateSection2Route();
@@ -504,7 +525,10 @@ public class AgilityDungeonSteps extends DetailedOwnerStep
 
 		if (!shouldntUsePath5V3.check(client))
 		{
-			if (path5WestIsWrong.check(client)) shouldntUsePath5V3.setConfigValue("true");
+			if (path5WestIsWrong.check(client))
+			{
+				shouldntUsePath5V3.setConfigValue("true");
+			}
 			if (shouldntUsePath5V1.check(client))
 			{
 				updateSection2Route();
@@ -513,7 +537,10 @@ public class AgilityDungeonSteps extends DetailedOwnerStep
 
 		if (!shouldUsePath6V2.check(client))
 		{
-			if (path6WestIsWrong.check(client)) shouldUsePath6V2.setConfigValue("true");
+			if (path6WestIsWrong.check(client))
+			{
+				shouldUsePath6V2.setConfigValue("true");
+			}
 			if (shouldUsePath6V2.check(client))
 			{
 				updateSection3Route();

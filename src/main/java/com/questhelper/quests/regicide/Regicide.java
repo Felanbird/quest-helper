@@ -74,7 +74,7 @@ public class Regicide extends BasicQuestHelper
 		oilyClothHighlight, fireArrow, litArrow, litArrowEquipped, bucketHighlight;
 
 	ItemRequirement coal20, limestone, stripOfCloth, pestle, gloves, pot, cookedRabbit, crystalPendant, barrel2,
-	coalBarrel2, sulphur, bigBookOfBangs, quicklime, groundQuicklime, groundSulphur, naphtha, naphthaMix,
+		coalBarrel2, sulphur, bigBookOfBangs, quicklime, groundQuicklime, groundSulphur, naphtha, naphthaMix,
 		barrelBombFused, barrelBombUnfused, iorwerthsMessage;
 
 	//Items Recommended
@@ -85,7 +85,7 @@ public class Regicide extends BasicQuestHelper
 		isBeforeThePit, isAfterThePit, isBeforeTheGrid, isAtTheGrid, isAfterTheGrid, isBeforeTrap1,
 		isBeforeTrap2, isBeforeTrap3, isBeforeTrap4, isBeforeTrap5, isInWellArea, isAtOrb1, isInsideCell, isBeforeLedge,
 		isAfterMaze, isInUnicornArea, isInUnicornArea2, isInKnightsArea, isBeforeIbansDoor, isInDwarfCavern, isInFinalArea,
-	    isInFallArea, isInUndergroundSection2, isInUndergroundSection3, isInMaze, isInTemple, isInPostIbanArea,
+		isInFallArea, isInUndergroundSection2, isInUndergroundSection3, isInMaze, isInTemple, isInPostIbanArea,
 		isInIbanRoom, isInWellEntrance, isInElvenLands, inForestNearCave, inForestSectionAfterCave, inWestForestPath,
 		inSouthOfLog, inIorwerthCamp, inGuardArea, inTyrasCamp;
 
@@ -272,7 +272,7 @@ public class Regicide extends BasicQuestHelper
 		gloves.appendToTooltip("Graceful Gloves");
 		gloves.appendToTooltip("Granite Gloves");
 		pot = new ItemRequirement("Pot", ItemID.POT);
-		cookedRabbit =  new ItemRequirement("Cooked rabbit (Obtainable during quest)", ItemID.COOKED_RABBIT);
+		cookedRabbit = new ItemRequirement("Cooked rabbit (Obtainable during quest)", ItemID.COOKED_RABBIT);
 		cookedRabbit.setTooltip("Raw Rabbit can be killed around Isafdar or purchased from the");
 		cookedRabbit.appendToTooltip(" Charter Ship near the Tyras Camp for 50gp.");
 
@@ -381,7 +381,7 @@ public class Regicide extends BasicQuestHelper
 		guardArea = new Zone(new WorldPoint(2205, 3115, 0), new WorldPoint(2236, 3154, 0));
 		tyrasCampArea = new Zone(new WorldPoint(2161, 3155, 0), new WorldPoint(2206, 3193, 0));
 		tyrasCampArea2 = new Zone(new WorldPoint(2207, 3155, 0), new WorldPoint(2227, 3179, 0));
-		tyrasCampArea3 = new Zone(new WorldPoint(2126, 3039, 0), new WorldPoint(2204 ,3154, 0));
+		tyrasCampArea3 = new Zone(new WorldPoint(2126, 3039, 0), new WorldPoint(2204, 3154, 0));
 	}
 
 	private void setupConditions()
@@ -495,7 +495,7 @@ public class Regicide extends BasicQuestHelper
 			"Enter the Underground Pass.");
 
 		enterTheDungeon = new ObjectStep(this, ObjectID.CAVE_ENTRANCE_3213, new WorldPoint(2434, 3315, 0),
-			"Enter the Underground Pass.",	bow, arrows, rope1, spade);
+			"Enter the Underground Pass.", bow, arrows, rope1, spade);
 		climbOverRockslide1 = new ObjectStep(this, ObjectID.ROCKSLIDE, new WorldPoint(2480, 9713, 0), "Climb-over rockslide.");
 		climbOverRockslide2 = new ObjectStep(this, ObjectID.ROCKSLIDE, new WorldPoint(2471, 9706, 0), "Climb-over rockslide.");
 		climbOverRockslide3 = new ObjectStep(this, ObjectID.ROCKSLIDE, new WorldPoint(2458, 9712, 0), "Climb-over rockslide.");
@@ -672,7 +672,7 @@ public class Regicide extends BasicQuestHelper
 		usePestleOnQuicklime = new DetailedQuestStep(this, "Use a pestle and mortar on the quicklime with a pot in " +
 			"your inventory.", pestle.highlighted(), quicklime.highlighted(), pot);
 		usePestleOnSulphur = new DetailedQuestStep(this, "Use a pestle and mortar on some sulphur.",
-			pestle.highlighted(),	sulphur.highlighted());
+			pestle.highlighted(), sulphur.highlighted());
 
 		talkToChemist = new NpcStep(this, NpcID.CHEMIST, new WorldPoint(2933, 3210, 0),
 			"Talk to the Chemist in Rimmington.", coalBarrel2, coal20);
@@ -931,11 +931,11 @@ public class Regicide extends BasicQuestHelper
 	public List<UnlockReward> getUnlockRewards()
 	{
 		return Arrays.asList(
-				new UnlockReward("Access to Tirannwn & Arandar"),
-				new UnlockReward("Ability to wield the Dragon Halberd"),
-				new UnlockReward("Ability to charter a ship to Port Tyras."),
-				new UnlockReward("Ability to use Iorwerth Camp teleport scrolls."),
-				new UnlockReward("Ability to use Zul-Andra teleport scrolls and battle Zulrah."));
+			new UnlockReward("Access to Tirannwn & Arandar"),
+			new UnlockReward("Ability to wield the Dragon Halberd"),
+			new UnlockReward("Ability to charter a ship to Port Tyras."),
+			new UnlockReward("Ability to use Iorwerth Camp teleport scrolls."),
+			new UnlockReward("Ability to use Zul-Andra teleport scrolls and battle Zulrah."));
 	}
 
 	@Override

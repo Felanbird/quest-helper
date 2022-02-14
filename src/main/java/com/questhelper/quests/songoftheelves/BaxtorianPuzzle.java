@@ -275,7 +275,7 @@ public class BaxtorianPuzzle extends DetailedOwnerStep
 		ItemRequirement blackDaggerPplus = new ItemRequirement("Black dagger(p+)", ItemID.BLACK_DAGGERP_5682);
 		ItemRequirement blackDaggerPplusPlus = new ItemRequirement("Black dagger(p++)", ItemID.BLACK_DAGGERP_5700);
 		blackDagger = new ItemRequirements(LogicType.OR, "Black dagger", blackDaggerClean, blackDaggerP, blackDaggerPplus,
-		blackDaggerPplusPlus);
+			blackDaggerPplusPlus);
 
 		blackKnifeOrDagger = new ItemRequirements(LogicType.OR, "Black knife or black dagger", blackKnife, blackDagger);
 		blackKnifeOrDagger.setHighlightInInventory(true);
@@ -293,7 +293,7 @@ public class BaxtorianPuzzle extends DetailedOwnerStep
 		String SOUTHWEST_ID = "south west";
 		pillars.add(new BaxtorianPillar(getQuestHelper(), new WorldPoint(2600, 9909, 0), new WorldPoint(2600, 9909, 0), "I am the ", SOUTHWEST_ID));
 		String WEST_ID = "west";
-		pillars.add(new BaxtorianPillar(getQuestHelper(), new WorldPoint(2600, 9913, 0), new WorldPoint(2600, 9911, 0),  "I am next to the ", WEST_ID));
+		pillars.add(new BaxtorianPillar(getQuestHelper(), new WorldPoint(2600, 9913, 0), new WorldPoint(2600, 9911, 0), "I am next to the ", WEST_ID));
 		String NORTHWEST_ID = "north west";
 		pillars.add(new BaxtorianPillar(getQuestHelper(), new WorldPoint(2607, 9913, 0), new WorldPoint(2600, 9913, 0), "I am opposite the ", NORTHWEST_ID));
 		String EAST_ID = "east";

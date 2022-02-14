@@ -37,7 +37,7 @@ import net.runelite.client.eventbus.Subscribe;
 
 public class AddCompost extends ObjectStep
 {
-	ItemRequirement compost = new ItemRequirement("Supercompost",ItemID.SUPERCOMPOST, 7);
+	ItemRequirement compost = new ItemRequirement("Supercompost", ItemID.SUPERCOMPOST, 7);
 	ItemRequirement spade = new ItemRequirement("Spade", ItemID.SPADE);
 
 	public AddCompost(QuestHelper questHelper)

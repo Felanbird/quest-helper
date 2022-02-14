@@ -397,26 +397,26 @@ public class RecruitmentDrive extends BasicQuestHelper
 	public List<ExperienceReward> getExperienceRewards()
 	{
 		return Arrays.asList(
-				new ExperienceReward(Skill.PRAYER, 1000),
-				new ExperienceReward(Skill.AGILITY, 1000),
-				new ExperienceReward(Skill.HERBLORE, 1000));
+			new ExperienceReward(Skill.PRAYER, 1000),
+			new ExperienceReward(Skill.AGILITY, 1000),
+			new ExperienceReward(Skill.HERBLORE, 1000));
 	}
 
 	@Override
 	public List<ItemReward> getItemRewards()
 	{
 		return Arrays.asList(
-				new ItemReward("Initiate Helm", ItemID.INITIATE_SALLET, 1),
-				new ItemReward("3000 Coins", ItemID.COINS_995, 3000),
-				new ItemReward("Makeover Voucher (If male when starting quest)", ItemID.MAKEOVER_VOUCHER, 1));
+			new ItemReward("Initiate Helm", ItemID.INITIATE_SALLET, 1),
+			new ItemReward("3000 Coins", ItemID.COINS_995, 3000),
+			new ItemReward("Makeover Voucher (If male when starting quest)", ItemID.MAKEOVER_VOUCHER, 1));
 	}
 
 	@Override
 	public List<UnlockReward> getUnlockRewards()
 	{
 		return Arrays.asList(
-				new UnlockReward("Ability to respawn in Falador"),
-				new UnlockReward("Access to Initiate Armor"));
+			new UnlockReward("Ability to respawn in Falador"),
+			new UnlockReward("Access to Initiate Armor"));
 	}
 
 	@Override

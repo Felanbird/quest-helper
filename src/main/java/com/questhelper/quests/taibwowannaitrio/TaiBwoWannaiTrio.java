@@ -88,10 +88,10 @@ public class TaiBwoWannaiTrio extends BasicQuestHelper
 		goToTimfrakuLadderEnd, talkToTimfrakuEnd, pickupBurntBones;
 
 	QuestStep makeKarambwanjiPaste, usePasteOnSpear, usePestleOnKarambwan, usePasteOnBones, getPoisonKarambwan,
-	goOnHuntToKill, askAboutResearch, useVesselOnTinsay;
+		goOnHuntToKill, askAboutResearch, useVesselOnTinsay;
 
 	Requirement startedQuestDuringSession, syncedState, inTimfrakusHut, inLufubuZone, givenKarambwanji,
-		vesselOnGround,	talkedToTiadeche, givenVessel, bonesNearby, corpseNearby, wentOnHunt, givenPotion, givenSpear,
+		vesselOnGround, talkedToTiadeche, givenVessel, bonesNearby, corpseNearby, wentOnHunt, givenPotion, givenSpear,
 		burningBonesNearby, burntBonesNearby, hadAtLeastRawKarambwan, hadRumWithBanana, hadSeaweed, hadMarinated,
 		defeatedBeast, talkedTinsay1, givenRum, givenSandwich, givenBones, hadSeaweedSandwich,
 		beenAskedToResearchVessel, hadManual;
@@ -125,7 +125,7 @@ public class TaiBwoWannaiTrio extends BasicQuestHelper
 		coreQuest.addStep(new Conditions(hadRumWithBanana, beenAskedToResearchVessel, defeatedBeast, hadSeaweed, hadMarinated, monkeySkin), makeSeaweedSandwich);
 		coreQuest.addStep(new Conditions(hadRumWithBanana, beenAskedToResearchVessel, defeatedBeast, hadSeaweed, hadMarinated, monkeyCorpse), useCorpseOnTamayu);
 		coreQuest.addStep(new Conditions(hadRumWithBanana, beenAskedToResearchVessel, defeatedBeast, hadSeaweed, hadMarinated,
-				corpseNearby), pickupCorpse);
+			corpseNearby), pickupCorpse);
 		coreQuest.addStep(new Conditions(hadRumWithBanana, beenAskedToResearchVessel, defeatedBeast, hadSeaweed, hadMarinated), getMonkeyCorpse);
 		coreQuest.addStep(new Conditions(hadRumWithBanana, beenAskedToResearchVessel, hadSeaweed, hadMarinated, givenPotion, givenSpear), goOnHuntToKill);
 		coreQuest.addStep(new Conditions(hadRumWithBanana, beenAskedToResearchVessel, hadSeaweed, hadMarinated, poisonedSpear, givenPotion),
@@ -149,7 +149,7 @@ public class TaiBwoWannaiTrio extends BasicQuestHelper
 		coreQuest.addStep(new Conditions(hadRumWithBanana, beenAskedToResearchVessel, hadSeaweed, burntJogreBones),
 			makeKarambwanjiPaste);
 		coreQuest.addStep(new Conditions(hadRumWithBanana, beenAskedToResearchVessel, hadSeaweed, new Conditions(LogicType.OR,
-				burningBonesNearby, burntBonesNearby)), pickupBurntBones);
+			burningBonesNearby, burntBonesNearby)), pickupBurntBones);
 		coreQuest.addStep(new Conditions(hadRumWithBanana, beenAskedToResearchVessel, hadSeaweed, anyJogreBones), burnBones);
 		coreQuest.addStep(new Conditions(hadRumWithBanana, beenAskedToResearchVessel, hadSeaweed, bonesNearby), pickupBones);
 		coreQuest.addStep(new Conditions(hadRumWithBanana, beenAskedToResearchVessel, hadSeaweed), getJogreBones);
@@ -183,8 +183,8 @@ public class TaiBwoWannaiTrio extends BasicQuestHelper
 
 	private void setupWorldPoints()
 	{
-		timfrakuHutWorldPoint = new WorldPoint(2782,3087,0);
-		lubufuWorldPoint = new WorldPoint(2769,3171,0);
+		timfrakuHutWorldPoint = new WorldPoint(2782, 3087, 0);
+		lubufuWorldPoint = new WorldPoint(2769, 3171, 0);
 	}
 
 	private void setupSteps()
@@ -202,7 +202,7 @@ public class TaiBwoWannaiTrio extends BasicQuestHelper
 
 		syncStep = new DetailedQuestStep(this, "Open your quest journal to sync your current state.");
 
-		fishKarambwaji = new NpcStep(this, NpcID.FISHING_SPOT_4710, new WorldPoint(2791,3019,0),
+		fishKarambwaji = new NpcStep(this, NpcID.FISHING_SPOT_4710, new WorldPoint(2791, 3019, 0),
 			"Using your small fishing net, catch atleast 23 raw karambwanji just south of Tai Bwo Wannai.", smallFishingNet);
 
 		goToLubufu = new NpcStep(this, NpcID.LUBUFU, lubufuWorldPoint, "Go to Brimhaven and talk to Lubufu. " +
@@ -248,7 +248,7 @@ public class TaiBwoWannaiTrio extends BasicQuestHelper
 
 		giveVessel = new NpcStep(this, NpcID.TIADECHE, new WorldPoint(2912, 3116, 0),
 			"Use a filled vessel on Tiadeche. Make sure to finish the dialogue with him and accept the karambwan he " +
-				"offers!",	filledKarabmwanVessel.highlighted());
+				"offers!", filledKarabmwanVessel.highlighted());
 		giveVessel.addDialogStep("Yes");
 		giveVessel.addIcon(ItemID.KARAMBWAN_VESSEL_3159);
 
@@ -462,8 +462,8 @@ public class TaiBwoWannaiTrio extends BasicQuestHelper
 
 	private void setupZones()
 	{
-		timfrakusHut = new Zone(new WorldPoint(2778,3084,1), new WorldPoint(2786, 3090,1));
-		lubufuZone = new Zone(new WorldPoint(2759,3173,0), new WorldPoint(2780,3162,0));
+		timfrakusHut = new Zone(new WorldPoint(2778, 3084, 1), new WorldPoint(2786, 3090, 1));
+		lubufuZone = new Zone(new WorldPoint(2759, 3173, 0), new WorldPoint(2780, 3162, 0));
 	}
 
 	private void setupItemRequirements()
@@ -569,10 +569,10 @@ public class TaiBwoWannaiTrio extends BasicQuestHelper
 	public List<ExperienceReward> getExperienceRewards()
 	{
 		return Arrays.asList(
-				new ExperienceReward(Skill.COOKING, 5000),
-				new ExperienceReward(Skill.FISHING, 5000),
-				new ExperienceReward(Skill.ATTACK, 2500),
-				new ExperienceReward(Skill.STRENGTH, 2500));
+			new ExperienceReward(Skill.COOKING, 5000),
+			new ExperienceReward(Skill.FISHING, 5000),
+			new ExperienceReward(Skill.ATTACK, 2500),
+			new ExperienceReward(Skill.STRENGTH, 2500));
 	}
 
 	@Override
@@ -585,9 +585,9 @@ public class TaiBwoWannaiTrio extends BasicQuestHelper
 	public List<UnlockReward> getUnlockRewards()
 	{
 		return Arrays.asList(
-				new UnlockReward("Ability to catch and cook Karambwans"),
-				new UnlockReward("Ability to use Tai Bwo Wannai teleport scrolls"),
-				new UnlockReward("Ability to complete the smithing section of Barbarian Training"));
+			new UnlockReward("Ability to catch and cook Karambwans"),
+			new UnlockReward("Ability to use Tai Bwo Wannai teleport scrolls"),
+			new UnlockReward("Ability to complete the smithing section of Barbarian Training"));
 	}
 
 	@Override

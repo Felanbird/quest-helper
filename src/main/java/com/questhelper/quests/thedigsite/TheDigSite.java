@@ -77,7 +77,7 @@ public class TheDigSite extends BasicQuestHelper
 	Requirement talkedToFemaleStudent, talkedToOrangeStudent, talkedToGreenStudent, talkedToGuide, letterStamped, hasTeddy, hasSkull, hasSpecialCup,
 		femaleStudentQ1Learnt, orangeStudentQ1Learnt, greenStudentQ1Learnt, femaleStudentQ2Learnt, orangeStudentQ2Learnt, greenStudentQ2Learnt, femaleStudentQ3Learnt,
 		femaleExtorting, orangeStudentQ3Learnt, greenStudentQ3Learnt, syncedUp, syncedUp2, syncedUp3, givenTalismanIn, rope1Added, rope2Added,
-		inUndergroundTemple1, inDougRoom,openedBarrel, searchedBricks, hasKeyOrPowderOrMixtures, openPowderChestNearby, inUndergroundTemple2,
+		inUndergroundTemple1, inDougRoom, openedBarrel, searchedBricks, hasKeyOrPowderOrMixtures, openPowderChestNearby, inUndergroundTemple2,
 		knowStateAsJustStartedQuest, knowStateAsJustCompletedFirstExam, knowStateAsJustCompletedSecondExam;
 
 	QuestStep talkToExaminer, talkToHaig, talkToExaminer2, searchBush, takeTray, talkToGuide, panWater, pickpocketWorkmen, talkToFemaleStudent, talkToFemaleStudent2,
@@ -295,7 +295,7 @@ public class TheDigSite extends BasicQuestHelper
 			new WidgetTextRequirement(WidgetInfo.DIALOG_PLAYER_TEXT, "Hey! Excellent!"));
 
 		syncedUp3 = new Conditions(true, LogicType.OR, knowStateAsJustCompletedSecondExam,
-			new WidgetTextRequirement(119,	2, "The Dig Site"),
+			new WidgetTextRequirement(119, 2, "The Dig Site"),
 			new WidgetTextRequirement(WidgetInfo.DIALOG_NPC_TEXT, "You got all the questions correct, well done!"),
 			new WidgetTextRequirement(WidgetInfo.DIALOG_PLAYER_TEXT, "Great, I'm getting good at this."));
 
@@ -544,8 +544,8 @@ public class TheDigSite extends BasicQuestHelper
 	public List<ExperienceReward> getExperienceRewards()
 	{
 		return Arrays.asList(
-				new ExperienceReward(Skill.MINING, 15300),
-				new ExperienceReward(Skill.HERBLORE, 2000));
+			new ExperienceReward(Skill.MINING, 15300),
+			new ExperienceReward(Skill.HERBLORE, 2000));
 	}
 
 	@Override

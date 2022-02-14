@@ -237,9 +237,9 @@ public class TheHandInTheSand extends BasicQuestHelper
 		useLensOnCounter = new ObjectStep(this, ObjectID.COUNTER, new WorldPoint(3013, 3259, 0), "\"Stand in the Betty's doorway and use the rose-tinted lens on the counter.", roseLens);
 		useLensOnCounter.addIcon(ItemID.ROSE_TINTED_LENS);
 		useLensOnCounter.addSubSteps(standInDoorway);
-		talkToBettyOnceMore =  new NpcStep(this, NpcID.BETTY_5905, new WorldPoint(3014, 3258, 0), "Talk to Betty again.", truthSerum, sand);
+		talkToBettyOnceMore = new NpcStep(this, NpcID.BETTY_5905, new WorldPoint(3014, 3258, 0), "Talk to Betty again.", truthSerum, sand);
 		talkToBettyOnceMore.addDialogStep("Talk to Betty about the Hand in the Sand.");
-		talkToSandyWithPotion =  new NpcStep(this, NpcID.SANDY, new WorldPoint(2790, 3175, 0), "Talk to Sandy in Brimhaven again with the truth serum. Select distractions until one works.", truthSerum);
+		talkToSandyWithPotion = new NpcStep(this, NpcID.SANDY, new WorldPoint(2790, 3175, 0), "Talk to Sandy in Brimhaven again with the truth serum. Select distractions until one works.", truthSerum);
 		useSerumOnCoffee = new ObjectStep(this, NullObjectID.NULL_10806, new WorldPoint(2789, 3176, 0), "Use the truth serum on Sandy's coffee mug.", truthSerum);
 		useSerumOnCoffee.addIcon(ItemID.TRUTH_SERUM);
 		activateMagicalOrb = new DetailedQuestStep(this, "Activate the magical orb next to Sandy.", magicalOrb);
@@ -294,16 +294,16 @@ public class TheHandInTheSand extends BasicQuestHelper
 	public List<ExperienceReward> getExperienceRewards()
 	{
 		return Arrays.asList(
-				new ExperienceReward(Skill.THIEVING, 1000),
-				new ExperienceReward(Skill.CRAFTING, 9000));
+			new ExperienceReward(Skill.THIEVING, 1000),
+			new ExperienceReward(Skill.CRAFTING, 9000));
 	}
 
 	@Override
 	public List<UnlockReward> getUnlockRewards()
 	{
 		return Arrays.asList(
-				new UnlockReward("Daily sand from Bert in Yanille."),
-				new UnlockReward("Access to the Wizards Guild rune store."));
+			new UnlockReward("Daily sand from Bert in Yanille."),
+			new UnlockReward("Access to the Wizards Guild rune store."));
 	}
 
 	@Override

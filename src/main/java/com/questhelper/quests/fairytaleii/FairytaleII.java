@@ -393,8 +393,8 @@ public class FairytaleII extends BasicQuestHelper
 	public List<ExperienceReward> getExperienceRewards()
 	{
 		return Arrays.asList(
-				new ExperienceReward(Skill.HERBLORE, 3500),
-				new ExperienceReward(Skill.THIEVING, 2500));
+			new ExperienceReward(Skill.HERBLORE, 3500),
+			new ExperienceReward(Skill.THIEVING, 2500));
 	}
 
 	@Override
@@ -407,8 +407,8 @@ public class FairytaleII extends BasicQuestHelper
 	public List<UnlockReward> getUnlockRewards()
 	{
 		return Arrays.asList(
-				new UnlockReward("Access to Fairy Rings."),
-				new UnlockReward("Access to Fairy Fixit's Fairy Enhancement Store."));
+			new UnlockReward("Access to Fairy Rings."),
+			new UnlockReward("Access to Fairy Fixit's Fairy Enhancement Store."));
 	}
 
 	@Override

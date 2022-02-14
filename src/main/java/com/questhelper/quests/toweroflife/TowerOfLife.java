@@ -78,7 +78,7 @@ public class TowerOfLife extends BasicQuestHelper
 	//Items Recommended
 	ItemRequirement rawSwordfish, rawChicken;
 
-	Requirement  hasSpokenToNoFingers, isPressureMachineBuilt, isPressureMachineFixed,
+	Requirement hasSpokenToNoFingers, isPressureMachineBuilt, isPressureMachineFixed,
 		isPipeMachineBuilt, isPipeMachineFixed, isCageBuilt, isCageFixed, isTowerFixed;
 
 	QuestStep
@@ -97,16 +97,16 @@ public class TowerOfLife extends BasicQuestHelper
 
 	//Zones
 	Zone
-			towerBasement,
-			tower1, tower2, tower3, tower4,
-			tower11, tower12, tower13, tower14,
-			tower21, tower22, tower23, tower24,
-			tower31, tower32, tower33, tower34,
-			tower41, tower42, tower43, tower44;
+		towerBasement,
+		tower1, tower2, tower3, tower4,
+		tower11, tower12, tower13, tower14,
+		tower21, tower22, tower23, tower24,
+		tower31, tower32, tower33, tower34,
+		tower41, tower42, tower43, tower44;
 
 	ZoneRequirement
-			inTower, inTowerBasement, inTowerGround, inTowerFloor1, inTowerFloor2, inTowerFloor3;
-	
+		inTower, inTowerBasement, inTowerGround, inTowerFloor1, inTowerFloor2, inTowerFloor3;
+
 	@Override
 	public Map<Integer, QuestStep> loadSteps()
 	{
@@ -480,9 +480,9 @@ public class TowerOfLife extends BasicQuestHelper
 	public List<ExperienceReward> getExperienceRewards()
 	{
 		return Arrays.asList(
-				new ExperienceReward(Skill.CONSTRUCTION, 1000),
-				new ExperienceReward(Skill.CRAFTING, 500),
-				new ExperienceReward(Skill.THIEVING, 500));
+			new ExperienceReward(Skill.CONSTRUCTION, 1000),
+			new ExperienceReward(Skill.CRAFTING, 500),
+			new ExperienceReward(Skill.THIEVING, 500));
 	}
 
 	@Override
@@ -511,9 +511,9 @@ public class TowerOfLife extends BasicQuestHelper
 
 		allSteps.add(new PanelDetails("Fix the tower",
 			Arrays.asList(enterTower,
-			buildPressureMachine, solvePressureMachinePuzzle,
-			buildPipeMachine, solvePipeMachinePuzzle,
-			buildCage, solveCagePuzzle), saw, hammer));
+				buildPressureMachine, solvePressureMachinePuzzle,
+				buildPipeMachine, solvePipeMachinePuzzle,
+				buildCage, solveCagePuzzle), saw, hammer));
 
 		allSteps.add(new PanelDetails("The Alchemists' Secret", talkToEffigyAgain, followTheAlchemists,
 			confrontEffigy, confrontTheHomunculus, scareTheAlchemists, talkToHomunculusInDungeon));

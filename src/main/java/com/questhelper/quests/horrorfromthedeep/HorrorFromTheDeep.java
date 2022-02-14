@@ -67,7 +67,7 @@ import net.runelite.api.coords.WorldPoint;
 public class HorrorFromTheDeep extends BasicQuestHelper
 {
 	ItemRequirement fireRune, airRune, waterRune, earthRune, sword, arrow, moltenGlass, tinderbox, hammer,
-	steelNails30, steelNails60, plank2, plank, swampTar1, combatRunes;
+		steelNails30, steelNails60, plank2, plank, swampTar1, combatRunes;
 
 	ItemRequirement magicCombat, food, prayerPotions, gamesNecklace;
 
@@ -344,18 +344,18 @@ public class HorrorFromTheDeep extends BasicQuestHelper
 	public List<ExperienceReward> getExperienceRewards()
 	{
 		return Arrays.asList(
-				new ExperienceReward(Skill.MAGIC, 4662),
-				new ExperienceReward(Skill.STRENGTH, 4662),
-				new ExperienceReward(Skill.RANGED, 4662));
+			new ExperienceReward(Skill.MAGIC, 4662),
+			new ExperienceReward(Skill.STRENGTH, 4662),
+			new ExperienceReward(Skill.RANGED, 4662));
 	}
 
 	@Override
 	public List<UnlockReward> getUnlockRewards()
 	{
 		return Arrays.asList(
-				new UnlockReward("A damaged God Book of your choice."),
-				new UnlockReward("Access to The Lighthouse"),
-				new UnlockReward("Ability to receive Dagannoth as a Slayer task."));
+			new UnlockReward("A damaged God Book of your choice."),
+			new UnlockReward("Access to The Lighthouse"),
+			new UnlockReward("Ability to receive Dagannoth as a Slayer task."));
 	}
 
 

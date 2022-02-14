@@ -215,9 +215,9 @@ public class LostCity extends BasicQuestHelper
 	public List<UnlockReward> getUnlockRewards()
 	{
 		return Arrays.asList(
-				new UnlockReward("Access to Zanaris."),
-				new UnlockReward("Ability to craft Cosmic Runes"),
-				new UnlockReward("Ability to buy and wield Dragon Daggers & Longswords"));
+			new UnlockReward("Access to Zanaris."),
+			new UnlockReward("Ability to craft Cosmic Runes"),
+			new UnlockReward("Ability to buy and wield Dragon Daggers & Longswords"));
 	}
 
 	@Override

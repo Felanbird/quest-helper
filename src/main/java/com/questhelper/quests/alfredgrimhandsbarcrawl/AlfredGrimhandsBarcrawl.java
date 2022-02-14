@@ -111,7 +111,7 @@ public class AlfredGrimhandsBarcrawl extends ComplexStateQuestHelper
 		coins18 = new ItemRequirement("Coins", ItemCollections.getCoins(), 18);
 		coins12 = new ItemRequirement("Coins", ItemCollections.getCoins(), 12);
 
-			gamesNecklace = new ItemRequirement("Games necklace", ItemCollections.getGamesNecklaces());
+		gamesNecklace = new ItemRequirement("Games necklace", ItemCollections.getGamesNecklaces());
 		varrockTeleport = new ItemRequirement("Varrock teleport", ItemID.VARROCK_TELEPORT);
 		faladorTeleport = new ItemRequirement("Falador teleport", ItemID.FALADOR_TELEPORT);
 		glory = new ItemRequirement("Amulet of Glory", ItemCollections.getAmuletOfGlories());
@@ -133,16 +133,16 @@ public class AlfredGrimhandsBarcrawl extends ComplexStateQuestHelper
 		inGrandTreeF1 = new ZoneRequirement(grandTreeF1);
 
 		notTalkedToGuard = new VarplayerRequirement(77, false, 0);
-		notTalkedToBlueMoon = new VarplayerRequirement(77, false,3);
-		notTalkedToJollyBoar = new VarplayerRequirement(77, false,9);
+		notTalkedToBlueMoon = new VarplayerRequirement(77, false, 3);
+		notTalkedToJollyBoar = new VarplayerRequirement(77, false, 9);
 		notTalkedToRisingSun = new VarplayerRequirement(77, false, 11);
-		notTalkedToRustyAnchor = new VarplayerRequirement(77, false,12);
-		notTalkedToZambo = new VarplayerRequirement(77, false,10);
-		notTalkedToDeadMansChest = new VarplayerRequirement(77, false,5);
-		notTalkedToFlyingHorseInn = new VarplayerRequirement(77, false,7);
-		notTalkedToForestersArms = new VarplayerRequirement(77, false,8);
-		notTalkedToBlurberry = new VarplayerRequirement(77, false,4);
-		notTalkedToDragonInn = new VarplayerRequirement(77, false,6);
+		notTalkedToRustyAnchor = new VarplayerRequirement(77, false, 12);
+		notTalkedToZambo = new VarplayerRequirement(77, false, 10);
+		notTalkedToDeadMansChest = new VarplayerRequirement(77, false, 5);
+		notTalkedToFlyingHorseInn = new VarplayerRequirement(77, false, 7);
+		notTalkedToForestersArms = new VarplayerRequirement(77, false, 8);
+		notTalkedToBlurberry = new VarplayerRequirement(77, false, 4);
+		notTalkedToDragonInn = new VarplayerRequirement(77, false, 6);
 	}
 
 	public void setupSteps()
@@ -212,8 +212,8 @@ public class AlfredGrimhandsBarcrawl extends ComplexStateQuestHelper
 	public List<UnlockReward> getUnlockRewards()
 	{
 		return Arrays.asList(
-				new UnlockReward("Access to Barbarian Outpost Agility Course"),
-				new UnlockReward("Speak to the Barbarian Guard to learn how to smash empty vials automatically."));
+			new UnlockReward("Access to Barbarian Outpost Agility Course"),
+			new UnlockReward("Speak to the Barbarian Guard to learn how to smash empty vials automatically."));
 	}
 
 	@Override

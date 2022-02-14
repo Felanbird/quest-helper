@@ -70,7 +70,7 @@ public class TheGolem extends BasicQuestHelper
 	//Items Recommended
 	ItemRequirement varrockTeleport, digsiteTeleport, waterskins;
 
-	Requirement inRuin, turnedStatue1, turnedStatue2, turnedStatue3, turnedStatue4,hasReadLetter, added1Clay, added2Clay, added3Clay, talkedToElissa,
+	Requirement inRuin, turnedStatue1, turnedStatue2, turnedStatue3, turnedStatue4, hasReadLetter, added1Clay, added2Clay, added3Clay, talkedToElissa,
 		hasReadNotes, talkedToCurator, inUpstairsMuseum, stolenStatuette, inThroneRoom, openedHead, enteredRuins;
 
 	QuestStep pickUpLetter, readLetter, talkToGolem, useClay, useClay2, useClay3, useClay4, talkToElissa, searchBookcase, readBook, talkToCurator, pickpocketCurator, goUpInMuseum, openCabinet,
@@ -342,17 +342,17 @@ public class TheGolem extends BasicQuestHelper
 	public List<ExperienceReward> getExperienceRewards()
 	{
 		return Arrays.asList(
-				new ExperienceReward(Skill.THIEVING, 1000),
-				new ExperienceReward(Skill.CRAFTING, 1000));
+			new ExperienceReward(Skill.THIEVING, 1000),
+			new ExperienceReward(Skill.CRAFTING, 1000));
 	}
 
 	@Override
 	public List<ItemReward> getItemRewards()
 	{
 		return Arrays.asList(
-				new ItemReward("Rubies", ItemID.RUBY, 2),
-				new ItemReward("Emeralds", ItemID.EMERALD, 2),
-				new ItemReward("Sapphires", ItemID.SAPPHIRE, 2));
+			new ItemReward("Rubies", ItemID.RUBY, 2),
+			new ItemReward("Emeralds", ItemID.EMERALD, 2),
+			new ItemReward("Sapphires", ItemID.SAPPHIRE, 2));
 	}
 
 	@Override

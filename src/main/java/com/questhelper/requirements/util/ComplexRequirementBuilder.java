@@ -46,7 +46,7 @@ public final class ComplexRequirementBuilder
 	/**
 	 * Create a new builder with the supplied {@link LogicType} and display text
 	 *
-	 * @param logicType logic type to use
+	 * @param logicType   logic type to use
 	 * @param displayText display text for rendering
 	 */
 	protected ComplexRequirementBuilder(@Nonnull LogicType logicType, @Nonnull String displayText)
@@ -73,7 +73,7 @@ public final class ComplexRequirementBuilder
 	 * <br>
 	 * Equivalent to {@link ComplexRequirement#ComplexRequirement(LogicType, String, Requirement...)}.
 	 *
-	 * @param logicType logic type to use
+	 * @param logicType   logic type to use
 	 * @param requirement requirement to add
 	 * @return this
 	 */

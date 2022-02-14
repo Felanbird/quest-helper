@@ -74,8 +74,7 @@ public class RagAndBoneManI extends BasicQuestHelper
 
 	ItemRequirement jugOfVinegar, jugOfVinegarNeeded, potOfVinegar, potOfVinegarNeeded, potNeeded;
 
-	DetailedQuestStep talkToOddOldMan, killGiantRat, killUnicorn, killBear, killRam, killGoblin, killFrog, killMonkey
-		, killBat, pickupBone;
+	DetailedQuestStep talkToOddOldMan, killGiantRat, killUnicorn, killBear, killRam, killGoblin, killFrog, killMonkey, killBat, pickupBone;
 
 	DetailedQuestStep addRope, enterSwamp, leaveJunaRoom, enterKaramjaDungeon;
 
@@ -267,7 +266,7 @@ public class RagAndBoneManI extends BasicQuestHelper
 		enterSwamp.addSubSteps(addRope, leaveJunaRoom);
 		killFrog = new NpcStep(this, NpcID.BIG_FROG, new WorldPoint(3153, 9558, 0),
 			"Kill a big frog in the south west of the caves. Make sure to RUN between the two marked run tiles to " +
-				"avoid the Wall Beast.",	true);
+				"avoid the Wall Beast.", true);
 		killFrog.addTileMarker(new QuestTile(new WorldPoint(3161, 9574, 0), SpriteID.OPTIONS_RUNNING));
 		killFrog.addTileMarker(new QuestTile(new WorldPoint(3163, 9574, 0), SpriteID.OPTIONS_RUNNING));
 
@@ -331,7 +330,7 @@ public class RagAndBoneManI extends BasicQuestHelper
 			"Take the pot from the pot-boiler.");
 
 		giveBones = new NpcStep(this, NpcID.ODD_OLD_MAN, new WorldPoint(3362, 3502, 0),
-		"Give the Odd Old Man the bones.");
+			"Give the Odd Old Man the bones.");
 		giveBones.addItemRequirements(RagBoneGroups.cleanBonesNotHandedIn(RagBoneGroups.getRagBoneIStates()));
 
 		talkToFinish = new NpcStep(this, NpcID.ODD_OLD_MAN, new WorldPoint(3362, 3502, 0),
@@ -378,8 +377,8 @@ public class RagAndBoneManI extends BasicQuestHelper
 	public List<ExperienceReward> getExperienceRewards()
 	{
 		return Arrays.asList(
-				new ExperienceReward(Skill.COOKING, 500),
-				new ExperienceReward(Skill.PRAYER, 500));
+			new ExperienceReward(Skill.COOKING, 500),
+			new ExperienceReward(Skill.PRAYER, 500));
 	}
 
 	@Override

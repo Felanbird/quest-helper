@@ -447,9 +447,9 @@ public class TheGrandTree extends BasicQuestHelper
 	public List<ExperienceReward> getExperienceRewards()
 	{
 		return Arrays.asList(
-				new ExperienceReward(Skill.ATTACK, 18400),
-				new ExperienceReward(Skill.AGILITY, 7900),
-				new ExperienceReward(Skill.MAGIC, 2150));
+			new ExperienceReward(Skill.ATTACK, 18400),
+			new ExperienceReward(Skill.AGILITY, 7900),
+			new ExperienceReward(Skill.MAGIC, 2150));
 	}
 
 	@Override

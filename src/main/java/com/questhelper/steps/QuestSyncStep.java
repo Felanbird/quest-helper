@@ -59,7 +59,7 @@ public class QuestSyncStep extends QuestStep
 		Widget questMembersContainer = client.getWidget(WidgetInfo.QUESTLIST_MEMBERS_CONTAINER);
 		Widget questMiniquestContainer = client.getWidget(WidgetInfo.QUESTLIST_MINIQUEST_CONTAINER);
 
-		Widget[] containers = new Widget[]{ questFreeContainer, questMembersContainer, questMiniquestContainer };
+		Widget[] containers = new Widget[]{questFreeContainer, questMembersContainer, questMiniquestContainer};
 
 		Widget finalEmoteWidget = null;
 
@@ -85,7 +85,10 @@ public class QuestSyncStep extends QuestStep
 					}
 				}
 			}
-			if (finalEmoteWidget != null) break;
+			if (finalEmoteWidget != null)
+			{
+				break;
+			}
 			extraHeight += container.getHeight();
 		}
 		if (!hasScrolled)

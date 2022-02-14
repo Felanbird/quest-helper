@@ -66,8 +66,8 @@ public class FillBurghCrate extends DetailedQuestStep
 	protected void updateSteps()
 	{
 		int numBronzeAxeNeeded = 10 - client.getVarbitValue(1991);
-		int numSnailOrMackerelNeeded =  10 - client.getVarbitValue(1992);
-		int numTinderboxNeeded =  3 - client.getVarbitValue(1993);
+		int numSnailOrMackerelNeeded = 10 - client.getVarbitValue(1992);
+		int numTinderboxNeeded = 3 - client.getVarbitValue(1993);
 
 		tinderbox3.setQuantity(numTinderboxNeeded);
 		bronzeAxe10.setQuantity(numBronzeAxeNeeded);

@@ -297,16 +297,16 @@ public class RFDAwowogei extends BasicQuestHelper
 	public List<ExperienceReward> getExperienceRewards()
 	{
 		return Arrays.asList(
-				new ExperienceReward(Skill.COOKING, 10000),
-				new ExperienceReward(Skill.AGILITY, 10000));
+			new ExperienceReward(Skill.COOKING, 10000),
+			new ExperienceReward(Skill.AGILITY, 10000));
 	}
 
 	@Override
 	public List<UnlockReward> getUnlockRewards()
 	{
 		return Arrays.asList(
-				new UnlockReward("Ability to teleport to Ape Atoll"),
-				new UnlockReward("Increased access to the Culinaromancer's Chest"));
+			new UnlockReward("Ability to teleport to Ape Atoll"),
+			new UnlockReward("Increased access to the Culinaromancer's Chest"));
 	}
 
 	@Override

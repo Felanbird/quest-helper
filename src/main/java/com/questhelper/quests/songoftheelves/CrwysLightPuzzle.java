@@ -61,7 +61,7 @@ public class CrwysLightPuzzle extends ConditionalStep
 
 	Requirement hasMirrorsAndCrystal, onF1, onF2, onF0, notResetCadarn, r1, r2, r3, r4, r5, r6, r7, r8, r9, r10, r11, r12;
 
-	public CrwysLightPuzzle(QuestHelper questHelper,ConditionalStep goToF1Steps)
+	public CrwysLightPuzzle(QuestHelper questHelper, ConditionalStep goToF1Steps)
 	{
 		super(questHelper, goToF1Steps);
 		setupItemRequirements();

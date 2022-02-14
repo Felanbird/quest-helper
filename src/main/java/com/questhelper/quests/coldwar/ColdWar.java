@@ -37,14 +37,14 @@ import net.runelite.api.Skill;
 import net.runelite.api.coords.WorldPoint;
 
 @QuestDescriptor(
-        quest = QuestHelperQuest.COLD_WAR
+	quest = QuestHelperQuest.COLD_WAR
 )
 public class ColdWar extends BasicQuestHelper
 {
 	//Items Required
 	ItemRequirement oakPlanks, oakPlankHighlight, steelNails, hammer, spade, spadeHighlight, clockworkOrSteelBar,
 		clockwork, steelBar, plank, silk, rawCodOrCharos, swampTar, feathers, mahoganyPlank, leather, cowbell,
-	    clockworkBookHighlight, clockworkSuit, clockworkSuitHighlight, missionReportHighlight, lumbridgeMissionReport, mahoganyPlankHighlight, leatherHighlight,
+		clockworkBookHighlight, clockworkSuit, clockworkSuitHighlight, missionReportHighlight, lumbridgeMissionReport, mahoganyPlankHighlight, leatherHighlight,
 		bongos, kgpId;
 
 	//Items Recommended
@@ -291,14 +291,14 @@ public class ColdWar extends BasicQuestHelper
 		useSpadeOnBirdHide = new ObjectStep(this, NullObjectID.NULL_21246, new WorldPoint(2666, 3991, 1), "Use a spade on the bird hide to cover it in snow.", spadeHighlight);
 		useSpadeOnBirdHide.addIcon(ItemID.SPADE);
 
-		learnPenguinEmotes = new NpcStep(this, NpcID.LARRY_829, new WorldPoint(2670,3988,1), "Talk to Larry on the iceberg to enter the bird hide. PAY ATTENTION TO THIS CUTSCENE and note the 3 emotes the LEFT penguin does.");
+		learnPenguinEmotes = new NpcStep(this, NpcID.LARRY_829, new WorldPoint(2670, 3988, 1), "Talk to Larry on the iceberg to enter the bird hide. PAY ATTENTION TO THIS CUTSCENE and note the 3 emotes the LEFT penguin does.");
 
-		talkToLarryAfterEmotes = new NpcStep(this, NpcID.LARRY_829, new WorldPoint(2670,3988,1), "Talk to Larry again.");
+		talkToLarryAfterEmotes = new NpcStep(this, NpcID.LARRY_829, new WorldPoint(2670, 3988, 1), "Talk to Larry again.");
 		talkToLarryAfterEmotes.addDialogStep("That's crazy!");
 
 		returnToRelleka = new ObjectStep(this, ObjectID.BOAT_21175, "Click the boat to return to Relleka.");
 
-		talkToLarryInRelleka = new NpcStep(this, NpcID.LARRY_828, new WorldPoint(2707,3732,0), "Talk to Larry in Relleka.");
+		talkToLarryInRelleka = new NpcStep(this, NpcID.LARRY_828, new WorldPoint(2707, 3732, 0), "Talk to Larry in Relleka.");
 
 		enterPoh = new DetailedQuestStep(this, "Travel to your POH or another POH with a Crafting table 3 or 4.", clockworkOrSteelBar, plank, silk);
 
@@ -315,7 +315,7 @@ public class ColdWar extends BasicQuestHelper
 		bringSuitToLarry.addDialogStep("Yes, I have it.");
 		bringSuitToLarry.addDialogStep("Yes");
 
-		talkToLarryOnIcebergWithSuit = new NpcStep(this, NpcID.LARRY_829, new WorldPoint(2670,3988,1), "Talk to Larry on the iceberg.");
+		talkToLarryOnIcebergWithSuit = new NpcStep(this, NpcID.LARRY_829, new WorldPoint(2670, 3988, 1), "Talk to Larry on the iceberg.");
 		talkToLarryOnIcebergWithSuit.addDialogStep("It looks like a warning message to keep us away.");
 
 		readMissionReport = new DetailedQuestStep(this, "Read the mission report.", missionReportHighlight);
@@ -335,7 +335,7 @@ public class ColdWar extends BasicQuestHelper
 
 		tuxedoTimeLumbridge = new NpcStep(this, NpcID.LARRY, new WorldPoint(3212, 3263, 0), "Tuxedo-time Larry in the Lumbridge sheep farm.");
 
-		talkToThing = new NpcStep(this, NpcID.SHEEP,new WorldPoint(3201, 3266, 0), "Talk to the penguins disguised as a sheep in the Lumbridge sheep farm. You will need to use the same 3 emotes as the penguin from the bird hide cutscene.");
+		talkToThing = new NpcStep(this, NpcID.SHEEP, new WorldPoint(3201, 3266, 0), "Talk to the penguins disguised as a sheep in the Lumbridge sheep farm. You will need to use the same 3 emotes as the penguin from the bird hide cutscene.");
 
 		emoteAtPenguinInLumbridge = new PenguinEmote(this);
 
@@ -362,16 +362,16 @@ public class ColdWar extends BasicQuestHelper
 
 		emoteAtPenguinOutpost = new PenguinEmote(this);
 
-		noodle1 = new NpcStep(this, NpcID.NOODLE, new WorldPoint(2644,4008,1),"Talk to Noodle.");
+		noodle1 = new NpcStep(this, NpcID.NOODLE, new WorldPoint(2644, 4008, 1), "Talk to Noodle.");
 
-		noodle2 = new NpcStep(this, NpcID.NOODLE,new WorldPoint(2644,4008,1), "Give Noodle the swamp tar to get an ID card and a mission report.", swampTar, feathers);
+		noodle2 = new NpcStep(this, NpcID.NOODLE, new WorldPoint(2644, 4008, 1), "Give Noodle the swamp tar to get an ID card and a mission report.", swampTar, feathers);
 		noodle2.addDialogStep("Yeah, I got it.");
 
 		kgpAgent2 = new NpcStep(this, NpcID.KGP_AGENT, new WorldPoint(2639, 4008, 1), "Talk to the KGP Agent again.", kgpId);
-		enterAvalanche = new ObjectStep(this, ObjectID.AVALANCHE, new WorldPoint(2638,4011,1),"Enter the avalanche.");
-		enterAvalanche2 = new ObjectStep(this, ObjectID.AVALANCHE, new WorldPoint(2638,4011,1),"Enter the avalanche " +
+		enterAvalanche = new ObjectStep(this, ObjectID.AVALANCHE, new WorldPoint(2638, 4011, 1), "Enter the avalanche.");
+		enterAvalanche2 = new ObjectStep(this, ObjectID.AVALANCHE, new WorldPoint(2638, 4011, 1), "Enter the avalanche " +
 			"as a penguin");
-		enterAvalanche3 = new ObjectStep(this, ObjectID.AVALANCHE, new WorldPoint(2638,4011,1),"Enter the avalanche.");
+		enterAvalanche3 = new ObjectStep(this, ObjectID.AVALANCHE, new WorldPoint(2638, 4011, 1), "Enter the avalanche.");
 
 		kgpAgentInAvalanche = new NpcStep(this, NpcID.KGP_AGENT, new WorldPoint(2647, 10384, 0), "Talk to the KGP Agent in the first room to the west of the entrance.");
 		((NpcStep) kgpAgentInAvalanche).setMaxRoamRange(12);
@@ -386,12 +386,12 @@ public class ColdWar extends BasicQuestHelper
 		agilityDone = new NpcStep(this, NpcID.AGILITY_INSTRUCTOR, "Talk to the Agility Instructor.");
 		agilityCourse.addSubSteps(enterAgilityCourse, agilityEnterWater, agilityExitWater, agilityJumpStones, agilityTreadSoftly, agilityCrossIce, agilityDone);
 
-		tellLarryAboutArmy = new NpcStep(this, NpcID.LARRY_829,  new WorldPoint(2670,3988,1), "Return to Larry to tell him about the penguin army. You can quickly return to him by removing the penguin suit.");
+		tellLarryAboutArmy = new NpcStep(this, NpcID.LARRY_829, new WorldPoint(2670, 3988, 1), "Return to Larry to tell him about the penguin army. You can quickly return to him by removing the penguin suit.");
 
 		kgpBeforePingPong = new NpcStep(this, NpcID.KGP_AGENT, new WorldPoint(2655, 10408, 0), "Re-enter the outpost and talk to the KGP agent north of the entrance.");
 		((NpcStep) kgpBeforePingPong).setMaxRoamRange(2);
 
-		pingPong1 = new NpcStep(this, NpcID.PING_839, new WorldPoint(2668,10396,0), "Talk to Ping or Pong in the room to the east.");
+		pingPong1 = new NpcStep(this, NpcID.PING_839, new WorldPoint(2668, 10396, 0), "Talk to Ping or Pong in the room to the east.");
 		((NpcStep) pingPong1).addAlternateNpcs(NpcID.PONG_840);
 
 		removePenguinSuitForBongos = new DetailedQuestStep(this, "Remove the penguin suit.");
@@ -399,10 +399,10 @@ public class ColdWar extends BasicQuestHelper
 		makeBongos = new DetailedQuestStep(this, "Use the mahogany plank on the leather to make bongos.", mahoganyPlankHighlight, leatherHighlight);
 		makeBongos.addSubSteps(removePenguinSuitForBongos);
 
-		pingPong2 = new NpcStep(this, NpcID.PING_839, new WorldPoint(2668,10396,0), "Return to Ping or Pong to give them the bongos and cowbells.", bongos, cowbell);
+		pingPong2 = new NpcStep(this, NpcID.PING_839, new WorldPoint(2668, 10396, 0), "Return to Ping or Pong to give them the bongos and cowbells.", bongos, cowbell);
 		((NpcStep) pingPong2).addAlternateNpcs(NpcID.PONG_840);
 		pingPong2.addDialogStep("Yes.");
-		pingPong3 = new NpcStep(this, NpcID.PING_839, new WorldPoint(2668,10396,0), "Return to Ping or Pong.");
+		pingPong3 = new NpcStep(this, NpcID.PING_839, new WorldPoint(2668, 10396, 0), "Return to Ping or Pong.");
 		((NpcStep) pingPong3).addAlternateNpcs(NpcID.PONG_840);
 		pingPong3.addDialogStep("Yes.");
 		pingPong2.addSubSteps(pingPong3);
@@ -418,7 +418,7 @@ public class ColdWar extends BasicQuestHelper
 
 		useChasm = new ObjectStep(this, ObjectID.CHASM, new WorldPoint(2657, 10423, 0), "Use the chasm to exit the cave.");
 
-		tellLarryPlans = new NpcStep(this, NpcID.LARRY_829,  new WorldPoint(2670,3988,1), "Return to Larry to finish the quest.");
+		tellLarryPlans = new NpcStep(this, NpcID.LARRY_829, new WorldPoint(2670, 3988, 1), "Return to Larry to finish the quest.");
 	}
 
 	@Override
@@ -456,18 +456,18 @@ public class ColdWar extends BasicQuestHelper
 	public List<ExperienceReward> getExperienceRewards()
 	{
 		return Arrays.asList(
-				new ExperienceReward(Skill.CRAFTING, 2000),
-				new ExperienceReward(Skill.AGILITY, 5000),
-				new ExperienceReward(Skill.CONSTRUCTION, 1500));
+			new ExperienceReward(Skill.CRAFTING, 2000),
+			new ExperienceReward(Skill.AGILITY, 5000),
+			new ExperienceReward(Skill.CONSTRUCTION, 1500));
 	}
 
 	@Override
 	public List<UnlockReward> getUnlockRewards()
 	{
 		return Arrays.asList(
-				new UnlockReward("Ability to create Penguin Suits"),
-				new UnlockReward("Ability to use the Penguin Agility Course"),
-				new UnlockReward("Abillity to make Bongo Drums"));
+			new UnlockReward("Ability to create Penguin Suits"),
+			new UnlockReward("Ability to use the Penguin Agility Course"),
+			new UnlockReward("Abillity to make Bongo Drums"));
 	}
 
 	@Override

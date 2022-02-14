@@ -64,16 +64,16 @@ import net.runelite.api.*;
 import net.runelite.api.coords.WorldPoint;
 
 @QuestDescriptor(
-		quest = QuestHelperQuest.THE_FEUD
+	quest = QuestHelperQuest.THE_FEUD
 )
 public class TheFeud extends BasicQuestHelper
 {
 
 	//Items Requirements
 	ItemRequirement coins, unspecifiedCoins, gloves, headPiece, fakeBeard, desertDisguise,
-			shantayPass, beer, oakBlackjack, glovesEquipped, disguiseEquipped, doorKeys,
-			highlightedCoins, snakeCharmHighlighted, snakeBasket, snakeBasketFull,
-			redHotSauce, bucket, dung, poisonHighlighted, oakBlackjackEquipped;
+		shantayPass, beer, oakBlackjack, glovesEquipped, disguiseEquipped, doorKeys,
+		highlightedCoins, snakeCharmHighlighted, snakeBasket, snakeBasketFull,
+		redHotSauce, bucket, dung, poisonHighlighted, oakBlackjackEquipped;
 
 	//Items Recommended
 	ItemRequirement combatGear;
@@ -89,15 +89,15 @@ public class TheFeud extends BasicQuestHelper
 	DetailedQuestStep getBucket, equipBlackjack, killMenaphiteThug, killBanditChampion;
 
 	NpcStep buyShantayPass, talkToRugMerchant, drunkenAli, talkToThug, talkToBandit, talkToCamelman, talkToBanditReturnedCamel, talkToMenaphiteReturnedCamel,
-			talkToAliTheOperator, pickpocketVillager, pickPocketVillagerWithUrchin, getBlackjackFromAli, blackjackVillager,
-			talkToAliToGetSecondJob, giveTheJewelsToAli, talkMenaphiteToFindTraitor, tellAliYouFoundTraitor, talkToAliTheBarman,
-			talkToAliTheHag, catchSnake, givePoisonToAliTheHag, talkToAliTheKebabSalesman, givenDungToHag, tellAliOperatorPoisoned,
-			talkToMenaphiteLeader, talkToAVillager, talkToBanditLeader, talkToAVillagerToSpawnMayor, talkToMayor, finishQuest;
+		talkToAliTheOperator, pickpocketVillager, pickPocketVillagerWithUrchin, getBlackjackFromAli, blackjackVillager,
+		talkToAliToGetSecondJob, giveTheJewelsToAli, talkMenaphiteToFindTraitor, tellAliYouFoundTraitor, talkToAliTheBarman,
+		talkToAliTheHag, catchSnake, givePoisonToAliTheHag, talkToAliTheKebabSalesman, givenDungToHag, tellAliOperatorPoisoned,
+		talkToMenaphiteLeader, talkToAVillager, talkToBanditLeader, talkToAVillagerToSpawnMayor, talkToMayor, finishQuest;
 
 	ObjectStep hideBehindCactus, pickupDung, openTheDoor, goUpStairs, crackTheSafe, goDownStairs, giveCoinToSnakeCharmer, getDung, poisonTheDrink;
 
 	VarbitRequirement talkedToThug, talkedToBandit, talkedToBanditReturn, doorOpen, traitorFound, talkedToBarman, talkedToAliTheHag,
-			givenPoisonToHag, menaphiteThugAlive, talkedToVillagerAboutMenaphite, banditChampionSpawned, mayorSpawned;
+		givenPoisonToHag, menaphiteThugAlive, talkedToVillagerAboutMenaphite, banditChampionSpawned, mayorSpawned;
 
 	//Zones
 	ZoneRequirement inPollniveach, secondFloorMansion, inShantayDesertSide;
@@ -302,7 +302,7 @@ public class TheFeud extends BasicQuestHelper
 		dungNearby = new ObjectCondition(ObjectID.DUNG);
 
 		//Combat Gear
-		combatGear = new ItemRequirement("Combat Gear bring Range or Mage Gear if safe spotting.", -1, -1 );
+		combatGear = new ItemRequirement("Combat Gear bring Range or Mage Gear if safe spotting.", -1, -1);
 		combatGear.setDisplayItemId(BankSlotIcons.getCombatGear());
 	}
 
@@ -324,7 +324,7 @@ public class TheFeud extends BasicQuestHelper
 		goToShantay = new ObjectStep(this, ObjectID.SHANTAY_PASS, new WorldPoint(3304, 3116, 0), "Go through Shantay Pass.", shantayPass);
 		buyShantayPass = new NpcStep(this, NpcID.SHANTAY, new WorldPoint(3303, 3122, 0), "Buy a shantay pass from Shantay.", unspecifiedCoins);
 
-		talkToRugMerchant = new NpcStep(this, NpcID.RUG_MERCHANT, new WorldPoint(3311, 3109, 0),"Talk to the rug merchant and travel to Pollnivneach via magic carpet.", unspecifiedCoins);
+		talkToRugMerchant = new NpcStep(this, NpcID.RUG_MERCHANT, new WorldPoint(3311, 3109, 0), "Talk to the rug merchant and travel to Pollnivneach via magic carpet.", unspecifiedCoins);
 		talkToRugMerchant.addDialogStep("Pollnivneach");
 
 
@@ -335,7 +335,7 @@ public class TheFeud extends BasicQuestHelper
 		//Step 2
 		//Find Beef
 		talkToThug = new NpcStep(this, NpcID.MENAPHITE_THUG, new WorldPoint(3347, 2955, 0), "Talk to a Menaphite Thug to figure out how their dispute started with the bandits.", true);
-		talkToBandit = new NpcStep(this, NpcID.BANDIT_734, new WorldPoint(3362, 2993, 0),"Talk to a bandit to figure out their issues with the Menaphites.", true);
+		talkToBandit = new NpcStep(this, NpcID.BANDIT_734, new WorldPoint(3362, 2993, 0), "Talk to a bandit to figure out their issues with the Menaphites.", true);
 
 		//Step 3
 		//Buy Camels
@@ -347,12 +347,12 @@ public class TheFeud extends BasicQuestHelper
 
 		//Step 4
 		//Return Camels
-		talkToBanditReturnedCamel = new NpcStep(this, NpcID.BANDIT_734, new WorldPoint(3362, 2993, 0),"Tell the bandits that the Menaphites have agreed to return the camel.", true);
+		talkToBanditReturnedCamel = new NpcStep(this, NpcID.BANDIT_734, new WorldPoint(3362, 2993, 0), "Tell the bandits that the Menaphites have agreed to return the camel.", true);
 		talkToMenaphiteReturnedCamel = new NpcStep(this, NpcID.MENAPHITE_THUG, new WorldPoint(3347, 2955, 0), "Tell the Menaphites that the bandits have agreed to return the camel.", true);
 
 		//Step 5
 		//Get First Job
-		talkToAliTheOperator = new NpcStep(this, NpcID.ALI_THE_OPERATOR, new WorldPoint(3332, 2948, 0),"Talk to Ali the Operator to get a job from him.");
+		talkToAliTheOperator = new NpcStep(this, NpcID.ALI_THE_OPERATOR, new WorldPoint(3332, 2948, 0), "Talk to Ali the Operator to get a job from him.");
 		talkToAliTheOperator.addDialogStep("Yes, of course, those bandits should be taught a lesson.");
 
 		//Step 6
@@ -402,8 +402,8 @@ public class TheFeud extends BasicQuestHelper
 
 		//Step 16
 		//Find Traitor
-		talkMenaphiteToFindTraitor =  new NpcStep(this, NpcID.MENAPHITE_THUG, new WorldPoint(3347, 2955, 0),"Talk to a Menaphite member to find the traitor.", true);
-		tellAliYouFoundTraitor = new NpcStep(this, NpcID.ALI_THE_OPERATOR, new WorldPoint(3332, 2948, 0),"Talk to Ali and tell him you have found the traitor.");
+		talkMenaphiteToFindTraitor = new NpcStep(this, NpcID.MENAPHITE_THUG, new WorldPoint(3347, 2955, 0), "Talk to a Menaphite member to find the traitor.", true);
+		tellAliYouFoundTraitor = new NpcStep(this, NpcID.ALI_THE_OPERATOR, new WorldPoint(3332, 2948, 0), "Talk to Ali and tell him you have found the traitor.");
 
 		//Step 17
 		//Get Snake & Talk to Barman
@@ -465,7 +465,7 @@ public class TheFeud extends BasicQuestHelper
 
 		//Step 26
 		//Spawn Mayor
-		talkToAVillagerToSpawnMayor  = new NpcStep(this, NpcID.VILLAGER, "Talk to a villager and they will be angry still.", true);
+		talkToAVillagerToSpawnMayor = new NpcStep(this, NpcID.VILLAGER, "Talk to a villager and they will be angry still.", true);
 		talkToAVillagerToSpawnMayor.addAlternateNpcs(NpcID.VILLAGER_3554, NpcID.VILLAGER_3555, NpcID.VILLAGER_3557, NpcID.VILLAGER_3558, NpcID.VILLAGER_3560);
 
 		talkToMayor = new NpcStep(this, NpcID.ALI_THE_MAYOR, new WorldPoint(3360, 2972, 0), "Talk to Ali the Mayor and get your due congratulations.");
@@ -509,19 +509,19 @@ public class TheFeud extends BasicQuestHelper
 	public List<ItemReward> getItemRewards()
 	{
 		return Arrays.asList(
-				new ItemReward("500 Coins", ItemID.COINS_995, 500),
-				new ItemReward("Oak Blackjack", ItemID.OAK_BLACKJACK, 1),
-				new ItemReward("Desert Disguise", ItemID.DESERT_DISGUISE, 1),
-				new ItemReward("Willow Blackjack", ItemID.WILLOW_BLACKJACK, 1),
-				new ItemReward("An Adamant Scimitar", ItemID.ADAMANT_SCIMITAR, 1));
+			new ItemReward("500 Coins", ItemID.COINS_995, 500),
+			new ItemReward("Oak Blackjack", ItemID.OAK_BLACKJACK, 1),
+			new ItemReward("Desert Disguise", ItemID.DESERT_DISGUISE, 1),
+			new ItemReward("Willow Blackjack", ItemID.WILLOW_BLACKJACK, 1),
+			new ItemReward("An Adamant Scimitar", ItemID.ADAMANT_SCIMITAR, 1));
 	}
 
 	@Override
 	public List<UnlockReward> getUnlockRewards()
 	{
 		return Arrays.asList(
-				new UnlockReward("Ability to blackjack."),
-				new UnlockReward("Access to the Rogue Trader minigame"));
+			new UnlockReward("Ability to blackjack."),
+			new UnlockReward("Access to the Rogue Trader minigame"));
 	}
 
 	@Override
@@ -529,20 +529,20 @@ public class TheFeud extends BasicQuestHelper
 	{
 		List<PanelDetails> allSteps = new ArrayList<>();
 		allSteps.add(new PanelDetails("Starting out",
-				Collections.singletonList(startQuest), unspecifiedCoins));
+			Collections.singletonList(startQuest), unspecifiedCoins));
 		allSteps.add(new PanelDetails("Pollnivneach",
-				Arrays.asList(buyDisguiseGear, createDisguise, goToShantay, talkToRugMerchant, drunkenAli), unspecifiedCoins));
+			Arrays.asList(buyDisguiseGear, createDisguise, goToShantay, talkToRugMerchant, drunkenAli), unspecifiedCoins));
 		allSteps.add(new PanelDetails("Find the beef between the two factions",
-				Arrays.asList(talkToThug, talkToBandit, talkToCamelman, talkToBanditReturnedCamel, talkToMenaphiteReturnedCamel), unspecifiedCoins));
+			Arrays.asList(talkToThug, talkToBandit, talkToCamelman, talkToBanditReturnedCamel, talkToMenaphiteReturnedCamel), unspecifiedCoins));
 		allSteps.add(new PanelDetails("First job",
 			Arrays.asList(talkToAliTheOperator, pickpocketVillager, pickPocketVillagerWithUrchin,
 				getBlackjackFromAli, blackjackVillager), unspecifiedCoins));
 		allSteps.add(new PanelDetails("Second job",
-				Arrays.asList(talkToAliToGetSecondJob, hideBehindCactus, openTheDoor, goUpStairs, crackTheSafe, giveTheJewelsToAli), desertDisguise, gloves));
+			Arrays.asList(talkToAliToGetSecondJob, hideBehindCactus, openTheDoor, goUpStairs, crackTheSafe, giveTheJewelsToAli), desertDisguise, gloves));
 		allSteps.add(new PanelDetails("Rising up",
-				Arrays.asList(talkMenaphiteToFindTraitor, tellAliYouFoundTraitor, talkToAliTheBarman, talkToAliTheHag, giveCoinToSnakeCharmer, catchSnake, givePoisonToAliTheHag, talkToAliTheKebabSalesman, getDung, givenDungToHag, tellAliOperatorPoisoned), unspecifiedCoins));
+			Arrays.asList(talkMenaphiteToFindTraitor, tellAliYouFoundTraitor, talkToAliTheBarman, talkToAliTheHag, giveCoinToSnakeCharmer, catchSnake, givePoisonToAliTheHag, talkToAliTheKebabSalesman, getDung, givenDungToHag, tellAliOperatorPoisoned), unspecifiedCoins));
 		allSteps.add(new PanelDetails("Finishing off",
-				Arrays.asList(talkToMenaphiteLeader, talkToAVillager, talkToBanditLeader, talkToAVillagerToSpawnMayor, talkToMayor, finishQuest), combatGear));
+			Arrays.asList(talkToMenaphiteLeader, talkToAVillager, talkToBanditLeader, talkToAVillagerToSpawnMayor, talkToMayor, finishQuest), combatGear));
 
 		return allSteps;
 	}

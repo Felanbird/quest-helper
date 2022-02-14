@@ -318,7 +318,7 @@ public class ANightAtTheTheatre extends BasicQuestHelper
 		String hesporiFightText = "Go to the island directly east of the Nature Grotto. Be prepared to fight Hespori. " +
 			"The fight is similar to what you would expect from the Hespori fight in the Farming Guild. Activate Hespori when ready.";
 		goToHesporiFight = new ObjectStep(this, ObjectID.STEPPING_STONE_42588, new WorldPoint(3499, 3355, 0),
-				hesporiFightText, combatGear, food, antipoison, axe);
+			hesporiFightText, combatGear, food, antipoison, axe);
 		((ObjectStep) goToHesporiFight).setLinePoints(Arrays.asList(
 			new WorldPoint(3440, 3327, 0),
 			new WorldPoint(3427, 3330, 0),
@@ -332,9 +332,9 @@ public class ANightAtTheTheatre extends BasicQuestHelper
 			new WorldPoint(3497, 3355, 0)
 		));
 		exitNatureGrotto = new ObjectStep(this, ObjectID.GROTTO_3526, new WorldPoint(3442, 9733, 1),
-				hesporiFightText, combatGear, food, antipoison, axe);
+			hesporiFightText, combatGear, food, antipoison, axe);
 		activateHesporiFight = new ObjectStep(this, ObjectID.HESPORI_42591, new WorldPoint(3507, 3357, 0),
-				hesporiFightText, combatGear, food, antipoison, axe);
+			hesporiFightText, combatGear, food, antipoison, axe);
 		goToHesporiFight.addSubSteps(exitNatureGrotto, activateHesporiFight);
 
 		fightHespori = new NpcStep(this, NpcID.HESPORI_11192, "Fight Hespori.");
@@ -347,7 +347,7 @@ public class ANightAtTheTheatre extends BasicQuestHelper
 
 		mysteriousStrangerCutscenes2 = new DetailedQuestStep(this, "Watch cutscenes.");
 		speakWithMysteriousStrangerAndWatchCutscenes2 = new NpcStep(this, NpcID.MYSTERIOUS_STRANGER_10876, new WorldPoint(3673, 3223, 0),
-		"Speak with the Mysterious Stranger in Ver Sinhaza and watch the cutscenes.");
+			"Speak with the Mysterious Stranger in Ver Sinhaza and watch the cutscenes.");
 		mysteriousStrangerCutscenes2.addSubSteps(speakWithMysteriousStrangerAndWatchCutscenes2);
 
 		speakWithMysteriousStrangerAndWatchCutscenes2.addDialogSteps("Can we use this bark to find more memories?",

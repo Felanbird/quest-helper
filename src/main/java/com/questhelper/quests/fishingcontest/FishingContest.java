@@ -157,11 +157,11 @@ public class FishingContest extends BasicQuestHelper
 		goToRedVine = new ObjectStep(this, ObjectID.VINE_2990, new WorldPoint(2631, 3496, 0), "", spade);
 		goToRedVine.setText("Use your spade on the red vines to gather 1 Red Vine Worm.");
 		goToRedVine.addIcon(ItemID.SPADE);
-		((ObjectStep)goToRedVine).addAlternateObjects(ObjectID.VINE_2013, ObjectID.VINE_2991, ObjectID.VINE_2992, ObjectID.VINE_2994);
-		((ObjectStep)goToRedVine).addAlternateObjects(ObjectID.VINE, ObjectID.VINE_2993, ObjectID.VINE_2989);
+		((ObjectStep) goToRedVine).addAlternateObjects(ObjectID.VINE_2013, ObjectID.VINE_2991, ObjectID.VINE_2992, ObjectID.VINE_2994);
+		((ObjectStep) goToRedVine).addAlternateObjects(ObjectID.VINE, ObjectID.VINE_2993, ObjectID.VINE_2989);
 
 		goToHemenster = new ObjectStep(this, ObjectID.GATE_48, new WorldPoint(2642, 3441, 0), "Enter Hemenster with your fishing pass.");
-		((ObjectStep)goToHemenster).addAlternateObjects(ObjectID.GATE_47);
+		((ObjectStep) goToHemenster).addAlternateObjects(ObjectID.GATE_47);
 		grandpaJack = new NpcStep(this, NpcID.GRANDPA_JACK, new WorldPoint(2649, 3451, 0), "Talk to Grandpa Jack to get a fishing rod.");
 		grandpaJack.addDialogStep("Can I buy one of your fishing rods?");
 		grandpaJack.addDialogStep("Very fair, I'll buy that rod!");
@@ -266,8 +266,8 @@ public class FishingContest extends BasicQuestHelper
 	public List<UnlockReward> getUnlockRewards()
 	{
 		return Arrays.asList(
-				new UnlockReward("Access to the underground White Wolf Mountain passage"),
-				new UnlockReward("Ability to catch minnows in The Fishing Guild."));
+			new UnlockReward("Access to the underground White Wolf Mountain passage"),
+			new UnlockReward("Ability to catch minnows in The Fishing Guild."));
 	}
 
 	@Override

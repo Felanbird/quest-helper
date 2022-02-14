@@ -317,10 +317,10 @@ public class TheEyesOfGlouphrie extends BasicQuestHelper
 	public List<ExperienceReward> getExperienceRewards()
 	{
 		return Arrays.asList(
-				new ExperienceReward(Skill.MAGIC, 12000),
-				new ExperienceReward(Skill.WOODCUTTING, 2500),
-				new ExperienceReward(Skill.RUNECRAFT, 6000),
-				new ExperienceReward(Skill.CONSTRUCTION, 250));
+			new ExperienceReward(Skill.MAGIC, 12000),
+			new ExperienceReward(Skill.WOODCUTTING, 2500),
+			new ExperienceReward(Skill.RUNECRAFT, 6000),
+			new ExperienceReward(Skill.CONSTRUCTION, 250));
 	}
 
 	@Override

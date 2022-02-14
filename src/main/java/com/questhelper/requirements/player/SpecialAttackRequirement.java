@@ -32,23 +32,23 @@ import net.runelite.api.Client;
 
 public class SpecialAttackRequirement extends AbstractRequirement
 {
-    private static final int SPECIALATTACK_VARP = 301;
-    private final SpecialAttack specialAttack;
+	private static final int SPECIALATTACK_VARP = 301;
+	private final SpecialAttack specialAttack;
 
-    public SpecialAttackRequirement(SpecialAttack specialAttack)
-    {
-        this.specialAttack = specialAttack;
-    }
+	public SpecialAttackRequirement(SpecialAttack specialAttack)
+	{
+		this.specialAttack = specialAttack;
+	}
 
-    @Override
-    public boolean check(Client client)
-    {
-        return specialAttack.check(client, SPECIALATTACK_VARP);
-    }
+	@Override
+	public boolean check(Client client)
+	{
+		return specialAttack.check(client, SPECIALATTACK_VARP);
+	}
 
-    @Override
-    public String getDisplayText()
-    {
-        return "You must turn " + specialAttack.getName() + " special attack.";
-    }
+	@Override
+	public String getDisplayText()
+	{
+		return "You must turn " + specialAttack.getName() + " special attack.";
+	}
 }

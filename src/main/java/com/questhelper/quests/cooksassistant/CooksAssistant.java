@@ -72,7 +72,8 @@ public class CooksAssistant extends BasicQuestHelper
 		return steps;
 	}
 
-	public void setupItemRequirements() {
+	public void setupItemRequirements()
+	{
 		egg = new ItemRequirement("Egg", ItemID.EGG);
 		egg.setTooltip("You can find an egg in the farm north of Lumbridge.");
 		milk = new ItemRequirement("Bucket of milk", ItemID.BUCKET_OF_MILK);

@@ -88,8 +88,8 @@ public class DoorPuzzle extends QuestStep
 	{
 		ENTRY_ONE = word.charAt(0);
 		ENTRY_TWO = word.charAt(1);
-		ENTRY_THREE =  word.charAt(2);
-		ENTRY_FOUR =  word.charAt(3);
+		ENTRY_THREE = word.charAt(2);
+		ENTRY_FOUR = word.charAt(3);
 		setText("Click the highlighted arrows to move the slots to the solution. The answer is " + word + ".");
 	}
 
@@ -124,18 +124,27 @@ public class DoorPuzzle extends QuestStep
 	private int matchStateToSolution(int slot, Character target, int arrowRightId, int arrowLeftId)
 	{
 		Widget widget = client.getWidget(285, slot);
-		if (widget == null) return 0;
+		if (widget == null)
+		{
+			return 0;
+		}
 		char current = widget.getText().charAt(0);
 		int currentPos = (int) current - (int) 'A';
 		int id = Math.floorMod(currentPos - target, 26) < Math.floorMod(target - currentPos, 26) ? arrowRightId : arrowLeftId;
-		if (current != target) return id;
+		if (current != target)
+		{
+			return id;
+		}
 		return 0;
 	}
 
 	private int matchStateToDistance(int slot, Character target)
 	{
 		Widget widget = client.getWidget(285, slot);
-		if (widget == null) return 0;
+		if (widget == null)
+		{
+			return 0;
+		}
 		char current = widget.getText().charAt(0);
 		return Math.min(Math.floorMod(current - target, 26), Math.floorMod(target - current, 26));
 	}

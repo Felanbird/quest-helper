@@ -75,7 +75,7 @@ public class GiveIngredientsToHelpersStep extends DetailedOwnerStep
 	{
 		if ((currentStep == giveHopsBroline && !sulphuricBroline.check(client))
 			|| (currentStep == giveChancyHoney && !liquidHoney.check(client))
-		    || (currentStep == giveVinciEthenea && !ethenea.check(client)))
+			|| (currentStep == giveVinciEthenea && !ethenea.check(client)))
 		{
 			updateSteps();
 		}

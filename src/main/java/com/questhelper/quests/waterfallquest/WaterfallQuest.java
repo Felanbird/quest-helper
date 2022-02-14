@@ -286,17 +286,17 @@ public class WaterfallQuest extends BasicQuestHelper
 	public List<ExperienceReward> getExperienceRewards()
 	{
 		return Arrays.asList(
-				new ExperienceReward(Skill.STRENGTH, 13750),
-				new ExperienceReward(Skill.ATTACK, 13750));
+			new ExperienceReward(Skill.STRENGTH, 13750),
+			new ExperienceReward(Skill.ATTACK, 13750));
 	}
 
 	@Override
 	public List<ItemReward> getItemRewards()
 	{
 		return Arrays.asList(
-				new ItemReward("Diamonds", ItemID.DIAMOND, 2),
-				new ItemReward("Gold Bars", ItemID.GOLD_BAR, 2),
-				new ItemReward("Mithril Seeds", ItemID.MITHRIL_SEEDS, 40));
+			new ItemReward("Diamonds", ItemID.DIAMOND, 2),
+			new ItemReward("Gold Bars", ItemID.GOLD_BAR, 2),
+			new ItemReward("Mithril Seeds", ItemID.MITHRIL_SEEDS, 40));
 	}
 
 	@Override

@@ -105,9 +105,9 @@ public class EnchantedKey extends BasicQuestHelper
 	public List<ItemReward> getItemRewards()
 	{
 		return Arrays.asList(
-				new ItemReward("Saradomin Mjolnir", ItemID.SARADOMIN_MJOLNIR, 1),
-				new ItemReward("Guthix Mjolnir", ItemID.GUTHIX_MJOLNIR, 1),
-				new ItemReward("Zamorak Mjolnir", ItemID.ZAMORAK_MJOLNIR, 1));
+			new ItemReward("Saradomin Mjolnir", ItemID.SARADOMIN_MJOLNIR, 1),
+			new ItemReward("Guthix Mjolnir", ItemID.GUTHIX_MJOLNIR, 1),
+			new ItemReward("Zamorak Mjolnir", ItemID.ZAMORAK_MJOLNIR, 1));
 	}
 
 	@Override

@@ -440,9 +440,9 @@ public class IcthlarinsLittleHelper extends BasicQuestHelper
 	public List<ExperienceReward> getExperienceRewards()
 	{
 		return Arrays.asList(
-				new ExperienceReward(Skill.THIEVING, 4500),
-				new ExperienceReward(Skill.AGILITY, 4000),
-				new ExperienceReward(Skill.WOODCUTTING, 4000));
+			new ExperienceReward(Skill.THIEVING, 4500),
+			new ExperienceReward(Skill.AGILITY, 4000),
+			new ExperienceReward(Skill.WOODCUTTING, 4000));
 	}
 
 	@Override
@@ -455,8 +455,8 @@ public class IcthlarinsLittleHelper extends BasicQuestHelper
 	public List<UnlockReward> getUnlockRewards()
 	{
 		return Arrays.asList(
-				new UnlockReward("Access to the city of Sophanem."),
-				new UnlockReward("Ability to take carpet rides from Pollnivneah to Sophanem and Menaphos."));
+			new UnlockReward("Access to the city of Sophanem."),
+			new UnlockReward("Ability to take carpet rides from Pollnivneah to Sophanem and Menaphos."));
 	}
 
 	@Override

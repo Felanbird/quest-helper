@@ -121,10 +121,10 @@ public class PanelDetails
 		else
 		{
 			return getSteps().stream()
-				    .filter(Objects::nonNull)
-					.map(QuestStep::getSubsteps)
-					.flatMap(Collection::stream)
-					.anyMatch(step -> containsSubStep(currentStep, step));
+				.filter(Objects::nonNull)
+				.map(QuestStep::getSubsteps)
+				.flatMap(Collection::stream)
+				.anyMatch(step -> containsSubStep(currentStep, step));
 		}
 	}
 

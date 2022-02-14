@@ -282,7 +282,9 @@ public class ItemRequirement extends AbstractRequirement
 		return color;
 	}
 
-	/** Find the first item that this requirement allows that the player has, or -1 if they don't have any item(s) */
+	/**
+	 * Find the first item that this requirement allows that the player has, or -1 if they don't have any item(s)
+	 */
 	private int findItemID(Client client, boolean checkConsideringSlotRestrictions)
 	{
 		int remainder = getRequiredItemDifference(client, id, checkConsideringSlotRestrictions, null);

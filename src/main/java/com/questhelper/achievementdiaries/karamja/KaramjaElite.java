@@ -166,22 +166,22 @@ public class KaramjaElite extends ComplexStateQuestHelper
 	public List<ItemReward> getItemRewards()
 	{
 		return Arrays.asList(
-				new ItemReward("Karamja Gloves (4)", ItemID.KARAMJA_GLOVES_4, 1),
-				new ItemReward("50,000 Exp. Lamp (Any skill above level 70)", ItemID.ANTIQUE_LAMP, 1));
+			new ItemReward("Karamja Gloves (4)", ItemID.KARAMJA_GLOVES_4, 1),
+			new ItemReward("50,000 Exp. Lamp (Any skill above level 70)", ItemID.ANTIQUE_LAMP, 1));
 	}
 
 	@Override
 	public List<UnlockReward> getUnlockRewards()
 	{
 		return Arrays.asList(
-				new UnlockReward("10% chance of receiving 2 Agility arena tickets in the Brimhaven Agility Dungeon"),
-				new UnlockReward("Free usage of Shilo Village's furnace"),
-				new UnlockReward("Free cart rides on Hajedy's cart system"),
-				new UnlockReward("Free access to the Hardwood Grove"),
-				new UnlockReward("Access to the stepping stones shortcut leading to the red dragons in Brimhaven Dungeon"),
-				new UnlockReward("Red and Metal in Brimhaven Dungeon will drop noted draonhide and bars"),
-				new UnlockReward("One free resurrection per day in the Fight Caves (Not the Inferno)"),
-				new UnlockReward("Double Tokkul from TzHaar Fight Caves, Inferno and Ket-Rak's Challenges"));
+			new UnlockReward("10% chance of receiving 2 Agility arena tickets in the Brimhaven Agility Dungeon"),
+			new UnlockReward("Free usage of Shilo Village's furnace"),
+			new UnlockReward("Free cart rides on Hajedy's cart system"),
+			new UnlockReward("Free access to the Hardwood Grove"),
+			new UnlockReward("Access to the stepping stones shortcut leading to the red dragons in Brimhaven Dungeon"),
+			new UnlockReward("Red and Metal in Brimhaven Dungeon will drop noted draonhide and bars"),
+			new UnlockReward("One free resurrection per day in the Fight Caves (Not the Inferno)"),
+			new UnlockReward("Double Tokkul from TzHaar Fight Caves, Inferno and Ket-Rak's Challenges"));
 	}
 
 	@Override
@@ -195,7 +195,7 @@ public class KaramjaElite extends ComplexStateQuestHelper
 		allSteps.add(equipCapeSteps);
 
 		PanelDetails potionSteps = new PanelDetails("Create Antivenom Potion", Collections.singletonList(makePotion),
-			herblore87 , antidotePlusPlus, zulrahScales.quantity(20));
+			herblore87, antidotePlusPlus, zulrahScales.quantity(20));
 		potionSteps.setDisplayCondition(notMadePotion);
 		allSteps.add(potionSteps);
 

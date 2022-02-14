@@ -118,7 +118,7 @@ public class RovingElves extends BasicQuestHelper
 	{
 		seed = new ItemRequirement("Consecration seed", ItemID.CONSECRATION_SEED);
 		seed.addAlternates(ItemID.CONSECRATION_SEED_4206);
-		
+
 		blessedSeed = new ItemRequirement("Consecration seed", ItemID.CONSECRATION_SEED_4206);
 		blessedSeed.setTooltip("You can get another from Eluned");
 
@@ -244,8 +244,8 @@ public class RovingElves extends BasicQuestHelper
 	public List<ItemReward> getItemRewards()
 	{
 		return Arrays.asList(
-				new ItemReward("A used Crystal Shield", ItemID.CRYSTAL_SHIELD, 1),
-				new ItemReward("or Crystal Bow", ItemID.CRYSTAL_BOW, 1));
+			new ItemReward("A used Crystal Shield", ItemID.CRYSTAL_SHIELD, 1),
+			new ItemReward("or Crystal Bow", ItemID.CRYSTAL_BOW, 1));
 	}
 
 	@Override

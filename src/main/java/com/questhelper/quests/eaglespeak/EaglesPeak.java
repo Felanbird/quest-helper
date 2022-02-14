@@ -480,9 +480,9 @@ public class EaglesPeak extends BasicQuestHelper
 	public List<UnlockReward> getUnlockRewards()
 	{
 		return Arrays.asList(
-				new UnlockReward("Ability to use Box Traps"),
-				new UnlockReward("Ability to use Eagle Transport System"),
-				new UnlockReward("Ability to hunt Rabbits."));
+			new UnlockReward("Ability to use Box Traps"),
+			new UnlockReward("Ability to use Eagle Transport System"),
+			new UnlockReward("Ability to hunt Rabbits."));
 	}
 
 	@Override

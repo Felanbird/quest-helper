@@ -69,7 +69,7 @@ public class BelowIceMountain extends BasicQuestHelper
 	ItemRequirement iceMountainTeleport, faladorTeleport, varrockTeleport, combatGearOrPickaxe;
 
 	Requirement needFlex, leftFlexBeforeLearning, haveFlex, recruitedCheckal, needRecipe, haveRecipe, haveIngredients,
-		fedMarley, recruitedMarley, needBeer,gaveBeer, needRPS, recruitedBurntof, inDungeon;
+		fedMarley, recruitedMarley, needBeer, gaveBeer, needRPS, recruitedBurntof, inDungeon;
 
 	QuestStep talkToWillowToStart, recruitCheckal, talkToAtlas, flexCheckal, talkToMarley, talkToCook, getIngredients,
 		makeSandwich, feedMarley, talkToMarleyAfterFeeding, talkToBurntof, buyBeer, giveBeer, playRPS, goToDungeon,
@@ -202,7 +202,7 @@ public class BelowIceMountain extends BasicQuestHelper
 		feedMarley = new NpcStep(this, NpcID.MARLEY, new WorldPoint(3088, 3470, 0), "Return to Marley and give him the" +
 			" steak sandwich. Be careful not to eat it!", steakSandwichHighlight);
 
-		talkToMarleyAfterFeeding = new NpcStep(this,  NpcID.MARLEY, new WorldPoint(3088, 3470, 0), "Talk to Marley to send him off to the excavation site.");
+		talkToMarleyAfterFeeding = new NpcStep(this, NpcID.MARLEY, new WorldPoint(3088, 3470, 0), "Talk to Marley to send him off to the excavation site.");
 		feedMarley.addSubSteps(talkToMarleyAfterFeeding);
 
 		talkToBurntof = new NpcStep(this, NpcID.BURNTOF, new WorldPoint(2956, 3367, 0), "Talk to Burntof in the " +
@@ -280,8 +280,8 @@ public class BelowIceMountain extends BasicQuestHelper
 	public List<UnlockReward> getUnlockRewards()
 	{
 		return Arrays.asList(
-				new UnlockReward("Access to the Ruins of Camdozaal."),
-				new UnlockReward("Flex Emote"));
+			new UnlockReward("Access to the Ruins of Camdozaal."),
+			new UnlockReward("Flex Emote"));
 	}
 
 	@Override

@@ -198,7 +198,7 @@ public class TheLostTribe extends BasicQuestHelper
 		talkToBob.addDialogStep("Do you know what happened in the castle cellar?");
 
 		talkToAllAboutCellar = new NpcStep(this, NpcID.COOK_4626, "Talk to the Cook, Hans, Father Aereck, and Bob in Lumbridge until one tells you about seeing a goblin.");
-		((NpcStep)(talkToAllAboutCellar)).addAlternateNpcs(NpcID.FATHER_AERECK);
+		((NpcStep) (talkToAllAboutCellar)).addAlternateNpcs(NpcID.FATHER_AERECK);
 		talkToAllAboutCellar.addDialogSteps("Do you know what happened in the castle cellar?");
 		talkToAllAboutCellar.addSubSteps(talkToHans, talkToBob);
 
@@ -389,9 +389,9 @@ public class TheLostTribe extends BasicQuestHelper
 	public List<UnlockReward> getUnlockRewards()
 	{
 		return Arrays.asList(
-				new UnlockReward("Access to the Dorgesh-Kann mine."),
-				new UnlockReward("Access to Nardok's Bone Weapon Store"),
-				new UnlockReward("2 new goblin emotes."));
+			new UnlockReward("Access to the Dorgesh-Kann mine."),
+			new UnlockReward("Access to Nardok's Bone Weapon Store"),
+			new UnlockReward("2 new goblin emotes."));
 	}
 
 	@Override

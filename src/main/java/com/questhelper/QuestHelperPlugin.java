@@ -100,7 +100,7 @@ import net.runelite.client.util.Text;
 @PluginDescriptor(
 	name = "Quest Helper",
 	description = "Helps you with questing",
-	tags = { "quest", "helper", "overlay" }
+	tags = {"quest", "helper", "overlay"}
 )
 @Slf4j
 public class QuestHelperPlugin extends Plugin
@@ -423,7 +423,9 @@ public class QuestHelperPlugin extends Plugin
 				overlayManager.remove(questHelperDebugOverlay);
 			}
 			else if ((Arrays.stream(commandExecuted.getArguments()).toArray()[0]).equals("enable"))
+			{
 				overlayManager.add(questHelperDebugOverlay);
+			}
 		}
 	}
 

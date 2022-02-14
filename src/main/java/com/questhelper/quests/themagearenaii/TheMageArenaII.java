@@ -63,8 +63,7 @@ import net.runelite.api.coords.WorldPoint;
 )
 public class TheMageArenaII extends BasicQuestHelper
 {
-	ItemRequirement zamorakStaff, guthixStaff, saradominStaff, runesForCasts, magicCombatGear, knife, brews, restores
-		, food, recoils, enchantedSymbol, justicarsHand, demonsHeart, entRoots, godCape;
+	ItemRequirement zamorakStaff, guthixStaff, saradominStaff, runesForCasts, magicCombatGear, knife, brews, restores, food, recoils, enchantedSymbol, justicarsHand, demonsHeart, entRoots, godCape;
 
 	Requirement inCavern, givenHand, givenHeart, givenRoots;
 
@@ -127,7 +126,7 @@ public class TheMageArenaII extends BasicQuestHelper
 		magicCombatGear = new ItemRequirement("Magic combat gear", -1, 1);
 		magicCombatGear.setDisplayItemId(BankSlotIcons.getMagicCombatGear());
 		knife = new ItemRequirement("Knife or sharp weapon to cut through a web", ItemID.KNIFE);
-		brews =  new ItemRequirement("Saradomin brews", ItemCollections.getSaradominBrews(), -1);
+		brews = new ItemRequirement("Saradomin brews", ItemCollections.getSaradominBrews(), -1);
 		restores = new ItemRequirement("Super restores", ItemCollections.getSuperRestorePotions(), -1);
 		food = new ItemRequirement("Food", ItemCollections.getGoodEatingFood(), -1);
 		recoils = new ItemRequirement("Rings of recoil", ItemID.RING_OF_RECOIL);
@@ -174,7 +173,7 @@ public class TheMageArenaII extends BasicQuestHelper
 			enchantedSymbol, food);
 		locateFollowerSara.addDialogStep("Saradomin");
 		locateFollowerGuthix = new MageArenaBossStep(this, guthixStaff, "Guthix", "If he spawns green orbs, destroy " +
-			"them to stop them healing him.",	enchantedSymbol, food);
+			"them to stop them healing him.", enchantedSymbol, food);
 		locateFollowerGuthix.addDialogStep("Guthix");
 		locateFollowerZammy = new MageArenaBossStep(this, zamorakStaff, "Zamorak", "If he fires an energy ball at " +
 			"you, move away away from the boss to reduce the damage you take.",

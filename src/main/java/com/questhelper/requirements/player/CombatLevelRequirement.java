@@ -44,7 +44,7 @@ public class CombatLevelRequirement extends AbstractRequirement
 	 * Checks if the player's combat level meets the required level using the given
 	 * {@link Operation}
 	 *
-	 * @param operation the {@link Operation} to use
+	 * @param operation     the {@link Operation} to use
 	 * @param requiredLevel the required combat level
 	 */
 	public CombatLevelRequirement(Operation operation, int requiredLevel)

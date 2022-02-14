@@ -34,14 +34,14 @@ import net.runelite.api.Client;
 @Getter
 public enum SpecialAttack
 {
-    OFF(0, "off"),
-    ON(1, "on");
+	OFF(0, "off"),
+	ON(1, "on");
 
-    private final int id;
-    private final String name;
+	private final int id;
+	private final String name;
 
-    public boolean check(Client client, int varp)
-    {
-        return client.getVarpValue(varp) == this.getId();
-    }
+	public boolean check(Client client, int varp)
+	{
+		return client.getVarpValue(varp) == this.getId();
+	}
 }

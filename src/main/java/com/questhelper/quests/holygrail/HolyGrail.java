@@ -340,16 +340,16 @@ public class HolyGrail extends BasicQuestHelper
 	public List<ExperienceReward> getExperienceRewards()
 	{
 		return Arrays.asList(
-				new ExperienceReward(Skill.PRAYER, 11000),
-				new ExperienceReward(Skill.DEFENCE, 15300));
+			new ExperienceReward(Skill.PRAYER, 11000),
+			new ExperienceReward(Skill.DEFENCE, 15300));
 	}
 
 	@Override
 	public List<UnlockReward> getUnlockRewards()
 	{
 		return Arrays.asList(
-				new UnlockReward("Access to the Fisher Realm."),
-				new UnlockReward("Ability to put King Arthur picture on the wall in the POH."));
+			new UnlockReward("Access to the Fisher Realm."),
+			new UnlockReward("Ability to put King Arthur picture on the wall in the POH."));
 	}
 
 	@Override

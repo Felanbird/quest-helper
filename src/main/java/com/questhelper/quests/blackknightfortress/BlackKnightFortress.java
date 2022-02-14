@@ -42,8 +42,7 @@ public class BlackKnightFortress extends BasicQuestHelper
 	ItemRequirement teleportFalador, armour, food;
 
 	Requirement onTopOfFortress, inBasement, inSecretRoomGroundFloor, inSecretRoomFirstFloor, inSecretRoomSecondFloor, inCentralAreaFloor1, inMainEntrance, inWestRoomFloor1,
-		inEastRoomFloor0, inEastRoomFloor1, inEastRoomFloor2, inListeningRoom, inCabbageHoleRoom, inPathToCabbageRoom
-	, inEastTurret, inFaladorF1, inFaladorF2;
+		inEastRoomFloor0, inEastRoomFloor1, inEastRoomFloor2, inListeningRoom, inCabbageHoleRoom, inPathToCabbageRoom, inEastTurret, inFaladorF1, inFaladorF2;
 
 	Zone secretRoomFloor0, secretRoomFloor1, secretRoomFloor2, secretRoomFloor3, secretBasement, mainEntrance1, mainEntrance2, mainEntrance3, mainEntrance4, westFloor1,
 		eastRoom1Floor0, eastRoom2Floor0, listeningRoom1, listeningRoom2, eastRoomFloor2, centralArea1Floor1, centralArea2Floor1, centralArea3Floor1,

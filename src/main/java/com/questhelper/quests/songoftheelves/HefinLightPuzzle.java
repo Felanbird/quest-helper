@@ -265,29 +265,29 @@ public class HefinLightPuzzle extends ConditionalStep
 			"Add a mirror to the pillar to the east. Rotate it to point the light up.", handMirrorHighlighted);
 		p1Pillar14.addIcon(ItemID.HAND_MIRROR_23775);
 
-		p1Pillar15 = new ObjectStep(getQuestHelper(), ObjectID.PILLAR_OF_LIGHT_35137, new WorldPoint(2581, 6130,0),
+		p1Pillar15 = new ObjectStep(getQuestHelper(), ObjectID.PILLAR_OF_LIGHT_35137, new WorldPoint(2581, 6130, 0),
 			"Add a mirror to the marked pillar. Rotate it to point the light north.", handMirrorHighlighted);
 		p1Pillar15.addIcon(ItemID.HAND_MIRROR_23775);
 
-		p1Pillar16 = new ObjectStep(getQuestHelper(), NullObjectID.NULL_8802, new WorldPoint(2581, 6144,0),
+		p1Pillar16 = new ObjectStep(getQuestHelper(), NullObjectID.NULL_8802, new WorldPoint(2581, 6144, 0),
 			"Add a mirror to the pillar to the north. Rotate it to point the light west.", handMirrorHighlighted);
 		p1Pillar16.addIcon(ItemID.HAND_MIRROR_23775);
 
-		p1Pillar17 = new ObjectStep(getQuestHelper(), NullObjectID.NULL_2535, new WorldPoint(2567, 6144,0),
+		p1Pillar17 = new ObjectStep(getQuestHelper(), NullObjectID.NULL_2535, new WorldPoint(2567, 6144, 0),
 			"Add a mirror to the pillar to the west. Rotate it to point the light up.", handMirrorHighlighted);
 		p1Pillar17.addIcon(ItemID.HAND_MIRROR_23775);
 
-		p1Pillar18 = new ObjectStep(getQuestHelper(), ObjectID.PILLAR_OF_LIGHT_35087, new WorldPoint(2581, 6116,2),
+		p1Pillar18 = new ObjectStep(getQuestHelper(), ObjectID.PILLAR_OF_LIGHT_35087, new WorldPoint(2581, 6116, 2),
 			"Add a mirror to the pillar to the south. Rotate it to point the light north.", handMirrorHighlighted);
 		p1Pillar18.setWorldMapPoint(new WorldPoint(2965, 6116, 2));
 		p1Pillar18.addIcon(ItemID.HAND_MIRROR_23775);
 
-		p1Pillar19 = new ObjectStep(getQuestHelper(), ObjectID.PILLAR_OF_LIGHT_35088, new WorldPoint(2581, 6130,2),
+		p1Pillar19 = new ObjectStep(getQuestHelper(), ObjectID.PILLAR_OF_LIGHT_35088, new WorldPoint(2581, 6130, 2),
 			"Add a mirror to the pillar to the north. Rotate it to point the light west.", handMirrorHighlighted);
 		p1Pillar19.setWorldMapPoint(new WorldPoint(2965, 6130, 2));
 		p1Pillar19.addIcon(ItemID.HAND_MIRROR_23775);
 
-		p1Pillar20 = new ObjectStep(getQuestHelper(), ObjectID.PILLAR_OF_LIGHT_35084, new WorldPoint(2567, 6144,2),
+		p1Pillar20 = new ObjectStep(getQuestHelper(), ObjectID.PILLAR_OF_LIGHT_35084, new WorldPoint(2567, 6144, 2),
 			"Add a mirror to the pillar to the north west. Rotate it to point the light south.", handMirrorHighlighted);
 		p1Pillar20.setWorldMapPoint(new WorldPoint(2951, 6130, 2));
 		p1Pillar20.addIcon(ItemID.HAND_MIRROR_23775);

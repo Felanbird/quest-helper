@@ -333,8 +333,8 @@ public class ShadesOfMortton extends BasicQuestHelper
 	public List<ExperienceReward> getExperienceRewards()
 	{
 		return Arrays.asList(
-				new ExperienceReward(Skill.CRAFTING, 2000),
-				new ExperienceReward(Skill.HERBLORE, 2000));
+			new ExperienceReward(Skill.CRAFTING, 2000),
+			new ExperienceReward(Skill.HERBLORE, 2000));
 	}
 
 	@Override

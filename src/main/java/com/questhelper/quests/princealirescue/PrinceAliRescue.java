@@ -267,8 +267,8 @@ public class PrinceAliRescue extends BasicQuestHelper
 	public List<UnlockReward> getUnlockRewards()
 	{
 		return Arrays.asList(
-				new UnlockReward("Free use of the Al Kharid toll gates."),
-				new UnlockReward("Access to Sorceress's Garden Minigame (Members)"));
+			new UnlockReward("Free use of the Al Kharid toll gates."),
+			new UnlockReward("Access to Sorceress's Garden Minigame (Members)"));
 	}
 
 	@Override

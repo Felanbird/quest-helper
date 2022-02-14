@@ -271,8 +271,8 @@ public class WhatLiesBelow extends BasicQuestHelper
 	public List<ExperienceReward> getExperienceRewards()
 	{
 		return Arrays.asList(
-				new ExperienceReward(Skill.RUNECRAFT, 8000),
-				new ExperienceReward(Skill.DEFENCE, 2000));
+			new ExperienceReward(Skill.RUNECRAFT, 8000),
+			new ExperienceReward(Skill.DEFENCE, 2000));
 	}
 
 	@Override

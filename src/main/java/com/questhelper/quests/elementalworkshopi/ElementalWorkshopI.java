@@ -321,9 +321,9 @@ public class ElementalWorkshopI extends ComplexStateQuestHelper
 	@Override
 	public List<ExperienceReward> getExperienceRewards()
 	{
-		return  Arrays.asList(
-				new ExperienceReward(Skill.CRAFTING, 5000),
-				new ExperienceReward(Skill.SMITHING, 5000));
+		return Arrays.asList(
+			new ExperienceReward(Skill.CRAFTING, 5000),
+			new ExperienceReward(Skill.SMITHING, 5000));
 	}
 
 	@Override
@@ -336,8 +336,8 @@ public class ElementalWorkshopI extends ComplexStateQuestHelper
 	public List<UnlockReward> getUnlockRewards()
 	{
 		return Arrays.asList(
-				new UnlockReward("Access to the Elemental Workshop."),
-				new UnlockReward("Ability to craft and wield Elemental equipment."));
+			new UnlockReward("Access to the Elemental Workshop."),
+			new UnlockReward("Ability to craft and wield Elemental equipment."));
 	}
 
 	@Override

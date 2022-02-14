@@ -51,6 +51,7 @@ public final class RequirementBuilder
 	/**
 	 * Convenience method to create a simple ComplexRequirement with the default {@link LogicType#AND} and no
 	 * display text (not null).
+	 *
 	 * @return a new {@link ComplexRequirementBuilder} with a default {@link LogicType#AND} and no display text
 	 */
 	public static ComplexRequirementBuilder complex()

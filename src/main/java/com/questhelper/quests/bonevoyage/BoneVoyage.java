@@ -210,7 +210,7 @@ public class BoneVoyage extends BasicQuestHelper
 		}
 
 		returnWithAgreement = new NpcStep(this, NpcID.SAWMILL_OPERATOR, new WorldPoint(3302, 3492, 0),
-		"Return to the Sawmill Operator north east of Varrock.", sawmillAgreement);
+			"Return to the Sawmill Operator north east of Varrock.", sawmillAgreement);
 		returnWithAgreement.addDialogStep("I'm here on behalf of the museum archaeological team.");
 
 		talkToForemanAgain = new NpcStep(this, NpcID.BARGE_FOREMAN, new WorldPoint(3364, 3445, 0),
@@ -226,7 +226,7 @@ public class BoneVoyage extends BasicQuestHelper
 			"Talk to Jack Seagull in the Port Sarim Pub.");
 		talkToJack.addDialogStep("Ever made any cursed voyages?");
 		boardBargeAfterJack = new NpcStep(this, NpcID.BARGE_GUARD_8013, new WorldPoint(3362, 3446, 0),
-		"Return to the barge.");
+			"Return to the barge.");
 		boardBargeAfterJack.addDialogStep("Can I go onto the barge?");
 		talkToNavigatorAgain = new NpcStep(this, NpcID.LEAD_NAVIGATOR, new WorldPoint(3363, 3453, 1),
 			"Talk to the Lead Navigator again.");
@@ -249,7 +249,7 @@ public class BoneVoyage extends BasicQuestHelper
 			"Board the barge.", boneCharm);
 		boardBargeWithCharm.addDialogStep("Can I go onto the barge?");
 		boardBargeWithPotionAndCharm.addSubSteps(boardBargeWithCharm, boardBargeWithPotion);
-		giveLeadPotion  = new NpcStep(this, NpcID.LEAD_NAVIGATOR, new WorldPoint(3363, 3453, 1),
+		giveLeadPotion = new NpcStep(this, NpcID.LEAD_NAVIGATOR, new WorldPoint(3363, 3453, 1),
 			"Give the Lead Navigator the potion.", potionOfSealegs);
 		giveJuniorBone = new NpcStep(this, NpcID.JUNIOR_NAVIGATOR, new WorldPoint(3363, 3453, 1),
 			"Give the Junior Navigator the bone charm.", boneCharm);

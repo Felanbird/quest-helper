@@ -329,8 +329,8 @@ public class DeathPlateau extends BasicQuestHelper
 	public List<UnlockReward> getUnlockRewards()
 	{
 		return Arrays.asList(
-				new UnlockReward("The ability to craft claws."),
-				new UnlockReward("The ability to purchase and equip Climbing Boots."));
+			new UnlockReward("The ability to craft claws."),
+			new UnlockReward("The ability to purchase and equip Climbing Boots."));
 	}
 
 	@Override

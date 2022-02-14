@@ -63,7 +63,7 @@ import net.runelite.api.Skill;
 import net.runelite.api.coords.WorldPoint;
 
 @QuestDescriptor(
-        quest = QuestHelperQuest.UNDERGROUND_PASS
+	quest = QuestHelperQuest.UNDERGROUND_PASS
 )
 public class UndergroundPass extends BasicQuestHelper
 {
@@ -791,8 +791,8 @@ public class UndergroundPass extends BasicQuestHelper
 	public List<ExperienceReward> getExperienceRewards()
 	{
 		return Arrays.asList(
-				new ExperienceReward(Skill.AGILITY, 3000),
-				new ExperienceReward(Skill.ATTACK, 3000));
+			new ExperienceReward(Skill.AGILITY, 3000),
+			new ExperienceReward(Skill.ATTACK, 3000));
 	}
 
 	@Override

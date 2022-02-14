@@ -42,8 +42,8 @@ public class WeightRequirement extends AbstractRequirement
 	/**
 	 * Checks if the player meets the weight requirement.
 	 *
-	 * @param text the display text
-	 * @param weight the weight required
+	 * @param text      the display text
+	 * @param weight    the weight required
 	 * @param operation the {@link Operation} to use
 	 */
 	public WeightRequirement(String text, int weight, Operation operation)

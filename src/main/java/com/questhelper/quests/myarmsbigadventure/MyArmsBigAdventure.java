@@ -481,8 +481,8 @@ public class MyArmsBigAdventure extends BasicQuestHelper
 	public List<ExperienceReward> getExperienceRewards()
 	{
 		return Arrays.asList(
-				new ExperienceReward(Skill.HERBLORE, 10000),
-				new ExperienceReward(Skill.FARMING, 5000));
+			new ExperienceReward(Skill.HERBLORE, 10000),
+			new ExperienceReward(Skill.FARMING, 5000));
 	}
 
 	@Override

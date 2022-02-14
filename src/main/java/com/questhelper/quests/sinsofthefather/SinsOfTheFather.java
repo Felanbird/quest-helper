@@ -68,15 +68,15 @@ import net.runelite.api.coords.WorldPoint;
 import java.util.HashMap;
 
 @QuestDescriptor(
-        quest = QuestHelperQuest.SINS_OF_THE_FATHER
+	quest = QuestHelperQuest.SINS_OF_THE_FATHER
 )
 public class SinsOfTheFather extends BasicQuestHelper
 {
 	//Items Required
 	ItemRequirement haemBook, unscentedTop, unscentedLegs, unscentedShoes, vyreTop, vyreLegs, vyreShoes, ivandisFlailEquipped, blisterwoodFlail, scentedTop, scentedLegs,
-			scentedShoes, blisterwood8, axe, knife, vine3, longVine, log1, log2, log3, axeEquipped, oldNote, ruby, sickle, enchantedSickle, enchantRubyRunesOrTablet, fireRune5,
-			fireStaff, cosmicRune, enchantRunes, enchantTablet, rubySickle, blisterwoodLog, blisterwoodSickle, ivandisFlailHighlighted, chisel, rubyHighlighted, ivandisFlail,
-			combatGear, rangedWeaponForBloodveld, vyrewatchOutfitOrCoins;
+		scentedShoes, blisterwood8, axe, knife, vine3, longVine, log1, log2, log3, axeEquipped, oldNote, ruby, sickle, enchantedSickle, enchantRubyRunesOrTablet, fireRune5,
+		fireStaff, cosmicRune, enchantRunes, enchantTablet, rubySickle, blisterwoodLog, blisterwoodSickle, ivandisFlailHighlighted, chisel, rubyHighlighted, ivandisFlail,
+		combatGear, rangedWeaponForBloodveld, vyrewatchOutfitOrCoins;
 
 	//Items Recommended
 	ItemRequirement antipoison, pickaxe, drakanMedallion, moryLegs3;
@@ -859,16 +859,16 @@ public class SinsOfTheFather extends BasicQuestHelper
 	public List<ItemReward> getItemRewards()
 	{
 		return Arrays.asList(
-				new ItemReward("3 x 15,000 Experince Tomes (Any skill above 60)", ItemID.ANTIQUE_LAMP, 3), //4447 is placeholder for filter
-				new ItemReward("A Blisterwood Flail", ItemID.BLISTERWOOD_FLAIL, 1));
+			new ItemReward("3 x 15,000 Experince Tomes (Any skill above 60)", ItemID.ANTIQUE_LAMP, 3), //4447 is placeholder for filter
+			new ItemReward("A Blisterwood Flail", ItemID.BLISTERWOOD_FLAIL, 1));
 	}
 
 	@Override
 	public List<UnlockReward> getUnlockRewards()
 	{
 		return Arrays.asList(
-				new UnlockReward("Access to Darkmeyer and the Daeyalt Essence Mine"),
-				new UnlockReward("Darkmeyer teleport via Drakan's Medallion."));
+			new UnlockReward("Access to Darkmeyer and the Daeyalt Essence Mine"),
+			new UnlockReward("Darkmeyer teleport via Drakan's Medallion."));
 	}
 
 	@Override

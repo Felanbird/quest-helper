@@ -63,7 +63,7 @@ public class QuestSelectPanel extends JPanel
 
 		JLabel nameLabel = new JLabel(questHelper.getQuest().getName());
 		Color color = questState == QuestState.FINISHED ? questHelperPlugin.getConfig().passColour() : (questState == QuestState.IN_PROGRESS ?
-			new Color(240,207, 123) : Color.WHITE);
+			new Color(240, 207, 123) : Color.WHITE);
 		nameLabel.setForeground(color);
 		add(nameLabel, BorderLayout.CENTER);
 

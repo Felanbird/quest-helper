@@ -62,17 +62,17 @@ public class QuestHelperBankTagService
 
 		ArrayList<Integer> flattenedList = new ArrayList<>();
 
-		 sortedItems.stream()
-					.map(BankTabItems::getItems)
-					.flatMap(Collection::stream)
-					.map(BankTabItem::getItemIDs)
-					.flatMap(Collection::stream)
-					.filter(Objects::nonNull) // filter non-null just in case any Integer get in the list
-					.filter(id -> !flattenedList.contains(id))
-					.forEach(flattenedList::add);
+		sortedItems.stream()
+			.map(BankTabItems::getItems)
+			.flatMap(Collection::stream)
+			.map(BankTabItem::getItemIDs)
+			.flatMap(Collection::stream)
+			.filter(Objects::nonNull) // filter non-null just in case any Integer get in the list
+			.filter(id -> !flattenedList.contains(id))
+			.forEach(flattenedList::add);
 		return flattenedList;
 	}
-	
+
 	public ArrayList<BankTabItems> getPluginBankTagItemsForSections(boolean onlyGetMissingItems)
 	{
 		ArrayList<BankTabItems> newList = new ArrayList<>();

@@ -49,8 +49,7 @@ import net.runelite.api.coords.WorldPoint;
 )
 public class MA2Locator extends ComplexStateQuestHelper
 {
-	ItemRequirement zamorakStaff, guthixStaff, saradominStaff, runesForCasts, magicCombatGear, knife, brews, restores
-		, food, recoils, enchantedSymbol, justicarsHand, demonsHeart, entRoots, godCape;
+	ItemRequirement zamorakStaff, guthixStaff, saradominStaff, runesForCasts, magicCombatGear, knife, brews, restores, food, recoils, enchantedSymbol, justicarsHand, demonsHeart, entRoots, godCape;
 
 	QuestStep locateFollowerSara;
 
@@ -81,7 +80,7 @@ public class MA2Locator extends ComplexStateQuestHelper
 		magicCombatGear = new ItemRequirement("Magic combat gear", -1, 1);
 		magicCombatGear.setDisplayItemId(BankSlotIcons.getMagicCombatGear());
 		knife = new ItemRequirement("Knife or sharp weapon to cut through a web", ItemID.KNIFE);
-		brews =  new ItemRequirement("Saradomin brews", ItemCollections.getSaradominBrews(), -1);
+		brews = new ItemRequirement("Saradomin brews", ItemCollections.getSaradominBrews(), -1);
 		restores = new ItemRequirement("Super restores", ItemCollections.getSuperRestorePotions(), -1);
 		food = new ItemRequirement("Food", ItemCollections.getGoodEatingFood(), -1);
 		recoils = new ItemRequirement("Rings of recoil", ItemID.RING_OF_RECOIL);

@@ -259,10 +259,10 @@ public class Wanted extends BasicQuestHelper
 		commorbComponents.setTooltip("Alternatively, you can bring 10k gp.");
 		tenThousandGp = new ItemRequirement("10k gp", ItemCollections.getCoins(), 10000);
 		commorbComponentsOrTenThousandGp = new ItemRequirements(LogicType.OR, "A law rune, an enchanted gem and some molten glass OR 10k gp", commorbComponents, tenThousandGp);
-		
+
 		runeEssence = new ItemRequirement("20 Rune Essence (UNNOTED)", ItemID.RUNE_ESSENCE, 20);
 		pureEssence = new ItemRequirement("20 Pure Essence (UNNOTED)", ItemID.PURE_ESSENCE, 20);
-		essence =  new ItemRequirements(LogicType.OR, "20 Rune or Pure Essence (UNNOTED)", runeEssence, pureEssence);
+		essence = new ItemRequirements(LogicType.OR, "20 Rune or Pure Essence (UNNOTED)", runeEssence, pureEssence);
 		lightSource = new ItemRequirement("A light source", ItemCollections.getLightSources());
 		rope = new ItemRequirement("A rope", ItemID.ROPE);
 

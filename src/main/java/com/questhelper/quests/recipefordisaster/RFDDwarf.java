@@ -196,7 +196,7 @@ public class RFDDwarf extends BasicQuestHelper
 
 		pickUpRockCake = new ItemStep(this, "Pick up the dwarven rock cake. If you have ice gloves, wear them to pick" +
 			" it up. Otherwise, wear other gloves or telegrab it. If it despawns you'll need to bring Rohak more " +
-			"ingredients.",	rockCakeHot);
+			"ingredients.", rockCakeHot);
 		coolRockCake = new NpcStep(this, NpcID.ICEFIEND, new WorldPoint(3008, 3471, 0),
 			"Kill an icefiend to cool the rock cake.", rockCakeHot);
 		coolRockCakeSidebar = new NpcStep(this, NpcID.ICEFIEND, new WorldPoint(3008, 3471, 0),
@@ -251,8 +251,8 @@ public class RFDDwarf extends BasicQuestHelper
 	public List<ExperienceReward> getExperienceRewards()
 	{
 		return Arrays.asList(
-				new ExperienceReward(Skill.COOKING, 1000),
-				new ExperienceReward(Skill.SLAYER, 1000));
+			new ExperienceReward(Skill.COOKING, 1000),
+			new ExperienceReward(Skill.SLAYER, 1000));
 	}
 
 	@Override

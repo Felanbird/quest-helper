@@ -198,8 +198,8 @@ public class RFDLumbridgeGuide extends BasicQuestHelper
 	public List<ExperienceReward> getExperienceRewards()
 	{
 		return Arrays.asList(
-				new ExperienceReward(Skill.COOKING, 2500),
-				new ExperienceReward(Skill.MAGIC, 2500));
+			new ExperienceReward(Skill.COOKING, 2500),
+			new ExperienceReward(Skill.MAGIC, 2500));
 	}
 
 	@Override
