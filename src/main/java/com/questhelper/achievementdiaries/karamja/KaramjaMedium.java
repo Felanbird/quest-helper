@@ -300,8 +300,8 @@ public class KaramjaMedium extends BasicQuestHelper
 	public List<ItemRequirement> getItemRequirements()
 	{
 		return Arrays.asList(coins.quantity(1615), spiderCarcass, skewerTicksOrArrowShaft, goutTuber, spade, rake,
-			fruitTreeSapling, teasingStick, knife, logs, axe, pickaxe, opal, tradingSticks.quantity(500),
-			karambwanVessel, rawKarambwanji, machete);
+			fruitTreeSapling, teasingStick, knife, logs, axe, pickaxe, opal, tradingSticks.quantity(500), karambwanVessel,
+			rawKarambwanji, machete);
 	}
 
 	@Override

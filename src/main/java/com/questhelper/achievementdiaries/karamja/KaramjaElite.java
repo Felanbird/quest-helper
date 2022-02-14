@@ -127,8 +127,7 @@ public class KaramjaElite extends ComplexStateQuestHelper
 	public void setupSteps()
 	{
 		enterNatureAltar = new ObjectStep(this, NullObjectID.NULL_34821, new WorldPoint(2869, 3019, 0),
-			"Enter the nature altar, either from the ruin or through the Abyss.", natureTiaraOrAbyss,
-			pureEssence);
+			"Enter the nature altar, either from the ruin or through the Abyss.", natureTiaraOrAbyss, pureEssence);
 		craftRunes = new ObjectStep(this, ObjectID.ALTAR_34768, new WorldPoint(2400, 4841, 0),
 			"Craft a full inventory of nature runes.", pureEssence);
 		equipCape = new DetailedQuestStep(this, "Equip a fire or infernal cape.", fireCapeOrInfernal.equipped());
@@ -199,8 +198,8 @@ public class KaramjaElite extends ComplexStateQuestHelper
 		potionSteps.setDisplayCondition(notMadePotion);
 		allSteps.add(potionSteps);
 
-		PanelDetails craftRunesSteps = new PanelDetails("Craft 56 Nature Runes", Arrays.asList(enterNatureAltar,
-			craftRunes), runecraft91, pureEssence, natureTiaraOrAbyss);
+		PanelDetails craftRunesSteps = new PanelDetails("Craft 56 Nature Runes", Arrays.asList(enterNatureAltar, craftRunes),
+			runecraft91, pureEssence, natureTiaraOrAbyss);
 		craftRunesSteps.setDisplayCondition(notCraftedRunes);
 		allSteps.add(craftRunesSteps);
 

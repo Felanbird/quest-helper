@@ -338,8 +338,7 @@ public class VarrockHard extends ComplexStateQuestHelper
 	@Override
 	public List<ItemRequirement> getItemRequirements()
 	{
-		return Arrays.asList(coins.quantity(25800), dashingKeb, axe, lawRune,
-			fireRune, airRune, tinderBox, yewSap, spade);
+		return Arrays.asList(coins.quantity(25800), dashingKeb, axe, lawRune, fireRune, airRune, tinderBox, yewSap, spade);
 	}
 
 	@Override

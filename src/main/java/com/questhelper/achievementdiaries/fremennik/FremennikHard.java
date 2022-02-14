@@ -233,9 +233,8 @@ public class FremennikHard extends ComplexStateQuestHelper
 	@Override
 	public List<ItemRequirement> getItemRequirements()
 	{
-		return Arrays.asList(rake, pickaxe, axe, arcticLog, hammer, rope, bronzeNail,
-			cadantineUnfPot, whiteBerries, teasingStick, log, knife, fireRune, lawRune.quantity(3),
-			astralRune, waterRune);
+		return Arrays.asList(rake, pickaxe, axe, arcticLog, hammer, rope, bronzeNail, cadantineUnfPot, whiteBerries,
+			teasingStick, log, knife, fireRune, lawRune.quantity(3), astralRune, waterRune);
 	}
 
 	@Override

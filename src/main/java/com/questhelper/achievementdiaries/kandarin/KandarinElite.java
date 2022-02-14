@@ -178,8 +178,7 @@ public class KandarinElite extends ComplexStateQuestHelper
 
 	public void setupSteps()
 	{
-		tpCath = new DetailedQuestStep(this, "Teleport to Catherby.",
-			lunarBook, waterRune, astralRune, lawRune);
+		tpCath = new DetailedQuestStep(this, "Teleport to Catherby.", lunarBook, waterRune, astralRune, lawRune);
 		plantAndPickDwarf = new ObjectStep(this, NullObjectID.NULL_8151, new WorldPoint(2814, 3464, 0),
 			"Plant and harvest the dwarf weed from the Catherby patch.", rake, dwarfSeed, seedDib);
 		catchAndCook5Sharks = new NpcStep(this, NpcID.FISHING_SPOT_1519, new WorldPoint(2837, 3431, 0),

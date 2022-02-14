@@ -210,8 +210,8 @@ public class KandarinEasy extends ComplexStateQuestHelper
     @Override
     public List<ItemRequirement> getItemRequirements()
     {
-        return Arrays.asList(coins.quantity(33), bigFishingNet, juteSeed,
-			seedDibber, rake, batteredKey, genericFishbowl, seaweed, combatGear);
+        return Arrays.asList(coins.quantity(33), bigFishingNet, juteSeed, seedDibber, rake, batteredKey, genericFishbowl,
+			seaweed, combatGear);
     }
 
     @Override

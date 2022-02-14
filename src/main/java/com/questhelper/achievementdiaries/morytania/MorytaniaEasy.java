@@ -219,8 +219,8 @@ public class MorytaniaEasy extends ComplexStateQuestHelper
 	@Override
 	public List<ItemRequirement> getItemRequirements()
 	{
-		return Arrays.asList(combatGear, chisel, snailShell, thinSnail, tannableHide, coins, scarecrow,
-			bonemeal, bucketOfSlime, wolfbane, bones, pot, bucket, earProtection);
+		return Arrays.asList(combatGear, chisel, snailShell, thinSnail, tannableHide, coins, scarecrow, bonemeal, bucketOfSlime,
+			wolfbane, bones, pot, bucket, earProtection);
 	}
 
 	@Override

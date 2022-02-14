@@ -65,7 +65,7 @@ import com.questhelper.steps.QuestStep;
 public class LumbridgeElite extends ComplexStateQuestHelper
 {
 	// Items required
-	ItemRequirement lockpick, crossbow, mithgrap, lightsource, axe, addyBar, hammer, ess, waterAccessOrAbyss, qcCape;
+	ItemRequirement lockpick, crossbow, mithgrap, lightsource, axe, addyBar, hammer, essence, waterAccessOrAbyss, qcCape;
 
 	// Items recommended
 	ItemRequirement ringOfDueling, dorgSphere;
@@ -133,7 +133,7 @@ public class LumbridgeElite extends ComplexStateQuestHelper
 		axe = new ItemRequirement("Any axe", ItemCollections.getAxes()).showConditioned(notChopMagic);
 		addyBar = new ItemRequirement("Adamantite bar", ItemID.ADAMANTITE_BAR, 5).showConditioned(notAddyPlatebody);
 		hammer = new ItemRequirement("Hammer", ItemID.HAMMER).showConditioned(notAddyPlatebody);
-		ess = new ItemRequirement("Essence", ItemCollections.getEssenceLow(), 28).showConditioned(notWaterRunes);
+		essence = new ItemRequirement("Essence", ItemCollections.getEssenceLow(), 28).showConditioned(notWaterRunes);
 		waterAccessOrAbyss = new ItemRequirement("Access to water altar, or travel through abyss",
 			ItemCollections.getWaterAltar()).showConditioned(notWaterRunes);
 		qcCape = new ItemRequirement("Quest cape", ItemCollections.getQuestCape()).showConditioned(notQCEmote);
@@ -179,9 +179,9 @@ public class LumbridgeElite extends ComplexStateQuestHelper
 			"Perform the skill cape emote with the quest cape equipped.", qcCape.equipped());
 
 		moveToWater = new ObjectStep(this, 34815, new WorldPoint(3185, 3165, 0),
-			"Enter the water altar.", waterAccessOrAbyss.highlighted(), ess);
+			"Enter the water altar.", waterAccessOrAbyss.highlighted(), essence);
 		waterRunes = new ObjectStep(this, ObjectID.ALTAR_34762, new WorldPoint(2716, 4836, 0),
-			"Craft water runes.", ess);
+			"Craft water runes.", essence);
 
 		moveToUndergroundMovario = new ObjectStep(this, ObjectID.TRAPDOOR_14880, new WorldPoint(3209, 3216, 0),
 			"Climb down the trapdoor in the Lumbridge Castle.", mithgrap, crossbow, lightsource);
@@ -216,8 +216,7 @@ public class LumbridgeElite extends ComplexStateQuestHelper
 	@Override
 	public List<ItemRequirement> getItemRequirements()
 	{
-		return Arrays.asList(qcCape, lockpick, mithgrap, hammer, waterAccessOrAbyss, axe, addyBar,
-			ess, crossbow);
+		return Arrays.asList(qcCape, lockpick, mithgrap, hammer, waterAccessOrAbyss, axe, addyBar, essence, crossbow);
 	}
 
 	@Override
@@ -283,7 +282,7 @@ public class LumbridgeElite extends ComplexStateQuestHelper
 		allSteps.add(questCapeEmoteSteps);
 
 		PanelDetails waterRunesSteps = new PanelDetails("140 Water Runes", Arrays.asList(moveToWater, waterRunes),
-			new SkillRequirement(Skill.RUNECRAFT, 76), ess, waterAccessOrAbyss);
+			new SkillRequirement(Skill.RUNECRAFT, 76), essence, waterAccessOrAbyss);
 		waterRunesSteps.setDisplayCondition(notWaterRunes);
 		allSteps.add(waterRunesSteps);
 

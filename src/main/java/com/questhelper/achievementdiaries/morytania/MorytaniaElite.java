@@ -230,8 +230,8 @@ public class MorytaniaElite extends ComplexStateQuestHelper
 	@Override
 	public List<ItemRequirement> getItemRequirements()
 	{
-		return Arrays.asList(combatGear, magicRedwoodPyreLogs, shadeRemains, tinderbox, barrowsSet,
-			blackLeather, needle, thread, earthRune, astralRune, natureRune);
+		return Arrays.asList(combatGear, magicRedwoodPyreLogs, shadeRemains, tinderbox, barrowsSet, blackLeather, needle,
+			thread, earthRune, astralRune, natureRune);
 	}
 
 	@Override
@@ -326,8 +326,8 @@ public class MorytaniaElite extends ComplexStateQuestHelper
 		allSteps.add(craftSteps);
 
 		PanelDetails fertSteps = new PanelDetails("Fertilize Herb Patch", Collections.singletonList(fertilizeHerb),
-			new SkillRequirement(Skill.MAGIC, 83, true), lunarDiplomacy, lunarBook, earthRune,
-			astralRune, natureRune);
+			new SkillRequirement(Skill.MAGIC, 83, true),
+			lunarDiplomacy, lunarBook, earthRune, astralRune, natureRune);
 		fertSteps.setDisplayCondition(notFertilizeHerb);
 		allSteps.add(fertSteps);
 

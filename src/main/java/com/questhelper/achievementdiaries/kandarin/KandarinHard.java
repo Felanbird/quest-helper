@@ -237,9 +237,8 @@ public class KandarinHard extends ComplexStateQuestHelper
 	@Override
 	public List<ItemRequirement> getItemRequirements()
 	{
-		return Arrays.asList(barbRod, feather, axe, bowString, knife, cosmicRune,
-			waterRune, unpoweredOrb, dustyKey, mapleLogs, bow, ringOfVis,
-			coins, addyBar, hammer, yewLogs, combatGear);
+		return Arrays.asList(barbRod, feather, axe, bowString, knife, cosmicRune, waterRune, unpoweredOrb, dustyKey,
+			mapleLogs, bow, ringOfVis, coins, addyBar, hammer, yewLogs, combatGear);
 	}
 
 	@Override

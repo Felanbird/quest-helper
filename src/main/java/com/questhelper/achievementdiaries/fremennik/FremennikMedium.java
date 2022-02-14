@@ -374,8 +374,7 @@ public class FremennikMedium extends ComplexStateQuestHelper
 	public List<ItemRequirement> getItemRequirements()
 	{
 		return Arrays.asList(pickaxe, coins.quantity(30002), spade, staff, rope, butterFlyJar,
-			butterFlyNet, petRock, goldHelm, oakPlanks, saw, hammer, thrownaxe,
-			combatGear);
+			butterFlyNet, petRock, goldHelm, oakPlanks, saw, hammer, thrownaxe, combatGear);
 	}
 
 	@Override

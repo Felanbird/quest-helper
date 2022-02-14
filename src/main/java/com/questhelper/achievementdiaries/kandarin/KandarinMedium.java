@@ -270,10 +270,9 @@ public class KandarinMedium extends ComplexStateQuestHelper
 	@Override
 	public List<ItemRequirement> getItemRequirements()
 	{
-		return Arrays.asList(mithGrap, crossbow, dustyKey, bigFishingNet, unicornHorn, mortarPest,
-			vialOfWater, iritLeaf, mapleUnstrung, bowString, lockpick, pickaxe, lawRune,
-			airRune, limpSeed, seedDib, compost, rake, rope, primedMind, batteredKey,
-			beatenBook, hammer, staff, combatGear);
+		return Arrays.asList(mithGrap, crossbow, dustyKey, bigFishingNet, unicornHorn, mortarPest, vialOfWater, iritLeaf,
+			mapleUnstrung, bowString, lockpick, pickaxe, lawRune, airRune, limpSeed, seedDib, compost, rake, rope, primedMind,
+			batteredKey, beatenBook, hammer, staff, combatGear);
 	}
 
 	@Override

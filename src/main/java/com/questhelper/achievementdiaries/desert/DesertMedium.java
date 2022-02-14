@@ -249,8 +249,8 @@ public class DesertMedium extends ComplexStateQuestHelper
 	@Override
 	public List<ItemRequirement> getItemRequirements()
 	{
-		return Arrays.asList(combatGear, coins, rope, smallFishingNet, axe, lightSource, scrollOfRedir,
-			teleToHouse, harraPot, goatHornDust, camulet, iceCooler);
+		return Arrays.asList(combatGear, coins, rope, smallFishingNet, axe, lightSource, scrollOfRedir, teleToHouse,
+			harraPot, goatHornDust, camulet, iceCooler);
 	}
 
 	@Override
