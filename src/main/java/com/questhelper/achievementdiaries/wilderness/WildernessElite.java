@@ -101,8 +101,8 @@ public class WildernessElite extends ComplexStateQuestHelper
 		doElite.addStep(new Conditions(notMagicLogs, inResource, gatheredLogs, magicLog), burnLogs);
 		doElite.addStep(new Conditions(notMagicLogs, inResource), magicLogs);
 		doElite.addStep(notMagicLogs, moveToResource1);
-		doElite.addStep(new Conditions(notRuneScim, inResource, runeBar.quantity(2)), runeScim);
-		doElite.addStep(new Conditions(notRuneScim, inResource, runeOre.quantity(2), coal.quantity(16)), smeltBar);
+		doElite.addStep(new Conditions(notRuneScim, inResource, runeBar), runeScim);
+		doElite.addStep(new Conditions(notRuneScim, inResource, runeOre, coal), smeltBar);
 		doElite.addStep(new Conditions(notRuneScim, inResource), runiteGolem);
 		doElite.addStep(notRuneScim, moveToResource2);
 		doElite.addStep(new Conditions(notDarkCrab, inResource, caughtCrab, rawDarkCrab), cookDarkCrab);
@@ -133,8 +133,8 @@ public class WildernessElite extends ComplexStateQuestHelper
 		combatGear = new ItemRequirement("Combat gear", -1, -1);
 		combatGear.setDisplayItemId(BankSlotIcons.getCombatGear());
 		hammer = new ItemRequirement("Hammer", ItemID.HAMMER).showConditioned(notRuneScim);
-		lawRune = new ItemRequirement("Law rune", ItemID.LAW_RUNE).showConditioned(notTPGhorrock);
-		waterRune = new ItemRequirement("Water rune", ItemID.WATER_RUNE).showConditioned(notTPGhorrock);
+		lawRune = new ItemRequirement("Law rune", ItemID.LAW_RUNE, 2).showConditioned(notTPGhorrock);
+		waterRune = new ItemRequirement("Water rune", ItemID.WATER_RUNE, 8).showConditioned(notTPGhorrock);
 		lobsterPot = new ItemRequirement("Lobster pot", ItemID.LOBSTER_POT).showConditioned(notDarkCrab);
 		darkFishingBait = new ItemRequirement("Dark fish bait", ItemID.DARK_FISHING_BAIT).showConditioned(notDarkCrab);
 		coins = new ItemRequirement("Coins", ItemCollections.getCoins()).showConditioned(new Conditions(LogicType.OR,
@@ -144,9 +144,9 @@ public class WildernessElite extends ComplexStateQuestHelper
 		tinderbox = new ItemRequirement("Tinderbox", ItemID.TINDERBOX).showConditioned(notMagicLogs);
 		godEquip = new ItemRequirement("Various god equipment (1 of each god suggested)", -1, -1)
 			.showConditioned(notSpiritMage);
-		coal = new ItemRequirement("Coal", ItemID.COAL).showConditioned(notRuneScim);
-		runeOre = new ItemRequirement("Runite ore", ItemID.RUNITE_ORE);
-		runeBar = new ItemRequirement("Runite bar", ItemID.RUNITE_BAR);
+		coal = new ItemRequirement("Coal", ItemID.COAL, 16).showConditioned(notRuneScim);
+		runeOre = new ItemRequirement("Runite ore", ItemID.RUNITE_ORE, 2);
+		runeBar = new ItemRequirement("Runite bar", ItemID.RUNITE_BAR, 2);
 		magicLog = new ItemRequirement("Magic logs", ItemID.MAGIC_LOGS);
 		rawDarkCrab = new ItemRequirement("Raw dark crab", ItemID.RAW_DARK_CRAB);
 
@@ -200,14 +200,14 @@ public class WildernessElite extends ComplexStateQuestHelper
 			magicLog.highlighted());
 
 		moveToResource2 = new ObjectStep(this, ObjectID.GATE_26760, new WorldPoint(3184, 3944, 0),
-			"Enter the Wilderness Resource Area.", coins.quantity(6000), combatGear, food, pickaxe, coal.quantity(16));
+			"Enter the Wilderness Resource Area.", coins.quantity(6000), combatGear, food, pickaxe, coal);
 		runiteGolem = new NpcStep(this, NpcID.RUNITE_GOLEM, new WorldPoint(3189, 3938, 0),
-			"Kill and mine the Runite Golems in the Resource Area.", combatGear, food, pickaxe, coal.quantity(16));
+			"Kill and mine the Runite Golems in the Resource Area.", combatGear, food, pickaxe, coal);
 		runiteGolem.addAlternateNpcs(NpcID.RUNITE_ORE);
 		smeltBar = new ObjectStep(this, ObjectID.FURNACE_26300, new WorldPoint(3191, 3936, 0),
-			"Smelt the ore into runite bars.", hammer, runeOre.quantity(2), coal.quantity(16));
+			"Smelt the ore into runite bars.", hammer, runeOre, coal);
 		runeScim = new ObjectStep(this, ObjectID.ANVIL_2097, new WorldPoint(3190, 3938, 0),
-			"Smith a runite scimitar in the Resource Area.", hammer, runeBar.quantity(2));
+			"Smith a runite scimitar in the Resource Area.", hammer, runeBar);
 
 		moveToResource3 = new ObjectStep(this, ObjectID.GATE_26760, new WorldPoint(3184, 3944, 0),
 			"Enter the Wilderness Resource Area.", coins.quantity(6000), lobsterPot, darkFishingBait);
@@ -216,8 +216,7 @@ public class WildernessElite extends ComplexStateQuestHelper
 		cookDarkCrab = new ObjectStep(this, ObjectID.FIRE_26185, new WorldPoint(3188, 3930, 0),
 			"Cook the raw dark crab on the nearby fire.", rawDarkCrab);
 
-		tPGhorrock = new DetailedQuestStep(this, "Teleport to Ghorrock.", ancientBook, lawRune.quantity(2),
-			waterRune.quantity(8));
+		tPGhorrock = new DetailedQuestStep(this, "Teleport to Ghorrock.", ancientBook, lawRune, waterRune);
 
 		moveToGodWars1 = new ObjectStep(this, ObjectID.CAVE_26766, new WorldPoint(3018, 3739, 0),
 			"Enter the Wilderness God Wars Dungeon.", combatGear, food, godEquip);
@@ -248,8 +247,8 @@ public class WildernessElite extends ComplexStateQuestHelper
 	@Override
 	public List<ItemRequirement> getItemRequirements()
 	{
-		return Arrays.asList(combatGear, lawRune.quantity(2), waterRune.quantity(8), coins.quantity(3750), axe,
-			tinderbox, pickaxe, coal.quantity(16), lobsterPot, darkFishingBait, godEquip);
+		return Arrays.asList(combatGear, lawRune, waterRune, coins.quantity(3750), axe,
+			tinderbox, pickaxe, coal, lobsterPot, darkFishingBait, godEquip);
 	}
 
 	@Override
@@ -301,7 +300,7 @@ public class WildernessElite extends ComplexStateQuestHelper
 			new UnlockReward("Unlimited free teleports to the Fountain of Rune on the Wilderness Sword 4"),
 			new UnlockReward("Free entry to the Resource Area"),
 			new UnlockReward("All dragon bones drops in the Wilderness are noted. (Note: This does not include the King Black Dragon, as his lair is not Wilderness affected.)"),
-			new UnlockReward("	Noted lava dragon bones can be toggled by speaking to the Lesser Fanatic."),
+			new UnlockReward("Noted lava dragon bones can be toggled by speaking to the Lesser Fanatic."),
 			new UnlockReward("50 random free runes from Lundail once per day"),
 			new UnlockReward("Increased dark crab catch rate")
 		);
@@ -313,7 +312,7 @@ public class WildernessElite extends ComplexStateQuestHelper
 		List<PanelDetails> allSteps = new ArrayList<>();
 
 		PanelDetails tpSteps = new PanelDetails("Teleport to Ghorrock", Collections.singletonList(tPGhorrock),
-			new SkillRequirement(Skill.MAGIC, 96), desertTreasure, lawRune.quantity(2), waterRune.quantity(8));
+			new SkillRequirement(Skill.MAGIC, 96), desertTreasure, lawRune, waterRune);
 		tpSteps.setDisplayCondition(notTPGhorrock);
 		allSteps.add(tpSteps);
 
@@ -326,7 +325,7 @@ public class WildernessElite extends ComplexStateQuestHelper
 		PanelDetails scimSteps = new PanelDetails("Rune Scimitar in Resource Area",
 			Arrays.asList(moveToResource2, runiteGolem, smeltBar, runeScim), new SkillRequirement(Skill.MINING, 85),
 			new SkillRequirement(Skill.SMITHING, 90), coins.quantity(6000), combatGear, food, pickaxe,
-			coal.quantity(16));
+			coal);
 		scimSteps.setDisplayCondition(notRuneScim);
 		allSteps.add(scimSteps);
 

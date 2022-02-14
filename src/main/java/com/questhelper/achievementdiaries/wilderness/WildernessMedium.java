@@ -112,8 +112,8 @@ public class WildernessMedium extends ComplexStateQuestHelper
 		doMedium.addStep(notEarthOrb, moveToEdge);
 		doMedium.addStep(notMineMith, mineMith);
 		doMedium.addStep(notWildyAgi, wildyAgi);
-		doMedium.addStep(new Conditions(notGoldHelm, inResource, goldBar.quantity(3).alsoCheckBank(questBank)), goldHelm);
-		doMedium.addStep(new Conditions(notGoldHelm, inResource, goldOre.quantity(3)), smeltGoldOre);
+		doMedium.addStep(new Conditions(notGoldHelm, inResource, goldBar.alsoCheckBank(questBank)), goldHelm);
+		doMedium.addStep(new Conditions(notGoldHelm, inResource, goldOre), smeltGoldOre);
 		doMedium.addStep(new Conditions(notGoldHelm, inResource), mineGoldOre);
 		doMedium.addStep(notGoldHelm, moveToResource);
 		doMedium.addStep(notMuddyChest, muddyChest);
@@ -147,17 +147,17 @@ public class WildernessMedium extends ComplexStateQuestHelper
 		pickaxe = new ItemRequirement("Any pickaxe", ItemCollections.getPickaxes())
 			.showConditioned(notMineMith);
 		unpoweredOrb = new ItemRequirement("Unpowered orb", ItemID.UNPOWERED_ORB).showConditioned(notEarthOrb);
-		cosmicRune = new ItemRequirement("Cosmic rune", ItemID.COSMIC_RUNE).showConditioned(notEarthOrb);
-		earthRune = new ItemRequirement("Earth rune", ItemID.EARTH_RUNE).showConditioned(notEarthOrb);
+		cosmicRune = new ItemRequirement("Cosmic rune", ItemID.COSMIC_RUNE, 3).showConditioned(notEarthOrb);
+		earthRune = new ItemRequirement("Earth rune", ItemID.EARTH_RUNE, 30).showConditioned(notEarthOrb);
 		knife = new ItemRequirement("Knife or slashing weapon", -1, -1);
 		muddyKey = new ItemRequirement("Muddy key", ItemID.MUDDY_KEY).showConditioned(notMuddyChest);
 		goldHelmet = new ItemRequirement("Golden helmet not in inventory or bank (make sure this is red)",
 			ItemID.GOLD_HELMET).showConditioned(notGoldHelm);
-		coins = new ItemRequirement("Coins", ItemCollections.getCoins()).showConditioned(notGoldHelm);
-		goldBar = new ItemRequirement("Gold bar", ItemID.GOLD_BAR).showConditioned(notGoldHelm);
-		goldOre = new ItemRequirement("Gold ore", ItemID.GOLD_ORE);
+		coins = new ItemRequirement("Coins", ItemCollections.getCoins(), 7500).showConditioned(notGoldHelm);
+		goldBar = new ItemRequirement("Gold bar", ItemID.GOLD_BAR,3).showConditioned(notGoldHelm);
+		goldOre = new ItemRequirement("Gold ore", ItemID.GOLD_ORE, 3);
 		hammer = new ItemRequirement("Hammer", ItemID.HAMMER).showConditioned(notGoldHelm);
-		barsOrPick = new ItemRequirements(LogicType.OR, "3 gold bars or a pickaxe", goldBar.quantity(3), pickaxe);
+		barsOrPick = new ItemRequirements(LogicType.OR, "3 gold bars or a pickaxe", goldBar, pickaxe);
 
 		food = new ItemRequirement("Food", ItemCollections.getGoodEatingFood(), -1);
 		burningAmulet = new ItemRequirement("Burning amulet", ItemCollections.getBurningAmulets());
@@ -221,19 +221,18 @@ public class WildernessMedium extends ComplexStateQuestHelper
 		moveToEdge = new ObjectStep(this, ObjectID.TRAPDOOR_1581, new WorldPoint(3097, 3468, 0),
 			"Enter to the Edgeville Dungeon.");
 		earthOrb = new ObjectStep(this, ObjectID.OBELISK_OF_EARTH, new WorldPoint(3087, 9933, 0),
-			"Cast charge earth orb on the Obelisk of Earth.", unpoweredOrb, earthRune.quantity(30),
-			cosmicRune.quantity(3));
+			"Cast charge earth orb on the Obelisk of Earth.", unpoweredOrb, earthRune, cosmicRune);
 
 		emblemTrader = new NpcStep(this, NpcID.EMBLEM_TRADER, new WorldPoint(3097, 3504, 0),
 			"Speak with the Emblem Trader.");
 
 		goldHelm = new ObjectStep(this, ObjectID.ANVIL_2097, new WorldPoint(3190, 3938, 0),
 			"Smith the gold helmet in the Resource Area. If you already have one in your bank you will need to drop " +
-				"it first.", hammer, goldBar.quantity(3));
+				"it first.", hammer, goldBar);
 		moveToResource = new ObjectStep(this, ObjectID.GATE_26760, new WorldPoint(3184, 3944, 0),
-			"Enter the Wilderness Resource Area.", coins.quantity(7500), hammer, barsOrPick);
+			"Enter the Wilderness Resource Area.", coins, hammer, barsOrPick);
 		smeltGoldOre = new ObjectStep(this, ObjectID.FURNACE_26300, new WorldPoint(3191, 3936, 0),
-			"Smelt the gold ore into gold bars.", hammer, goldOre.quantity(3));
+			"Smelt the gold ore into gold bars.", hammer, goldOre);
 		mineGoldOre = new ObjectStep(this, ObjectID.ROCKS_11370, new WorldPoint(3184, 3941, 0),
 			"Mine gold ore.", true, hammer, pickaxe);
 
@@ -248,8 +247,8 @@ public class WildernessMedium extends ComplexStateQuestHelper
 	@Override
 	public List<ItemRequirement> getItemRequirements()
 	{
-		return Arrays.asList(unpoweredOrb, cosmicRune.quantity(3), earthRune.quantity(30), pickaxe, antiDragonShield,
-			runeAxe, combatGear, barsOrPick, hammer, coins.quantity(7500), knife, muddyKey);
+		return Arrays.asList(unpoweredOrb, cosmicRune, earthRune, pickaxe, antiDragonShield,
+			runeAxe, combatGear, barsOrPick, hammer, coins, knife, muddyKey);
 	}
 
 	@Override
@@ -340,7 +339,7 @@ public class WildernessMedium extends ComplexStateQuestHelper
 		allSteps.add(emblemSteps);
 
 		PanelDetails earthOrbSteps = new PanelDetails("Earth Orb", Arrays.asList(moveToEdge, earthOrb),
-			new SkillRequirement(Skill.MAGIC, 60), unpoweredOrb, earthRune.quantity(30), cosmicRune.quantity(3));
+			new SkillRequirement(Skill.MAGIC, 60), unpoweredOrb, earthRune, cosmicRune);
 		earthOrbSteps.setDisplayCondition(notEarthOrb);
 		allSteps.add(earthOrbSteps);
 
@@ -356,7 +355,7 @@ public class WildernessMedium extends ComplexStateQuestHelper
 
 		PanelDetails goldHelmSteps = new PanelDetails("Gold Helmet in Resource Area", Arrays.asList(moveToResource,
 			mineGoldOre, smeltGoldOre, goldHelm), new SkillRequirement(Skill.SMITHING, 50), betweenARock,
-			coins.quantity(7500), barsOrPick, hammer, knife);
+			coins, barsOrPick, hammer, knife);
 		goldHelmSteps.setDisplayCondition(notGoldHelm);
 		allSteps.add(goldHelmSteps);
 

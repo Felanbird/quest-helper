@@ -139,8 +139,8 @@ public class WildernessHard extends ComplexStateQuestHelper
 			.showConditioned(notGodSpells);
 		godStaff = new ItemRequirement("Any god staff", ItemCollections.getGodStaff()).showConditioned(notGodSpells);
 		unpoweredOrb = new ItemRequirement("Unpowered orb", ItemID.UNPOWERED_ORB).showConditioned(notAirOrb);
-		cosmicRune = new ItemRequirement("Cosmic rune", ItemID.COSMIC_RUNE).showConditioned(notAirOrb);
-		airRune = new ItemRequirement("Air rune", ItemID.AIR_RUNE).showConditioned(notAirOrb);
+		cosmicRune = new ItemRequirement("Cosmic rune", ItemID.COSMIC_RUNE, 3).showConditioned(notAirOrb);
+		airRune = new ItemRequirement("Air rune", ItemID.AIR_RUNE, 30).showConditioned(notAirOrb);
 		smallFishingNet = new ItemRequirement("Small fishing net", ItemID.SMALL_FISHING_NET).showConditioned(notBlackSally);
 		rope = new ItemRequirement("Rope", ItemID.ROPE).showConditioned(notBlackSally);
 		knife = new ItemRequirement("Knife or slashing weapon", -1, -1).showConditioned(notRawLavaEel);
@@ -149,7 +149,7 @@ public class WildernessHard extends ComplexStateQuestHelper
 		godEquip = new ItemRequirement("Various god equipment (1 of each god suggested)", -1, -1)
 			.showConditioned(notSprirtualWarrior);
 		pickaxe = new ItemRequirement("Any pickaxe", ItemCollections.getPickaxes()).showConditioned(notAddyScim);
-		coins = new ItemRequirement("Coins", ItemCollections.getCoins()).showConditioned(notAddyScim);
+		coins = new ItemRequirement("Coins", ItemCollections.getCoins(), 6000).showConditioned(notAddyScim);
 		addyBar = new ItemRequirement("Adamantite bar", ItemID.ADAMANTITE_BAR, 2).showConditioned(notAddyScim);
 		addyOre = new ItemRequirement("Adamantite ore", ItemID.ADAMANTITE_ORE);
 		hammer = new ItemRequirement("Hammer", ItemID.HAMMER).showConditioned(notAddyScim);
@@ -189,11 +189,11 @@ public class WildernessHard extends ComplexStateQuestHelper
 			"Wilderness. Splashing will not count.", godStaff.equipped(), godRunes);
 
 		moveToEdge = new ObjectStep(this, ObjectID.TRAPDOOR_1581, new WorldPoint(3097, 3468, 0),
-			"Enter to the Edgeville dungeon.", airRune.quantity(30), cosmicRune.quantity(3), unpoweredOrb);
+			"Enter to the Edgeville dungeon.", airRune, cosmicRune, unpoweredOrb);
 		moveToAir = new ObjectStep(this, ObjectID.LADDER_17385, new WorldPoint(3088, 9971, 0),
-			"Climb the ladder that leads to the Obelisk of Air.", airRune.quantity(30), cosmicRune.quantity(3), unpoweredOrb);
+			"Climb the ladder that leads to the Obelisk of Air.", airRune, cosmicRune, unpoweredOrb);
 		airOrb = new ObjectStep(this, ObjectID.OBELISK_OF_AIR, new WorldPoint(3088, 3569, 0),
-			"Cast charge air orb on the Obelisk of Air.", airRune.quantity(30), cosmicRune.quantity(3), unpoweredOrb);
+			"Cast charge air orb on the Obelisk of Air.", airRune, cosmicRune, unpoweredOrb);
 
 		chaosEle = new NpcStep(this, NpcID.CHAOS_ELEMENTAL, new WorldPoint(3263, 3918, 0),
 			"Kill the Chaos Elemental.", combatGear, food);
@@ -212,7 +212,7 @@ public class WildernessHard extends ComplexStateQuestHelper
 		addyScim = new ObjectStep(this, ObjectID.ANVIL_2097, new WorldPoint(3190, 3938, 0),
 			"Smith an Adamant scimitar in the Resource Area.", hammer, addyBar);
 		moveToResource = new ObjectStep(this, ObjectID.GATE_26760, new WorldPoint(3184, 3944, 0),
-			"Enter the Wilderness Resource Area.", coins.quantity(6000), hammer, addyBar);
+			"Enter the Wilderness Resource Area.", coins, hammer, addyBar);
 
 		moveToGodWars1 = new ObjectStep(this, ObjectID.CAVE_26766, new WorldPoint(3018, 3739, 0),
 			"Enter the Wilderness God Wars Dungeon.", combatGear, food, godEquip);
@@ -244,8 +244,8 @@ public class WildernessHard extends ComplexStateQuestHelper
 	@Override
 	public List<ItemRequirement> getItemRequirements()
 	{
-		return Arrays.asList(combatGear, godStaff, godRunes, airRune.quantity(30), cosmicRune.quantity(3),
-			unpoweredOrb, knife, burningAmulet, oilyRod, fishingBait, coins.quantity(6000), hammer, barsOrPick, godEquip);
+		return Arrays.asList(combatGear, godStaff, godRunes, airRune, cosmicRune,
+			unpoweredOrb, knife, burningAmulet, oilyRod, fishingBait, coins, hammer, barsOrPick, godEquip);
 	}
 
 	@Override
@@ -310,7 +310,7 @@ public class WildernessHard extends ComplexStateQuestHelper
 		List<PanelDetails> allSteps = new ArrayList<>();
 
 		PanelDetails airSteps = new PanelDetails("Air Orb", Arrays.asList(moveToEdge, moveToAir, airOrb),
-			new SkillRequirement(Skill.MAGIC, 60), airRune.quantity(30), cosmicRune.quantity(3), unpoweredOrb);
+			new SkillRequirement(Skill.MAGIC, 60), airRune, cosmicRune, unpoweredOrb);
 		airSteps.setDisplayCondition(notAirOrb);
 		allSteps.add(airSteps);
 
