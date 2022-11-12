@@ -50,7 +50,10 @@ import com.questhelper.steps.ObjectStep;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+import java.util.concurrent.locks.Condition;
 import net.runelite.api.ItemID;
 import net.runelite.api.NpcID;
 import net.runelite.api.ObjectID;
@@ -69,7 +72,7 @@ public class WesternMedium extends ComplexStateQuestHelper
 {
 	// Items required
 	ItemRequirement combatGear, ogreBellows, ogreBow, ogreArrows, teasingStick, logs, knife, bigFishingNet, axe, tinderbox,
-		rope, gnomebowl, gianneDough, chocolateBar, equaLeaf, potOfCream, chocolateDust, crystalSawSeed, pickaxe, teakLogs;
+		rope, gnomebowl, gianneDough, rawGnomeBowl, halfBakedBowl, unfinishedBowl, halfMadeBowl,  chocolateBar, equaLeaf, potOfCream, chocolateDust, crystalSawSeed, pickaxe, teakLogs;
 
 	// Items recommended
 	ItemRequirement food, fairyAccess, seedPod;
@@ -82,7 +85,7 @@ public class WesternMedium extends ComplexStateQuestHelper
 		notGliderToFeldip, notChompyHat, notEagleFeldip, notChocolateBomb, notGnomeDelivery, notCrystalSaw, notMineGold;
 
 	QuestStep claimReward, agiShortcut, spiritToStronghold, spinedLarupia, apeBass, interPest, gliderToFeldip,
-		chompyHat, eagleFeldip, chocolateBomb, gnomeDelivery, crystalSaw, moveToApeBass, moveToApeTeak, moveToStrongFirstDelivery,
+		chompyHat, eagleFeldip, chocolateBomb, chocolateBombStep2, chocolateBombStep3, chocolateBombStep4, chocolateBombStep5, gnomeDelivery, crystalSaw, moveToApeBass, moveToApeTeak, moveToStrongFirstDelivery,
 		moveToStrongFirstChoco, moveToStrongBase, moveToStrongBase2, moveToBrimstailCave, moveToEagle, moveToPest,
 		apeTeakChop, apeTeakBurn;
 
@@ -103,14 +106,58 @@ public class WesternMedium extends ComplexStateQuestHelper
 		loadZones();
 		setupRequirements();
 		setupSteps();
+		Map<Integer, QuestStep> steps = new HashMap<>();
 
 		ConditionalStep doMedium = new ConditionalStep(this, claimReward);
 
 		spiritToStrongholdTask = new ConditionalStep(this, spiritToStronghold);
 		doMedium.addStep(notSpiritToStronghold, spiritToStrongholdTask);
 
+
+		/*
+		moveToApeTeak = new DetailedQuestStep(this, "Travel to Ape Atoll.", axe, tinderbox);
+		apeTeakChop = new ObjectStep(this, ObjectID.TEAK, new WorldPoint(2773, 2698, 0),
+			"Chop some teak logs on Ape Atoll.", axe, tinderbox);
+		apeTeakBurn = new ItemStep(this, "Burn some teak logs on Ape Atoll.",
+			teakLogs.highlighted(), tinderbox.highlighted());
+
+		apeTeakTask = new ConditionalStep(this, moveToApeTeak);
+		apeTeakTask.addStep(inApeAtoll, apeTeakChop);
+		apeTeakTask.addStep(new Conditions(inApeAtoll, teakLogs, choppedLogs), apeTeakBurn);
+		doMedium.addStep(notApeTeak, apeTeakTask);
+		*/
+
+
+		/*
+		moveToStrongFirstChoco = new ObjectStep(this, ObjectID.LADDER_16683, new WorldPoint(2466, 3495, 0),
+		"Climb the ladder at the Grand Tree.", gnomebowl, gianneDough, chocolateBar, equaLeaf, potOfCream, chocolateDust);
+		//chocolateBomb = new DetailedQuestStep(this, "Make a chocolate bomb.", gnomebowl, gianneDough, chocolateBar, equaLeaf, potOfCream, chocolateDust);
+
+		chocolateBomb = new DetailedQuestStep(this, "Use the Gianne dough on the Gnomebowl mould", gnomebowl.highlighted(), gianneDough.highlighted());
+
+		chocolateBombStep2 = new ObjectStep(this, ObjectID.GNOME_COOKER, (new WorldPoint(2447,3510, 1)),
+		"Cook the Raw gnomebowl", rawGnomeBowl.highlighted());
+
+		chocolateBombStep3 = new DetailedQuestStep(this, "Left-click the Half Baked bowl to add the Chocolate and Equa Leaf",
+		halfBakedBowl.highlighted(), chocolateBar, equaLeaf);
+
+		chocolateBombStep4 = new ObjectStep(this, ObjectID.GNOME_COOKER, new WorldPoint(2447, 3510, 1),
+		"Cook the Half made bowl", halfMadeBowl.highlighted());
+
+		chocolateBombStep5 = new DetailedQuestStep(this, "Use the Unfinished bowl on the Chocolate Dust",
+		unfinishedBowl.highlighted(), chocolateDust);
+
+		 */
 		chocolateBombTask = new ConditionalStep(this, moveToStrongFirstChoco);
 		chocolateBombTask.addStep(inStrongholdFirst, chocolateBomb);
+	//	chocolateBombTask = new ConditionalStep(this, chocolateBombStep2);
+		chocolateBombTask.addStep(new Conditions(LogicType.AND, inStrongholdFirst), chocolateBombStep2);
+		chocolateBombTask.addStep(new Conditions(halfBakedBowl, inStrongholdFirst), chocolateBombStep3);
+		chocolateBombTask.addStep(new Conditions(halfMadeBowl, inStrongholdFirst), chocolateBombStep4);
+		chocolateBombTask.addStep(new Conditions(unfinishedBowl, inStrongholdFirst), chocolateBombStep5);
+
+		//chocolateBombTask = new ConditionalStep(this, chocolateBomb);
+		//chocolateBombTask = new ConditionalStep(this, chocolateBombStep2);
 		doMedium.addStep(notChocolateBomb, chocolateBombTask);
 
 		gnomeDeliveryTask = new ConditionalStep(this, moveToStrongFirstDelivery);
@@ -171,7 +218,7 @@ public class WesternMedium extends ComplexStateQuestHelper
 		notGliderToFeldip = new VarplayerRequirement(1182, false, 18);
 		notChompyHat = new VarplayerRequirement(1182, false, 19);
 		notEagleFeldip = new VarplayerRequirement(1182, false, 20);
-		notChocolateBomb = new VarplayerRequirement(1182, false, 21);
+		notChocolateBomb = new VarplayerRequirement(1182, true, 21);
 		notGnomeDelivery = new VarplayerRequirement(1182, false, 22);
 		notCrystalSaw = new VarplayerRequirement(1182, false, 23);
 		notMineGold = new VarplayerRequirement(1182, false, 24);
@@ -191,6 +238,10 @@ public class WesternMedium extends ComplexStateQuestHelper
 		gnomebowl.setTooltip("can be purchased at Grand Tree Groceries");
 		gianneDough = new ItemRequirement("Gianne dough", ItemID.GIANNE_DOUGH).showConditioned(notChocolateBomb);
 		gianneDough.setTooltip("can be purchased at Grand Tree Groceries");
+		rawGnomeBowl = new ItemRequirement("Raw gnomebowl", ItemID.RAW_GNOMEBOWL).showConditioned(notChocolateBomb);
+		halfBakedBowl = new ItemRequirement("Half Baked Bowl", ItemID.HALF_BAKED_BOWL).showConditioned(notChocolateBomb);
+		halfMadeBowl = new ItemRequirement("Half made bowl", ItemID.HALF_MADE_BOWL).showConditioned(notChocolateBomb);
+		unfinishedBowl = new ItemRequirement("Unfinished bowl (chocolate bomb)", ItemID.UNFINISHED_BOWL_2181).showConditioned(notChocolateBomb); // confirm bowl ID
 		chocolateBar = new ItemRequirement("Chocolate bar", ItemID.CHOCOLATE_BAR, 4).showConditioned(notChocolateBomb);
 		chocolateBar.setTooltip("can be purchased at Grand Tree Groceries");
 		equaLeaf = new ItemRequirement("Equa leaves", ItemID.EQUA_LEAVES).showConditioned(notChocolateBomb);
@@ -256,11 +307,16 @@ public class WesternMedium extends ComplexStateQuestHelper
 
 		spiritToStronghold = new DetailedQuestStep(this, "Travel to the Gnome Stronghold by spirit tree.");
 
-		// todo more detailed chocobomb steps
 		moveToStrongFirstChoco = new ObjectStep(this, ObjectID.LADDER_16683, new WorldPoint(2466, 3495, 0),
-			"Climb the ladder at the Grand Tree.", gnomebowl, gianneDough, chocolateBar, equaLeaf, potOfCream, chocolateDust);
-		chocolateBomb = new DetailedQuestStep(this, "Make a chocolate bomb.", gnomebowl, gianneDough, chocolateBar,
-			equaLeaf, potOfCream, chocolateDust);
+			"Climb the ladder at the Grand Tree.");
+		//chocolateBomb = new DetailedQuestStep(this, "Make a chocolate bomb.", gnomebowl, gianneDough, chocolateBar, equaLeaf, potOfCream, chocolateDust);
+		chocolateBomb = new DetailedQuestStep(this, "Use the Gianne dough on the Gnomebowl mould", gnomebowl.highlighted(), gianneDough.highlighted());
+		chocolateBombStep2 = new ObjectStep(this, ObjectID.GNOME_COOKER, (new WorldPoint(2447,3510, 1)), "Cook the Raw gnomebowl", rawGnomeBowl.highlighted());
+		chocolateBombStep3 = new DetailedQuestStep(this, "Left-click the Half Baked bowl to add the Chocolate and Equa Leaf", halfBakedBowl.highlighted(), chocolateBar, equaLeaf);
+		chocolateBombStep4 = new ObjectStep(this, ObjectID.GNOME_COOKER, new WorldPoint(2447, 3510, 1), "Cook the Half made bowl", halfMadeBowl.highlighted());
+		chocolateBombStep5 = new DetailedQuestStep(this, "Use the Unfinished bowl on the Chocolate Dust", unfinishedBowl.highlighted(), chocolateDust);
+		// 2451, 3510, 1
+		// chocolateBombStep2 = new DetailedQuestStep(this, "Left click the Half Baked bowl to add 4 Chocolate bars and 1 Equa Leaf to it", halfBakedBowl.highlighted());
 
 		moveToStrongFirstDelivery = new ObjectStep(this, ObjectID.LADDER_16683, new WorldPoint(2466, 3495, 0),
 			"Climb the ladder at the Grand Tree.");
@@ -396,8 +452,8 @@ public class WesternMedium extends ComplexStateQuestHelper
 		allSteps.add(spiritSteps);
 
 		PanelDetails chocoSteps = new PanelDetails("Chocolate Bomb", Arrays.asList(moveToStrongFirstChoco,
-			chocolateBomb), new SkillRequirement(Skill.COOKING, 42), gnomebowl, gianneDough, chocolateBar, equaLeaf,
-			potOfCream, chocolateDust);
+			chocolateBomb, chocolateBombStep2, chocolateBombStep3, chocolateBombStep4, chocolateBombStep5), new SkillRequirement(Skill.COOKING, 42),
+			gnomebowl, gianneDough, chocolateBar, equaLeaf,	potOfCream, chocolateDust);
 		chocoSteps.setDisplayCondition(notChocolateBomb);
 		chocoSteps.setLockingStep(chocolateBombTask);
 		allSteps.add(chocoSteps);
