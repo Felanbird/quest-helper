@@ -142,7 +142,7 @@ public class VarrockElite extends ComplexStateQuestHelper
 		cookingGuild.setTooltip("A chef's hat, Varrock Armour 3, or Cooking Cape");
 		rawPie = new ItemRequirement("Raw summer pie", ItemID.RAW_SUMMER_PIE).showConditioned(notSummerPie);
 		runeBar = new ItemRequirement("Runite bar", ItemID.RUNITE_BAR).showConditioned(notRuneDart);
-		feather = new ItemRequirement("Feather", ItemID.FEATHER).showConditioned(notRuneDart);
+		feather = new ItemRequirement("Feather", ItemID.FEATHER, 10).showConditioned(notRuneDart);
 		hammer = new ItemRequirement("Hammer", ItemID.HAMMER).showConditioned(notRuneDart).isNotConsumed();
 		runeDartTip = new ItemRequirement("Rune dart tip", ItemID.RUNE_DART_TIP);
 		essence = new ItemRequirement("Essence", ItemCollections.ESSENCE_LOW).showConditioned(not100Earth);
@@ -205,7 +205,7 @@ public class VarrockElite extends ComplexStateQuestHelper
 		dartTip = new ObjectStep(this, ObjectID.ANVIL_2097, new WorldPoint(3188, 3426, 0),
 			"Make rune dart tips on the anvil in west Varrock.", runeBar);
 		runeDart = new ItemStep(this, "Use feathers on the rune dart tips.", runeDartTip.highlighted(),
-			feather.quantity(10).highlighted());
+			feather.highlighted());
 
 		claimReward = new NpcStep(this, NpcID.TOBY, new WorldPoint(3225, 3415, 0),
 			"Talk to Toby in Varrock to claim your reward!");
