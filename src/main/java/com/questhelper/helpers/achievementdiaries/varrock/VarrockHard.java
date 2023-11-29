@@ -298,23 +298,23 @@ public class VarrockHard extends ComplexStateQuestHelper
 		moveToStronghold = new ObjectStep(this, ObjectID.ENTRANCE_20790, new WorldPoint(3081, 3420, 0),
 			"Enter the Security Stronghold.", combatGear, food);
 		killMino = new NpcStep(this, NpcID.MINOTAUR, new WorldPoint(1888, 5220, 0),
-			"Kill Minotaurs until you receive a right skull half.", rightSkull, combatGear, food);
+			"Kill Minotaurs until you receive a right skull half.", true, rightSkull, combatGear, food);
 		killMino.addAlternateNpcs(NpcID.MINOTAUR_2482);
 		killMino.addAlternateNpcs(NpcID.MINOTAUR_2483);
 		moveToStronghold2 = new ObjectStep(this, ObjectID.LADDER_20785, new WorldPoint(1902, 5222, 0),
 			"Go to the 2nd floor of the stronghold.", combatGear, food);
 		killFlesh = new NpcStep(this, NpcID.FLESH_CRAWLER, new WorldPoint(2019, 5215, 0),
-			"Kill Flesh crawlers until you receive a bottom of sceptre.", combatGear, food, botSceptre);
+			"Kill Flesh crawlers until you receive a bottom of sceptre.", true, combatGear, food, botSceptre);
 		killFlesh.addAlternateNpcs(NpcID.FLESH_CRAWLER_2499);
 		killFlesh.addAlternateNpcs(NpcID.FLESH_CRAWLER_2500);
 		moveToStronghold3 = new ObjectStep(this, ObjectID.LADDER_19004, new WorldPoint(2026, 5218, 0),
 			"Go to the 3rd floor of the stronghold.", combatGear, food);
 		killCatablepon = new NpcStep(this, NpcID.CATABLEPON, new WorldPoint(2144, 5281, 0),
-			"Kill Catablepons until you receive a top of sceptre.", combatGear, food, topSceptre);
+			"Kill Catablepons until you receive a top of sceptre.", true, combatGear, food, topSceptre);
 		killCatablepon.addAlternateNpcs(NpcID.CATABLEPON_2475);
 		killCatablepon.addAlternateNpcs(NpcID.CATABLEPON_2476);
 		moveToStronghold4 = new ObjectStep(this, ObjectID.DRIPPING_VINE_23706, new WorldPoint(2148, 5284, 0),
-			"Go to the 4th floor of the stronghold.", combatGear, food);
+			"Go to the 4th floor of the stronghold.", true, combatGear, food);
 		killAnkou = new NpcStep(this, NpcID.ANKOU, new WorldPoint(2344, 5213, 0),
 			"Kill Ankous until you receive a left skull half.", combatGear, food, leftSkull);
 		killAnkou.addAlternateNpcs(NpcID.ANKOU_2515);
